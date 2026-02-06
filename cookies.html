@@ -209,6 +209,22 @@
         font-weight: 700;
       }
     </style>
+
+    <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF5KB7S3WL"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XF5KB7S3WL', { 'cookie_flags': 'SameSite=None;Secure' });
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -289,41 +305,17 @@
             </label>
           </div>
           <p class="cookie-description">
-            These cookies help us understand how visitors interact with our website. All data is anonymised and we use
-            privacy-focused analytics that don't track you across other websites.
+            These cookies help us understand how visitors interact with our website. They are only set if you consent.
+            All data is anonymised and we use privacy-focused analytics.
           </p>
           <div class="cookie-list">
             <div class="cookie-item">
-              <span class="cookie-name">_ga (Google Analytics alternative)</span>
+              <span class="cookie-name">_ga, _ga_* (Google Analytics 4)</span>
               <span class="cookie-duration">2 years</span>
             </div>
             <div class="cookie-item">
-              <span class="cookie-name">_analytics_session</span>
-              <span class="cookie-duration">30 minutes</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cookie-category">
-          <div class="cookie-header">
-            <h3>🎯 Marketing Cookies</h3>
-            <label class="cookie-toggle">
-              <input type="checkbox" id="marketing" />
-              <span class="cookie-slider"></span>
-            </label>
-          </div>
-          <p class="cookie-description">
-            These cookies are used to show you relevant advertisements and measure the effectiveness of our marketing
-            campaigns. They may be set by our advertising partners.
-          </p>
-          <div class="cookie-list">
-            <div class="cookie-item">
-              <span class="cookie-name">_fbp (Facebook Pixel)</span>
-              <span class="cookie-duration">3 months</span>
-            </div>
-            <div class="cookie-item">
-              <span class="cookie-name">_gcl (Google Ads)</span>
-              <span class="cookie-duration">90 days</span>
+              <span class="cookie-name">_clck, _clsk (Microsoft Clarity)</span>
+              <span class="cookie-duration">1 year</span>
             </div>
           </div>
         </div>
@@ -337,17 +329,13 @@
             </label>
           </div>
           <p class="cookie-description">
-            These cookies enable enhanced functionality and personalisation, such as remembering your preferences and
-            settings. If you disable these, some features may not work as expected.
+            These cookies enable enhanced functionality and personalisation. Currently we do not set any functionality
+            cookies on this website, but we reserve the option for future features.
           </p>
           <div class="cookie-list">
             <div class="cookie-item">
-              <span class="cookie-name">user_preferences</span>
-              <span class="cookie-duration">1 year</span>
-            </div>
-            <div class="cookie-item">
-              <span class="cookie-name">theme</span>
-              <span class="cookie-duration">1 year</span>
+              <span class="cookie-name">None currently in use</span>
+              <span class="cookie-duration">—</span>
             </div>
           </div>
         </div>
@@ -480,58 +468,63 @@
 
       // Cookie preference management
       const analyticsToggle = document.getElementById('analytics')
-      const marketingToggle = document.getElementById('marketing')
       const functionalityToggle = document.getElementById('functionality')
       const savedMessage = document.getElementById('savedMessage')
 
       // Load saved preferences
       function loadPreferences() {
-        const consent = localStorage.getItem('gorocco_cookie_consent')
-        if (consent === 'all' || consent === 'custom') {
-          analyticsToggle.checked = true
-          marketingToggle.checked = true
-          functionalityToggle.checked = true
-        } else if (consent === 'essential') {
-          analyticsToggle.checked = false
-          marketingToggle.checked = false
-          functionalityToggle.checked = false
-        } else {
-          // Try legacy format with error handling
-          const legacyConsent = localStorage.getItem('cookie_consent')
-          if (legacyConsent) {
-            try {
-              const prefs = JSON.parse(legacyConsent)
-              analyticsToggle.checked = prefs.analytics || false
-              marketingToggle.checked = prefs.marketing || false
-              functionalityToggle.checked = prefs.functionality || false
-            } catch (e) {
-              console.warn('Invalid cookie preference data, resetting')
-              localStorage.removeItem('cookie_consent')
-            }
+        try {
+          const consent = localStorage.getItem('gorocco_cookie_consent')
+          if (consent) {
+            const prefs = JSON.parse(consent)
+            analyticsToggle.checked = prefs.analytics || false
+            functionalityToggle.checked = prefs.functionality || false
           }
+        } catch (e) {
+          console.warn('Invalid cookie preference data')
         }
       }
 
-      // Save preferences
+      // Save preferences and update GA4 consent
       function savePreferences() {
         const prefs = {
           essential: true,
           analytics: analyticsToggle.checked,
-          marketing: marketingToggle.checked,
-          functionality: functionalityToggle.checked,
-          timestamp: new Date().toISOString(),
+          functionality: functionalityToggle.checked
         }
-        localStorage.setItem('cookie_consent', JSON.stringify(prefs))
-
-        // Also set the simple consent flag for banner sync
-        if (analyticsToggle.checked || marketingToggle.checked || functionalityToggle.checked) {
-          localStorage.setItem('gorocco_cookie_consent', 'custom')
-        } else {
-          localStorage.setItem('gorocco_cookie_consent', 'essential')
-        }
+        localStorage.setItem('gorocco_cookie_consent', JSON.stringify(prefs))
         localStorage.setItem('gorocco_cookie_consent_date', new Date().toISOString())
 
+        // Update GA4 consent
+        gtag('consent', 'update', {
+          'analytics_storage': prefs.analytics ? 'granted' : 'denied'
+        });
+
+        // Load or unload analytics based on consent
+        if (prefs.analytics) {
+          loadAnalytics();
+        }
+
         showSavedMessage()
+      }
+
+      // Load analytics scripts if consent given
+      function loadAnalytics() {
+        if (!document.getElementById('cf-beacon-script')) {
+          var cf = document.createElement('script');
+          cf.id = 'cf-beacon-script';
+          cf.defer = true;
+          cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+          cf.setAttribute('data-cf-beacon', '{"token": "644d34331b7b4af0beacf23a746bb948"}');
+          document.body.appendChild(cf);
+        }
+        if (!window.clarity) {
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "vd24wvz3m1");
+        }
       }
 
       function showSavedMessage() {
@@ -546,27 +539,25 @@
 
       document.getElementById('acceptAll').addEventListener('click', () => {
         analyticsToggle.checked = true
-        marketingToggle.checked = true
         functionalityToggle.checked = true
         savePreferences()
       })
 
       document.getElementById('rejectAll').addEventListener('click', () => {
         analyticsToggle.checked = false
-        marketingToggle.checked = false
         functionalityToggle.checked = false
         savePreferences()
       })
 
-      // Load preferences on page load
+      // Load preferences on page load and update GA4 consent state
       loadPreferences()
+      try {
+        var consent = JSON.parse(localStorage.getItem('gorocco_cookie_consent'));
+        if (consent && consent.analytics) {
+          gtag('consent', 'update', { 'analytics_storage': 'granted' });
+          loadAnalytics();
+        }
+      } catch (e) {}
     </script>
-    <!-- Cloudflare Web Analytics -->
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'
-    ></script>
-    <!-- End Cloudflare Web Analytics -->
   </body>
 </html>

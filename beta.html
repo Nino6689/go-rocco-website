@@ -5,9 +5,114 @@
     <meta http-equiv="refresh" content="0; url=index.html#early-adopter" />
     <title>Redirecting to Early Adopter Program | Go Rocco</title>
     <link rel="canonical" href="https://go-rocco.com/index.html#early-adopter" />
+    <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF5KB7S3WL"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XF5KB7S3WL', { 'cookie_flags': 'SameSite=None;Secure' });
+    </script>
   </head>
   <body>
     <p>Redirecting to our <a href="index.html#early-adopter">Early Adopter Program</a>...</p>
-  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'></script><!-- End Cloudflare Web Analytics -->
+
+    <!-- UK GDPR Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
+      <div class="cookie-content">
+        <p id="cookieDescription">
+          We use cookies to improve your experience and analyze site traffic.
+          <a href="cookies.html">Learn more</a>
+        </p>
+        <div class="cookie-buttons">
+          <button type="button" class="cookie-btn reject" onclick="rejectOptionalCookies()">Reject Optional</button>
+          <button type="button" class="cookie-btn settings" onclick="window.location.href='cookies.html'">Manage</button>
+          <button type="button" class="cookie-btn accept" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GDPR-Compliant Consent & Analytics Management -->
+    <script>
+      function getCookieConsent() {
+        try {
+          var consent = localStorage.getItem('gorocco_cookie_consent');
+          var consentDate = localStorage.getItem('gorocco_cookie_consent_date');
+          if (!consent || !consentDate) return null;
+          var expiryDate = new Date(consentDate);
+          expiryDate.setMonth(expiryDate.getMonth() + 12);
+          if (new Date() > expiryDate) {
+            localStorage.removeItem('gorocco_cookie_consent');
+            localStorage.removeItem('gorocco_cookie_consent_date');
+            return null;
+          }
+          return JSON.parse(consent);
+        } catch (e) { return null; }
+      }
+
+      function setCookieConsent(value) {
+        localStorage.setItem('gorocco_cookie_consent', JSON.stringify(value));
+        localStorage.setItem('gorocco_cookie_consent_date', new Date().toISOString());
+      }
+
+      function acceptAllCookies() {
+        setCookieConsent({ essential: true, analytics: true, functionality: true });
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        loadAnalytics();
+        hideCookieBanner();
+      }
+
+      function rejectOptionalCookies() {
+        setCookieConsent({ essential: true, analytics: false, functionality: false });
+        gtag('consent', 'update', { 'analytics_storage': 'denied' });
+        hideCookieBanner();
+      }
+
+      function hideCookieBanner() {
+        document.getElementById('cookieBanner').classList.remove('active');
+      }
+
+      function showCookieBanner() {
+        if (!getCookieConsent()) {
+          document.getElementById('cookieBanner').classList.add('active');
+        }
+      }
+
+      function loadAnalytics() {
+        var consent = getCookieConsent();
+        if (!consent || !consent.analytics) return;
+        if (!document.getElementById('cf-beacon-script')) {
+          var cf = document.createElement('script');
+          cf.id = 'cf-beacon-script';
+          cf.defer = true;
+          cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+          cf.setAttribute('data-cf-beacon', '{"token": "644d34331b7b4af0beacf23a746bb948"}');
+          document.body.appendChild(cf);
+        }
+        if (!window.clarity) {
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "vd24wvz3m1");
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        showCookieBanner();
+        var consent = getCookieConsent();
+        if (consent && consent.analytics) {
+          gtag('consent', 'update', { 'analytics_storage': 'granted' });
+          loadAnalytics();
+        }
+      });
+    </script>
 </body>
 </html>
