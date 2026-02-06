@@ -4,6 +4,9 @@
 User-agent: *
 Allow: /
 
+# Block staging/upload folder
+Disallow: /upload/
+
 # Sitemap location
 Sitemap: https://go-rocco.com/sitemap.xml
 

@@ -1804,9 +1804,35 @@
         border-radius: 50px;
         font-size: 0.85rem;
         font-weight: 700;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         text-transform: uppercase;
         letter-spacing: 1px;
+      }
+      .social-proof {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        color: var(--white);
+      }
+      .social-proof-icon {
+        font-size: 1.25rem;
+      }
+      .social-proof-count {
+        font-weight: 800;
+        color: var(--rocco-coral);
+        font-size: 1.1rem;
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); }
+        50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
       }
       .early-adopter h2 {
         font-size: 2.5rem;
@@ -2715,6 +2741,11 @@
       <section class="early-adopter" id="early-adopter">
         <div class="early-adopter-content reveal">
           <div class="early-adopter-badge">🚀 Limited Spots</div>
+          <div class="social-proof" id="socialProof">
+            <span class="social-proof-icon">🐕</span>
+            <span class="social-proof-count" id="signupCount">Loading...</span>
+            <span class="social-proof-text">dog owners already signed up!</span>
+          </div>
           <h2>Become an Early Adopter</h2>
           <p>
             Be among the first to try Go Rocco when we launch in 2026. Early adopters get exclusive features, a founding
@@ -3057,6 +3088,23 @@
           if (target) target.scrollIntoView({ behavior: shouldReduceMotion() ? 'auto' : 'smooth', block: 'start' })
         }, 100)
       })
+
+      // Fetch and display signup count for social proof
+      (async function loadSignupCount() {
+        const countEl = document.getElementById('signupCount');
+        try {
+          const res = await fetch('https://subscribe.go-rocco.com/api/count');
+          if (res.ok) {
+            const data = await res.json();
+            const count = data.count || 0;
+            countEl.textContent = count > 0 ? count.toLocaleString() : '500+';
+          } else {
+            countEl.textContent = '500+';
+          }
+        } catch (e) {
+          countEl.textContent = '500+';
+        }
+      })();
 
       // Early Adopter Form Submission
       const earlyAdopterForm = document.getElementById('earlyAdopterForm')

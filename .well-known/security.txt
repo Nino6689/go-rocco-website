@@ -1,0 +1,16 @@
+# Go Rocco Security Contact
+# https://go-rocco.com/.well-known/security.txt
+
+Contact: mailto:security@go-rocco.com
+Expires: 2027-02-06T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://go-rocco.com/.well-known/security.txt
+
+# We take security seriously. If you discover a vulnerability,
+# please report it to us responsibly.
+#
+# We commit to:
+# - Acknowledging receipt within 48 hours
+# - Providing a timeline for a fix
+# - Keeping you informed of progress
+# - Recognising your contribution (if desired)
