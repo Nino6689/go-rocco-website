@@ -3142,5 +3142,15 @@
       data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'
     ></script>
     <!-- End Cloudflare Web Analytics -->
+
+    <!-- Auto-scroll to early adopter signup on page load -->
+    <script>
+      window.addEventListener('load', function() {
+        const signupSection = document.getElementById('early-adopter');
+        if (signupSection && !window.location.hash) {
+          signupSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    </script>
   </body>
 </html>
