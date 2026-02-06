@@ -2926,6 +2926,23 @@
       </div>
     </footer>
 
+    <!-- Social Proof Counter - Independent Script -->
+    <script>
+      (function() {
+        var countEl = document.getElementById('signupCount');
+        if (!countEl) return;
+        fetch('https://subscribe.go-rocco.com/api/count')
+          .then(function(res) { return res.ok ? res.json() : Promise.reject('not ok'); })
+          .then(function(data) {
+            var count = data.count || 0;
+            countEl.textContent = count > 0 ? count.toLocaleString() : '500+';
+          })
+          .catch(function() {
+            countEl.textContent = '500+';
+          });
+      })();
+    </script>
+
     <script>
       // Mobile Hamburger Menu
       const hamburger = document.getElementById('hamburger')
@@ -3088,23 +3105,6 @@
           if (target) target.scrollIntoView({ behavior: shouldReduceMotion() ? 'auto' : 'smooth', block: 'start' })
         }, 100)
       })
-
-      // Fetch and display signup count for social proof
-      (async function loadSignupCount() {
-        const countEl = document.getElementById('signupCount');
-        try {
-          const res = await fetch('https://subscribe.go-rocco.com/api/count');
-          if (res.ok) {
-            const data = await res.json();
-            const count = data.count || 0;
-            countEl.textContent = count > 0 ? count.toLocaleString() : '500+';
-          } else {
-            countEl.textContent = '500+';
-          }
-        } catch (e) {
-          countEl.textContent = '500+';
-        }
-      })();
 
       // Early Adopter Form Submission
       const earlyAdopterForm = document.getElementById('earlyAdopterForm')
