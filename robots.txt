@@ -1,0 +1,11 @@
+# Go Rocco - Dog Safety App
+# https://go-rocco.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://go-rocco.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

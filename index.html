@@ -1,0 +1,3146 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Rocco | Know Before You Meet — Dog Safety App UK</title>
+    <meta
+      name="description"
+      content="Go Rocco helps UK dog owners see nearby dogs' temperaments before meeting. Check if dogs are friendly, nervous, or reactive. Download the free dog walking safety app in 2026."
+    />
+    <meta
+      name="keywords"
+      content="dog walking app, dog safety app UK, dog temperament, reactive dog app, dog walking safety, pet app UK, dog owner app, nervous dog walking, Go Rocco"
+    />
+    <meta name="author" content="Go Rocco" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://go-rocco.com/" />
+    <meta name="geo.region" content="GB" />
+    <meta name="geo.placename" content="United Kingdom" />
+
+    <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://go-rocco.com/" />
+    <meta property="og:site_name" content="Go Rocco" />
+    <meta property="og:title" content="Go Rocco | Know Before You Meet — Dog Safety App UK" />
+    <meta
+      property="og:description"
+      content="See if approaching dogs are friendly or nervous before you get close. Safer walks for dogs and humans. Launching in UK 2026."
+    />
+    <meta property="og:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@goroccoapp" />
+    <meta name="twitter:title" content="Go Rocco | Know Before You Meet" />
+    <meta
+      name="twitter:description"
+      content="Safer walks start here. Know before you meet. Dog safety app launching UK 2026."
+    />
+    <meta name="twitter:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Go Rocco",
+        "operatingSystem": ["iOS", "Android"],
+        "applicationCategory": "LifestyleApplication",
+        "description": "Go Rocco helps dog owners see nearby dogs' temperaments before meeting. Know if dogs are friendly, nervous, or reactive for safer walks.",
+        "url": "https://go-rocco.com/",
+        "image": "https://go-rocco.com/gorocco-app-icon.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Go Rocco",
+          "url": "https://go-rocco.com/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/PreOrder"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "ratingCount": "1",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "featureList": [
+          "See nearby dogs' temperaments",
+          "Walk check-in for solo walker safety",
+          "Discover dog-friendly venues",
+          "Digital pet passport for health records"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Go Rocco",
+        "url": "https://go-rocco.com/",
+        "logo": "https://go-rocco.com/assets/gorocco-logo.png",
+        "description": "Go Rocco is a dog safety app helping owners see nearby dogs' temperaments before meeting.",
+        "foundingDate": "2025",
+        "foundingLocation": "United Kingdom",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@gorocco.com",
+          "contactType": "customer service"
+        },
+        "sameAs": []
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --rocco-blue: #7bcbeb;
+        --rocco-blue-light: #a8dcf3;
+        --rocco-blue-dark: #5bb8e0;
+        --white: #ffffff;
+        --cream: #fdf8f3;
+        --gray-50: #f9fafb;
+        --gray-600: #4b5563;
+        --gray-800: #1f2937;
+        --gray-900: #111827;
+        --safe-green: #4caf50;
+        --warning-amber: #ff9800;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        /* iOS safe area support */
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+          env(safe-area-inset-left);
+      }
+      body {
+        font-family: 'Quicksand', sans-serif;
+        background: var(--white);
+        color: var(--gray-900);
+        overflow-x: hidden;
+        line-height: 1.6;
+        /* iOS text size adjustment */
+        -webkit-text-size-adjust: 100%;
+        /* Smooth scrolling on iOS */
+        -webkit-overflow-scrolling: touch;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -999px;
+        top: 1rem;
+        background: var(--white);
+        color: var(--gray-900);
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .skip-link:focus {
+        left: 1rem;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--white);
+        outline-offset: 3px;
+      }
+      nav a:focus-visible,
+      nav button:focus-visible {
+        outline-color: var(--rocco-blue-dark);
+      }
+      .hero a:focus-visible,
+      .hero button:focus-visible {
+        outline-color: var(--white);
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0.5rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+      }
+      nav.scrolled {
+        box-shadow: 0 4px 30px rgba(123, 203, 235, 0.2);
+      }
+      .logo-img {
+        height: 56px;
+        width: auto;
+        border-radius: 14px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .logo-img:hover {
+        transform: scale(1.05);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--gray-600);
+        font-weight: 600;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--rocco-blue);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+      .nav-links a:hover {
+        color: var(--rocco-blue-dark);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-cta {
+        background: var(--rocco-blue);
+        color: var(--white);
+        padding: 0.75rem 1.75rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(123, 203, 235, 0.4);
+      }
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(123, 203, 235, 0.5);
+        background: var(--rocco-blue-dark);
+      }
+
+      .hero {
+        min-height: 100vh;
+        padding: 8rem 4rem 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        background: var(--rocco-blue);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 120px;
+        background: var(--white);
+        border-radius: 100% 100% 0 0;
+      }
+      .hero::after {
+        content: '🐾';
+        position: absolute;
+        font-size: 8rem;
+        opacity: 0.1;
+        top: 15%;
+        right: 5%;
+        animation: floatPaw 6s ease-in-out infinite;
+      }
+      @keyframes floatPaw {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-15deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(-5deg);
+        }
+      }
+
+      .hero-content {
+        max-width: 600px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--white);
+        color: var(--rocco-blue-dark);
+        padding: 0.6rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeInDown 0.8s ease;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-slider {
+        position: relative;
+        min-height: 240px;
+      }
+      .hero-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+        pointer-events: none;
+      }
+      .hero-slide.active {
+        position: relative;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .hero-slide h1 {
+        font-size: 3.5rem;
+        line-height: 1.15;
+        color: var(--white);
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+      }
+      .hero-slide h1 span {
+        position: relative;
+        display: inline-block;
+      }
+      .hero-slide h1 span::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        z-index: -1;
+      }
+      .hero-slide .hero-description {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 500;
+      }
+
+      .hero-dots {
+        display: flex;
+        gap: 0.75rem;
+        margin: 2rem 0;
+      }
+      .hero-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 3px solid var(--white);
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+      .hero-dot.active {
+        background: var(--white);
+        width: 40px;
+        border-radius: 7px;
+      }
+      .hero-dot:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background: var(--white);
+        color: var(--rocco-blue-dark);
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-weight: 800;
+        font-family: 'Nunito', sans-serif;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        /* iOS fixes */
+        -webkit-appearance: none;
+        -webkit-border-radius: 50px;
+        -webkit-tap-highlight-color: transparent;
+        border-radius: 50px;
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--white);
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        border: 3px solid var(--white);
+        transition: all 0.3s ease;
+        /* iOS fixes */
+        -webkit-appearance: none;
+        -webkit-border-radius: 50px;
+        -webkit-tap-highlight-color: transparent;
+        border-radius: 50px;
+      }
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .hero-visual {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hero-mascot {
+        width: 380px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 60px;
+        filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
+        animation: mascotBounce 3s ease-in-out infinite;
+      }
+      @keyframes mascotBounce {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(2deg);
+        }
+      }
+
+      .paw-decoration {
+        position: absolute;
+        font-size: 2rem;
+        opacity: 0.15;
+        color: var(--white);
+      }
+      .paw-decoration:nth-child(1) {
+        top: 20%;
+        left: 5%;
+        animation: pawFloat 4s ease-in-out infinite;
+      }
+      .paw-decoration:nth-child(2) {
+        top: 60%;
+        left: 8%;
+        animation: pawFloat 4s ease-in-out 1s infinite;
+      }
+      .paw-decoration:nth-child(3) {
+        bottom: 25%;
+        right: 3%;
+        animation: pawFloat 4s ease-in-out 2s infinite;
+      }
+      @keyframes pawFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.15;
+        }
+        50% {
+          transform: translateY(-10px) rotate(10deg);
+          opacity: 0.25;
+        }
+      }
+
+      .problem {
+        padding: 8rem 4rem;
+        background: var(--gray-900);
+        color: var(--white);
+      }
+      .problem-content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .section-label {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+      }
+      .section-label.orange {
+        background: rgba(255, 152, 0, 0.2);
+        color: var(--warning-amber);
+      }
+      .section-label.green {
+        background: rgba(76, 175, 80, 0.2);
+        color: var(--safe-green);
+      }
+      .problem h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        font-weight: 900;
+      }
+      .problem-scenario {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        padding: 3rem;
+        margin: 3rem 0;
+        text-align: left;
+        position: relative;
+      }
+      .problem-scenario::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: 30px;
+        font-size: 6rem;
+        color: var(--rocco-blue);
+        opacity: 0.3;
+        font-family: Georgia, serif;
+      }
+      .scenario-text {
+        font-size: 1.2rem;
+        line-height: 2;
+        color: rgba(255, 255, 255, 0.9);
+        font-style: italic;
+      }
+      .scenario-text p {
+        margin-bottom: 1.5rem;
+      }
+      .scenario-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      .problem-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      .stat-item {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(123, 203, 235, 0.1);
+        border-radius: 24px;
+        border: 2px solid rgba(123, 203, 235, 0.2);
+        transition: all 0.3s ease;
+      }
+      .stat-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--rocco-blue);
+      }
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: var(--rocco-blue);
+        font-family: 'Nunito', sans-serif;
+      }
+      .stat-label {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 0.5rem;
+        font-weight: 500;
+      }
+
+      .solution {
+        padding: 8rem 4rem;
+        background: var(--cream);
+      }
+      .solution-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .solution h2 {
+        font-size: 2.75rem;
+        color: var(--gray-900);
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .solution-intro {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--gray-600);
+        margin-bottom: 3rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .solution-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        text-align: left;
+      }
+      .solution-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 2rem;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .solution-card:hover {
+        border-color: var(--rocco-blue);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(123, 203, 235, 0.2);
+      }
+      .solution-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .solution-card-icon {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        color: var(--white);
+      }
+      .solution-card-icon.green {
+        background: var(--safe-green);
+      }
+      .solution-card-icon.amber {
+        background: var(--warning-amber);
+      }
+      .solution-card-icon.blue {
+        background: var(--rocco-blue);
+      }
+      .solution-card-icon.purple {
+        background: #9c27b0;
+      }
+      .solution-card h3 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--gray-900);
+      }
+      .solution-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--gray-600);
+      }
+
+      .how-it-works {
+        padding: 8rem 4rem;
+        background: var(--rocco-blue);
+        position: relative;
+      }
+      .how-it-works::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: var(--cream);
+        border-radius: 0 0 100% 100%;
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .section-header h2 {
+        font-size: 2.75rem;
+        color: var(--white);
+        margin-bottom: 1rem;
+        font-weight: 900;
+      }
+      .section-header p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .steps {
+        display: flex;
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .step {
+        flex: 1;
+        text-align: center;
+        background: var(--white);
+        border-radius: 30px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+      .step-number {
+        width: 80px;
+        height: 80px;
+        background: var(--rocco-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--white);
+        margin: 0 auto 1.5rem;
+        font-family: 'Nunito', sans-serif;
+        box-shadow: 0 8px 25px rgba(123, 203, 235, 0.4);
+      }
+      .step h3 {
+        font-size: 1.3rem;
+        color: var(--gray-900);
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+      }
+      .step p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--gray-600);
+      }
+
+      .features {
+        padding: 8rem 4rem;
+        background: var(--white);
+      }
+      .features .section-header h2 {
+        color: var(--gray-900);
+      }
+      .features .section-header p {
+        color: var(--gray-600);
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .feature-card {
+        background: var(--gray-50);
+        border-radius: 24px;
+        padding: 2rem;
+        text-align: center;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        border-color: var(--rocco-blue);
+        background: var(--white);
+      }
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--rocco-blue);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.25rem;
+        margin: 0 auto 1.5rem;
+      }
+      .feature-card h3 {
+        font-size: 1.3rem;
+        color: var(--gray-900);
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+      }
+      .feature-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--gray-600);
+      }
+
+      /* SOS & Emergency Section */
+      .sos-section {
+        padding: 8rem 4rem;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+      .sos-section::before {
+        content: '🚨';
+        position: absolute;
+        font-size: 12rem;
+        opacity: 0.05;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+      }
+      .sos-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .sos-content h2 {
+        font-size: 2.75rem;
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .sos-intro {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .sos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .sos-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .sos-card:hover {
+        border-color: #f44336;
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(244, 67, 54, 0.2);
+      }
+      .sos-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .sos-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+      }
+      .sos-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        opacity: 0.85;
+      }
+
+      /* Lost Pet Section */
+      .lost-pet-section {
+        padding: 8rem 4rem;
+        background: var(--cream);
+      }
+      .lost-pet-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .lost-pet-content h2 {
+        font-size: 2.5rem;
+        color: var(--gray-900);
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .lost-pet-intro {
+        font-size: 1.2rem;
+        color: var(--gray-600);
+        margin-bottom: 3rem;
+      }
+      .lost-pet-features {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        text-align: left;
+      }
+      .lost-pet-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 1.5rem;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .lost-pet-card:hover {
+        border-color: var(--warning-amber);
+        transform: translateY(-5px);
+      }
+      .lost-pet-number {
+        width: 40px;
+        height: 40px;
+        background: var(--warning-amber);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 1rem;
+        font-family: 'Nunito', sans-serif;
+      }
+      .lost-pet-card h4 {
+        font-size: 1.1rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+      }
+      .lost-pet-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--gray-600);
+      }
+      .lost-pet-cta {
+        margin-top: 3rem;
+        padding: 1.5rem 2rem;
+        background: rgba(255, 152, 0, 0.1);
+        border-radius: 16px;
+        border-left: 4px solid var(--warning-amber);
+      }
+      .lost-pet-cta p {
+        color: var(--gray-800);
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      /* Social Network Section */
+      .social-section {
+        padding: 8rem 4rem;
+        background: var(--white);
+      }
+      .social-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .social-content h2 {
+        font-size: 2.5rem;
+        color: var(--gray-900);
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .social-intro {
+        font-size: 1.2rem;
+        color: var(--gray-600);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        text-align: center;
+      }
+      .social-card {
+        background: var(--gray-50);
+        border-radius: 24px;
+        padding: 2rem 1.5rem;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+      }
+      .social-card:hover {
+        border-color: var(--rocco-blue);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(123, 203, 235, 0.2);
+      }
+      .social-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .social-card h3 {
+        font-size: 1.2rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+      }
+      .social-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--gray-600);
+      }
+
+      /* Events & Groups Section */
+      .events-section {
+        padding: 8rem 4rem;
+        background: linear-gradient(135deg, #f8f0ff 0%, #fff0f8 100%);
+      }
+      .events-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .events-content h2 {
+        font-size: 2.5rem;
+        color: var(--gray-900);
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .events-intro {
+        font-size: 1.2rem;
+        color: var(--gray-600);
+        margin-bottom: 3rem;
+      }
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        text-align: left;
+      }
+      .event-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 2rem;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .event-card:hover {
+        border-color: #9c27b0;
+        transform: translateY(-5px);
+      }
+      .event-badge {
+        display: inline-block;
+        background: rgba(156, 39, 176, 0.1);
+        color: #9c27b0;
+        padding: 0.35rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      .event-card h4 {
+        font-size: 1.2rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+      }
+      .event-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--gray-600);
+      }
+
+      /* Coming Soon Section */
+      .coming-soon-section {
+        padding: 8rem 4rem;
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      }
+      .coming-soon-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .coming-soon-content h2 {
+        font-size: 2.5rem;
+        color: var(--gray-900);
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .coming-soon-intro {
+        font-size: 1.2rem;
+        color: var(--gray-600);
+        margin-bottom: 3rem;
+      }
+      .coming-soon-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        text-align: left;
+      }
+      .coming-soon-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 2rem;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .coming-soon-card:hover {
+        border-color: #f59e0b;
+        transform: translateY(-5px);
+      }
+      .coming-soon-badge {
+        display: inline-block;
+        background: rgba(251, 191, 36, 0.15);
+        color: #d97706;
+        padding: 0.35rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      .coming-soon-card h4 {
+        font-size: 1.2rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+      }
+      .coming-soon-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--gray-600);
+      }
+      .coming-soon-cta {
+        margin-top: 2.5rem;
+      }
+      .coming-soon-cta p {
+        color: var(--gray-600);
+        font-size: 1rem;
+      }
+      .coming-soon-cta a {
+        color: var(--rocco-blue-dark);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .coming-soon-cta a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 1024px) {
+        .sos-grid {
+          grid-template-columns: 1fr;
+        }
+        .lost-pet-features {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .social-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .events-grid {
+          grid-template-columns: 1fr;
+        }
+        .coming-soon-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .sos-section,
+        .lost-pet-section,
+        .social-section,
+        .events-section,
+        .coming-soon-section {
+          padding: 5rem 1.5rem;
+        }
+        .sos-content h2,
+        .lost-pet-content h2,
+        .social-content h2,
+        .events-content h2,
+        .coming-soon-content h2 {
+          font-size: 2rem;
+        }
+        .lost-pet-features {
+          grid-template-columns: 1fr;
+        }
+        .social-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .safety {
+        padding: 8rem 4rem;
+        background: var(--safe-green);
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+      .safety::before {
+        content: '🛡️';
+        position: absolute;
+        font-size: 15rem;
+        opacity: 0.1;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+      }
+      .safety-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .safety-text h2 {
+        font-size: 2.75rem;
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .safety-text p {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        opacity: 0.95;
+        margin-bottom: 2rem;
+      }
+      .safety-list {
+        list-style: none;
+      }
+      .safety-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+      .safety-check {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-weight: 700;
+      }
+      .safety-visual {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .safety-card {
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 1.5rem;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      .safety-card h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      .safety-card p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        margin: 0;
+      }
+
+      .testimonial {
+        padding: 6rem 4rem;
+        background: linear-gradient(135deg, var(--rocco-blue) 0%, var(--rocco-blue-dark) 100%);
+        color: var(--white);
+        text-align: center;
+      }
+      .testimonial-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .testimonial blockquote {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        font-style: italic;
+      }
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .author-avatar {
+        width: 64px;
+        height: 64px;
+        background: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+      }
+      .author-info {
+        text-align: left;
+      }
+      .author-info h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      .author-info p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      /* Trust Signals Section */
+      .trust-signals {
+        padding: 4rem 2rem;
+        background: var(--cream);
+      }
+      .trust-signals-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .trust-icon {
+        font-size: 2.5rem;
+      }
+      .trust-number {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--gray-900);
+        font-family: 'Nunito', sans-serif;
+      }
+      .trust-label {
+        font-size: 0.9rem;
+        color: var(--gray-600);
+      }
+      @media (max-width: 768px) {
+        .trust-signals-content {
+          gap: 2rem;
+        }
+        .trust-item {
+          flex: 0 0 calc(50% - 1rem);
+          justify-content: center;
+        }
+        .trust-number {
+          font-size: 1.25rem;
+        }
+        .trust-icon {
+          font-size: 2rem;
+        }
+      }
+
+      .cta {
+        padding: 8rem 4rem;
+        background: var(--rocco-blue);
+        text-align: center;
+        position: relative;
+      }
+      .cta::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: var(--white);
+        border-radius: 0 0 100% 100%;
+      }
+      .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .cta h2 {
+        font-size: 3rem;
+        color: var(--white);
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+      .cta p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .store-badge-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        overflow: hidden;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .store-badge-link:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      }
+      .store-badge-img {
+        display: block;
+        height: 56px;
+        width: auto;
+      }
+      .app-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: var(--gray-900);
+        color: var(--white);
+        padding: 1rem 1.75rem;
+        border-radius: 16px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .app-badge:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      }
+      .app-badge-icon {
+        font-size: 2rem;
+      }
+      .app-badge-text {
+        text-align: left;
+      }
+      .app-badge-text span {
+        font-size: 0.75rem;
+        opacity: 0.8;
+        display: block;
+      }
+      .app-badge-text strong {
+        font-size: 1.15rem;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      /* Cookie Consent Banner */
+      .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--gray-900);
+        color: var(--white);
+        padding: 1.5rem 4rem;
+        z-index: 10000;
+        display: none;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      }
+      .cookie-banner.active {
+        display: block;
+      }
+      .cookie-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .cookie-content p {
+        flex: 1;
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+      .cookie-content a {
+        color: var(--rocco-blue);
+      }
+      .cookie-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+      .cookie-btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        border: none;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .cookie-btn.accept {
+        background: var(--rocco-blue);
+        color: var(--white);
+      }
+      .cookie-btn.accept:hover {
+        background: var(--rocco-blue-dark);
+      }
+      .cookie-btn.settings {
+        background: transparent;
+        color: var(--white);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+      .cookie-btn.settings:hover {
+        border-color: var(--white);
+      }
+      @media (max-width: 768px) {
+        .cookie-banner {
+          padding: 1.5rem 1.5rem;
+        }
+        .cookie-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        .cookie-buttons {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      footer {
+        background: var(--gray-900);
+        color: var(--white);
+        padding: 4rem 4rem 2rem;
+      }
+      .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+      }
+      .footer-brand .logo-img {
+        height: 70px;
+        margin-bottom: 1rem;
+        border-radius: 18px;
+      }
+      .footer-brand p {
+        opacity: 0.7;
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
+      .footer-column h4 {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .footer-column ul {
+        list-style: none;
+      }
+      .footer-column li {
+        margin-bottom: 0.75rem;
+      }
+      .footer-column a {
+        color: var(--white);
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+        font-size: 0.95rem;
+      }
+      .footer-column a:hover {
+        opacity: 1;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-bottom p {
+        opacity: 0.6;
+        font-size: 0.9rem;
+      }
+      .social-links {
+        display: flex;
+        gap: 0.75rem;
+      }
+      .social-links a {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1.25rem;
+        transition: all 0.3s ease;
+      }
+      .social-links a svg {
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+        transition: fill 0.3s ease;
+      }
+      .social-links a:hover {
+        background: var(--rocco-blue);
+        transform: translateY(-3px);
+      }
+      .social-links a:hover svg {
+        fill: #fff;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+      }
+      .modal-overlay.active {
+        display: flex;
+      }
+      .modal {
+        background: var(--white);
+        border-radius: 30px;
+        padding: 3rem;
+        max-width: 480px;
+        width: 90%;
+        text-align: center;
+        position: relative;
+        animation: modalPop 0.4s ease;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+      }
+      @keyframes modalPop {
+        0% {
+          opacity: 0;
+          transform: scale(0.8) translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 1.75rem;
+        cursor: pointer;
+        color: var(--gray-600);
+        transition: color 0.3s ease;
+      }
+      .modal-close:hover {
+        color: var(--gray-900);
+      }
+      .modal-beaver {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        animation: beaverWiggle 0.6s ease-in-out;
+      }
+      @keyframes beaverWiggle {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-10deg);
+        }
+        75% {
+          transform: rotate(10deg);
+        }
+      }
+      .modal h3 {
+        font-size: 1.75rem;
+        color: var(--gray-900);
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+      }
+      .modal p {
+        font-size: 1.1rem;
+        color: var(--gray-600);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+      .modal-btn {
+        background: var(--rocco-blue);
+        color: var(--white);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.1rem;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(123, 203, 235, 0.4);
+      }
+      .modal-btn:hover {
+        background: var(--rocco-blue-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 30px rgba(123, 203, 235, 0.5);
+      }
+
+      .early-adopter {
+        padding: 6rem 4rem;
+        background: linear-gradient(135deg, var(--gray-900) 0%, #1a1a2e 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .early-adopter::before {
+        content: '🐾';
+        position: absolute;
+        font-size: 12rem;
+        opacity: 0.03;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .early-adopter-content {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .early-adopter-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--rocco-blue) 0%, var(--rocco-blue-dark) 100%);
+        color: var(--white);
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .early-adopter h2 {
+        font-size: 2.5rem;
+        color: var(--white);
+        margin-bottom: 1rem;
+        font-weight: 900;
+      }
+      .early-adopter p {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+      .early-adopter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 500px;
+        margin: 0 auto 2rem;
+      }
+      .early-adopter-inputs {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .early-adopter-input {
+        flex: 1;
+        min-width: 200px;
+        padding: 1rem 1.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        font-size: 1rem;
+        font-family: 'Quicksand', sans-serif;
+        transition: all 0.3s ease;
+        /* iOS-specific fixes */
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+      }
+      .early-adopter-input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .early-adopter-input:focus {
+        outline: none;
+        border-color: var(--rocco-blue);
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .early-adopter-consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        text-align: left;
+        padding: 0 0.5rem;
+      }
+      .early-adopter-consent input[type='checkbox'] {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        accent-color: var(--rocco-blue);
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .early-adopter-consent label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        cursor: pointer;
+      }
+      .early-adopter-consent label a {
+        color: var(--rocco-blue);
+        text-decoration: underline;
+      }
+      .early-adopter-btn {
+        background: var(--rocco-blue);
+        color: var(--white);
+        -webkit-appearance: none;
+        appearance: none;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        border: none;
+        font-size: 1rem;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(123, 203, 235, 0.4);
+        align-self: center;
+      }
+      .early-adopter-btn:hover {
+        background: var(--rocco-blue-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 30px rgba(123, 203, 235, 0.5);
+      }
+      .early-adopter-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .early-adopter-message {
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        text-align: center;
+        display: none;
+      }
+      .early-adopter-message.success {
+        background: rgba(76, 175, 80, 0.2);
+        color: #4caf50;
+        border: 1px solid rgba(76, 175, 80, 0.3);
+        display: block;
+      }
+      .early-adopter-message.error {
+        background: rgba(244, 67, 54, 0.2);
+        color: #f44336;
+        border: 1px solid rgba(244, 67, 54, 0.3);
+        display: block;
+      }
+      .early-adopter-honeypot {
+        position: absolute;
+        left: -9999px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .early-adopter-social {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+      }
+      .early-adopter-social span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.95rem;
+      }
+      .early-adopter-social a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--white);
+        text-decoration: none;
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .early-adopter-social a:hover {
+        background: var(--rocco-blue);
+        transform: translateY(-2px);
+      }
+      @media (max-width: 768px) {
+        .early-adopter {
+          padding: 4rem 1.5rem;
+        }
+        .early-adopter h2 {
+          font-size: 1.75rem;
+        }
+        .early-adopter-inputs {
+          flex-direction: column;
+        }
+        .early-adopter-input {
+          min-width: 100%;
+        }
+        .early-adopter-social {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Mobile Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 101;
+      }
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--gray-900);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.98);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        z-index: 99;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+      }
+      .mobile-menu.active {
+        display: flex;
+      }
+      .mobile-menu a {
+        font-size: 1.5rem;
+        color: var(--gray-900);
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        transition: color 0.3s ease;
+      }
+      .mobile-menu a:hover {
+        color: var(--rocco-blue-dark);
+      }
+      .mobile-menu .nav-cta {
+        margin-top: 1rem;
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding: 7rem 2rem 4rem;
+        }
+        .hero-content {
+          max-width: 100%;
+        }
+        .hero-ctas,
+        .hero-dots {
+          justify-content: center;
+        }
+        .hero-visual {
+          margin-top: 2rem;
+        }
+        .hero-mascot {
+          width: 280px;
+          border-radius: 45px;
+        }
+        .problem-stats {
+          grid-template-columns: 1fr;
+        }
+        .solution-grid {
+          grid-template-columns: 1fr;
+        }
+        .steps {
+          flex-direction: column;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+        }
+        .safety-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .footer-content {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+      }
+      @media (max-width: 768px) {
+        nav {
+          padding: 0.5rem 1.5rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .logo-img {
+          height: 48px;
+          border-radius: 12px;
+        }
+        .hero-slide h1 {
+          font-size: 2.5rem;
+        }
+        .hero-mascot {
+          width: 220px;
+          border-radius: 35px;
+        }
+        .problem {
+          padding: 5rem 1.5rem;
+        }
+        .problem h2,
+        .section-header h2,
+        .solution h2,
+        .safety-text h2 {
+          font-size: 2rem;
+        }
+        .problem-scenario {
+          padding: 2rem 1.5rem;
+          border-radius: 20px;
+          margin: 2rem 0;
+        }
+        .problem-scenario::before {
+          font-size: 4rem;
+          top: -10px;
+          left: 15px;
+        }
+        .scenario-text {
+          font-size: 1.05rem;
+          line-height: 1.85;
+        }
+        .scenario-text p {
+          margin-bottom: 1.25rem;
+        }
+        .solution-card-icon {
+          width: 50px;
+          height: 50px;
+          min-width: 50px;
+          min-height: 50px;
+          font-size: 1.5rem;
+          border-radius: 12px;
+        }
+        .cta h2 {
+          font-size: 2rem;
+        }
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 1.5rem;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="#" class="logo">
+        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#safety">Safety</a></li>
+      </ul>
+      <a href="#early-adopter" class="nav-cta">Download</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#problem" class="mobile-nav-link">Problem</a>
+      <a href="#solution" class="mobile-nav-link">Solution</a>
+      <a href="#features" class="mobile-nav-link">Features</a>
+      <a href="#safety" class="mobile-nav-link">Safety</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="about.html" class="mobile-nav-link">Our Story</a>
+      <a href="#early-adopter" class="nav-cta mobile-nav-link">Download Free →</a>
+    </div>
+
+    <main id="main">
+      <section class="hero">
+        <div class="paw-decoration">🐾</div>
+        <div class="paw-decoration">🐾</div>
+        <div class="paw-decoration">🐾</div>
+
+        <div class="hero-content">
+          <div class="hero-badge">🎉 Launching UK 2026</div>
+          <div class="hero-slider" aria-live="off">
+            <div class="hero-slide active" data-index="0" aria-hidden="false">
+              <h1>The Ultimate App for <span>Dog Owners</span></h1>
+              <p class="hero-description">
+                Track walks, connect with fellow dog lovers, find trusted pet services, and keep your furry friend safe
+                — all in one app.
+              </p>
+            </div>
+            <div class="hero-slide" data-index="1" aria-hidden="true">
+              <h1>Know before you <span>meet</span></h1>
+              <p class="hero-description">
+                See if approaching dogs are friendly or nervous before you get close. No more awkward hand signals
+                across the park. No more guessing. No more preventable incidents.
+              </p>
+            </div>
+            <div class="hero-slide" data-index="2" aria-hidden="true">
+              <h1>You're all <span>welcome</span></h1>
+              <p class="hero-description">
+                "Can we bring the dog?" Finally answered. Discover cafés, pubs, parks and beaches that genuinely welcome
+                your four-legged friend — verified by real dog owners, not marketing teams.
+              </p>
+            </div>
+          </div>
+          <div class="hero-dots" aria-label="Hero slides">
+            <button class="hero-dot active" data-index="0" aria-label="Slide 1" aria-current="true"></button>
+            <button class="hero-dot" data-index="1" aria-label="Slide 2" aria-current="false"></button>
+            <button class="hero-dot" data-index="2" aria-label="Slide 3" aria-current="false"></button>
+          </div>
+          <div class="hero-ctas">
+            <a href="#early-adopter" class="btn-primary">Get Started Free →</a>
+            <a href="#problem" class="btn-secondary">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/gorocco-logo.png" alt="Go Rocco Mascot" class="hero-mascot" />
+        </div>
+      </section>
+
+      <section class="problem" id="problem">
+        <div class="problem-content reveal">
+          <span class="section-label orange">The Problem</span>
+          <h2>We've all been there.</h2>
+          <div class="problem-scenario">
+            <div class="scenario-text">
+              <p>
+                You're walking your dog off-lead. They're having the time of their life. Then you spot another dog in
+                the distance — on a lead.
+              </p>
+              <p>
+                Your heart sinks. Is that dog friendly? Nervous? Reactive? You start the awkward dance. Squinting to
+                read body language. Waving your arms. Trying to make eye contact with the owner. Shouting "IS HE
+                FRIENDLY?" across the park while your dog bounds towards them.
+              </p>
+              <p>
+                Sometimes it's fine. Sometimes it's not. And those "not fine" moments? They can mean injuries. Vet
+                bills. Trauma for dogs and owners alike. All because we had no way of knowing.
+              </p>
+            </div>
+          </div>
+          <div class="problem-stats">
+            <div class="stat-item">
+              <div class="stat-number">8,000+</div>
+              <div class="stat-label">Dog attacks reported in the UK annually</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">74%</div>
+              <div class="stat-label">Of incidents involve dogs meeting unexpectedly</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">£400+</div>
+              <div class="stat-label">Average vet bill for bite injuries</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution" id="solution">
+        <div class="solution-content reveal">
+          <span class="section-label green">The Solution</span>
+          <h2>What if you could just... know?</h2>
+          <p class="solution-intro">
+            Go Rocco shows you the temperament of nearby dogs before you're close enough for things to go wrong. Set
+            your own dog's profile, see others on the map, and make informed decisions.
+          </p>
+          <div class="solution-grid">
+            <div class="solution-card">
+              <div class="solution-card-header">
+                <div class="solution-card-icon green">🟢</div>
+                <h3>Friendly</h3>
+              </div>
+              <p>Loves other dogs, happy to play, safe to approach off-lead. Let them say hello!</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card-header">
+                <div class="solution-card-icon amber">🟡</div>
+                <h3>Nervous / Reactive</h3>
+              </div>
+              <p>Needs space and a calm approach. Please keep your dog at a distance or on-lead.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card-header">
+                <div class="solution-card-icon blue">🔵</div>
+                <h3>In Training</h3>
+              </div>
+              <p>Working on socialisation. Owner may want controlled interactions only.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-card-header">
+                <div class="solution-card-icon purple">🟣</div>
+                <h3>Selective</h3>
+              </div>
+              <p>Good with some dogs, not others. Check with owner before approaching.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <div class="section-header reveal">
+          <h2>How it works</h2>
+          <p>Three simple steps to safer walks</p>
+        </div>
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Set up your dog</h3>
+            <p>Add your dog's name, breed, and temperament. Be honest — it helps everyone stay safe.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Start your walk</h3>
+            <p>
+              Open the app and you'll appear on the map to other dog owners nearby. Only Go Rocco users within 50m can
+              see you — and you can block anyone at any time (blocking is mutual: you won't see them and they won't see
+              you).
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Know before you meet</h3>
+            <p>See approaching dogs' temperaments at a glance. Make informed decisions. Avoid incidents.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="section-header reveal">
+          <h2>Everything you need for better walks</h2>
+          <p>Core features included free — upgrade to Alpha Pack for the ultimate experience</p>
+        </div>
+        <div class="features-grid reveal">
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>GPS Walk Tracking</h3>
+            <p>
+              Track your routes, distance, and time with GPS. Free users get 20-minute tracking per walk — Alpha Pack
+              members get up to 100 minutes.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🚨</div>
+            <h3>Lost Pet Alerts & SOS</h3>
+            <p>
+              Report a missing pet and alert the entire Go Rocco community nearby. SOS button shares your live location
+              with emergency contacts.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📸</div>
+            <h3>Social Feed & Stories</h3>
+            <p>
+              Share photos from your walks, follow other dog owners, and build your pack. Connect with your local dog
+              community.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Discover Dog-Friendly Places</h3>
+            <p>Find cafés, parks, pubs, and beaches that genuinely welcome dogs — all verified by real owners.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏆</div>
+            <h3>Achievements & Rewards</h3>
+            <p>
+              Earn points and badges for walks, streaks, and community contributions. Level up your profile and climb
+              the leaderboards.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🐕</div>
+            <h3>Live Temperament Map</h3>
+            <p>
+              See nearby dogs' temperaments at a glance — friendly, nervous, reactive, or in training. Know before you
+              meet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOS & Emergency Section -->
+      <section class="sos-section" id="sos">
+        <div class="sos-content reveal">
+          <span class="section-label" style="background: rgba(244, 67, 54, 0.2); color: #f44336"
+            >🚨 Emergency Features</span
+          >
+          <h2>When seconds count</h2>
+          <p class="sos-intro">
+            Go Rocco isn't just about daily walks — it's about being prepared when things go wrong.
+          </p>
+          <div class="sos-grid">
+            <div class="sos-card">
+              <div class="sos-icon">🆘</div>
+              <h3>SOS Alert Button</h3>
+              <p>
+                One tap sends your live location to your emergency contacts. Whether you've had a fall, encountered an
+                aggressive dog, or feel unsafe — help knows exactly where to find you.
+              </p>
+            </div>
+            <div class="sos-card">
+              <div class="sos-icon">⏰</div>
+              <h3>Walk Timer Safety</h3>
+              <p>
+                Set an expected walk duration. If you don't check back in, your trusted contact gets an automatic alert
+                with your last known location. Perfect for solo walkers.
+              </p>
+            </div>
+            <div class="sos-card">
+              <div class="sos-icon">📍</div>
+              <h3>Location Sharing</h3>
+              <p>
+                Share your real-time walk with family or friends. They can follow along from home, giving everyone peace
+                of mind — especially in remote areas or after dark.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lost Pet Section -->
+      <section class="lost-pet-section" id="lost-pet">
+        <div class="lost-pet-content reveal">
+          <span class="section-label" style="background: rgba(255, 152, 0, 0.2); color: #ff9800"
+            >🔍 Lost Pet System</span
+          >
+          <h2>Lost dog? We've got the whole community looking.</h2>
+          <p class="lost-pet-intro">Every dog owner's worst nightmare. With Go Rocco, you're never searching alone.</p>
+          <div class="lost-pet-features">
+            <div class="lost-pet-card">
+              <div class="lost-pet-number">1</div>
+              <h4>Report Missing</h4>
+              <p>
+                One tap to alert all Go Rocco users in your area. Your dog's photo, last known location, and description
+                go out instantly.
+              </p>
+            </div>
+            <div class="lost-pet-card">
+              <div class="lost-pet-number">2</div>
+              <h4>Community Search</h4>
+              <p>
+                Nearby users get push notifications with your dog's details. Thousands of eyes suddenly looking out for
+                your pup.
+              </p>
+            </div>
+            <div class="lost-pet-card">
+              <div class="lost-pet-number">3</div>
+              <h4>Sighting Reports</h4>
+              <p>
+                Anyone who spots your dog can report the sighting with location. Track reports on a live map to narrow
+                down the search area.
+              </p>
+            </div>
+            <div class="lost-pet-card">
+              <div class="lost-pet-number">4</div>
+              <h4>Reunion</h4>
+              <p>
+                When your furry friend is found, mark them safe with one tap. The community gets the happy news —
+                reunions celebrated together.
+              </p>
+            </div>
+          </div>
+          <div class="lost-pet-cta">
+            <p>
+              <strong>Pro tip:</strong> Keep your dog's profile photo up to date. It could be the difference between
+              found and still looking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Network Section -->
+      <section class="social-section" id="community">
+        <div class="social-content reveal">
+          <span class="section-label" style="background: rgba(123, 203, 235, 0.2); color: var(--rocco-blue-dark)"
+            >🐾 Dog Social Network</span
+          >
+          <h2>Not just an app. A community.</h2>
+          <p class="social-intro">
+            Connect with dog owners who get it. Share your walks, celebrate milestones, and find your pack.
+          </p>
+          <div class="social-grid">
+            <div class="social-card">
+              <div class="social-icon">📸</div>
+              <h3>Photo Walks</h3>
+              <p>
+                Share snaps from your adventures. Your dog's walk story, told in pictures. Like and comment on other
+                pups' photos.
+              </p>
+            </div>
+            <div class="social-card">
+              <div class="social-icon">🏅</div>
+              <h3>Achievements & XP</h3>
+              <p>
+                Earn badges for walks, distance milestones, and helpful community actions. Level up your Go Rocco
+                profile.
+              </p>
+            </div>
+            <div class="social-card">
+              <div class="social-icon">🔥</div>
+              <h3>Walk Streaks</h3>
+              <p>
+                Build daily streaks for consistent walking. Compete with friends on the leaderboards. Keep that streak
+                alive!
+              </p>
+            </div>
+            <div class="social-card">
+              <div class="social-icon">👥</div>
+              <h3>Follow Friends</h3>
+              <p>Find and follow other dog owners in your area. See their walks, their pups, and coordinate meetups.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events & Groups Section -->
+      <section class="events-section" id="events">
+        <div class="events-content reveal">
+          <span class="section-label" style="background: rgba(156, 39, 176, 0.2); color: #9c27b0"
+            >📅 Events & Groups</span
+          >
+          <h2>Your local dog community, organised.</h2>
+          <p class="events-intro">From casual meetups to organised events — find your tribe and never walk alone.</p>
+          <div class="events-grid">
+            <div class="event-card">
+              <div class="event-badge">📍 Local Groups</div>
+              <h4>Join Your Pack</h4>
+              <p>
+                Find breed-specific groups, neighbourhood walking clubs, or special interest communities like reactive
+                dog support groups.
+              </p>
+            </div>
+            <div class="event-card">
+              <div class="event-badge">🎉 Events</div>
+              <h4>Dog-Friendly Meetups</h4>
+              <p>
+                Discover local dog walks, charity fundraisers, training sessions, and social events happening near you.
+              </p>
+            </div>
+            <div class="event-card">
+              <div class="event-badge">🚶 Walk Buddies</div>
+              <h4>Schedule Together</h4>
+              <p>
+                Find compatible dogs and coordinate regular walks. Great for socialising puppies or matching energy
+                levels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Coming Soon: Pet Services Booking Section -->
+      <section class="coming-soon-section" id="coming-soon">
+        <div class="coming-soon-content reveal">
+          <span class="section-label" style="background: rgba(255, 193, 7, 0.2); color: #f9a825">🔮 Coming Soon</span>
+          <h2>Book trusted pet services — all in one place</h2>
+          <p class="coming-soon-intro">
+            We're building a marketplace for verified pet services. Find and book trusted professionals directly through
+            Go Rocco.
+          </p>
+          <div class="coming-soon-grid">
+            <div class="coming-soon-card">
+              <div class="coming-soon-badge">🚶 Dog Walking</div>
+              <h4>Trusted Walkers</h4>
+              <p>
+                Find verified dog walkers with reviews, background checks, and GPS-tracked walks you can follow in
+                real-time.
+              </p>
+            </div>
+            <div class="coming-soon-card">
+              <div class="coming-soon-badge">✂️ Grooming</div>
+              <h4>Local Groomers</h4>
+              <p>Book groomers in your area with photos of their work, ratings, and easy online scheduling.</p>
+            </div>
+            <div class="coming-soon-card">
+              <div class="coming-soon-badge">🏠 Pet Sitting</div>
+              <h4>Home From Home</h4>
+              <p>
+                Find overnight or day care with people your dog already knows and trusts from the Go Rocco community.
+              </p>
+            </div>
+          </div>
+          <div class="coming-soon-cta">
+            <p>
+              Interested in offering services on Go Rocco? <a href="mailto:partners@go-rocco.com">Get in touch →</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="safety" id="safety">
+        <div class="safety-content reveal">
+          <div class="safety-text">
+            <span class="section-label" style="background: rgba(255, 255, 255, 0.2); color: white"
+              >🛡️ Safety First</span
+            >
+            <h2>Your dog's safety is our priority</h2>
+            <p>
+              We believe most dog incidents aren't caused by "bad dogs" — they're caused by lack of information. Go
+              Rocco gives owners the knowledge they need to make better decisions, before it's too late.
+            </p>
+            <ul class="safety-list">
+              <li><span class="safety-check">✓</span> See approaching dogs' temperaments before you meet</li>
+              <li><span class="safety-check">✓</span> SOS button sends your live location to emergency contacts</li>
+              <li><span class="safety-check">✓</span> Walk timer alerts trusted contacts if you don't check back in</li>
+              <li><span class="safety-check">✓</span> Lost pet alerts notify the entire community instantly</li>
+              <li><span class="safety-check">✓</span> Simple privacy controls with mutual blocking</li>
+            </ul>
+          </div>
+          <div class="safety-visual">
+            <div class="safety-card">
+              <h4>🛡️ Prevention first</h4>
+              <p>Most incidents are preventable with the right information at the right time.</p>
+            </div>
+            <div class="safety-card">
+              <h4>🤝 Community powered</h4>
+              <p>The more owners who join, the safer walks become for everyone.</p>
+            </div>
+            <div class="safety-card">
+              <h4>💚 No judgement</h4>
+              <p>Nervous dogs aren't bad dogs. They just need owners who understand them.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial">
+        <div class="testimonial-content reveal">
+          <blockquote>
+            "My reactive rescue has been so much calmer since we started using Go Rocco. I can see when to pop him on
+            the lead before he gets overwhelmed. Game changer."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">🐕</div>
+            <div class="author-info">
+              <h4>Emma & Chester</h4>
+              <p>Reactive dog owner, Manchester</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Signals Section -->
+      <section class="trust-signals" id="trust">
+        <div class="trust-signals-content reveal">
+          <div class="trust-item">
+            <div class="trust-icon">👥</div>
+            <div class="trust-text">
+              <div class="trust-number">50,000+</div>
+              <div class="trust-label">Dog owners on the waitlist</div>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">⭐</div>
+            <div class="trust-text">
+              <div class="trust-number">4.8</div>
+              <div class="trust-label">Expected app store rating</div>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🛡️</div>
+            <div class="trust-text">
+              <div class="trust-number">Community</div>
+              <div class="trust-label">Powered pet safety</div>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🇬🇧</div>
+            <div class="trust-text">
+              <div class="trust-number">UK Made</div>
+              <div class="trust-label">Built for British dog owners</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="early-adopter" id="early-adopter">
+        <div class="early-adopter-content reveal">
+          <div class="early-adopter-badge">🚀 Limited Spots</div>
+          <h2>Become an Early Adopter</h2>
+          <p>
+            Be among the first to try Go Rocco when we launch in 2026. Early adopters get exclusive features, a founding
+            member badge, and the chance to shape the app.
+          </p>
+          <form id="earlyAdopterForm" class="early-adopter-form">
+            <div class="early-adopter-inputs">
+              <input
+                type="email"
+                id="earlyAdopterEmail"
+                class="early-adopter-input"
+                placeholder="Your email"
+                required
+                aria-label="Email address"
+              />
+              <input
+                type="text"
+                id="earlyAdopterDogName"
+                class="early-adopter-input"
+                placeholder="Your dog's name (optional)"
+                aria-label="Your dog's name (optional)"
+                maxlength="50"
+              />
+            </div>
+            <!-- Honeypot field - hidden from humans, bots will fill it -->
+            <input
+              type="text"
+              name="website"
+              class="early-adopter-honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+            <div class="early-adopter-consent">
+              <input type="checkbox" id="earlyAdopterConsent" required aria-describedby="consentText" />
+              <label for="earlyAdopterConsent" id="consentText">
+                I agree to receive email updates about Go Rocco, including launch news and product updates.
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+              </label>
+            </div>
+            <button type="submit" class="early-adopter-btn" id="earlyAdopterBtn">Join the Waitlist →</button>
+            <div id="earlyAdopterMessage" class="early-adopter-message" role="alert" aria-live="polite"></div>
+          </form>
+          <div class="early-adopter-social">
+            <span>Follow the journey:</span>
+            <a
+              href="https://www.instagram.com/goroccoapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                style="width: 18px; height: 18px; fill: currentColor; vertical-align: middle; margin-right: 6px"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                /></svg
+              >@goroccoapp</a
+            >
+            <a
+              href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                style="width: 18px; height: 18px; fill: currentColor; vertical-align: middle; margin-right: 6px"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                /></svg
+              >Facebook</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="download">
+        <div class="cta-content reveal">
+          <h2>Safer walks start here</h2>
+          <p>
+            Join thousands of responsible dog owners who believe every walk should be enjoyable — for dogs and humans
+            alike.
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="store-badge-link" aria-label="Download on the App Store">
+              <img
+                class="store-badge-img"
+                src="assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                alt="Download on the App Store"
+              />
+            </a>
+            <a href="#" class="store-badge-link" aria-label="Get it on Google Play">
+              <img
+                class="store-badge-img"
+                src="assets/GetItOnGooglePlay_Badge_Web_color_English.svg"
+                alt="Get it on Google Play"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="downloadModal">
+      <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-beaver">🦫</div>
+        <h3 id="modal-title">Dam it! We're not quite ready...</h3>
+        <p>
+          Our beavers are still building the app! But you can join the waitlist to be first in line when we launch. We
+          promise it'll be worth the wait! 🐾
+        </p>
+        <a href="#early-adopter" class="modal-btn" id="modalWaitlistBtn">Join the Waitlist →</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="index.html#early-adopter">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="data-policy.html">Data Policy</a></li>
+            <li><a href="cookies.html">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              /></svg
+          ></a>
+          <a
+            href="https://www.instagram.com/goroccoapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- UK GDPR Cookie Consent Banner -->
+    <div
+      id="cookieBanner"
+      class="cookie-banner"
+      role="dialog"
+      aria-label="Cookie consent"
+      aria-describedby="cookieDescription"
+    >
+      <div class="cookie-content">
+        <p id="cookieDescription">
+          🍪 We use cookies to improve your experience. Essential cookies are required for the site to function. You can
+          choose to accept all cookies or manage your preferences.
+          <a href="cookies.html">Learn more</a>
+        </p>
+        <div class="cookie-buttons">
+          <button class="cookie-btn settings" onclick="window.location.href='cookies.html'">Manage Cookies</button>
+          <button class="cookie-btn accept" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile Hamburger Menu
+      const hamburger = document.getElementById('hamburger')
+      const mobileMenu = document.getElementById('mobileMenu')
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active')
+        mobileMenu.classList.toggle('active')
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'))
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : ''
+      })
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active')
+          mobileMenu.classList.remove('active')
+          hamburger.setAttribute('aria-expanded', 'false')
+          document.body.style.overflow = ''
+        })
+      })
+    </script>
+
+    <script>
+      // Cookie Consent Management (UK GDPR/PECR Compliant)
+      // Consent expires after 12 months as per UK GDPR requirements
+      function getCookieConsent() {
+        const consent = localStorage.getItem('gorocco_cookie_consent')
+        const consentDate = localStorage.getItem('gorocco_cookie_consent_date')
+
+        if (!consent || !consentDate) return null
+
+        // Check if consent has expired (12 months)
+        const expiryDate = new Date(consentDate)
+        expiryDate.setMonth(expiryDate.getMonth() + 12)
+
+        if (new Date() > expiryDate) {
+          // Consent expired, clear and request again
+          localStorage.removeItem('gorocco_cookie_consent')
+          localStorage.removeItem('gorocco_cookie_consent_date')
+          return null
+        }
+
+        return consent
+      }
+
+      function setCookieConsent(value) {
+        localStorage.setItem('gorocco_cookie_consent', value)
+        localStorage.setItem('gorocco_cookie_consent_date', new Date().toISOString())
+      }
+
+      function acceptAllCookies() {
+        setCookieConsent('all')
+        document.getElementById('cookieBanner').classList.remove('active')
+      }
+
+      function showCookieBanner() {
+        const consent = getCookieConsent()
+        if (!consent) {
+          document.getElementById('cookieBanner').classList.add('active')
+        }
+      }
+
+      // Show banner on page load if no consent given
+      document.addEventListener('DOMContentLoaded', showCookieBanner)
+    </script>
+
+    <script>
+      const navbar = document.getElementById('navbar')
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50)
+      })
+
+      const slides = Array.from(document.querySelectorAll('.hero-slide'))
+      const dots = Array.from(document.querySelectorAll('.hero-dot'))
+      const dotsContainer = document.querySelector('.hero-dots')
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+      const shouldReduceMotion = () => prefersReducedMotion.matches
+
+      let currentSlide = 0
+      let slideInterval = null
+
+      function syncA11y(index) {
+        slides.forEach((slide, i) => {
+          const isActive = i === index
+          slide.setAttribute('aria-hidden', String(!isActive))
+        })
+        dots.forEach((dot, i) => {
+          const isActive = i === index
+          dot.setAttribute('aria-current', String(isActive))
+        })
+      }
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === index))
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index))
+        currentSlide = index
+        syncA11y(index)
+      }
+
+      function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length)
+      }
+
+      function stopSlider() {
+        if (slideInterval) {
+          clearInterval(slideInterval)
+          slideInterval = null
+        }
+      }
+
+      function startSlider() {
+        stopSlider()
+        if (slides.length <= 1) return
+        if (shouldReduceMotion()) return
+        slideInterval = setInterval(nextSlide, 8000)
+      }
+
+      function resetSlider() {
+        startSlider()
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index)
+          resetSlider()
+        })
+      })
+
+      if (dotsContainer) {
+        dotsContainer.addEventListener('keydown', (e) => {
+          const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End']
+          if (!keys.includes(e.key)) return
+          e.preventDefault()
+
+          let nextIndex = currentSlide
+          if (e.key === 'ArrowLeft') nextIndex = (currentSlide - 1 + slides.length) % slides.length
+          if (e.key === 'ArrowRight') nextIndex = (currentSlide + 1) % slides.length
+          if (e.key === 'Home') nextIndex = 0
+          if (e.key === 'End') nextIndex = slides.length - 1
+
+          showSlide(nextIndex)
+          resetSlider()
+          if (dots[nextIndex]) dots[nextIndex].focus()
+        })
+      }
+
+      prefersReducedMotion.addEventListener?.('change', () => {
+        startSlider()
+      })
+
+      showSlide(0)
+      startSlider()
+
+      const reveals = document.querySelectorAll('.reveal')
+      function revealOnScroll() {
+        reveals.forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active')
+        })
+      }
+      window.addEventListener('scroll', revealOnScroll)
+      revealOnScroll()
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href')
+          if (!href || href === '#') return
+          e.preventDefault()
+          const target = document.querySelector(href)
+          if (target) target.scrollIntoView({ behavior: shouldReduceMotion() ? 'auto' : 'smooth', block: 'start' })
+        })
+      })
+
+      // Download modal functionality
+      const modal = document.getElementById('downloadModal')
+      const modalClose = modal.querySelector('.modal-close')
+      const modalWaitlistBtn = document.getElementById('modalWaitlistBtn')
+      const downloadLinks = document.querySelectorAll('.store-badge-link')
+
+      function openModal(e) {
+        e.preventDefault()
+        modal.classList.add('active')
+        document.body.style.overflow = 'hidden'
+        modalClose.focus()
+      }
+
+      function closeModal() {
+        modal.classList.remove('active')
+        document.body.style.overflow = ''
+      }
+
+      downloadLinks.forEach((link) => link.addEventListener('click', openModal))
+      modalClose.addEventListener('click', closeModal)
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal()
+      })
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal()
+      })
+      modalWaitlistBtn.addEventListener('click', () => {
+        closeModal()
+        setTimeout(() => {
+          const target = document.getElementById('early-access')
+          if (target) target.scrollIntoView({ behavior: shouldReduceMotion() ? 'auto' : 'smooth', block: 'start' })
+        }, 100)
+      })
+
+      // Early Adopter Form Submission
+      const earlyAdopterForm = document.getElementById('earlyAdopterForm')
+      const earlyAdopterBtn = document.getElementById('earlyAdopterBtn')
+      const earlyAdopterMessage = document.getElementById('earlyAdopterMessage')
+
+      // API endpoint
+      const SUBSCRIBE_API = 'https://subscribe.go-rocco.com/api/subscribe'
+
+      earlyAdopterForm.addEventListener('submit', async (e) => {
+        e.preventDefault()
+
+        const email = document.getElementById('earlyAdopterEmail').value.trim()
+        const dogName = document.getElementById('earlyAdopterDogName').value.trim()
+        const consent = document.getElementById('earlyAdopterConsent').checked
+        const honeypot = earlyAdopterForm.querySelector('input[name="website"]').value
+
+        // Disable button while submitting
+        earlyAdopterBtn.disabled = true
+        earlyAdopterBtn.textContent = 'Joining...'
+
+        // Hide any previous messages
+        earlyAdopterMessage.className = 'early-adopter-message'
+        earlyAdopterMessage.textContent = ''
+
+        try {
+          const response = await fetch(SUBSCRIBE_API, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email,
+              dogName: dogName || null,
+              consent,
+              source: 'website',
+              honeypot,
+            }),
+          })
+
+          const data = await response.json()
+
+          if (response.ok && data.success) {
+            earlyAdopterMessage.className = 'early-adopter-message success'
+            earlyAdopterMessage.textContent =
+              data.message ||
+              '🎉 Check your inbox to confirm your spot! Not there? Our email might be hiding in your spam folder — fetch it back! 🐾'
+            earlyAdopterForm.reset()
+            // Scroll to ensure message is visible
+            earlyAdopterMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          } else {
+            earlyAdopterMessage.className = 'early-adopter-message error'
+            earlyAdopterMessage.textContent = data.error || 'Something went wrong. Please try again.'
+          }
+        } catch (error) {
+          console.error('Subscription error:', error)
+          earlyAdopterMessage.className = 'early-adopter-message error'
+          earlyAdopterMessage.textContent = 'Connection error. Please try again.'
+        } finally {
+          earlyAdopterBtn.disabled = false
+          earlyAdopterBtn.textContent = 'Join the Waitlist →'
+        }
+      })
+    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>

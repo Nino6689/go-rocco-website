@@ -1,0 +1,26 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "html.format.wrapLineLength": 120,
+  "css.validate": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.venv": true
+  },
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#7BCBEB",
+    "statusBar.foreground": "#1f2937",
+    "statusBar.noFolderBackground": "#7BCBEB",
+    "statusBar.debuggingBackground": "#5BB8E0",
+    "statusBar.debuggingForeground": "#ffffff",
+    "activityBar.background": "#7BCBEB",
+    "activityBar.foreground": "#1f2937",
+    "activityBar.inactiveForeground": "#4b5563",
+    "activityBarBadge.background": "#5BB8E0",
+    "activityBarBadge.foreground": "#ffffff"
+  }
+}

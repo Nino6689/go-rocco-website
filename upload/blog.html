@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Go Rocco — Dog Safety Tips & News</title>
+    <meta
+      name="description"
+      content="Tips, stories, and updates from the Go Rocco team. Dog safety advice, reactive dog tips, product news, and community stories for UK dog owners."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://go-rocco.com/blog.html" />
+    <meta property="og:title" content="Blog | Go Rocco" />
+    <meta
+      property="og:description"
+      content="Dog safety tips, reactive dog advice, and product updates from Go Rocco."
+    />
+    <meta property="og:url" content="https://go-rocco.com/blog.html" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        padding: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .blog-card {
+        background: var(--white);
+        border-radius: 24px;
+        overflow: hidden;
+        border: 2px solid var(--gray-50);
+        transition: all 0.3s ease;
+      }
+      .blog-card:hover {
+        border-color: var(--rocco-blue);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+      .blog-card-image {
+        height: 200px;
+        background: var(--rocco-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+      }
+      .blog-card-content {
+        padding: 1.5rem;
+      }
+      .blog-card-category {
+        display: inline-block;
+        background: var(--rocco-blue);
+        color: var(--white);
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+      }
+      .blog-card h3 {
+        font-size: 1.25rem;
+        color: var(--gray-900);
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+      .blog-card h3 a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .blog-card h3 a:hover {
+        color: var(--rocco-blue-dark);
+      }
+      .blog-card p {
+        color: var(--gray-600);
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+      .blog-card-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.85rem;
+        color: var(--gray-600);
+      }
+      .coming-soon-overlay {
+        position: relative;
+      }
+      .coming-soon-overlay::after {
+        content: 'Coming Soon';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--gray-900);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .newsletter-section {
+        background: var(--cream);
+        padding: 4rem;
+        text-align: center;
+      }
+      .newsletter-content {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .newsletter-content h2 {
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 1rem;
+      }
+      .newsletter-content p {
+        color: var(--gray-600);
+        margin-bottom: 2rem;
+      }
+      .newsletter-form {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .newsletter-form input {
+        flex: 1;
+        min-width: 250px;
+        padding: 1rem 1.5rem;
+        border: 2px solid var(--gray-50);
+        border-radius: 50px;
+        font-size: 1rem;
+        font-family: 'Quicksand', sans-serif;
+      }
+      .newsletter-form input:focus {
+        outline: none;
+        border-color: var(--rocco-blue);
+      }
+      .newsletter-form button {
+        background: var(--rocco-blue);
+        color: var(--white);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .newsletter-form button:hover {
+        background: var(--rocco-blue-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+      </ul>
+      <a href="index.html#download" class="nav-cta">Download</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#features" class="mobile-nav-link">Features</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="about.html" class="mobile-nav-link">Our Story</a>
+      <a href="roadmap.html" class="mobile-nav-link">Roadmap</a>
+      <a href="index.html#early-adopter" class="nav-cta mobile-nav-link">Download Free →</a>
+    </div>
+
+    <main id="main">
+      <header class="page-header">
+        <h1>Blog</h1>
+        <p>Tips, stories, and updates from the Go Rocco pack</p>
+      </header>
+
+      <section class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card-image">🚀</div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Announcement</span>
+            <h3><a href="#">Introducing Go Rocco: Know Before You Meet</a></h3>
+            <p>
+              We're building something new for dog owners. Here's what Go Rocco is all about and why we think it
+              matters.
+            </p>
+            <div class="blog-card-meta">
+              <span>📅 January 2026</span>
+              <span>⏱️ 5 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">🐕</div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Dog Safety</span>
+            <h3><a href="#">5 Signs a Dog Needs Space (and How to Respond)</a></h3>
+            <p>Not every dog wants to say hello. Here's how to read the signs and be a considerate fellow dog owner.</p>
+            <div class="blog-card-meta">
+              <span>📅 Coming Soon</span>
+              <span>⏱️ 7 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">🧪</div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Product</span>
+            <h3><a href="#">Join Our Beta: Help Us Build Go Rocco</a></h3>
+            <p>We're looking for dog owners to test Go Rocco before launch. Here's what you'll get and how to apply.</p>
+            <div class="blog-card-meta">
+              <span>📅 Coming Soon</span>
+              <span>⏱️ 4 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">🔒</div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Privacy</span>
+            <h3><a href="#">The 50-Metre Rule: Why We Built Privacy Into Go Rocco</a></h3>
+            <p>Location apps can be creepy. Here's how we designed Go Rocco so it's helpful without being invasive.</p>
+            <div class="blog-card-meta">
+              <span>📅 Coming Soon</span>
+              <span>⏱️ 6 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">💛</div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Community</span>
+            <h3><a href="#">Nervous Dogs Aren't Bad Dogs</a></h3>
+            <p>A love letter to reactive and nervous dogs, and the owners who advocate for them every single day.</p>
+            <div class="blog-card-meta">
+              <span>📅 Coming Soon</span>
+              <span>⏱️ 8 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">🗺️</div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Features</span>
+            <h3><a href="#">How the Live Map Works (Without Being Creepy)</a></h3>
+            <p>A technical deep-dive into how we show nearby dogs without compromising your privacy or safety.</p>
+            <div class="blog-card-meta">
+              <span>📅 Coming Soon</span>
+              <span>⏱️ 10 min read</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="newsletter-section">
+        <div class="newsletter-content">
+          <h2>Get Updates in Your Inbox</h2>
+          <p>New articles, product updates, and dog safety tips. No spam, unsubscribe anytime.</p>
+          <form class="newsletter-form" action="#" method="POST">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit">Subscribe 🐾</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="index.html#early-adopter">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="data-policy.html">Data Policy</a></li>
+            <li><a href="cookies.html">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              /></svg
+          ></a>
+          <a
+            href="https://www.instagram.com/goroccoapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- UK GDPR Cookie Consent Banner -->
+    <div
+      id="cookieBanner"
+      class="cookie-banner"
+      role="dialog"
+      aria-label="Cookie consent"
+      aria-describedby="cookieDescription"
+    >
+      <div class="cookie-content">
+        <p id="cookieDescription">
+          🍪 We use cookies to improve your experience. Essential cookies are required for the site to function. You can
+          choose to accept all cookies or manage your preferences.
+          <a href="cookies.html">Learn more</a>
+        </p>
+        <div class="cookie-buttons">
+          <button class="cookie-btn settings" onclick="window.location.href='cookies.html'">Manage Cookies</button>
+          <button class="cookie-btn accept" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cookie Consent Management (UK GDPR/PECR Compliant)
+      // Consent expires after 12 months as per UK GDPR requirements
+      function getCookieConsent() {
+        const consent = localStorage.getItem('gorocco_cookie_consent')
+        const consentDate = localStorage.getItem('gorocco_cookie_consent_date')
+
+        if (!consent || !consentDate) return null
+
+        // Check if consent has expired (12 months)
+        const expiryDate = new Date(consentDate)
+        expiryDate.setMonth(expiryDate.getMonth() + 12)
+
+        if (new Date() > expiryDate) {
+          localStorage.removeItem('gorocco_cookie_consent')
+          localStorage.removeItem('gorocco_cookie_consent_date')
+          return null
+        }
+
+        return consent
+      }
+
+      function setCookieConsent(value) {
+        localStorage.setItem('gorocco_cookie_consent', value)
+        localStorage.setItem('gorocco_cookie_consent_date', new Date().toISOString())
+      }
+
+      function acceptAllCookies() {
+        setCookieConsent('all')
+        document.getElementById('cookieBanner').classList.remove('active')
+      }
+
+      function showCookieBanner() {
+        const consent = getCookieConsent()
+        if (!consent) {
+          document.getElementById('cookieBanner').classList.add('active')
+        }
+      }
+
+      // Show banner on page load if no consent given
+      document.addEventListener('DOMContentLoaded', showCookieBanner)
+    </script>
+
+    <script>
+      const navbar = document.getElementById('navbar')
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50)
+      })
+
+      // Mobile Hamburger Menu
+      const hamburger = document.getElementById('hamburger')
+      const mobileMenu = document.getElementById('mobileMenu')
+      
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active')
+        mobileMenu.classList.toggle('active')
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'))
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : ''
+      })
+      
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active')
+          mobileMenu.classList.remove('active')
+          hamburger.setAttribute('aria-expanded', 'false')
+          document.body.style.overflow = ''
+        })
+      })
+    </script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

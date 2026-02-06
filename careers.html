@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers | Go Rocco — Join Our Team</title>
+    <meta
+      name="description"
+      content="Join the Go Rocco team. We're building the future of dog safety in the UK and looking for passionate dog lovers to help."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://go-rocco.com/careers.html" />
+    <meta property="og:title" content="Careers | Go Rocco" />
+    <meta
+      property="og:description"
+      content="Join us in building the future of dog safety. We're hiring passionate dog lovers."
+    />
+    <meta property="og:url" content="https://go-rocco.com/careers.html" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .careers-intro {
+        background: var(--cream);
+        padding: 4rem;
+        text-align: center;
+      }
+      .careers-intro-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .careers-intro h2 {
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 1rem;
+      }
+      .careers-intro p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+      .perks-section {
+        padding: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .perks-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 2rem;
+      }
+      .perks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+      .perk-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 24px;
+        border: 2px solid var(--gray-50);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .perk-card:hover {
+        border-color: var(--rocco-blue);
+        transform: translateY(-5px);
+      }
+      .perk-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .perk-card h3 {
+        font-size: 1.25rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+      }
+      .perk-card p {
+        color: var(--gray-600);
+        line-height: 1.6;
+      }
+      .jobs-section {
+        padding: 4rem;
+        background: var(--cream);
+      }
+      .jobs-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 2rem;
+      }
+      .jobs-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .job-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 24px;
+        margin-bottom: 1.5rem;
+        border: 2px solid var(--gray-50);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        transition: all 0.3s ease;
+      }
+      .job-card:hover {
+        border-color: var(--rocco-blue);
+      }
+      .job-info h3 {
+        font-size: 1.25rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+      }
+      .job-meta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .job-meta span {
+        background: var(--gray-50);
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        color: var(--gray-600);
+      }
+      .job-apply {
+        background: var(--rocco-blue);
+        color: var(--white);
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+      .job-apply:hover {
+        background: var(--rocco-blue-dark);
+      }
+      .no-jobs {
+        text-align: center;
+        padding: 3rem;
+        background: var(--white);
+        border-radius: 24px;
+        border: 2px dashed var(--gray-200);
+      }
+      .no-jobs-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+      .no-jobs h3 {
+        font-size: 1.5rem;
+        color: var(--gray-900);
+        margin-bottom: 1rem;
+      }
+      .no-jobs p {
+        color: var(--gray-600);
+        margin-bottom: 1.5rem;
+      }
+      .no-jobs a {
+        color: var(--rocco-blue-dark);
+        font-weight: 700;
+      }
+      .values-section {
+        padding: 4rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .values-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 2rem;
+      }
+      .values-list {
+        display: grid;
+        gap: 1.5rem;
+      }
+      .value-item {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+      .value-number {
+        background: var(--rocco-blue);
+        color: var(--white);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+      .value-content h3 {
+        font-size: 1.25rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+      }
+      .value-content p {
+        color: var(--gray-600);
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+      </ul>
+      <a href="index.html#download" class="nav-cta">Download</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#features" class="mobile-nav-link">Features</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="about.html" class="mobile-nav-link">Our Story</a>
+      <a href="roadmap.html" class="mobile-nav-link">Roadmap</a>
+      <a href="index.html#early-adopter" class="nav-cta mobile-nav-link">Download Free →</a>
+    </div>
+
+    <main id="main">
+      <header class="page-header">
+        <h1>Careers</h1>
+        <p>Join the pack. Help us make every walk safer.</p>
+      </header>
+
+      <section class="careers-intro">
+        <div class="careers-intro-content">
+          <h2>We're Just Getting Started</h2>
+          <p>
+            Go Rocco is a small, early-stage team based in the UK. We're building something new — an app that helps dog
+            owners feel safer and more connected. If you're passionate about dogs, privacy, and building products that
+            genuinely help people, we'd love to hear from you.
+          </p>
+        </div>
+      </section>
+
+      <section class="perks-section">
+        <h2>Why Join Go Rocco</h2>
+        <div class="perks-grid">
+          <div class="perk-card">
+            <div class="perk-icon">🐕</div>
+            <h3>Dog-Friendly Everything</h3>
+            <p>Bring your dog to work (even if work is your living room). We're building this for dog people.</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">🏠</div>
+            <h3>Remote-First</h3>
+            <p>Work from anywhere in the UK. We believe in flexibility and trust our team to get things done.</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">🚀</div>
+            <h3>Early-Stage Impact</h3>
+            <p>Shape the product from the ground up. Your ideas will directly influence what we build.</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">💷</div>
+            <h3>Equity Options</h3>
+            <p>Early team members get stock options. When Go Rocco succeeds, you succeed.</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">📚</div>
+            <h3>Learning Budget</h3>
+            <p>Annual budget for courses, conferences, and books. We invest in your growth.</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">🎯</div>
+            <h3>Meaningful Work</h3>
+            <p>Build something that actually helps people and their dogs. Not ads. Not engagement hacks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="values-section">
+        <h2>Our Values</h2>
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-number">1</div>
+            <div class="value-content">
+              <h3>Dogs Come First</h3>
+              <p>
+                Every decision starts with: "Does this help dogs and their owners?" If it doesn't, we don't build it.
+              </p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-number">2</div>
+            <div class="value-content">
+              <h3>Privacy by Design</h3>
+              <p>We collect only what we need, protect it fiercely, and give users complete control. No exceptions.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-number">3</div>
+            <div class="value-content">
+              <h3>No Judgment</h3>
+              <p>Reactive dogs aren't bad dogs. Nervous owners aren't bad owners. We build for everyone.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-number">4</div>
+            <div class="value-content">
+              <h3>Ship and Learn</h3>
+              <p>
+                We'd rather launch something good today and improve it than wait for perfect. Iteration over perfection.
+              </p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-number">5</div>
+            <div class="value-content">
+              <h3>Be Kind</h3>
+              <p>To each other, to our users, to everyone. Life's too short for drama.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="jobs-section">
+        <h2>Open Positions</h2>
+        <div class="jobs-list">
+          <div class="no-jobs">
+            <div class="no-jobs-icon">🐾</div>
+            <h3>No Open Roles Right Now</h3>
+            <p>
+              We don't have any positions listed at the moment, but we're always interested in meeting talented dog
+              lovers. Send us a note and tell us about yourself.
+            </p>
+            <a href="mailto:info@gorocco.com">info@gorocco.com</a>
+          </div>
+
+          <!-- Future job listings template:
+          <div class="job-card">
+            <div class="job-info">
+              <h3>Senior iOS Developer</h3>
+              <div class="job-meta">
+                <span>📍 Remote (UK)</span>
+                <span>⏰ Full-time</span>
+                <span>💷 £65-80k</span>
+              </div>
+            </div>
+            <a href="#" class="job-apply">Apply Now</a>
+          </div>
+          -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="index.html#early-adopter">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="data-policy.html">Data Policy</a></li>
+            <li><a href="cookies.html">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              /></svg
+          ></a>
+          <a
+            href="https://www.instagram.com/goroccoapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- UK GDPR Cookie Consent Banner -->
+    <div
+      id="cookieBanner"
+      class="cookie-banner"
+      role="dialog"
+      aria-label="Cookie consent"
+      aria-describedby="cookieDescription"
+    >
+      <div class="cookie-content">
+        <p id="cookieDescription">
+          🍪 We use cookies to improve your experience. Essential cookies are required for the site to function. You can
+          choose to accept all cookies or manage your preferences.
+          <a href="cookies.html">Learn more</a>
+        </p>
+        <div class="cookie-buttons">
+          <button class="cookie-btn settings" onclick="window.location.href='cookies.html'">Manage Cookies</button>
+          <button class="cookie-btn accept" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cookie Consent Management (UK GDPR/PECR Compliant)
+      // Consent expires after 12 months as per UK GDPR requirements
+      function getCookieConsent() {
+        const consent = localStorage.getItem('gorocco_cookie_consent')
+        const consentDate = localStorage.getItem('gorocco_cookie_consent_date')
+
+        if (!consent || !consentDate) return null
+
+        // Check if consent has expired (12 months)
+        const expiryDate = new Date(consentDate)
+        expiryDate.setMonth(expiryDate.getMonth() + 12)
+
+        if (new Date() > expiryDate) {
+          localStorage.removeItem('gorocco_cookie_consent')
+          localStorage.removeItem('gorocco_cookie_consent_date')
+          return null
+        }
+
+        return consent
+      }
+
+      function setCookieConsent(value) {
+        localStorage.setItem('gorocco_cookie_consent', value)
+        localStorage.setItem('gorocco_cookie_consent_date', new Date().toISOString())
+      }
+
+      function acceptAllCookies() {
+        setCookieConsent('all')
+        document.getElementById('cookieBanner').classList.remove('active')
+      }
+
+      function showCookieBanner() {
+        const consent = getCookieConsent()
+        if (!consent) {
+          document.getElementById('cookieBanner').classList.add('active')
+        }
+      }
+
+      // Show banner on page load if no consent given
+      document.addEventListener('DOMContentLoaded', showCookieBanner)
+    </script>
+
+    <script>
+      const navbar = document.getElementById('navbar')
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50)
+      })
+
+      // Mobile Hamburger Menu
+      const hamburger = document.getElementById('hamburger')
+      const mobileMenu = document.getElementById('mobileMenu')
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active')
+        mobileMenu.classList.toggle('active')
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'))
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : ''
+      })
+
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active')
+          mobileMenu.classList.remove('active')
+          hamburger.setAttribute('aria-expanded', 'false')
+          document.body.style.overflow = ''
+        })
+      })
+    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>

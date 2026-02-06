@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Press Kit | Go Rocco — Media Resources</title>
+    <meta
+      name="description"
+      content="Go Rocco press resources. Download logos, brand assets, and get company information for media coverage of the UK dog safety app."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://go-rocco.com/press.html" />
+    <meta property="og:title" content="Press Kit | Go Rocco" />
+    <meta property="og:description" content="Download logos, brand assets, and company info for media coverage." />
+    <meta property="og:url" content="https://go-rocco.com/press.html" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .press-intro {
+        background: var(--cream);
+        padding: 4rem;
+        text-align: center;
+      }
+      .press-intro-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .press-intro h2 {
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 1rem;
+      }
+      .press-intro p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+      .press-contact {
+        margin-top: 2rem;
+      }
+      .press-contact a {
+        background: var(--rocco-blue);
+        color: var(--white);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+      .press-contact a:hover {
+        background: var(--rocco-blue-dark);
+      }
+      .boilerplate-section {
+        padding: 4rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .boilerplate-section h2 {
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .boilerplate-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 24px;
+        border: 2px solid var(--gray-50);
+        margin-bottom: 2rem;
+      }
+      .boilerplate-card h3 {
+        font-size: 1.25rem;
+        color: var(--gray-900);
+        margin-bottom: 1rem;
+      }
+      .boilerplate-card p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      .boilerplate-card p:last-child {
+        margin-bottom: 0;
+      }
+      .copy-btn {
+        background: var(--gray-50);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+      }
+      .copy-btn:hover {
+        background: var(--gray-200);
+      }
+      .facts-section {
+        padding: 4rem;
+        background: var(--cream);
+      }
+      .facts-section h2 {
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .facts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .fact-card {
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 16px;
+        border: 2px solid var(--gray-50);
+      }
+      .fact-label {
+        font-size: 0.85rem;
+        color: var(--gray-600);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      .fact-value {
+        font-size: 1.1rem;
+        color: var(--gray-900);
+        font-weight: 600;
+      }
+      .assets-section {
+        padding: 4rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .assets-section h2 {
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .assets-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .asset-card {
+        background: var(--white);
+        border-radius: 24px;
+        border: 2px solid var(--gray-50);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .asset-card:hover {
+        border-color: var(--rocco-blue);
+      }
+      .asset-preview {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .asset-preview.light {
+        background: var(--white);
+      }
+      .asset-preview.dark {
+        background: var(--gray-900);
+      }
+      .asset-preview.blue {
+        background: var(--rocco-blue);
+      }
+      .asset-preview img {
+        max-height: 80px;
+        max-width: 100%;
+      }
+      .asset-info {
+        padding: 1.5rem;
+        border-top: 2px solid var(--gray-50);
+      }
+      .asset-info h3 {
+        font-size: 1.1rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+      }
+      .asset-info p {
+        color: var(--gray-600);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .asset-download {
+        display: inline-block;
+        background: var(--gray-50);
+        color: var(--gray-900);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .asset-download:hover {
+        background: var(--rocco-blue);
+        color: var(--white);
+      }
+      .guidelines-section {
+        padding: 4rem;
+        background: var(--cream);
+      }
+      .guidelines-section h2 {
+        font-size: 2rem;
+        color: var(--gray-900);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .guidelines-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 24px;
+        border: 2px solid var(--gray-50);
+      }
+      .guideline-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+      }
+      .guideline-item:last-child {
+        margin-bottom: 0;
+      }
+      .guideline-icon {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+      .guideline-item p {
+        color: var(--gray-600);
+        line-height: 1.6;
+      }
+      .guideline-item strong {
+        color: var(--gray-900);
+      }
+      .color-swatches {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .color-swatch {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 0.25rem;
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: var(--white);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+      </ul>
+      <a href="index.html#download" class="nav-cta">Download</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#features" class="mobile-nav-link">Features</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="about.html" class="mobile-nav-link">Our Story</a>
+      <a href="roadmap.html" class="mobile-nav-link">Roadmap</a>
+      <a href="index.html#early-adopter" class="nav-cta mobile-nav-link">Download Free →</a>
+    </div>
+
+    <main id="main">
+      <header class="page-header">
+        <h1>Press Kit</h1>
+        <p>Everything you need to write about Go Rocco</p>
+      </header>
+
+      <section class="press-intro">
+        <div class="press-intro-content">
+          <h2>Media Enquiries</h2>
+          <p>
+            Writing about Go Rocco? We'd love to help. Whether you need quotes, interviews, or additional information,
+            our team is happy to assist journalists and content creators.
+          </p>
+          <div class="press-contact">
+            <a href="mailto:info@gorocco.com">Contact Press Team</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="boilerplate-section">
+        <h2>About Go Rocco</h2>
+
+        <div class="boilerplate-card">
+          <h3>Short Description (50 words)</h3>
+          <p>
+            Go Rocco is a UK-based mobile app that helps dog owners see nearby dogs' temperaments before meeting them.
+            Using privacy-first location sharing, owners can identify friendly, nervous, or reactive dogs within 50
+            metres — making every walk safer and reducing unexpected encounters.
+          </p>
+          <button class="copy-btn" onclick="copyText(this.previousElementSibling)">📋 Copy</button>
+        </div>
+
+        <div class="boilerplate-card">
+          <h3>Long Description (150 words)</h3>
+          <p>
+            Go Rocco is a mobile app launching in the UK in 2026 that's reimagining dog walk safety. The app allows dog
+            owners to see other dogs within 50 metres and their temperament indicators — whether they're friendly,
+            nervous, in training, or reactive.
+          </p>
+          <p>
+            Beyond the live map, Go Rocco includes a solo walker check-in feature for personal safety, a directory of
+            dog-friendly venues, and a digital pet passport for health records. The app is built with privacy at its
+            core: location sharing is strictly limited to 50 metres, only other verified dog owners can see you, and
+            users can block anyone who makes them uncomfortable — which also prevents that person from seeing them.
+          </p>
+          <p>
+            Founded by dog owners who understand the daily challenges of walks, Go Rocco aims to reduce anxiety for both
+            dogs and their humans while building a supportive community of responsible pet owners.
+          </p>
+          <button class="copy-btn" onclick="copyText(this.parentElement.querySelector('p'))">📋 Copy</button>
+        </div>
+
+        <div class="boilerplate-card">
+          <h3>Key Message</h3>
+          <p>
+            <strong>"Know Before You Meet"</strong> — Go Rocco helps dog owners see nearby dogs' temperaments so they
+            can choose whether to say hello or give space. It's about making walks safer and more enjoyable for
+            everyone.
+          </p>
+        </div>
+      </section>
+
+      <section class="facts-section">
+        <h2>Quick Facts</h2>
+        <div class="facts-grid">
+          <div class="fact-card">
+            <div class="fact-label">Company Name</div>
+            <div class="fact-value">Go Rocco</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label">Founded</div>
+            <div class="fact-value">2025</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label">Headquarters</div>
+            <div class="fact-value">United Kingdom</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label">Launch Date</div>
+            <div class="fact-value">2026</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label">Platforms</div>
+            <div class="fact-value">iOS, Android, Apple Watch</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label">Pricing</div>
+            <div class="fact-value">Free + Pro (£2.99/month)</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label">Website</div>
+            <div class="fact-value">gorocco.co.uk</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-label">Contact</div>
+            <div class="fact-value">info@gorocco.com</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="assets-section">
+        <h2>Brand Assets</h2>
+        <div class="assets-grid">
+          <div class="asset-card">
+            <div class="asset-preview light">
+              <img src="assets/gorocco-logo.png" alt="Go Rocco Logo" />
+            </div>
+            <div class="asset-info">
+              <h3>Primary Logo</h3>
+              <p>Full colour logo for light backgrounds. PNG format with transparency.</p>
+              <a href="assets/gorocco-logo.png" class="asset-download" download>Download PNG</a>
+            </div>
+          </div>
+
+          <div class="asset-card">
+            <div class="asset-preview blue">
+              <img src="gorocco-app-icon.png" alt="Go Rocco App Icon" style="border-radius: 20px" />
+            </div>
+            <div class="asset-info">
+              <h3>App Icon</h3>
+              <p>Square app icon for app store listings and social media.</p>
+              <a href="gorocco-app-icon.png" class="asset-download" download>Download PNG</a>
+            </div>
+          </div>
+
+          <div class="asset-card">
+            <div
+              class="asset-preview light"
+              style="background: linear-gradient(135deg, var(--rocco-blue), var(--rocco-blue-dark))"
+            >
+              <span style="color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 2rem"
+                >Go Rocco</span
+              >
+            </div>
+            <div class="asset-info">
+              <h3>Wordmark</h3>
+              <p>Text-only logo. Use Nunito Extra Bold, 800 weight.</p>
+              <span class="asset-download" style="opacity: 0.5">SVG Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guidelines-section">
+        <h2>Brand Guidelines</h2>
+        <div class="guidelines-content">
+          <div class="guideline-item">
+            <span class="guideline-icon">✅</span>
+            <p>
+              <strong>Do:</strong> Use "Go Rocco" as two words with capital G and R. The app name is always written this
+              way.
+            </p>
+          </div>
+          <div class="guideline-item">
+            <span class="guideline-icon">✅</span>
+            <p><strong>Do:</strong> Maintain clear space around the logo equal to the height of the "o" in Rocco.</p>
+          </div>
+          <div class="guideline-item">
+            <span class="guideline-icon">✅</span>
+            <p><strong>Do:</strong> Use our brand colours when featuring Go Rocco prominently.</p>
+          </div>
+          <div class="guideline-item">
+            <span class="guideline-icon">❌</span>
+            <p><strong>Don't:</strong> Alter the logo colours, stretch, rotate, or add effects to the logo.</p>
+          </div>
+          <div class="guideline-item">
+            <span class="guideline-icon">❌</span>
+            <p><strong>Don't:</strong> Use "GoRocco", "gorocco", or "Go-Rocco" — always two separate words.</p>
+          </div>
+
+          <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.1rem">Brand Colours</h3>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background: #7bcbeb">#7BCBEB</div>
+            <div class="color-swatch" style="background: #5bb8e0">#5BB8E0</div>
+            <div class="color-swatch" style="background: #4caf50">#4CAF50</div>
+            <div class="color-swatch" style="background: #ff9800">#FF9800</div>
+            <div class="color-swatch" style="background: #111827">#111827</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="index.html#early-adopter">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="data-policy.html">Data Policy</a></li>
+            <li><a href="cookies.html">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              /></svg
+          ></a>
+          <a
+            href="https://www.instagram.com/goroccoapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- UK GDPR Cookie Consent Banner -->
+    <div
+      id="cookieBanner"
+      class="cookie-banner"
+      role="dialog"
+      aria-label="Cookie consent"
+      aria-describedby="cookieDescription"
+    >
+      <div class="cookie-content">
+        <p id="cookieDescription">
+          🍪 We use cookies to improve your experience. Essential cookies are required for the site to function. You can
+          choose to accept all cookies or manage your preferences.
+          <a href="cookies.html">Learn more</a>
+        </p>
+        <div class="cookie-buttons">
+          <button class="cookie-btn settings" onclick="window.location.href='cookies.html'">Manage Cookies</button>
+          <button class="cookie-btn accept" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cookie Consent Management (UK GDPR/PECR Compliant)
+      // Consent expires after 12 months as per UK GDPR requirements
+      function getCookieConsent() {
+        const consent = localStorage.getItem('gorocco_cookie_consent')
+        const consentDate = localStorage.getItem('gorocco_cookie_consent_date')
+
+        if (!consent || !consentDate) return null
+
+        // Check if consent has expired (12 months)
+        const expiryDate = new Date(consentDate)
+        expiryDate.setMonth(expiryDate.getMonth() + 12)
+
+        if (new Date() > expiryDate) {
+          localStorage.removeItem('gorocco_cookie_consent')
+          localStorage.removeItem('gorocco_cookie_consent_date')
+          return null
+        }
+
+        return consent
+      }
+
+      function setCookieConsent(value) {
+        localStorage.setItem('gorocco_cookie_consent', value)
+        localStorage.setItem('gorocco_cookie_consent_date', new Date().toISOString())
+      }
+
+      function acceptAllCookies() {
+        setCookieConsent('all')
+        document.getElementById('cookieBanner').classList.remove('active')
+      }
+
+      function showCookieBanner() {
+        const consent = getCookieConsent()
+        if (!consent) {
+          document.getElementById('cookieBanner').classList.add('active')
+        }
+      }
+
+      // Show banner on page load if no consent given
+      document.addEventListener('DOMContentLoaded', showCookieBanner)
+    </script>
+
+    <script>
+      const navbar = document.getElementById('navbar')
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50)
+      })
+
+      // Mobile Hamburger Menu
+      const hamburger = document.getElementById('hamburger')
+      const mobileMenu = document.getElementById('mobileMenu')
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active')
+        mobileMenu.classList.toggle('active')
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'))
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : ''
+      })
+
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active')
+          mobileMenu.classList.remove('active')
+          hamburger.setAttribute('aria-expanded', 'false')
+          document.body.style.overflow = ''
+        })
+      })
+
+      function copyText(element) {
+        const text = element.innerText
+        navigator.clipboard.writeText(text).then(() => {
+          const btn = element.nextElementSibling
+          const originalText = btn.innerText
+          btn.innerText = '✓ Copied!'
+          setTimeout(() => {
+            btn.innerText = originalText
+          }, 2000)
+        })
+      }
+    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>

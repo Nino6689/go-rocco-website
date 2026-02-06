@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the Pack! | Go Rocco</title>
+    <meta
+      name="description"
+      content="You're officially part of the Go Rocco early adopter community. Thanks for joining us on this journey to make dog walks safer for everyone."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://go-rocco.com/thank-you.html" />
+    <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .thank-you-hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, var(--gray-900) 0%, #1a1a2e 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .thank-you-hero::before {
+        content: '🐾';
+        position: absolute;
+        font-size: 20rem;
+        opacity: 0.03;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .thank-you-content {
+        max-width: 600px;
+        position: relative;
+        z-index: 1;
+      }
+      .thank-you-icon {
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+        animation: bounce 2s ease-in-out infinite;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .thank-you-icon {
+          animation: none;
+        }
+      }
+      .thank-you-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--safe-green) 0%, #43a047 100%);
+        color: var(--white);
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .thank-you-badge.warning {
+        background: linear-gradient(135deg, var(--warning-amber) 0%, #f57c00 100%);
+      }
+      .thank-you-badge.error {
+        background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+      }
+      .thank-you-content h1 {
+        font-size: 2.75rem;
+        color: var(--white);
+        margin-bottom: 1rem;
+        font-weight: 900;
+        line-height: 1.2;
+      }
+      .thank-you-content p {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+      .thank-you-steps {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 2rem 0;
+        text-align: left;
+      }
+      .thank-you-steps h3 {
+        color: var(--white);
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .thank-you-steps ol {
+        color: rgba(255, 255, 255, 0.8);
+        padding-left: 1.5rem;
+        margin: 0;
+      }
+      .thank-you-steps li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+      }
+      .thank-you-steps li:last-child {
+        margin-bottom: 0;
+      }
+      .thank-you-social {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+      .thank-you-social span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.95rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      .thank-you-social a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--white);
+        text-decoration: none;
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .thank-you-social a:hover {
+        background: var(--rocco-blue);
+        transform: translateY(-2px);
+      }
+      .thank-you-home {
+        display: inline-block;
+        margin-top: 2rem;
+        color: var(--rocco-blue);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .thank-you-home:hover {
+        color: var(--rocco-blue-dark);
+      }
+      @media (max-width: 768px) {
+        .thank-you-hero {
+          padding: 4rem 1.5rem;
+        }
+        .thank-you-content h1 {
+          font-size: 2rem;
+        }
+        .thank-you-icon {
+          font-size: 4rem;
+        }
+        .thank-you-social {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+      </ul>
+      <a href="index.html#download" class="nav-cta">Download</a>
+    </nav>
+
+    <main id="main">
+      <section class="thank-you-hero">
+        <div class="thank-you-content" id="thankYouContent">
+          <!-- Content will be populated by JavaScript based on status -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="index.html#early-adopter">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="data-policy.html">Data Policy</a></li>
+            <li><a href="cookies.html">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              /></svg
+          ></a>
+          <a
+            href="https://www.instagram.com/goroccoapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById('navbar')
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50)
+      })
+
+      // Get status from URL
+      const urlParams = new URLSearchParams(window.location.search)
+      const status = urlParams.get('status') || 'success'
+
+      const content = {
+        success: {
+          icon: '🎉',
+          badge: 'Confirmed',
+          badgeClass: '',
+          title: "You're part of something great!",
+          message:
+            "Welcome to the pack! You're officially an early adopter. We're building Go Rocco to make every walk safer — and you're helping us get there.",
+          showSteps: true,
+          steps: [
+            "You'll receive updates about our progress",
+            'Early access when we launch in 2026',
+            'A founding member badge on your profile — forever',
+          ],
+        },
+        already: {
+          icon: '👋',
+          badge: 'Already Confirmed',
+          badgeClass: 'warning',
+          title: "You're already in the pack!",
+          message:
+            "Looks like you've already confirmed your spot. No worries — you're all set! We'll keep you updated on our launch progress.",
+          showSteps: false,
+        },
+        invalid: {
+          icon: '🔗',
+          badge: 'Invalid Link',
+          badgeClass: 'error',
+          title: "Hmm, that link didn't work",
+          message:
+            "The confirmation link might have expired or already been used. If you haven't confirmed yet, try signing up again and we'll send a fresh link.",
+          showSteps: false,
+        },
+        error: {
+          icon: '😅',
+          badge: 'Something Went Wrong',
+          badgeClass: 'error',
+          title: "Oops! That didn't go as planned",
+          message:
+            'Something went wrong on our end. Please try signing up again, or drop us an email at info@gorocco.com if you keep having trouble.',
+          showSteps: false,
+        },
+      }
+
+      const data = content[status] || content.success
+
+      const contentEl = document.getElementById('thankYouContent')
+      contentEl.innerHTML = `
+        <div class="thank-you-icon">${data.icon}</div>
+        <div class="thank-you-badge ${data.badgeClass}">✓ ${data.badge}</div>
+        <h1>${data.title}</h1>
+        <p>${data.message}</p>
+        ${
+          data.showSteps
+            ? `
+          <div class="thank-you-steps">
+            <h3>What happens next?</h3>
+            <ol>
+              ${data.steps.map((step) => `<li>${step}</li>`).join('')}
+            </ol>
+          </div>
+        `
+            : ''
+        }
+        <div class="thank-you-social">
+          <span>Follow our journey:</span>
+          <a href="https://www.instagram.com/goroccoapp" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+            📸 @goroccoapp
+          </a>
+          <a href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+            📘 Facebook
+          </a>
+        </div>
+        <a href="index.html" class="thank-you-home">← Back to Home</a>
+      `
+
+      // Update page title based on status
+      if (status !== 'success') {
+        document.title = data.badge + ' | Go Rocco'
+      }
+    </script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "644d34331b7b4af0beacf23a746bb948"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

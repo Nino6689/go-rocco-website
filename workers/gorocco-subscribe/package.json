@@ -1,0 +1,24 @@
+{
+  "name": "gorocco-subscribe",
+  "version": "1.0.0",
+  "description": "Go Rocco Early Adopter Email Collection Worker",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create gorocco-subscribers",
+    "db:init": "wrangler d1 execute gorocco-subscribers --remote --file=schema.sql",
+    "db:init:local": "wrangler d1 execute gorocco-subscribers --local --file=schema.sql"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "d1",
+    "email"
+  ],
+  "author": "Go Rocco",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "wrangler": "^4.59.1"
+  }
+}

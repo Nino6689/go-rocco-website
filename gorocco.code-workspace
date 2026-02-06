@@ -1,0 +1,96 @@
+{
+  "folders": [
+    {
+      "name": "Go Rocco Marketing Site",
+      "path": "."
+    }
+  ],
+  "settings": {
+    // Editor Settings
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.linkedEditing": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // HTML/CSS Specific
+    "html.format.wrapLineLength": 120,
+    "html.format.wrapAttributes": "preserve-aligned",
+    "css.validate": true,
+    "emmet.includeLanguages": {
+      "html": "html"
+    },
+
+    // File Associations
+    "files.associations": {
+      "*.html": "html",
+      "*.css": "css",
+      "*.js": "javascript"
+    },
+
+    // Exclude from search
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.venv": true,
+      "**/node_modules": true
+    },
+
+    // Live Server Settings
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.root": "/",
+
+    // Git Settings
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+
+    // Terminal
+    "terminal.integrated.defaultProfile.osx": "zsh"
+  },
+  "extensions": {
+    "recommendations": [
+      "ritwickdey.liveserver",
+      "esbenp.prettier-vscode",
+      "formulahendry.auto-rename-tag",
+      "formulahendry.auto-close-tag",
+      "ecmel.vscode-html-css",
+      "bradlc.vscode-tailwindcss",
+      "naumovs.color-highlight",
+      "kisstkondoros.vscode-gutter-preview",
+      "vincaslt.highlight-matching-tag",
+      "github.copilot",
+      "github.copilot-chat"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Live Server",
+        "type": "shell",
+        "command": "echo 'Use Live Server extension: Right-click index.html > Open with Live Server'",
+        "problemMatcher": []
+      },
+      {
+        "label": "Deploy to Hostinger (FTP)",
+        "type": "shell",
+        "command": "echo 'Deploy via Hostinger File Manager or set up FTP in hPanel'",
+        "problemMatcher": []
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Open index.html in Chrome",
+        "file": "${workspaceFolder}/index.html"
+      }
+    ]
+  }
+}

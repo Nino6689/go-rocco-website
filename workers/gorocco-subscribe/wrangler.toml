@@ -1,0 +1,25 @@
+name = "gorocco-subscribe"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Custom domain route for email link matching
+routes = [
+  { pattern = "subscribe.go-rocco.com/*", zone_name = "go-rocco.com" }
+]
+
+[vars]
+SITE_URL = "https://go-rocco.com"
+FROM_EMAIL = "woof@mail.go-rocco.com"
+FROM_NAME = "Rocco from Go Rocco"
+WORKER_URL = "https://subscribe.go-rocco.com"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "gorocco-subscribers"
+database_id = "c7fc0b42-a00e-44ce-8128-f7ade6158161"
+
+# Secrets to set via `wrangler secret put`:
+# - RESEND_API_KEY
+# - ADMIN_USERNAME
+# - ADMIN_PASSWORD
