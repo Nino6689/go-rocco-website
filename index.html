@@ -66,8 +66,7 @@
     <script>
       gtag('js', new Date());
       gtag('config', 'G-XF5KB7S3WL', { 'cookie_flags': 'SameSite=None;Secure' });
-    />
-    <meta name="twitter:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+    </script>
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -98,6 +97,8 @@
           "bestRating": "5",
           "worstRating": "1"
         },
+        "inLanguage": "en-GB",
+        "softwareVersion": "1.0",
         "featureList": [
           "See nearby dogs' temperaments",
           "Walk check-in for solo walker safety",
@@ -399,7 +400,7 @@
         pointer-events: auto;
       }
       .hero-slide h1 {
-        font-size: 3.5rem;
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
         line-height: 1.15;
         color: var(--white);
         margin-bottom: 1.5rem;
@@ -586,7 +587,7 @@
         color: var(--safe-green);
       }
       .problem h2 {
-        font-size: 3rem;
+        font-size: clamp(2rem, 4.5vw, 3rem);
         margin-bottom: 2rem;
         font-weight: 900;
       }
@@ -757,7 +758,7 @@
         margin-bottom: 4rem;
       }
       .section-header h2 {
-        font-size: 2.75rem;
+        font-size: clamp(1.8rem, 4vw, 2.75rem);
         color: var(--white);
         margin-bottom: 1rem;
         font-weight: 900;
@@ -2123,8 +2124,8 @@
           flex-direction: column;
         }
         .features-grid {
-          grid-template-columns: 1fr;
-          max-width: 500px;
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 700px;
         }
         .safety-content {
           grid-template-columns: 1fr;
@@ -2149,21 +2150,12 @@
           height: 48px;
           border-radius: 12px;
         }
-        .hero-slide h1 {
-          font-size: 2.5rem;
-        }
         .hero-mascot {
           width: 220px;
           border-radius: 35px;
         }
         .problem {
           padding: 5rem 1.5rem;
-        }
-        .problem h2,
-        .section-header h2,
-        .solution h2,
-        .safety-text h2 {
-          font-size: 2rem;
         }
         .problem-scenario {
           padding: 2rem 1.5rem;
@@ -2189,6 +2181,10 @@
           min-height: 50px;
           font-size: 1.5rem;
           border-radius: 12px;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
         }
         .cta h2 {
           font-size: 2rem;
@@ -2244,7 +2240,7 @@
 
         <div class="hero-content">
           <div class="hero-badge">🎉 Launching UK 2026</div>
-          <div class="hero-slider" aria-live="off">
+          <div class="hero-slider" aria-live="polite">
             <div class="hero-slide active" data-index="0" aria-hidden="false">
               <h1>The Ultimate App for <span>Dog Owners</span></h1>
               <p class="hero-description">
@@ -2503,7 +2499,7 @@
               <div class="lost-pet-number">2</div>
               <h4>Community Search</h4>
               <p>
-                Nearby users get push notifications with your dog's details. Thousands of eyes suddenly looking out for
+                Nearby users get push notifications with your dog's details. More eyes suddenly looking out for
                 your pup.
               </p>
             </div>
@@ -2838,6 +2834,7 @@
                 class="store-badge-img"
                 src="assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
                 alt="Download on the App Store"
+                loading="lazy"
               />
             </a>
             <a href="#" class="store-badge-link" aria-label="Get it on Google Play">
@@ -2845,6 +2842,7 @@
                 class="store-badge-img"
                 src="assets/GetItOnGooglePlay_Badge_Web_color_English.svg"
                 alt="Get it on Google Play"
+                loading="lazy"
               />
             </a>
           </div>
@@ -2868,7 +2866,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" loading="lazy" />
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -2931,22 +2929,43 @@
       (function() {
         var countEl = document.getElementById('signupCount');
         var trustEl = document.getElementById('trustCount');
+        var CACHE_KEY = 'gorocco_signup_count';
+        var CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+        function applyCount(count) {
+          if (count > 0) {
+            var formatted = count.toLocaleString();
+            if (countEl) countEl.textContent = formatted;
+            if (trustEl) trustEl.textContent = formatted;
+          } else {
+            if (countEl) document.getElementById('socialProof').style.display = 'none';
+            if (trustEl) trustEl.textContent = '0';
+          }
+        }
+
+        function hideCounters() {
+          if (countEl) document.getElementById('socialProof').style.display = 'none';
+          if (trustEl) trustEl.textContent = '-';
+        }
+
+        // Check cache first
+        try {
+          var cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+          if (cached && (Date.now() - cached.ts) < CACHE_TTL) {
+            applyCount(cached.count);
+            return;
+          }
+        } catch(e) {}
+
         fetch('https://subscribe.go-rocco.com/api/count')
           .then(function(res) { return res.ok ? res.json() : Promise.reject('not ok'); })
           .then(function(data) {
             var count = data.count || 0;
-            if (count > 0) {
-              var formatted = count.toLocaleString();
-              if (countEl) countEl.textContent = formatted;
-              if (trustEl) trustEl.textContent = formatted;
-            } else {
-              if (countEl) document.getElementById('socialProof').style.display = 'none';
-              if (trustEl) trustEl.textContent = '0';
-            }
+            try { localStorage.setItem(CACHE_KEY, JSON.stringify({ count: count, ts: Date.now() })); } catch(e) {}
+            applyCount(count);
           })
           .catch(function() {
-            if (countEl) document.getElementById('socialProof').style.display = 'none';
-            if (trustEl) trustEl.textContent = '-';
+            hideCounters();
           });
       })();
     </script>
@@ -3086,8 +3105,11 @@
       const modalWaitlistBtn = document.getElementById('modalWaitlistBtn')
       const downloadLinks = document.querySelectorAll('.store-badge-link')
 
+      var lastFocusedEl = null
+
       function openModal(e) {
         e.preventDefault()
+        lastFocusedEl = document.activeElement
         modal.classList.add('active')
         document.body.style.overflow = 'hidden'
         modalClose.focus()
@@ -3096,7 +3118,21 @@
       function closeModal() {
         modal.classList.remove('active')
         document.body.style.overflow = ''
+        if (lastFocusedEl) lastFocusedEl.focus()
       }
+
+      // Trap focus inside modal
+      modal.addEventListener('keydown', function(e) {
+        if (e.key !== 'Tab') return
+        var focusable = modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')
+        var first = focusable[0]
+        var last = focusable[focusable.length - 1]
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus() }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus() }
+        }
+      })
 
       downloadLinks.forEach((link) => link.addEventListener('click', openModal))
       modalClose.addEventListener('click', closeModal)
@@ -3165,12 +3201,18 @@
             earlyAdopterMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
           } else {
             earlyAdopterMessage.className = 'early-adopter-message error'
-            earlyAdopterMessage.textContent = data.error || 'Something went wrong. Please try again.'
+            if (response.status === 409) {
+              earlyAdopterMessage.textContent = data.error || 'This email is already on the waitlist! Check your inbox for a confirmation email.'
+            } else if (response.status === 429) {
+              earlyAdopterMessage.textContent = 'Too many attempts. Please wait a moment and try again.'
+            } else {
+              earlyAdopterMessage.textContent = data.error || 'Something went wrong. Please try again.'
+            }
           }
         } catch (error) {
           console.error('Subscription error:', error)
           earlyAdopterMessage.className = 'early-adopter-message error'
-          earlyAdopterMessage.textContent = 'Connection error. Please try again.'
+          earlyAdopterMessage.textContent = 'Unable to connect. Please check your internet connection and try again.'
         } finally {
           earlyAdopterBtn.disabled = false
           earlyAdopterBtn.textContent = 'Join the Waitlist →'
