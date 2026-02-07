@@ -4,7 +4,7 @@
 
 ---
 
-## 🐕 Project Overview
+## Project Overview
 
 This is the marketing landing page for **Go Rocco**, a mobile app launching in the UK in 2026. The site promotes the app's core features:
 
@@ -15,142 +15,224 @@ This is the marketing landing page for **Go Rocco**, a mobile app launching in t
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Website/
-├── index.html              # Main landing page (single-page site)
-├── gorocco-app-icon.png    # App icon / favicon
+├── index.html              # Main landing page
+├── about.html              # About Go Rocco
+├── pricing.html            # Pricing plans
+├── roadmap.html            # Product roadmap
+├── blog.html               # Blog/news
+├── careers.html            # Job listings
+├── press.html              # Press kit
+├── beta.html               # Beta signup
+├── thank-you.html          # Post-signup confirmation
+├── privacy.html            # Privacy policy
+├── terms.html              # Terms of service
+├── cookies.html            # Cookie policy
+├── data-policy.html        # Data protection policy
+├── sitemap.xml             # XML sitemap for search engines
+├── robots.txt              # Crawler instructions
+├── .well-known/
+│   └── security.txt        # Security contact info
 ├── assets/
 │   ├── gorocco-logo.png    # Logo image
-│   ├── Download_on_the_App_Store_Badge_*.svg  # iOS App Store badges
-│   └── GetItOnGooglePlay_Badge_*.svg          # Google Play badge
-├── .vscode/                # VS Code configuration
-│   ├── settings.json       # Editor settings
-│   └── extensions.json     # Recommended extensions
-├── gorocco.code-workspace  # VS Code workspace file
-└── .github/
-    └── copilot-instructions.md  # AI assistant context
+│   ├── *.svg               # App store badges
+│   └── ...                 # Other images
+├── styles.css              # Shared styles
+├── workers/                # Cloudflare Workers
+└── upload/                 # Staging/temp files (blocked from crawlers)
 ```
 
 ---
 
-## 🚀 Getting Started
+## Hosting & Deployment
 
-### 1. Open the Workspace
+### Infrastructure
+
+| Service | Purpose |
+|---------|---------|
+| **Hostinger** | Web hosting (LiteSpeed) |
+| **Cloudflare** | DNS, CDN, SSL, DDoS protection |
+| **GitHub** | Version control |
+| **Cloudflare Workers** | Serverless functions (subscribe API) |
+
+### Quick Deployment (via GitHub)
 
 ```bash
-# Open VS Code with the workspace
-code gorocco.code-workspace
+# 1. Make your changes locally
+# 2. Commit changes
+git add .
+git commit -m "Your commit message"
+
+# 3. Push to GitHub
+git push origin main
+
+# 4. Deploy to Hostinger (manual sync required)
+# Option A: Use Hostinger Git integration (if configured)
+# Option B: Upload via FTP/File Manager
 ```
 
-### 2. Install Recommended Extensions
+### Manual Deployment to Hostinger
 
-When prompted, install the recommended extensions or run:
+1. **Login to Hostinger hPanel**: https://hpanel.hostinger.com
+2. **Go to**: Files → File Manager → `public_html/`
+3. **Upload** all changed files (maintain folder structure)
+4. **Clear Cloudflare cache** (optional but recommended):
+   - Cloudflare Dashboard → Caching → Purge Everything
 
-- `Cmd+Shift+P` → "Extensions: Show Recommended Extensions"
+### FTP Details (if needed)
 
-### 3. Start Local Development
+| Setting | Value |
+|---------|-------|
+| Host | ftp.go-rocco.com |
+| Port | 21 |
+| Username | (see Hostinger hPanel) |
+| Directory | /public_html/ |
 
-- Right-click `index.html` → **Open with Live Server**
-- Or use `Cmd+Shift+P` → "Live Server: Open with Live Server"
+### Cloudflare Settings
+
+| Setting | Value |
+|---------|-------|
+| SSL Mode | Full (Strict) |
+| Always HTTPS | On |
+| Auto Minify | HTML, CSS, JS |
+| Brotli | On |
 
 ---
 
-## 🎨 Design System
+## Development Workflow
 
-### Brand Colors (CSS Variables)
+### Local Development
 
-| Variable             | Hex       | Usage                    |
-| -------------------- | --------- | ------------------------ |
-| `--rocco-blue`       | `#7BCBEB` | Primary brand color      |
-| `--rocco-blue-light` | `#A8DCF3` | Hover states, highlights |
-| `--rocco-blue-dark`  | `#5BB8E0` | CTA buttons, links       |
-| `--safe-green`       | `#4CAF50` | Friendly status, safety  |
-| `--warning-amber`    | `#FF9800` | Nervous/reactive status  |
-| `--cream`            | `#FDF8F3` | Light backgrounds        |
+```bash
+# 1. Open VS Code workspace
+code gorocco.code-workspace
+
+# 2. Start Live Server
+# Right-click index.html → "Open with Live Server"
+# Or: Cmd+Shift+P → "Live Server: Open with Live Server"
+
+# 3. Make changes and test
+# Live Server auto-refreshes on save
+```
+
+### Testing Checklist
+
+- [ ] Test all navigation links
+- [ ] Verify responsive design (mobile, tablet, desktop)
+- [ ] Check hero slider on mobile
+- [ ] Test cookie consent banner
+- [ ] Verify analytics only load after consent
+- [ ] Test form submissions
+- [ ] Check across browsers (Chrome, Safari, Firefox)
+
+---
+
+## Design System
+
+### Brand Colors
+
+| Variable | Hex | Usage |
+|----------|-----|-------|
+| `--rocco-blue` | `#7BCBEB` | Primary brand color |
+| `--rocco-blue-light` | `#A8DCF3` | Hover states |
+| `--rocco-blue-dark` | `#5BB8E0` | CTA buttons |
+| `--safe-green` | `#4CAF50` | Friendly status |
+| `--warning-amber` | `#FF9800` | Reactive status |
+| `--cream` | `#FDF8F3` | Light backgrounds |
 
 ### Typography
 
-- **Headings**: Nunito (Google Fonts) — weights 400–900
-- **Body**: Quicksand (Google Fonts) — weights 400–700
+- **Headings**: Nunito (Google Fonts)
+- **Body**: Quicksand (Google Fonts)
 
-### Key Sections
+### Responsive Breakpoints
 
-1. **Hero** — Rotating slides showcasing main features
-2. **Problem** — The challenge of unexpected dog encounters
-3. **Solution** — Temperament visibility system (Green/Amber/Blue/Purple)
-4. **How It Works** — 3-step onboarding
-5. **Features** — Full feature grid
-6. **Safety** — Responsible ownership messaging
-7. **CTA/Download** — App store badges
+| Breakpoint | Devices |
+|------------|---------|
+| > 1024px | Desktop |
+| 768px–1024px | Tablet |
+| < 768px | Mobile |
 
 ---
 
-## 🌐 Hosting & DNS
+## Analytics & Tracking
 
-### Hostinger
+### Configured Services
 
-- **Host**: Hostinger (hPanel)
-- **Type**: Static HTML hosting
-- **Deployment**: Upload via File Manager or FTP
+| Service | ID | Status |
+|---------|-----|--------|
+| Google Analytics 4 | `G-XF5KB7S3WL` | Active (consent-gated) |
+| Microsoft Clarity | `vd24wvz3m1` | Active (consent-gated) |
+| Cloudflare Analytics | `644d34331b7b4af0beacf23a746bb948` | Active |
 
-### Cloudflare DNS
+### GDPR Compliance
 
-- **DNS Provider**: Cloudflare
-- **Features**: CDN, SSL, DDoS protection
-- **Records**: Point A/CNAME records to Hostinger IP
-
-### Deployment Steps
-
-1. **Hostinger hPanel** → File Manager → `public_html/`
-2. Upload all files (index.html, assets/, gorocco-app-icon.png)
-3. In **Cloudflare**, ensure DNS records point to Hostinger
-4. Enable "Full (Strict)" SSL mode in Cloudflare
+- Cookie consent banner on all pages
+- Analytics only load after user consent
+- 12-month consent expiry (UK GDPR requirement)
+- Users can manage preferences on cookies.html
 
 ---
 
-## 🔧 Development Workflow
+## Cloudflare Workers
 
-### Making Changes
+### Subscribe Worker
 
-1. Edit files locally with Live Server running
-2. Test responsive design (mobile breakpoints at 768px and 1024px)
-3. Validate accessibility (skip links, ARIA labels, focus states)
-4. Deploy to Hostinger
-
-### CSS is Inline
-
-All styles are in `<style>` tags within `index.html`. For larger changes, consider extracting to a separate `styles.css`.
-
----
-
-## 📱 Responsive Breakpoints
-
-| Breakpoint   | Devices |
-| ------------ | ------- |
-| > 1024px     | Desktop |
-| 768px–1024px | Tablet  |
-| < 768px      | Mobile  |
+- **URL**: https://subscribe.go-rocco.com
+- **Endpoints**:
+  - `POST /api/subscribe` — New signup
+  - `GET /api/count` — Get confirmed subscriber count
+  - `GET /confirm?token=xxx` — Email confirmation
+  - `GET /admin/stats` — Admin stats (auth required)
+  - `GET /admin/export` — Export CSV (auth required)
 
 ---
 
-## ✅ Pre-Deployment Checklist
+## SEO
 
-- [ ] Test all navigation links
-- [ ] Verify hero slider works on mobile
-- [ ] Check App Store/Play Store badge links (update when live)
-- [ ] Test scroll animations with reduced motion
-- [ ] Validate meta tags for SEO
-- [ ] Confirm favicon displays correctly
-- [ ] Test across browsers (Chrome, Safari, Firefox)
+### Configured
+
+- [x] XML Sitemap (`sitemap.xml`)
+- [x] robots.txt
+- [x] security.txt
+- [x] Meta descriptions on all pages
+- [x] Open Graph tags
+- [x] Canonical URLs
+
+### Google Search Console
+
+Submit sitemap at: https://search.google.com/search-console
 
 ---
 
-## 📞 Support
+## Useful Commands
 
-For questions about Go Rocco, visit the main app or contact the team through the footer social links.
+```bash
+# Check git status
+git status
+
+# View recent commits
+git log --oneline -5
+
+# Discard local changes
+git checkout -- filename.html
+
+# Pull latest from GitHub
+git pull origin main
+```
 
 ---
 
-_Made with 🐾 in the UK_
+## Support
+
+For questions about Go Rocco:
+- Website: https://go-rocco.com
+- Email: hello@go-rocco.com
+- Security: security@go-rocco.com
+
+---
+
+_Made with paw in the UK_

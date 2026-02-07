@@ -2273,7 +2273,7 @@
             <button class="hero-dot" data-index="2" aria-label="Slide 3" aria-current="false"></button>
           </div>
           <div class="hero-ctas">
-            <a href="#early-adopter" class="btn-primary">Get Started Free →</a>
+            <a href="#early-adopter" class="btn-primary">Become an Early Adopter →</a>
             <a href="#problem" class="btn-secondary">Learn More</a>
           </div>
         </div>
@@ -2829,7 +2829,7 @@
         <div class="cta-content reveal">
           <h2>Safer walks start here</h2>
           <p>
-            Join thousands of responsible dog owners who believe every walk should be enjoyable — for dogs and humans
+            Join our growing community of responsible dog owners who believe every walk should be enjoyable — for dogs and humans
             alike.
           </p>
           <div class="cta-buttons">
@@ -2935,10 +2935,14 @@
           .then(function(res) { return res.ok ? res.json() : Promise.reject('not ok'); })
           .then(function(data) {
             var count = data.count || 0;
-            countEl.textContent = count > 0 ? count.toLocaleString() : '500+';
+            if (count > 0) {
+              countEl.textContent = count.toLocaleString();
+            } else {
+              document.getElementById('socialProof').style.display = 'none';
+            }
           })
           .catch(function() {
-            countEl.textContent = '500+';
+            document.getElementById('socialProof').style.display = 'none';
           });
       })();
     </script>
@@ -3291,14 +3295,5 @@
       });
     </script>
 
-    <!-- Auto-scroll to early adopter signup on page load -->
-    <script>
-      window.addEventListener('load', function() {
-        const signupSection = document.getElementById('early-adopter');
-        if (signupSection && !window.location.hash) {
-          signupSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    </script>
   </body>
 </html>
