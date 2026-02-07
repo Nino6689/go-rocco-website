@@ -458,8 +458,8 @@
         flex-wrap: wrap;
       }
       .btn-primary {
-        background: var(--white);
-        color: var(--rocco-blue-dark);
+        background: #1a1a2e;
+        color: var(--white);
         padding: 1rem 2rem;
         text-decoration: none;
         font-weight: 800;
@@ -2710,7 +2710,7 @@
           <div class="trust-item">
             <div class="trust-icon">👥</div>
             <div class="trust-text">
-              <div class="trust-number">50,000+</div>
+              <div class="trust-number" id="trustCount">...</div>
               <div class="trust-label">Dog owners on the waitlist</div>
             </div>
           </div>
@@ -2930,19 +2930,23 @@
     <script>
       (function() {
         var countEl = document.getElementById('signupCount');
-        if (!countEl) return;
+        var trustEl = document.getElementById('trustCount');
         fetch('https://subscribe.go-rocco.com/api/count')
           .then(function(res) { return res.ok ? res.json() : Promise.reject('not ok'); })
           .then(function(data) {
             var count = data.count || 0;
             if (count > 0) {
-              countEl.textContent = count.toLocaleString();
+              var formatted = count.toLocaleString();
+              if (countEl) countEl.textContent = formatted;
+              if (trustEl) trustEl.textContent = formatted;
             } else {
-              document.getElementById('socialProof').style.display = 'none';
+              if (countEl) document.getElementById('socialProof').style.display = 'none';
+              if (trustEl) trustEl.textContent = '0';
             }
           })
           .catch(function() {
-            document.getElementById('socialProof').style.display = 'none';
+            if (countEl) document.getElementById('socialProof').style.display = 'none';
+            if (trustEl) trustEl.textContent = '-';
           });
       })();
     </script>

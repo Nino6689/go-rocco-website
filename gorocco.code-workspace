@@ -1,11 +1,22 @@
 {
   "folders": [
     {
-      "name": "Go Rocco Marketing Site",
+      "name": "Go-Rocco Website",
       "path": "."
     }
   ],
   "settings": {
+// Workbench Colors
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#7BCBEB",
+      "activityBar.foreground": "#1a1a2e",
+      "activityBar.activeBorder": "#1a1a2e",
+      "statusBar.background": "#7BCBEB",
+      "statusBar.foreground": "#1a1a2e",
+      "statusBar.debuggingBackground": "#5BB8E0",
+      "statusBar.noFolderBackground": "#7BCBEB"
+    },
+
     // Editor Settings
     "editor.formatOnSave": true,
     "editor.tabSize": 2,
