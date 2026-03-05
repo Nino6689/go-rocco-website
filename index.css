@@ -517,6 +517,11 @@ nav.scrolled {
   margin-top: 0.5rem;
   font-weight: 500;
 }
+.stat-source {
+  font-size: 0.7rem;
+  font-style: normal;
+  opacity: 0.7;
+}
 
 .solution {
   padding: 8rem 4rem;

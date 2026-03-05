@@ -197,6 +197,11 @@
       .newsletter-form button:hover {
         background: var(--rocco-blue-dark);
       }
+      .newsletter-msg {
+        display: none;
+        margin-top: 1rem;
+        font-weight: 600;
+      }
     </style>
     <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
     <script>
@@ -254,7 +259,7 @@
           <div class="blog-card-image">🚀</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Announcement</span>
-            <h3><a href="index.html#early-adopter">Introducing Go Rocco: Know Before You Meet</a></h3>
+            <h3><a href="index.html">Introducing Go Rocco: Know Before You Meet</a></h3>
             <p>
               We're building something new for dog owners. Here's what Go Rocco is all about and why we think it
               matters.
@@ -362,10 +367,11 @@
         <div class="newsletter-content">
           <h2>Get Updates in Your Inbox</h2>
           <p>New articles, product updates, and dog safety tips. No spam, unsubscribe anytime.</p>
-          <form class="newsletter-form" action="#" method="POST">
-            <input type="email" placeholder="Your email address" required />
-            <button type="submit">Subscribe 🐾</button>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" id="newsletterEmail" placeholder="Your email address" required />
+            <button type="submit" id="newsletterBtn">Subscribe 🐾</button>
           </form>
+          <p id="newsletterMsg" class="newsletter-msg"></p>
         </div>
       </section>
     </main>
@@ -456,6 +462,49 @@
           document.body.style.overflow = ''
         })
       })
+      // Newsletter Form
+      var form = document.getElementById('newsletterForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var email = document.getElementById('newsletterEmail').value;
+          var btn = document.getElementById('newsletterBtn');
+          var msg = document.getElementById('newsletterMsg');
+          btn.disabled = true;
+          btn.textContent = 'Subscribing...';
+          var controller = new AbortController();
+          var timeoutId = setTimeout(function() { controller.abort(); }, 10000);
+          fetch('https://subscribe.go-rocco.com/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email }),
+            signal: controller.signal
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            clearTimeout(timeoutId);
+            msg.style.display = 'block';
+            if (data.success) {
+              msg.textContent = 'You\'re subscribed! Welcome to the pack 🐾';
+              msg.style.color = 'var(--safe-green)';
+              form.reset();
+            } else {
+              msg.textContent = data.error || 'Something went wrong. Please try again.';
+              msg.style.color = 'var(--rocco-coral)';
+            }
+          })
+          .catch(function() {
+            clearTimeout(timeoutId);
+            msg.style.display = 'block';
+            msg.textContent = 'Network error. Please try again.';
+            msg.style.color = 'var(--rocco-coral)';
+          })
+          .finally(function() {
+            btn.disabled = false;
+            btn.textContent = 'Subscribe 🐾';
+          });
+        });
+      }
     </script>
     <!-- UK GDPR Cookie Consent Banner -->
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
