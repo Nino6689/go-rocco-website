@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The 50-Metre Rule: Why We Built Privacy Into Go Rocco | Go Rocco Blog</title>
+    <meta
+      name="description"
+      content="How Go Rocco shows nearby dogs without exposing exact locations. Learn about the 50-metre fuzzy radius and why we chose privacy-first over precision."
+    />
+    <meta
+      name="keywords"
+      content="dog tracking app privacy, location privacy dog app, GDPR dog app UK, pet app data protection, Go Rocco privacy"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://go-rocco.com/blog/the-50-metre-rule.html" />
+    <meta name="geo.region" content="GB" />
+    <meta name="geo.placename" content="United Kingdom" />
+
+    <link rel="alternate" hreflang="en-GB" href="https://go-rocco.com/blog/the-50-metre-rule.html" />
+    <link rel="alternate" hreflang="en" href="https://go-rocco.com/blog/the-50-metre-rule.html" />
+    <link rel="alternate" hreflang="x-default" href="https://go-rocco.com/blog/the-50-metre-rule.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://go-rocco.com/blog/the-50-metre-rule.html" />
+    <meta property="og:site_name" content="Go Rocco" />
+    <meta property="og:title" content="The 50-Metre Rule: Why We Built Privacy Into Go Rocco" />
+    <meta property="og:description" content="How Go Rocco shows nearby dogs without exposing exact locations. The privacy-first approach to dog walking." />
+    <meta property="og:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="article:published_time" content="2026-03-05" />
+    <meta property="article:section" content="Privacy" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@goroccoapp" />
+    <meta name="twitter:title" content="The 50-Metre Rule: Why We Built Privacy Into Go Rocco" />
+    <meta name="twitter:description" content="How Go Rocco shows nearby dogs without exposing exact locations." />
+    <meta name="twitter:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The 50-Metre Rule: Why We Built Privacy Into Go Rocco",
+        "description": "How Go Rocco shows nearby dogs without exposing exact locations. Learn about the 50-metre fuzzy radius and why we chose privacy-first over precision.",
+        "datePublished": "2026-03-05",
+        "author": {"@type": "Organization", "name": "Go Rocco"},
+        "publisher": {"@type": "Organization", "name": "Go Rocco", "logo": {"@type": "ImageObject", "url": "https://go-rocco.com/gorocco-app-icon.png"}},
+        "mainEntityOfPage": "https://go-rocco.com/blog/the-50-metre-rule.html",
+        "articleSection": "Privacy",
+        "wordCount": 1000,
+        "inLanguage": "en-GB"
+      }
+    </script>
+
+    <link rel="icon" type="image/png" href="../gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="../gorocco-app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .blog-post { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+      .blog-post-header { margin-bottom: 2rem; }
+      .blog-post-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--gray-600); margin-bottom: 1.5rem; }
+      .blog-post-category { display: inline-block; background: var(--rocco-blue); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+      .blog-post h1 { font-size: 2.25rem; color: var(--gray-900); font-weight: 900; line-height: 1.3; margin-bottom: 1rem; }
+      .blog-post h2 { font-size: 1.5rem; color: var(--gray-900); font-weight: 800; margin: 2.5rem 0 1rem; }
+      .blog-post h3 { font-size: 1.2rem; color: var(--gray-900); font-weight: 700; margin: 2rem 0 0.75rem; }
+      .blog-post p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
+      .blog-post ul, .blog-post ol { color: var(--gray-600); line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.5rem; }
+      .blog-post li { margin-bottom: 0.5rem; }
+      .blog-post blockquote { border-left: 4px solid var(--rocco-blue); padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(123, 203, 235, 0.08); border-radius: 0 12px 12px 0; }
+      .blog-post blockquote p { color: var(--gray-800); font-style: italic; margin-bottom: 0; }
+      .blog-post-cta { background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 100%); border-radius: 24px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+      .blog-post-cta h3 { margin-top: 0; }
+      .blog-post-cta .cta-btn { display: inline-block; background: var(--rocco-blue); color: var(--white); padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; font-family: 'Nunito', sans-serif; }
+      .blog-post-cta .cta-btn:hover { background: var(--rocco-blue-dark); transform: translateY(-2px); }
+      .blog-back { display: inline-block; color: var(--rocco-blue-dark); text-decoration: none; font-weight: 700; margin-bottom: 2rem; }
+      .blog-back:hover { text-decoration: underline; }
+      @media (max-width: 768px) { .blog-post h1 { font-size: 1.75rem; } .blog-post { padding: 1.5rem 1rem 3rem; } }
+    </style>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', 'wait_for_update': 500 });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF5KB7S3WL"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XF5KB7S3WL', { 'cookie_flags': 'SameSite=None;Secure' });
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="../index.html" class="logo">
+        <img src="../assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../about.html">Our Story</a></li>
+        <li><a href="../roadmap.html">Roadmap</a></li>
+      </ul>
+      <a href="../index.html#download" class="nav-cta">Download</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html#features" class="mobile-nav-link">Features</a>
+      <a href="../pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="../about.html" class="mobile-nav-link">Our Story</a>
+      <a href="../roadmap.html" class="mobile-nav-link">Roadmap</a>
+      <a href="../index.html#early-adopter" class="nav-cta mobile-nav-link">Download Free</a>
+    </div>
+
+    <main id="main">
+      <article class="blog-post">
+        <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
+
+        <header class="blog-post-header">
+          <span class="blog-post-category">Privacy</span>
+          <h1>The 50-Metre Rule: Why We Built Privacy Into Go Rocco</h1>
+          <div class="blog-post-meta">
+            <span>March 2026</span>
+            <span>6 min read</span>
+          </div>
+        </header>
+
+        <p>When we started building Go Rocco, one of the very first questions we had to answer was deceptively simple: <em>how much should people know about where other dogs are?</em></p>
+
+        <p>The obvious answer — the one most apps default to — is "as much as possible." Show the exact location. Update it in real time. Make the map as precise as a sat-nav. But the more we thought about it, the more uncomfortable that felt. Because we weren't tracking parcels or taxis. We were tracking people walking their dogs.</p>
+
+        <p>And people deserve privacy.</p>
+
+        <h2>Why precision isn't the point</h2>
+
+        <p>Go Rocco's live map shows you that there are dogs nearby and tells you about their temperament. That's the useful information. You don't need to know that a reactive German Shepherd is standing outside number 42 Maple Road. You just need to know there's a dog ahead who might need space, so you can adjust your route.</p>
+
+        <p>That distinction — between <em>useful awareness</em> and <em>exact surveillance</em> — is what led us to the 50-metre rule. Every dog's location on the Go Rocco map is deliberately fuzzed to a 50-metre approximate zone. You'll see them in the area, not at the address.</p>
+
+        <p>It sounds like a limitation. We think it's a feature.</p>
+
+        <h2>How the 50-metre radius works</h2>
+
+        <p>When your phone sends location data to Go Rocco, we don't store or display the precise GPS coordinates. Instead, the app rounds the position to a generalised zone. On the map, you'll see a coloured circle representing the dog's approximate area — not a pin marking their exact spot.</p>
+
+        <p>This means:</p>
+
+        <ul>
+          <li><strong>You can see dogs are nearby</strong> and plan your walk accordingly</li>
+          <li><strong>You can read their temperament</strong> (green, amber, or red) before you encounter them</li>
+          <li><strong>You can't follow someone home</strong> or work out their daily routine from the map</li>
+          <li><strong>You can't identify someone's exact location</strong> from their dog's profile</li>
+        </ul>
+
+        <p>The 50-metre radius gives you everything you need to make informed decisions on your walk, without giving anyone the tools to do anything creepy.</p>
+
+        <h2>How GDPR and UK data protection shaped our design</h2>
+
+        <p>We're a UK-based company, and we take data protection seriously. The UK GDPR and Data Protection Act 2018 set a high bar for how personal data — including location data — must be handled. Location data is considered personal data under these regulations, and precise location tracking raises significant compliance concerns.</p>
+
+        <p>But our approach wasn't born out of legal obligation alone. The principles behind GDPR — data minimisation, purpose limitation, privacy by design — aligned perfectly with what we already believed. You should only collect the data you need, use it only for its stated purpose, and build privacy into the architecture from day one.</p>
+
+        <p>That's exactly what the 50-metre rule does. We don't collect precise data and then blur it on the front end. The fuzziness is baked into how we process and store the data. We simply don't hold the level of precision that would allow exact tracking.</p>
+
+        <blockquote>
+          <p>"Privacy by design means the protection isn't a feature you bolt on — it's a constraint you build around."</p>
+        </blockquote>
+
+        <h2>How other apps get it wrong</h2>
+
+        <p>Many pet tracking and social apps show exact, real-time locations. Some even let you view historical walking routes — where someone walked, when, and for how long. For a tracker attached to a dog's collar, that might make sense (you're tracking your own pet). But for a community map showing other people's dogs? That's a different conversation entirely.</p>
+
+        <p>Precise tracking in a social context creates risks that most app developers don't think about:</p>
+
+        <ul>
+          <li><strong>Stalking and harassment:</strong> Someone could use real-time dog locations to track a person's movements</li>
+          <li><strong>Burglary risk:</strong> If your map shows you're out walking, your home is empty</li>
+          <li><strong>Dog theft:</strong> Sadly, dog theft remains a serious concern in the UK, and broadcasting your dog's exact location helps no one but thieves</li>
+          <li><strong>Domestic abuse:</strong> Survivors fleeing abusive situations could be tracked through their pet's location data</li>
+        </ul>
+
+        <p>These aren't hypothetical concerns. They're real-world risks that informed our engineering decisions from the very beginning.</p>
+
+        <h2>The opt-in philosophy</h2>
+
+        <p>The 50-metre rule is just one part of our broader privacy approach. Everything in Go Rocco is opt-in. Your dog only appears on the map when you choose to share. You control what information is visible on your profile. And you can go invisible at any time — one tap, and you're off the map entirely.</p>
+
+        <p>We don't believe in defaulting to "share everything" and making people hunt through settings to turn things off. The default should always be private, with clear, simple options to share more if you want to.</p>
+
+        <p>This matters because not every dog owner's situation is the same. Some people walk in remote areas and want to know if there's anyone around. Others live in busy cities and just want a heads-up about reactive dogs on their street. Some are fostering rescue dogs and need to keep a low profile. The opt-in model respects all of those needs.</p>
+
+        <h2>Privacy builds trust</h2>
+
+        <p>We've found that privacy and community aren't at odds — they reinforce each other. When people know their location isn't being broadcast to the metre, they're more willing to participate. They're more likely to share their dog's temperament honestly, to engage with the map, and to recommend the app to friends.</p>
+
+        <p>Trust is the foundation of any community app. And trust starts with showing people you've thought carefully about their safety — not just their convenience.</p>
+
+        <p>The 50-metre rule isn't perfect. There are edge cases where you might wish you had more precision. But we'd rather err on the side of protecting our users than give anyone a reason to feel unsafe. That's a trade-off we're proud of.</p>
+
+        <div class="blog-post-cta">
+          <h3>Privacy-first dog walking</h3>
+          <p>Go Rocco shows you nearby dogs without compromising anyone's safety. See how it works.</p>
+          <a href="../index.html#early-adopter" class="cta-btn">Join the Waitlist</a>
+        </div>
+
+        <h2>What this means for you</h2>
+
+        <p>As a Go Rocco user, you don't need to worry about any of this in practice. The app just works — you see dogs nearby, you see their temperament, and you make better decisions on your walk. The privacy layer is invisible because it's supposed to be.</p>
+
+        <p>But we think it's important to be transparent about <em>why</em> things work the way they do. Too many apps treat privacy as an afterthought or a compliance checkbox. We built Go Rocco around it.</p>
+
+        <p>Because every dog deserves a safe walk. And every owner deserves to feel safe too.</p>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="../index.html#features">Features</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a href="../index.html#early-adopter">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">Our Story</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../press.html">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+            <li><a href="../data-policy.html">Data Policy</a></li>
+            <li><a href="../cookies.html">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Go Rocco. All rights reserved. Made with &#x1f43e; in the UK.</p>
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active'); mobileMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+        });
+      });
+    </script>
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
+      <div class="cookie-content">
+        <p id="cookieDescription">We use cookies to improve your experience and analyze site traffic. <a href="../cookies.html">Learn more</a></p>
+        <div class="cookie-buttons">
+          <button type="button" class="cookie-btn reject" onclick="rejectOptionalCookies()">Reject Optional</button>
+          <button type="button" class="cookie-btn settings" onclick="window.location.href='../cookies.html'">Manage</button>
+          <button type="button" class="cookie-btn accept" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function getCookieConsent(){try{var c=localStorage.getItem('gorocco_cookie_consent');var d=localStorage.getItem('gorocco_cookie_consent_date');if(!c||!d)return null;var e=new Date(d);e.setMonth(e.getMonth()+12);if(new Date()>e){localStorage.removeItem('gorocco_cookie_consent');localStorage.removeItem('gorocco_cookie_consent_date');return null;}return JSON.parse(c);}catch(x){return null;}}
+      function setCookieConsent(v){localStorage.setItem('gorocco_cookie_consent',JSON.stringify(v));localStorage.setItem('gorocco_cookie_consent_date',new Date().toISOString());}
+      function acceptAllCookies(){setCookieConsent({essential:true,analytics:true,functionality:true});gtag('consent','update',{'analytics_storage':'granted'});loadAnalytics();hideCookieBanner();}
+      function rejectOptionalCookies(){setCookieConsent({essential:true,analytics:false,functionality:false});gtag('consent','update',{'analytics_storage':'denied'});hideCookieBanner();}
+      function hideCookieBanner(){document.getElementById('cookieBanner').classList.remove('active');}
+      function showCookieBanner(){if(!getCookieConsent()){document.getElementById('cookieBanner').classList.add('active');}}
+      function loadAnalytics(){var c=getCookieConsent();if(!c||!c.analytics)return;if(!document.getElementById('cf-beacon-script')){var s=document.createElement('script');s.id='cf-beacon-script';s.defer=true;s.src='https://static.cloudflareinsights.com/beacon.min.js';s.setAttribute('data-cf-beacon','{"token":"644d34331b7b4af0beacf23a746bb948"}');document.body.appendChild(s);}if(!window.clarity){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vd24wvz3m1");}}
+      document.addEventListener('DOMContentLoaded',function(){showCookieBanner();var c=getCookieConsent();if(c&&c.analytics){gtag('consent','update',{'analytics_storage':'granted'});loadAnalytics();}});
+    </script>
+  </body>
+</html>

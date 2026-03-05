@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How the Live Map Works (Without Being Creepy) | Go Rocco Blog</title>
+    <meta
+      name="description"
+      content="A friendly deep-dive into how Go Rocco's live map shows nearby dogs, temperament colours, and walking routes — all without compromising anyone's privacy."
+    />
+    <meta
+      name="keywords"
+      content="dog walking map app, live dog map UK, nearby dogs app, dog walking tracker GPS, how Go Rocco map works"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://go-rocco.com/blog/how-the-live-map-works.html" />
+    <meta name="geo.region" content="GB" />
+    <meta name="geo.placename" content="United Kingdom" />
+
+    <link rel="alternate" hreflang="en-GB" href="https://go-rocco.com/blog/how-the-live-map-works.html" />
+    <link rel="alternate" hreflang="en" href="https://go-rocco.com/blog/how-the-live-map-works.html" />
+    <link rel="alternate" hreflang="x-default" href="https://go-rocco.com/blog/how-the-live-map-works.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://go-rocco.com/blog/how-the-live-map-works.html" />
+    <meta property="og:site_name" content="Go Rocco" />
+    <meta property="og:title" content="How the Live Map Works (Without Being Creepy)" />
+    <meta property="og:description" content="A friendly deep-dive into how Go Rocco's live map shows nearby dogs and temperament colours." />
+    <meta property="og:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="article:published_time" content="2026-03-05" />
+    <meta property="article:section" content="Features" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@goroccoapp" />
+    <meta name="twitter:title" content="How the Live Map Works (Without Being Creepy)" />
+    <meta name="twitter:description" content="A friendly deep-dive into how Go Rocco's live map shows nearby dogs and temperament colours." />
+    <meta name="twitter:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How the Live Map Works (Without Being Creepy)",
+        "description": "A friendly deep-dive into how Go Rocco's live map shows nearby dogs, temperament colours, and walking routes — all without compromising anyone's privacy.",
+        "datePublished": "2026-03-05",
+        "author": {"@type": "Organization", "name": "Go Rocco"},
+        "publisher": {"@type": "Organization", "name": "Go Rocco", "logo": {"@type": "ImageObject", "url": "https://go-rocco.com/gorocco-app-icon.png"}},
+        "mainEntityOfPage": "https://go-rocco.com/blog/how-the-live-map-works.html",
+        "articleSection": "Features",
+        "wordCount": 1500,
+        "inLanguage": "en-GB"
+      }
+    </script>
+
+    <link rel="icon" type="image/png" href="../gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="../gorocco-app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .blog-post { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+      .blog-post-header { margin-bottom: 2rem; }
+      .blog-post-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--gray-600); margin-bottom: 1.5rem; }
+      .blog-post-category { display: inline-block; background: var(--rocco-blue); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+      .blog-post h1 { font-size: 2.25rem; color: var(--gray-900); font-weight: 900; line-height: 1.3; margin-bottom: 1rem; }
+      .blog-post h2 { font-size: 1.5rem; color: var(--gray-900); font-weight: 800; margin: 2.5rem 0 1rem; }
+      .blog-post h3 { font-size: 1.2rem; color: var(--gray-900); font-weight: 700; margin: 2rem 0 0.75rem; }
+      .blog-post p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
+      .blog-post ul, .blog-post ol { color: var(--gray-600); line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.5rem; }
+      .blog-post li { margin-bottom: 0.5rem; }
+      .blog-post blockquote { border-left: 4px solid var(--rocco-blue); padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(123, 203, 235, 0.08); border-radius: 0 12px 12px 0; }
+      .blog-post blockquote p { color: var(--gray-800); font-style: italic; margin-bottom: 0; }
+      .blog-post-cta { background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 100%); border-radius: 24px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+      .blog-post-cta h3 { margin-top: 0; }
+      .blog-post-cta .cta-btn { display: inline-block; background: var(--rocco-blue); color: var(--white); padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; font-family: 'Nunito', sans-serif; }
+      .blog-post-cta .cta-btn:hover { background: var(--rocco-blue-dark); transform: translateY(-2px); }
+      .blog-back { display: inline-block; color: var(--rocco-blue-dark); text-decoration: none; font-weight: 700; margin-bottom: 2rem; }
+      .blog-back:hover { text-decoration: underline; }
+      @media (max-width: 768px) { .blog-post h1 { font-size: 1.75rem; } .blog-post { padding: 1.5rem 1rem 3rem; } }
+    </style>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', 'wait_for_update': 500 });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF5KB7S3WL"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-XF5KB7S3WL', { 'cookie_flags': 'SameSite=None;Secure' });
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="../index.html" class="logo">
+        <img src="../assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../about.html">Our Story</a></li>
+        <li><a href="../roadmap.html">Roadmap</a></li>
+      </ul>
+      <a href="../index.html#download" class="nav-cta">Download</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html#features" class="mobile-nav-link">Features</a>
+      <a href="../pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="../about.html" class="mobile-nav-link">Our Story</a>
+      <a href="../roadmap.html" class="mobile-nav-link">Roadmap</a>
+      <a href="../index.html#early-adopter" class="nav-cta mobile-nav-link">Download Free</a>
+    </div>
+
+    <main id="main">
+      <article class="blog-post">
+        <a href="../blog.html" class="blog-back">&larr; Back to Blog</a>
+
+        <header class="blog-post-header">
+          <span class="blog-post-category">Features</span>
+          <h1>How the Live Map Works (Without Being Creepy)</h1>
+          <div class="blog-post-meta">
+            <span>March 2026</span>
+            <span>10 min read</span>
+          </div>
+        </header>
+
+        <p>The live map is the heart of Go Rocco. It's the feature people ask about most, and the one that took us the longest to get right. Not because the technology was hard (although it was), but because we had to balance two things that usually pull in opposite directions: being genuinely useful, and not being invasive.</p>
+
+        <p>This post explains how the map works under the hood — in plain English, no computer science degree required.</p>
+
+        <h2>The basics: what you see on the map</h2>
+
+        <p>When you open Go Rocco and start a walk, the map shows your local area with coloured circles representing nearby dogs who are also out walking. Each circle has a colour that corresponds to the dog's temperament setting:</p>
+
+        <ul>
+          <li><strong>Green (Friendly):</strong> This dog is sociable and happy to meet other dogs</li>
+          <li><strong>Amber (Selective):</strong> This dog is fine with some dogs but may need a calm introduction</li>
+          <li><strong>Red (Reactive):</strong> This dog needs space — please give them a wide berth</li>
+        </ul>
+
+        <p>You can also see basic profile information — the dog's name, breed, and size — if the owner has chosen to share it. Everything is opt-in. If someone hasn't set a temperament or hasn't shared their profile, they simply won't appear on your map.</p>
+
+        <h2>Approximate zones, not pinpoints</h2>
+
+        <p>This is the part that makes Go Rocco different from a standard GPS tracker. We don't show you exactly where a dog is standing. Instead, we show an approximate zone — a fuzzy circle roughly 50 metres in diameter.</p>
+
+        <p>Why? Because you don't need pinpoint accuracy to make better decisions on your walk. Knowing there's a reactive dog <em>somewhere on the path ahead</em> is just as useful as knowing their exact coordinates — and far less invasive for the other owner.</p>
+
+        <p>The technical term for this is "spatial generalisation." Your phone's GPS might know your position to within 5 metres, but Go Rocco deliberately rounds that to a much larger area before it ever reaches our servers. We don't store the precise data and then blur it on the screen. The precision is reduced at the source, so even our database doesn't know exactly where you were.</p>
+
+        <h2>How GPS tracking works during a walk</h2>
+
+        <p>When you tap "Start Walk" in Go Rocco, the app begins recording your route using your phone's built-in GPS. This is the same technology that powers Google Maps, Strava, and every other location-based app on your phone.</p>
+
+        <p>Your phone calculates its position by communicating with satellites (typically between 4 and 12 at any given time). In open areas, this is accurate to within a few metres. In built-up areas with tall buildings, or under heavy tree cover, accuracy can drop to 10-20 metres.</p>
+
+        <p>Go Rocco uses this GPS data for two things:</p>
+
+        <ol>
+          <li><strong>Your personal walk log:</strong> A detailed record of your route, distance, duration, and pace — visible only to you</li>
+          <li><strong>The live map:</strong> A fuzzed, approximate version of your location shared with nearby users (if you've opted in)</li>
+        </ol>
+
+        <p>These are treated completely differently. Your walk log stores your full route so you can review it later. The live map only ever sees the generalised zone. Two separate data paths, two different privacy levels.</p>
+
+        <h2>How temperament colours work on the map</h2>
+
+        <p>The colour system is one of Go Rocco's most important features, and it's deliberately simple. When you set up your dog's profile, you choose one of three temperament levels: Friendly (green), Selective (amber), or Reactive (red).</p>
+
+        <p>This information is displayed on the map as the colour of the dog's zone circle. It's visible to anyone nearby, and that's the point — it lets other walkers make informed decisions before they're close enough for an encounter to become difficult.</p>
+
+        <p>A few things to understand about how this works in practice:</p>
+
+        <ul>
+          <li><strong>Owners set their own temperament.</strong> We don't assess or rate dogs. The owner knows their dog best and chooses the level that reflects their dog's typical behaviour</li>
+          <li><strong>Temperaments can be changed at any time.</strong> A dog might be green most days but amber after a stressful vet visit. Owners can update this on the fly</li>
+          <li><strong>There's no judgement attached.</strong> Red doesn't mean "dangerous" — it means "needs space." Many reactive dogs are the sweetest animals you'll ever meet; they just need a calmer environment</li>
+        </ul>
+
+        <blockquote>
+          <p>"The colour system isn't about labelling dogs. It's about giving owners a voice — a way to communicate their dog's needs before words are even necessary."</p>
+        </blockquote>
+
+        <h2>Planning safer routes</h2>
+
+        <p>One of the most powerful uses of the live map is route planning. Before you head out, you can glance at the map to see which areas have dogs currently walking. If you have a reactive dog and the park is busy with green-zone dogs, you might choose a quieter route. If your dog is sociable and you want them to have a good run-around, you can head towards an area with other friendly dogs.</p>
+
+        <p>Over time, as more people use Go Rocco, the map builds up a picture of local walking patterns. You'll start to learn which areas are busy at which times, where off-lead dogs tend to congregate, and which routes are consistently quieter. This isn't data we display directly — it's something you'll naturally pick up from using the map regularly.</p>
+
+        <p>For owners of reactive or nervous dogs, this kind of awareness is genuinely life-changing. Instead of every walk being a source of anxiety, you can plan ahead and walk with confidence.</p>
+
+        <h2>What happens to your data</h2>
+
+        <p>Transparency matters to us, so here's exactly what happens with your location data:</p>
+
+        <ul>
+          <li><strong>During a walk:</strong> Your generalised zone is shared with nearby users in real time (if you've opted in). Your full route is recorded locally for your walk log</li>
+          <li><strong>After a walk:</strong> Your zone disappears from the live map. Your walk log is stored securely and is only visible to you</li>
+          <li><strong>If you go invisible:</strong> Your zone is immediately removed from the map. Other users won't know you were ever there</li>
+          <li><strong>If you delete your account:</strong> All data — walk logs, profile, temperament settings — is permanently deleted</li>
+        </ul>
+
+        <p>We don't sell location data. We don't share it with advertisers. We don't build movement profiles. The data exists to power the features you use, and nothing else.</p>
+
+        <h2>The technology behind the scenes</h2>
+
+        <p>For the technically curious, here's a simplified overview of the stack. Your phone sends its generalised location to our servers, which determine which other users are "nearby" (within a configurable radius). The server then sends back the generalised zones of those nearby dogs, along with their temperament and profile data.</p>
+
+        <p>This all happens in near real-time — typically within a couple of seconds. The map updates as you walk, so the picture of nearby dogs stays current. When a dog leaves the area or their owner ends the walk, they fade from the map.</p>
+
+        <p>The key architectural decision is that generalisation happens on your device, before data is transmitted. Your phone knows your exact location; our servers never do. This is a meaningful distinction — it means that even if our servers were compromised, precise location data simply wouldn't be there to steal.</p>
+
+        <div class="blog-post-cta">
+          <h3>See the map in action</h3>
+          <p>Go Rocco's live map shows nearby dogs, their temperaments, and helps you plan safer walks — all with privacy built in.</p>
+          <a href="../index.html#early-adopter" class="cta-btn">Join the Waitlist</a>
+        </div>
+
+        <h2>Why we didn't just use an existing map platform</h2>
+
+        <p>Early in development, we considered building on top of existing social map platforms. It would have been faster and cheaper. But every platform we evaluated had the same problem: they were built for precision. Find the nearest coffee shop. Navigate to an exact address. Track a delivery to the minute.</p>
+
+        <p>That mindset doesn't work for a community safety app. We needed a map that was deliberately imprecise — one that prioritised awareness over accuracy. So we built our own, from the ground up, with privacy constraints baked into every layer.</p>
+
+        <p>It took longer. It cost more. But it means we can look every user in the eye and say: your location data is handled with care, from the moment it leaves your phone to the moment it disappears from the map.</p>
+
+        <h2>What's coming next</h2>
+
+        <p>The live map is already the feature our early testers use most, but we have plans to make it even more useful. We're working on historical walk patterns (showing you your own walking habits over time), area alerts (notifications when a new dog appears on your regular route), and community reporting (letting users flag hazards like broken glass or livestock in fields).</p>
+
+        <p>All of these features will follow the same privacy principles: opt-in, generalised, transparent, and under your control.</p>
+
+        <p>The map is the foundation of Go Rocco. Everything else we build sits on top of it. And we're committed to making sure that foundation is one our users can trust completely.</p>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="../index.html#features">Features</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a href="../index.html#early-adopter">Early Access</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">Our Story</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../press.html">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+            <li><a href="../data-policy.html">Data Policy</a></li>
+            <li><a href="../cookies.html">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Go Rocco. All rights reserved. Made with &#x1f43e; in the UK.</p>
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active'); mobileMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+        });
+      });
+    </script>
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
+      <div class="cookie-content">
+        <p id="cookieDescription">We use cookies to improve your experience and analyze site traffic. <a href="../cookies.html">Learn more</a></p>
+        <div class="cookie-buttons">
+          <button type="button" class="cookie-btn reject" onclick="rejectOptionalCookies()">Reject Optional</button>
+          <button type="button" class="cookie-btn settings" onclick="window.location.href='../cookies.html'">Manage</button>
+          <button type="button" class="cookie-btn accept" onclick="acceptAllCookies()">Accept All</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function getCookieConsent(){try{var c=localStorage.getItem('gorocco_cookie_consent');var d=localStorage.getItem('gorocco_cookie_consent_date');if(!c||!d)return null;var e=new Date(d);e.setMonth(e.getMonth()+12);if(new Date()>e){localStorage.removeItem('gorocco_cookie_consent');localStorage.removeItem('gorocco_cookie_consent_date');return null;}return JSON.parse(c);}catch(x){return null;}}
+      function setCookieConsent(v){localStorage.setItem('gorocco_cookie_consent',JSON.stringify(v));localStorage.setItem('gorocco_cookie_consent_date',new Date().toISOString());}
+      function acceptAllCookies(){setCookieConsent({essential:true,analytics:true,functionality:true});gtag('consent','update',{'analytics_storage':'granted'});loadAnalytics();hideCookieBanner();}
+      function rejectOptionalCookies(){setCookieConsent({essential:true,analytics:false,functionality:false});gtag('consent','update',{'analytics_storage':'denied'});hideCookieBanner();}
+      function hideCookieBanner(){document.getElementById('cookieBanner').classList.remove('active');}
+      function showCookieBanner(){if(!getCookieConsent()){document.getElementById('cookieBanner').classList.add('active');}}
+      function loadAnalytics(){var c=getCookieConsent();if(!c||!c.analytics)return;if(!document.getElementById('cf-beacon-script')){var s=document.createElement('script');s.id='cf-beacon-script';s.defer=true;s.src='https://static.cloudflareinsights.com/beacon.min.js';s.setAttribute('data-cf-beacon','{"token":"644d34331b7b4af0beacf23a746bb948"}');document.body.appendChild(s);}if(!window.clarity){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vd24wvz3m1");}}
+      document.addEventListener('DOMContentLoaded',function(){showCookieBanner();var c=getCookieConsent();if(c&&c.analytics){gtag('consent','update',{'analytics_storage':'granted'});loadAnalytics();}});
+    </script>
+  </body>
+</html>
