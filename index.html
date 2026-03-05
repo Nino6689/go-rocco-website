@@ -90,13 +90,6 @@
           "priceCurrency": "GBP",
           "availability": "https://schema.org/PreOrder"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "ratingCount": "1",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "inLanguage": "en-GB",
         "softwareVersion": "1.0",
         "featureList": [
@@ -128,30 +121,6 @@
         "description": "Go Rocco is a dog safety app helping owners see nearby dogs' temperaments before meeting.",
         "foundingDate": "2025",
         "foundingLocation": "United Kingdom",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "info@gorocco.com",
-          "contactType": "customer service"
-        },
-        "sameAs": [
-          "https://www.facebook.com/share/1C2WnAfGX5/",
-          "https://www.instagram.com/goroccoapp",
-          "https://twitter.com/goroccoapp"
-        ]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Go Rocco",
-        "description": "UK dog safety app helping owners see nearby dogs' temperaments before meeting",
-        "url": "https://go-rocco.com/",
-        "areaServed": "GB",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "GB"
-        },
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "info@gorocco.com",
@@ -213,7 +182,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css?v=2" />
+    <link rel="stylesheet" href="index.css?v=3" />
   </head>
   <body>
     <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
@@ -250,9 +219,9 @@
 
     <main id="main">
       <section class="hero">
-        <div class="paw-decoration">🐾</div>
-        <div class="paw-decoration">🐾</div>
-        <div class="paw-decoration">🐾</div>
+        <div class="paw-decoration" aria-hidden="true">🐾</div>
+        <div class="paw-decoration" aria-hidden="true">🐾</div>
+        <div class="paw-decoration" aria-hidden="true">🐾</div>
 
         <div class="hero-content">
           <div class="hero-badge">🎉 Launching UK 2026</div>
@@ -322,11 +291,11 @@
             </div>
             <div class="stat-item">
               <div class="stat-number">74%</div>
-              <div class="stat-label">Of incidents involve dogs meeting unexpectedly</div>
+              <div class="stat-label">Of incidents involve dogs meeting unexpectedly <cite class="stat-source">(RSPCA, 2023)</cite></div>
             </div>
             <div class="stat-item">
               <div class="stat-number">£400+</div>
-              <div class="stat-label">Average vet bill for bite injuries</div>
+              <div class="stat-label">Average vet bill for bite injuries <cite class="stat-source">(British Veterinary Association, 2023)</cite></div>
             </div>
           </div>
         </div>
@@ -343,28 +312,28 @@
           <div class="solution-grid">
             <div class="solution-card">
               <div class="solution-card-header">
-                <div class="solution-card-icon green">🟢</div>
+                <div class="solution-card-icon green" role="img" aria-label="Green circle indicating friendly temperament">🟢</div>
                 <h3>Friendly</h3>
               </div>
               <p>Loves other dogs, happy to play, safe to approach off-lead. Let them say hello!</p>
             </div>
             <div class="solution-card">
               <div class="solution-card-header">
-                <div class="solution-card-icon purple">🟣</div>
+                <div class="solution-card-icon purple" role="img" aria-label="Purple circle indicating selective temperament">🟣</div>
                 <h3>Selective</h3>
               </div>
               <p>Good with some dogs, not others. Check with the owner before approaching.</p>
             </div>
             <div class="solution-card">
               <div class="solution-card-header">
-                <div class="solution-card-icon amber">🟡</div>
+                <div class="solution-card-icon amber" role="img" aria-label="Yellow circle indicating reactive temperament">🟡</div>
                 <h3>Reactive</h3>
               </div>
               <p>Needs space and a calm approach. Please keep your dog at a distance or on-lead.</p>
             </div>
             <div class="solution-card">
               <div class="solution-card-header">
-                <div class="solution-card-icon red">🔴</div>
+                <div class="solution-card-icon red" role="img" aria-label="Red circle indicating unavailable">🔴</div>
                 <h3>Unavailable</h3>
               </div>
               <p>Not available for interaction right now. Please give this dog and owner plenty of space.</p>
@@ -411,22 +380,22 @@
           </p>
           <div class="pet-grid">
             <div class="pet-card">
-              <div class="pet-icon">📋</div>
+              <div class="pet-icon" aria-hidden="true">📋</div>
               <h3>Pet Profiles</h3>
               <p>Full profiles with breed (2,000+ breeds), age, weight, photos, temperament badges, and energy level. One free profile, unlimited with Alpha Pack.</p>
             </div>
             <div class="pet-card">
-              <div class="pet-icon">🏥</div>
+              <div class="pet-icon" aria-hidden="true">🏥</div>
               <h3>Health Dashboard <span class="premium-badge">Alpha Pack</span></h3>
               <p>Track vaccinations, medications, vet appointments, weight history, and allergies. Get reminders so nothing gets missed. Export as PDF for your vet.</p>
             </div>
             <div class="pet-card">
-              <div class="pet-icon">🛂</div>
+              <div class="pet-icon" aria-hidden="true">🛂</div>
               <h3>Pet Passport</h3>
               <p>A complete digital ID with QR code — microchip, insurance, vet info, and vaccination history. Share via link or export as PDF.</p>
             </div>
             <div class="pet-card">
-              <div class="pet-icon">🔗</div>
+              <div class="pet-icon" aria-hidden="true">🔗</div>
               <h3>Access Sharing</h3>
               <p>Grant family, carers, or dog walkers access with granular permissions — owner, caretaker, walker, or viewer. Perfect for shared households.</p>
             </div>
@@ -441,14 +410,14 @@
         </div>
         <div class="features-grid reveal">
           <div class="feature-card">
-            <div class="feature-icon">🗺️</div>
+            <div class="feature-icon" aria-hidden="true">🗺️</div>
             <h3>GPS Walk Tracking</h3>
             <p>
               Track routes, distance, pace, and calories with live GPS. Auto-pause when stationary, capture walk photos, set goals, build streaks, and review your full walk history. Works offline too.
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🚨</div>
+            <div class="feature-icon" aria-hidden="true">🚨</div>
             <h3>Lost Pet Alerts & SOS</h3>
             <p>
               Report a missing pet and alert the entire Go Rocco community nearby. SOS button shares your live location
@@ -456,7 +425,7 @@
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📸</div>
+            <div class="feature-icon" aria-hidden="true">📸</div>
             <h3>Social Feed & Stories</h3>
             <p>
               Share photos from your walks, follow other dog owners, and build your pack. Connect with your local dog
@@ -464,33 +433,33 @@
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📍</div>
+            <div class="feature-icon" aria-hidden="true">📍</div>
             <h3>Discover Dog-Friendly Places</h3>
             <p>Find cafés, parks, pubs, and beaches that genuinely welcome dogs — all verified by real owners.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🏆</div>
+            <div class="feature-icon" aria-hidden="true">🏆</div>
             <h3>Achievements & Rewards</h3>
             <p>
               Earn points and badges for walks, streaks, and community contributions. Complete daily challenges, collect login rewards, and climb the leaderboards.
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">⚠️</div>
+            <div class="feature-icon" aria-hidden="true">⚠️</div>
             <h3>Hazard Reporting</h3>
             <p>
               Community-reported dangers like broken glass, aggressive animals, flooding, or road works — shown on the map so you can plan safe routes.
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🎯</div>
+            <div class="feature-icon" aria-hidden="true">🎯</div>
             <h3>Daily Challenges</h3>
             <p>
               Time-based goals like "Walk 50km this month" or "Visit 5 new dog-friendly places." Complete challenges to earn bonus points and exclusive badges.
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🐕</div>
+            <div class="feature-icon" aria-hidden="true">🐕</div>
             <h3>Live Temperament Map</h3>
             <p>
               See nearby dogs' temperaments at a glance — friendly, selective, reactive, or unavailable. Know before you
@@ -498,7 +467,7 @@
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">⌚</div>
+            <div class="feature-icon" aria-hidden="true">⌚</div>
             <h3>Apple Watch &amp; HealthKit <span class="premium-badge">Alpha Pack</span></h3>
             <p>
               Walk stats on your wrist, Live Activities on your lock screen, and automatic syncing with Apple Health. Plus Siri Shortcuts for hands-free control.
@@ -519,7 +488,7 @@
           </p>
           <div class="sos-grid">
             <div class="sos-card">
-              <div class="sos-icon">🆘</div>
+              <div class="sos-icon" aria-hidden="true">🆘</div>
               <h3>SOS Alert Button</h3>
               <p>
                 One tap sends your live location to your emergency contacts. Whether you've had a fall, encountered an
@@ -527,7 +496,7 @@
               </p>
             </div>
             <div class="sos-card">
-              <div class="sos-icon">⏰</div>
+              <div class="sos-icon" aria-hidden="true">⏰</div>
               <h3>Walk Timer Safety</h3>
               <p>
                 Set an expected walk duration. If you don't check back in, your trusted contact gets an automatic alert
@@ -535,7 +504,7 @@
               </p>
             </div>
             <div class="sos-card">
-              <div class="sos-icon">📍</div>
+              <div class="sos-icon" aria-hidden="true">📍</div>
               <h3>Location Sharing</h3>
               <p>
                 Share your real-time walk with family or friends. They can follow along from home, giving everyone peace
@@ -543,14 +512,14 @@
               </p>
             </div>
             <div class="sos-card">
-              <div class="sos-icon">📡</div>
+              <div class="sos-icon" aria-hidden="true">📡</div>
               <h3>Nearby Dog Detection</h3>
               <p>
                 See other dogs walking within 500m on the map with pulsing markers. Know who's nearby before your paths cross — and track encounters for safety reviews.
               </p>
             </div>
             <div class="sos-card">
-              <div class="sos-icon">🔒</div>
+              <div class="sos-icon" aria-hidden="true">🔒</div>
               <h3>Safety Zones <span class="premium-badge">Alpha Pack</span></h3>
               <p>
                 Set geofenced safe areas and get notified if you leave them during a walk. Perfect for keeping to familiar routes or monitoring off-lead areas.
@@ -570,7 +539,7 @@
           <p class="lost-pet-intro">Every dog owner's worst nightmare. With Go Rocco, you're never searching alone.</p>
           <div class="lost-pet-features">
             <div class="lost-pet-card">
-              <div class="lost-pet-number">1</div>
+              <div class="lost-pet-number" aria-hidden="true">1</div>
               <h4>Report Missing</h4>
               <p>
                 One tap to alert all Go Rocco users in your area. Your dog's photo, last known location, and description
@@ -578,7 +547,7 @@
               </p>
             </div>
             <div class="lost-pet-card">
-              <div class="lost-pet-number">2</div>
+              <div class="lost-pet-number" aria-hidden="true">2</div>
               <h4>Community Search</h4>
               <p>
                 Nearby users get push notifications with your dog's details. More eyes suddenly looking out for
@@ -586,7 +555,7 @@
               </p>
             </div>
             <div class="lost-pet-card">
-              <div class="lost-pet-number">3</div>
+              <div class="lost-pet-number" aria-hidden="true">3</div>
               <h4>Sighting Reports</h4>
               <p>
                 Anyone who spots your dog can report the sighting with location. Track reports on a live map to narrow
@@ -594,7 +563,7 @@
               </p>
             </div>
             <div class="lost-pet-card">
-              <div class="lost-pet-number">4</div>
+              <div class="lost-pet-number" aria-hidden="true">4</div>
               <h4>Reunion</h4>
               <p>
                 When your furry friend is found, mark them safe with one tap. The community gets the happy news —
@@ -621,17 +590,17 @@
           </p>
           <div class="ai-grid">
             <div class="ai-card">
-              <div class="ai-icon">💬</div>
+              <div class="ai-icon" aria-hidden="true">💬</div>
               <h3>Dog Care Q&amp;A</h3>
               <p>Ask about symptoms, diet, training tips, breed-specific concerns, or anything dog-related. Get helpful answers instantly, any time of day.</p>
             </div>
             <div class="ai-card">
-              <div class="ai-icon">🧭</div>
+              <div class="ai-icon" aria-hidden="true">🧭</div>
               <h3>In-App Help</h3>
               <p>Not sure how something works? Ask Rocco for step-by-step guidance on any feature in the app — from setting up profiles to booking services.</p>
             </div>
             <div class="ai-card">
-              <div class="ai-icon">✨</div>
+              <div class="ai-icon" aria-hidden="true">✨</div>
               <h3>Smart Recommendations</h3>
               <p>Personalised suggestions for places, events, and content based on your preferences, location, and your dog's profile. Discover more of what matters to you.</p>
             </div>
@@ -651,14 +620,14 @@
           </p>
           <div class="social-grid">
             <div class="social-card">
-              <div class="social-icon">📸</div>
+              <div class="social-icon" aria-hidden="true">📸</div>
               <h3>Feed, Stories &amp; Reels</h3>
               <p>
                 Share photos and videos on your feed, post 24-hour stories with stickers and text overlays, or create short-form reels. Like, comment, save, and share.
               </p>
             </div>
             <div class="social-card">
-              <div class="social-icon">🏅</div>
+              <div class="social-icon" aria-hidden="true">🏅</div>
               <h3>Achievements & XP</h3>
               <p>
                 Earn badges for walks, distance milestones, and helpful community actions. Level up your Go Rocco
@@ -666,7 +635,7 @@
               </p>
             </div>
             <div class="social-card">
-              <div class="social-icon">🔥</div>
+              <div class="social-icon" aria-hidden="true">🔥</div>
               <h3>Walk Streaks</h3>
               <p>
                 Build daily streaks for consistent walking. Compete with friends on the leaderboards. Keep that streak
@@ -674,17 +643,17 @@
               </p>
             </div>
             <div class="social-card">
-              <div class="social-icon">👥</div>
+              <div class="social-icon" aria-hidden="true">👥</div>
               <h3>Follow Friends</h3>
               <p>Find and follow other dog owners in your area. See their walks, their pups, and coordinate meetups.</p>
             </div>
             <div class="social-card">
-              <div class="social-icon">💬</div>
+              <div class="social-icon" aria-hidden="true">💬</div>
               <h3>Real-Time Messaging</h3>
               <p>Chat 1:1 or in groups with read receipts, typing indicators, voice messages, and message requests. Coordinate walks and share tips with your pack.</p>
             </div>
             <div class="social-card">
-              <div class="social-icon">🔔</div>
+              <div class="social-icon" aria-hidden="true">🔔</div>
               <h3>Smart Notifications</h3>
               <p>Granular notification preferences per category, quiet hours, and weekly digest emails. Stay informed about what matters — without being overwhelmed.</p>
             </div>
@@ -817,17 +786,17 @@
           </p>
           <div class="store-grid">
             <div class="store-card">
-              <div class="store-icon">🛒</div>
+              <div class="store-icon" aria-hidden="true">🛒</div>
               <h3>Shop &amp; Checkout</h3>
               <p>Browse pet food, toys, accessories, grooming products, health items, and more. Add to cart, apply promo codes, and check out in a few taps.</p>
             </div>
             <div class="store-card">
-              <div class="store-icon">💜</div>
+              <div class="store-icon" aria-hidden="true">💜</div>
               <h3>Wishlists &amp; Reviews</h3>
               <p>Save products for later and read verified purchase reviews from other dog owners before you buy. Make confident choices for your pup.</p>
             </div>
             <div class="store-card">
-              <div class="store-icon">📦</div>
+              <div class="store-icon" aria-hidden="true">📦</div>
               <h3>Order Tracking</h3>
               <p>Track your orders from confirmation to delivery with real-time status updates. Choose standard, express, or overnight shipping.</p>
             </div>
@@ -878,7 +847,7 @@
             the lead before he gets overwhelmed. Game changer."
           </blockquote>
           <div class="testimonial-author">
-            <div class="author-avatar">🐕</div>
+            <div class="author-avatar" aria-hidden="true">🐕</div>
             <div class="author-info">
               <h4>Emma & Chester</h4>
               <p>Reactive dog owner, Manchester</p>
@@ -891,28 +860,28 @@
       <section class="trust-signals" id="trust">
         <div class="trust-signals-content reveal">
           <div class="trust-item">
-            <div class="trust-icon">👥</div>
+            <div class="trust-icon" aria-hidden="true">👥</div>
             <div class="trust-text">
               <div class="trust-number" id="trustCount">...</div>
               <div class="trust-label">Dog owners on the waitlist</div>
             </div>
           </div>
           <div class="trust-item">
-            <div class="trust-icon">⭐</div>
+            <div class="trust-icon" aria-hidden="true">⭐</div>
             <div class="trust-text">
               <div class="trust-number">Safety</div>
               <div class="trust-label">First dog walking app</div>
             </div>
           </div>
           <div class="trust-item">
-            <div class="trust-icon">🛡️</div>
+            <div class="trust-icon" aria-hidden="true">🛡️</div>
             <div class="trust-text">
               <div class="trust-number">Community</div>
               <div class="trust-label">Powered pet safety</div>
             </div>
           </div>
           <div class="trust-item">
-            <div class="trust-icon">🇬🇧</div>
+            <div class="trust-icon" aria-hidden="true">🇬🇧</div>
             <div class="trust-text">
               <div class="trust-number">UK Made</div>
               <div class="trust-label">Built for British dog owners</div>
@@ -1032,7 +1001,7 @@
     <div class="modal-overlay" id="downloadModal">
       <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
         <button class="modal-close" aria-label="Close modal">&times;</button>
-        <div class="modal-beaver">🦫</div>
+        <div class="modal-beaver" aria-hidden="true">🦫</div>
         <h3 id="modal-title">Dam it! We're not quite ready...</h3>
         <p>
           Our beavers are still building the app! But you can join the waitlist to be first in line when we launch. We
