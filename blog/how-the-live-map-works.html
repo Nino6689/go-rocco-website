@@ -26,9 +26,10 @@
     <meta property="og:site_name" content="Go Rocco" />
     <meta property="og:title" content="How the Live Map Works (Without Being Creepy)" />
     <meta property="og:description" content="A friendly deep-dive into how Go Rocco's live map shows nearby dogs and temperament colours." />
-    <meta property="og:image" content="https://go-rocco.com/gorocco-app-icon.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:image" content="https://go-rocco.com/assets/blog/how-the-live-map-works.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Go Rocco live map showing nearby dogs with temperament colours" />
     <meta property="og:locale" content="en_GB" />
     <meta property="article:published_time" content="2026-03-05" />
     <meta property="article:modified_time" content="2026-03-05" />
@@ -38,13 +39,14 @@
     <meta name="twitter:site" content="@goroccoapp" />
     <meta name="twitter:title" content="How the Live Map Works (Without Being Creepy)" />
     <meta name="twitter:description" content="A friendly deep-dive into how Go Rocco's live map shows nearby dogs and temperament colours." />
-    <meta name="twitter:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+    <meta name="twitter:image" content="https://go-rocco.com/assets/blog/how-the-live-map-works.jpg" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "How the Live Map Works (Without Being Creepy)",
+        "image": "https://go-rocco.com/assets/blog/how-the-live-map-works.jpg",
         "description": "A friendly deep-dive into how Go Rocco's live map shows nearby dogs, temperament colours, and walking routes — all without compromising anyone's privacy.",
         "datePublished": "2026-03-05",
         "dateModified": "2026-03-05",
@@ -56,7 +58,43 @@
         "inLanguage": "en-GB"
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How Go Rocco's live map works",
+        "description": "A step-by-step explanation of how the Go Rocco live map shows nearby dogs, their temperaments, and walking routes while protecting privacy.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Open the map and start a walk",
+            "text": "Tap 'Start Walk' in Go Rocco. The app begins recording your route using your phone's GPS."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "See nearby dogs on the map",
+            "text": "Coloured circles appear showing nearby dogs who are also walking. Green means friendly, amber means selective, red means reactive."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Location is fuzzed for privacy",
+            "text": "Every dog's position is rounded to a 50-metre approximate zone. You see the general area, not an exact pinpoint."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Plan your route based on what you see",
+            "text": "If you have a reactive dog and the park is busy with off-lead dogs, choose a quieter route before you get close."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "End your walk",
+            "text": "Your zone disappears from the live map. Your detailed walk log is stored privately and visible only to you."
+          }
+        ]
+      }
+    </script>
 
+    <link rel="alternate" type="application/rss+xml" title="Go Rocco Blog" href="https://go-rocco.com/feed.xml" />
     <link rel="icon" type="image/png" href="../gorocco-app-icon.png" />
     <link rel="apple-touch-icon" href="../gorocco-app-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -110,6 +148,7 @@
         <li><a href="../pricing.html">Pricing</a></li>
         <li><a href="../about.html">Our Story</a></li>
         <li><a href="../roadmap.html">Roadmap</a></li>
+        <li><a href="../blog.html">Blog</a></li>
       </ul>
       <a href="../index.html#download" class="nav-cta">Download</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -122,6 +161,7 @@
       <a href="../pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="../about.html" class="mobile-nav-link">Our Story</a>
       <a href="../roadmap.html" class="mobile-nav-link">Roadmap</a>
+      <a href="../blog.html" class="mobile-nav-link">Blog</a>
       <a href="../index.html#early-adopter" class="nav-cta mobile-nav-link">Download Free</a>
     </div>
 
@@ -133,16 +173,33 @@
           <span class="blog-post-category">Features</span>
           <h1>How the Live Map Works (Without Being Creepy)</h1>
           <div class="blog-post-meta">
-            <span>March 2026</span>
+            <span>Published 5 March 2026</span>
+            <span>By the Go Rocco Team</span>
             <span>10 min read</span>
           </div>
         </header>
+
+        <img src="../assets/blog/how-the-live-map-works.jpg" alt="Go Rocco live map showing nearby dogs with temperament colours" class="blog-hero-img" width="1200" height="630" />
 
         <p>The live map is the heart of Go Rocco. It's the feature people ask about most, and the one that took us the longest to get right. Not because the technology was hard (although it was), but because we had to balance two things that usually pull in opposite directions: being genuinely useful, and not being invasive.</p>
 
         <p>This post explains how the map works under the hood — in plain English, no computer science degree required.</p>
 
-        <h2>The basics: what you see on the map</h2>
+        <nav class="blog-toc">
+          <ol>
+            <li><a href="#the-basics-what-you-see-on-the-map">The basics: what you see on the map</a></li>
+            <li><a href="#approximate-zones-not-pinpoints">Approximate zones, not pinpoints</a></li>
+            <li><a href="#how-gps-tracking-works-during-a-walk">How GPS tracking works during a walk</a></li>
+            <li><a href="#how-temperament-colours-work-on-the-map">How temperament colours work on the map</a></li>
+            <li><a href="#planning-safer-routes">Planning safer routes</a></li>
+            <li><a href="#what-happens-to-your-data">What happens to your data</a></li>
+            <li><a href="#the-technology-behind-the-scenes">The technology behind the scenes</a></li>
+            <li><a href="#why-we-didnt-just-use-an-existing-map-platform">Why we didn't just use an existing map platform</a></li>
+            <li><a href="#whats-coming-next">What's coming next</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="the-basics-what-you-see-on-the-map">The basics: what you see on the map</h2>
 
         <p>When you open Go Rocco and start a walk, the map shows your local area with coloured circles representing nearby dogs who are also out walking. Each circle has a colour that corresponds to the dog's temperament setting:</p>
 
@@ -154,7 +211,7 @@
 
         <p>You can also see basic profile information — the dog's name, breed, and size — if the owner has chosen to share it. Everything is opt-in. If someone hasn't set a temperament or hasn't shared their profile, they simply won't appear on your map.</p>
 
-        <h2>Approximate zones, not pinpoints</h2>
+        <h2 id="approximate-zones-not-pinpoints">Approximate zones, not pinpoints</h2>
 
         <p>This is the part that makes Go Rocco different from a standard GPS tracker. We don't show you exactly where a dog is standing. Instead, we show an approximate zone — a fuzzy circle roughly 50 metres in diameter.</p>
 
@@ -162,7 +219,7 @@
 
         <p>The technical term for this is "spatial generalisation." Your phone's GPS might know your position to within 5 metres, but Go Rocco deliberately rounds that to a much larger area before it ever reaches our servers. We don't store the precise data and then blur it on the screen. The precision is reduced at the source, so even our database doesn't know exactly where you were.</p>
 
-        <h2>How GPS tracking works during a walk</h2>
+        <h2 id="how-gps-tracking-works-during-a-walk">How GPS tracking works during a walk</h2>
 
         <p>When you tap "Start Walk" in Go Rocco, the app begins recording your route using your phone's built-in GPS. This is the same technology that powers Google Maps, Strava, and every other location-based app on your phone.</p>
 
@@ -177,7 +234,7 @@
 
         <p>These are treated completely differently. Your walk log stores your full route so you can review it later. The live map only ever sees the generalised zone. Two separate data paths, two different privacy levels.</p>
 
-        <h2>How temperament colours work on the map</h2>
+        <h2 id="how-temperament-colours-work-on-the-map">How temperament colours work on the map</h2>
 
         <p>The colour system is one of Go Rocco's most important features, and it's deliberately simple. When you set up your dog's profile, you choose one of three temperament levels: Friendly (green), Selective (amber), or Reactive (red).</p>
 
@@ -195,7 +252,7 @@
           <p>"The colour system isn't about labelling dogs. It's about giving owners a voice — a way to communicate their dog's needs before words are even necessary."</p>
         </blockquote>
 
-        <h2>Planning safer routes</h2>
+        <h2 id="planning-safer-routes">Planning safer routes</h2>
 
         <p>One of the most powerful uses of the live map is route planning. Before you head out, you can glance at the map to see which areas have dogs currently walking. If you have a reactive dog and the park is busy with green-zone dogs, you might choose a quieter route. If your dog is sociable and you want them to have a good run-around, you can head towards an area with other friendly dogs.</p>
 
@@ -203,7 +260,7 @@
 
         <p>For owners of reactive or nervous dogs, this kind of awareness is genuinely life-changing. Instead of every walk being a source of anxiety, you can plan ahead and walk with confidence.</p>
 
-        <h2>What happens to your data</h2>
+        <h2 id="what-happens-to-your-data">What happens to your data</h2>
 
         <p>Transparency matters to us, so here's exactly what happens with your location data:</p>
 
@@ -216,7 +273,7 @@
 
         <p>We don't sell location data. We don't share it with advertisers. We don't build movement profiles. The data exists to power the features you use, and nothing else.</p>
 
-        <h2>The technology behind the scenes</h2>
+        <h2 id="the-technology-behind-the-scenes">The technology behind the scenes</h2>
 
         <p>For the technically curious, here's a simplified overview of the stack. Your phone sends its generalised location to our servers, which determine which other users are "nearby" (within a configurable radius). The server then sends back the generalised zones of those nearby dogs, along with their temperament and profile data.</p>
 
@@ -230,7 +287,7 @@
           <a href="../index.html#early-adopter" class="cta-btn">Join the Waitlist</a>
         </div>
 
-        <h2>Why we didn't just use an existing map platform</h2>
+        <h2 id="why-we-didnt-just-use-an-existing-map-platform">Why we didn't just use an existing map platform</h2>
 
         <p>Early in development, we considered building on top of existing social map platforms. It would have been faster and cheaper. But every platform we evaluated had the same problem: they were built for precision. Find the nearest coffee shop. Navigate to an exact address. Track a delivery to the minute.</p>
 
@@ -238,13 +295,37 @@
 
         <p>It took longer. It cost more. But it means we can look every user in the eye and say: your location data is handled with care, from the moment it leaves your phone to the moment it disappears from the map.</p>
 
-        <h2>What's coming next</h2>
+        <h2 id="whats-coming-next">What's coming next</h2>
 
         <p>The live map is already the feature our early testers use most, but we have plans to make it even more useful. We're working on historical walk patterns (showing you your own walking habits over time), area alerts (notifications when a new dog appears on your regular route), and community reporting (letting users flag hazards like broken glass or livestock in fields).</p>
 
         <p>All of these features will follow the same privacy principles: opt-in, generalised, transparent, and under your control.</p>
 
         <p>The map is the foundation of Go Rocco. Everything else we build sits on top of it. And we're committed to making sure that foundation is one our users can trust completely.</p>
+
+        <div class="share-bar">
+          <span>Share this:</span>
+          <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=https://go-rocco.com/blog/how-the-live-map-works.html&text=How%20the%20Live%20Map%20Works%20(Without%20Being%20Creepy)" target="_blank" rel="noopener" aria-label="Share on Twitter">&#x1d54f;</a>
+          <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://go-rocco.com/blog/how-the-live-map-works.html" target="_blank" rel="noopener" aria-label="Share on Facebook">f</a>
+          <a class="share-btn whatsapp" href="https://wa.me/?text=How%20the%20Live%20Map%20Works%20(Without%20Being%20Creepy)%20https://go-rocco.com/blog/how-the-live-map-works.html" target="_blank" rel="noopener" aria-label="Share on WhatsApp">w</a>
+          <button type="button" class="share-btn copy-link" onclick="navigator.clipboard.writeText('https://go-rocco.com/blog/how-the-live-map-works.html');this.textContent='&#x2713;';setTimeout(()=>this.textContent='&#x1f517;',2000)" aria-label="Copy link">&#x1f517;</button>
+        </div>
+
+        <section class="related-articles">
+          <h2>You might also like</h2>
+          <div class="related-articles-grid">
+            <a href="the-50-metre-rule.html" class="related-card">
+              <span class="related-card-category">Privacy</span>
+              <h3>The 50-Metre Rule: Why We Built Privacy Into Go Rocco</h3>
+              <p>How Go Rocco shows nearby dogs without exposing exact locations.</p>
+            </a>
+            <a href="best-dog-walking-routes-uk.html" class="related-card">
+              <span class="related-card-category">Dog Walking</span>
+              <h3>Best Dog Walking Routes in the UK for 2026</h3>
+              <p>Discover the best dog-friendly trails across the UK.</p>
+            </a>
+          </div>
+        </section>
       </article>
     </main>
 

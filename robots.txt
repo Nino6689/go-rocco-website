@@ -10,5 +10,8 @@ Disallow: /upload/
 # Sitemap location
 Sitemap: https://go-rocco.com/sitemap.xml
 
+# RSS Feed
+# https://go-rocco.com/feed.xml
+
 # Crawl-delay for polite crawling
 Crawl-delay: 1

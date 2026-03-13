@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go Rocco Blog</title>
+    <link>https://go-rocco.com/blog.html</link>
+    <description>Dog safety tips, reactive dog advice, and UK dog walking guides from Go Rocco.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://go-rocco.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Dog Walking Laws UK: Rights, Rules &amp; Lead Requirements</title>
+      <link>https://go-rocco.com/blog/dog-walking-laws-uk.html</link>
+      <description>A complete guide to dog walking laws in the UK for 2026. Lead requirements, right to roam, livestock rules, dangerous dogs act, and your legal rights as a dog owner.</description>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/dog-walking-laws-uk.html</guid>
+      <category>Legal</category>
+    </item>
+
+    <item>
+      <title>How to Socialise a Puppy: A Week-by-Week UK Guide</title>
+      <link>https://go-rocco.com/blog/how-to-socialise-a-puppy.html</link>
+      <description>A practical week-by-week guide to puppy socialisation in the UK. From first walks to meeting other dogs, how to build a confident, well-adjusted dog.</description>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/how-to-socialise-a-puppy.html</guid>
+      <category>Training</category>
+    </item>
+
+    <item>
+      <title>XL Bully Ban UK: What Dog Owners Need to Know in 2026</title>
+      <link>https://go-rocco.com/blog/xl-bully-ban-uk.html</link>
+      <description>Everything UK dog owners need to know about the XL Bully ban in 2026. Exemption rules, registration deadlines, walking requirements, and what it means for owners.</description>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/xl-bully-ban-uk.html</guid>
+      <category>Legal</category>
+    </item>
+
+    <item>
+      <title>Dog Bite Statistics UK 2026: What Every Owner Should Know</title>
+      <link>https://go-rocco.com/blog/dog-bite-statistics-uk.html</link>
+      <description>UK dog bite statistics for 2026. Hospital admissions data, breed analysis, risk factors, and how awareness and responsible ownership can prevent incidents.</description>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/dog-bite-statistics-uk.html</guid>
+      <category>Dog Safety</category>
+    </item>
+
+    <item>
+      <title>Dog-Friendly Pubs and Cafes: A Complete UK Guide</title>
+      <link>https://go-rocco.com/blog/dog-friendly-pubs-cafes-uk.html</link>
+      <description>The best dog-friendly pubs and cafes across the UK. Regional picks, what to expect, etiquette tips, and how to find welcoming spots for you and your dog.</description>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/dog-friendly-pubs-cafes-uk.html</guid>
+      <category>Lifestyle</category>
+    </item>
+
+    <item>
+      <title>Separation Anxiety in Dogs: Signs, Causes &amp; Solutions</title>
+      <link>https://go-rocco.com/blog/separation-anxiety-in-dogs.html</link>
+      <description>How to recognise and help separation anxiety in dogs. Signs, causes, proven solutions, and when to seek professional help. A UK guide for worried owners.</description>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/separation-anxiety-in-dogs.html</guid>
+      <category>Health</category>
+    </item>
+
+    <item>
+      <title>Best Dog Walking Routes in the UK for 2026</title>
+      <link>https://go-rocco.com/blog/best-dog-walking-routes-uk.html</link>
+      <description>Discover the best dog walking routes across the UK for 2026. Dog-friendly trails with lead rules, parking tips, and scenic walk guides.</description>
+      <pubDate>Wed, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/best-dog-walking-routes-uk.html</guid>
+      <category>Dog Walking</category>
+    </item>
+
+    <item>
+      <title>What To Do If an Off-Lead Dog Approaches Yours</title>
+      <link>https://go-rocco.com/blog/what-to-do-off-lead-dog.html</link>
+      <description>Practical advice for UK dog owners when an unfamiliar off-lead dog runs towards yours. Stay calm, protect your dog, and know your legal rights.</description>
+      <pubDate>Wed, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/what-to-do-off-lead-dog.html</guid>
+      <category>Dog Safety</category>
+    </item>
+
+    <item>
+      <title>How the Live Map Works (Without Being Creepy)</title>
+      <link>https://go-rocco.com/blog/how-the-live-map-works.html</link>
+      <description>A friendly deep-dive into how Go Rocco's live map shows nearby dogs, temperament colours, and walking routes — all without compromising anyone's privacy.</description>
+      <pubDate>Wed, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/how-the-live-map-works.html</guid>
+      <category>Features</category>
+    </item>
+
+    <item>
+      <title>The 50-Metre Rule: Why We Built Privacy Into Go Rocco</title>
+      <link>https://go-rocco.com/blog/the-50-metre-rule.html</link>
+      <description>How Go Rocco shows nearby dogs without exposing exact locations. Learn about the 50-metre fuzzy radius and why we chose privacy-first over precision.</description>
+      <pubDate>Wed, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/the-50-metre-rule.html</guid>
+      <category>Privacy</category>
+    </item>
+
+    <item>
+      <title>Nervous Dogs Aren't Bad Dogs</title>
+      <link>https://go-rocco.com/blog/nervous-dogs-arent-bad-dogs.html</link>
+      <description>A love letter to reactive and nervous dogs and the owners who advocate for them. Why nervous dogs deserve understanding, not judgement.</description>
+      <pubDate>Wed, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/nervous-dogs-arent-bad-dogs.html</guid>
+      <category>Community</category>
+    </item>
+
+    <item>
+      <title>5 Signs a Dog Needs Space (and How to Respond)</title>
+      <link>https://go-rocco.com/blog/5-signs-a-dog-needs-space.html</link>
+      <description>Learn to read the 5 key body language signs that a dog needs space. Practical advice for UK dog owners on how to respond safely and respectfully.</description>
+      <pubDate>Wed, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/5-signs-a-dog-needs-space.html</guid>
+      <category>Dog Safety</category>
+    </item>
+
+  </channel>
+</rss>

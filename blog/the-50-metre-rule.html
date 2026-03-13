@@ -26,9 +26,10 @@
     <meta property="og:site_name" content="Go Rocco" />
     <meta property="og:title" content="The 50-Metre Rule: Why We Built Privacy Into Go Rocco" />
     <meta property="og:description" content="How Go Rocco shows nearby dogs without exposing exact locations. The privacy-first approach to dog walking." />
-    <meta property="og:image" content="https://go-rocco.com/gorocco-app-icon.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:image" content="https://go-rocco.com/assets/blog/the-50-metre-rule.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Map showing fuzzy 50 metre radius for dog location privacy" />
     <meta property="og:locale" content="en_GB" />
     <meta property="article:published_time" content="2026-03-05" />
     <meta property="article:modified_time" content="2026-03-05" />
@@ -38,13 +39,14 @@
     <meta name="twitter:site" content="@goroccoapp" />
     <meta name="twitter:title" content="The 50-Metre Rule: Why We Built Privacy Into Go Rocco" />
     <meta name="twitter:description" content="How Go Rocco shows nearby dogs without exposing exact locations." />
-    <meta name="twitter:image" content="https://go-rocco.com/gorocco-app-icon.png" />
+    <meta name="twitter:image" content="https://go-rocco.com/assets/blog/the-50-metre-rule.jpg" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "The 50-Metre Rule: Why We Built Privacy Into Go Rocco",
+        "image": "https://go-rocco.com/assets/blog/the-50-metre-rule.jpg",
         "description": "How Go Rocco shows nearby dogs without exposing exact locations. Learn about the 50-metre fuzzy radius and why we chose privacy-first over precision.",
         "datePublished": "2026-03-05",
         "dateModified": "2026-03-05",
@@ -57,6 +59,7 @@
       }
     </script>
 
+    <link rel="alternate" type="application/rss+xml" title="Go Rocco Blog" href="https://go-rocco.com/feed.xml" />
     <link rel="icon" type="image/png" href="../gorocco-app-icon.png" />
     <link rel="apple-touch-icon" href="../gorocco-app-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -109,6 +112,7 @@
         <li><a href="../index.html#features">Features</a></li>
         <li><a href="../pricing.html">Pricing</a></li>
         <li><a href="../about.html">Our Story</a></li>
+        <li><a href="../blog.html">Blog</a></li>
         <li><a href="../roadmap.html">Roadmap</a></li>
       </ul>
       <a href="../index.html#download" class="nav-cta">Download</a>
@@ -122,6 +126,7 @@
       <a href="../pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="../about.html" class="mobile-nav-link">Our Story</a>
       <a href="../roadmap.html" class="mobile-nav-link">Roadmap</a>
+      <a href="../blog.html" class="mobile-nav-link">Blog</a>
       <a href="../index.html#early-adopter" class="nav-cta mobile-nav-link">Download Free</a>
     </div>
 
@@ -133,10 +138,13 @@
           <span class="blog-post-category">Privacy</span>
           <h1>The 50-Metre Rule: Why We Built Privacy Into Go Rocco</h1>
           <div class="blog-post-meta">
-            <span>March 2026</span>
+            <span>Published 5 March 2026</span>
+            <span>By the Go Rocco Team</span>
             <span>6 min read</span>
           </div>
         </header>
+
+        <img src="../assets/blog/the-50-metre-rule.jpg" alt="Map showing fuzzy 50 metre radius for dog location privacy" class="blog-hero-img" width="1200" height="630" />
 
         <p>When we started building Go Rocco, one of the very first questions we had to answer was deceptively simple: <em>how much should people know about where other dogs are?</em></p>
 
@@ -144,7 +152,19 @@
 
         <p>And people deserve privacy.</p>
 
-        <h2>Why precision isn't the point</h2>
+        <nav class="blog-toc">
+          <ol>
+            <li><a href="#why-precision-isnt-the-point">Why precision isn't the point</a></li>
+            <li><a href="#how-the-50-metre-radius-works">How the 50-metre radius works</a></li>
+            <li><a href="#how-gdpr-and-uk-data-protection-shaped-our-design">How GDPR and UK data protection shaped our design</a></li>
+            <li><a href="#how-other-apps-get-it-wrong">How other apps get it wrong</a></li>
+            <li><a href="#the-opt-in-philosophy">The opt-in philosophy</a></li>
+            <li><a href="#privacy-builds-trust">Privacy builds trust</a></li>
+            <li><a href="#what-this-means-for-you">What this means for you</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="why-precision-isnt-the-point">Why precision isn't the point</h2>
 
         <p>Go Rocco's live map shows you that there are dogs nearby and tells you about their temperament. That's the useful information. You don't need to know that a reactive German Shepherd is standing outside number 42 Maple Road. You just need to know there's a dog ahead who might need space, so you can adjust your route.</p>
 
@@ -152,7 +172,7 @@
 
         <p>It sounds like a limitation. We think it's a feature.</p>
 
-        <h2>How the 50-metre radius works</h2>
+        <h2 id="how-the-50-metre-radius-works">How the 50-metre radius works</h2>
 
         <p>When your phone sends location data to Go Rocco, we don't store or display the precise GPS coordinates. Instead, the app rounds the position to a generalised zone. On the map, you'll see a coloured circle representing the dog's approximate area — not a pin marking their exact spot.</p>
 
@@ -167,7 +187,7 @@
 
         <p>The 50-metre radius gives you everything you need to make informed decisions on your walk, without giving anyone the tools to do anything creepy.</p>
 
-        <h2>How GDPR and UK data protection shaped our design</h2>
+        <h2 id="how-gdpr-and-uk-data-protection-shaped-our-design">How GDPR and UK data protection shaped our design</h2>
 
         <p>We're a UK-based company, and we take data protection seriously. The UK GDPR and Data Protection Act 2018 set a high bar for how personal data — including location data — must be handled. Location data is considered personal data under these regulations, and precise location tracking raises significant compliance concerns.</p>
 
@@ -179,7 +199,7 @@
           <p>"Privacy by design means the protection isn't a feature you bolt on — it's a constraint you build around."</p>
         </blockquote>
 
-        <h2>How other apps get it wrong</h2>
+        <h2 id="how-other-apps-get-it-wrong">How other apps get it wrong</h2>
 
         <p>Many pet tracking and social apps show exact, real-time locations. Some even let you view historical walking routes — where someone walked, when, and for how long. For a tracker attached to a dog's collar, that might make sense (you're tracking your own pet). But for a community map showing other people's dogs? That's a different conversation entirely.</p>
 
@@ -194,7 +214,7 @@
 
         <p>These aren't hypothetical concerns. They're real-world risks that informed our engineering decisions from the very beginning.</p>
 
-        <h2>The opt-in philosophy</h2>
+        <h2 id="the-opt-in-philosophy">The opt-in philosophy</h2>
 
         <p>The 50-metre rule is just one part of our broader privacy approach. Everything in Go Rocco is opt-in. Your dog only appears on the map when you choose to share. You control what information is visible on your profile. And you can go invisible at any time — one tap, and you're off the map entirely.</p>
 
@@ -202,7 +222,7 @@
 
         <p>This matters because not every dog owner's situation is the same. Some people walk in remote areas and want to know if there's anyone around. Others live in busy cities and just want a heads-up about reactive dogs on their street. Some are fostering rescue dogs and need to keep a low profile. The opt-in model respects all of those needs.</p>
 
-        <h2>Privacy builds trust</h2>
+        <h2 id="privacy-builds-trust">Privacy builds trust</h2>
 
         <p>We've found that privacy and community aren't at odds — they reinforce each other. When people know their location isn't being broadcast to the metre, they're more willing to participate. They're more likely to share their dog's temperament honestly, to engage with the map, and to recommend the app to friends.</p>
 
@@ -216,13 +236,37 @@
           <a href="../index.html#early-adopter" class="cta-btn">Join the Waitlist</a>
         </div>
 
-        <h2>What this means for you</h2>
+        <h2 id="what-this-means-for-you">What this means for you</h2>
 
         <p>As a Go Rocco user, you don't need to worry about any of this in practice. The app just works — you see dogs nearby, you see their temperament, and you make better decisions on your walk. The privacy layer is invisible because it's supposed to be.</p>
 
         <p>But we think it's important to be transparent about <em>why</em> things work the way they do. Too many apps treat privacy as an afterthought or a compliance checkbox. We built Go Rocco around it.</p>
 
         <p>Because every dog deserves a safe walk. And every owner deserves to feel safe too.</p>
+
+        <div class="share-bar">
+          <span>Share this:</span>
+          <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=https://go-rocco.com/blog/the-50-metre-rule.html&text=The 50-Metre Rule: Why We Built Privacy Into Go Rocco" target="_blank" rel="noopener" aria-label="Share on Twitter">&#x1D54F;</a>
+          <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://go-rocco.com/blog/the-50-metre-rule.html" target="_blank" rel="noopener" aria-label="Share on Facebook">f</a>
+          <a class="share-btn whatsapp" href="https://wa.me/?text=The 50-Metre Rule: Why We Built Privacy Into Go Rocco%20https://go-rocco.com/blog/the-50-metre-rule.html" target="_blank" rel="noopener" aria-label="Share on WhatsApp">w</a>
+          <button type="button" class="share-btn copy-link" onclick="navigator.clipboard.writeText('https://go-rocco.com/blog/the-50-metre-rule.html');this.textContent='✓';setTimeout(()=>this.textContent='🔗',2000)" aria-label="Copy link">🔗</button>
+        </div>
+
+        <section class="related-articles">
+          <h2>You might also like</h2>
+          <div class="related-articles-grid">
+            <a href="how-the-live-map-works.html" class="related-card">
+              <span class="related-card-category">Features</span>
+              <h3>How the Live Map Works (Without Being Creepy)</h3>
+              <p>A deep-dive into how the live map shows nearby dogs and walking routes.</p>
+            </a>
+            <a href="5-signs-a-dog-needs-space.html" class="related-card">
+              <span class="related-card-category">Dog Safety</span>
+              <h3>5 Signs a Dog Needs Space (and How to Respond)</h3>
+              <p>Learn to read the key body language signs that a dog needs space.</p>
+            </a>
+          </div>
+        </section>
       </article>
     </main>
 

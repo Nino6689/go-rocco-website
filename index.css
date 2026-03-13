@@ -856,7 +856,7 @@ nav.scrolled {
   margin-bottom: 1rem;
   font-family: 'Nunito', sans-serif;
 }
-.lost-pet-card h4 {
+.lost-pet-card h3 {
   font-size: 1.1rem;
   color: var(--gray-900);
   margin-bottom: 0.5rem;
@@ -987,7 +987,7 @@ nav.scrolled {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.event-card h4 {
+.event-card h3 {
   font-size: 1.2rem;
   color: var(--gray-900);
   margin-bottom: 0.5rem;
@@ -1174,7 +1174,7 @@ nav.scrolled {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.marketplace-card h4 {
+.marketplace-card h3 {
   font-size: 1.2rem;
   color: var(--gray-900);
   margin-bottom: 0.5rem;
@@ -1409,7 +1409,7 @@ nav.scrolled {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-.safety-card h4 {
+.safety-card h3 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -1459,7 +1459,7 @@ nav.scrolled {
 .author-info {
   text-align: left;
 }
-.author-info h4 {
+.author-info h3 {
   font-size: 1.1rem;
   font-weight: 700;
 }
