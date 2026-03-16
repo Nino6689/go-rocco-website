@@ -1,0 +1,20 @@
+{
+  "name": "Go Rocco",
+  "short_name": "Go Rocco",
+  "description": "The all-in-one dog walking, safety, and community app for UK dog owners.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7bcbeb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "gorocco-app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "social"],
+  "lang": "en-GB"
+}
