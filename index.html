@@ -485,6 +485,89 @@
         </div>
       </section>
 
+      <!-- App Showcase Section -->
+      <section class="app-showcase" id="app-showcase">
+        <div class="showcase-decoration" aria-hidden="true">📱</div>
+        <div class="showcase-decoration" aria-hidden="true">🐾</div>
+        <div class="section-header reveal">
+          <span class="section-label white">📱 See It in Action</span>
+          <h2>Designed for dog people</h2>
+          <p>Real screenshots. Real features. Really free.</p>
+        </div>
+        <div class="showcase-carousel reveal">
+          <div class="showcase-slider" aria-live="polite">
+            <div class="showcase-slide active" data-index="0" aria-hidden="false">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="assets/screenshots/social-feed.png" alt="Go Rocco social feed showing walk posts, photos, and community activity" loading="lazy" />
+              </div>
+              <div class="showcase-caption">
+                <h3>Social Feed</h3>
+                <p>Share walks, photos, and connect with the pack</p>
+              </div>
+            </div>
+            <div class="showcase-slide" data-index="1" aria-hidden="true">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="assets/screenshots/discover-map.png" alt="Go Rocco discover map showing dog-friendly places nearby" loading="lazy" />
+              </div>
+              <div class="showcase-caption">
+                <h3>Discover</h3>
+                <p>Find dog-friendly places near you</p>
+              </div>
+            </div>
+            <div class="showcase-slide" data-index="2" aria-hidden="true">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="assets/screenshots/walk-dashboard.png" alt="Go Rocco walk dashboard with weather, goals, and quick actions" loading="lazy" />
+              </div>
+              <div class="showcase-caption">
+                <h3>Walk Hub</h3>
+                <p>Weather, goals, streaks, and quick actions</p>
+              </div>
+            </div>
+            <div class="showcase-slide" data-index="3" aria-hidden="true">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="assets/screenshots/live-walk-tracking.png" alt="Go Rocco live GPS walk tracking with SOS button" loading="lazy" />
+              </div>
+              <div class="showcase-caption">
+                <h3>Live Tracking</h3>
+                <p>GPS walks with SOS and hazard reporting</p>
+              </div>
+            </div>
+            <div class="showcase-slide" data-index="4" aria-hidden="true">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="assets/screenshots/pet-services.png" alt="Go Rocco pet services marketplace with grooming, training, and daycare" loading="lazy" />
+              </div>
+              <div class="showcase-caption">
+                <h3>Pet Services</h3>
+                <p>Grooming, training, daycare, and more</p>
+              </div>
+            </div>
+            <div class="showcase-slide" data-index="5" aria-hidden="true">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="assets/screenshots/pet-profile.png" alt="Go Rocco pet profile with health records and temperament badge" loading="lazy" />
+              </div>
+              <div class="showcase-caption">
+                <h3>Pet Passport</h3>
+                <p>Health records, temperament, and profile</p>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-dots" aria-label="App screenshots">
+            <button class="showcase-dot active" data-index="0" aria-label="Social Feed" aria-current="true"></button>
+            <button class="showcase-dot" data-index="1" aria-label="Discover" aria-current="false"></button>
+            <button class="showcase-dot" data-index="2" aria-label="Walk Hub" aria-current="false"></button>
+            <button class="showcase-dot" data-index="3" aria-label="Live Tracking" aria-current="false"></button>
+            <button class="showcase-dot" data-index="4" aria-label="Pet Services" aria-current="false"></button>
+            <button class="showcase-dot" data-index="5" aria-label="Pet Passport" aria-current="false"></button>
+          </div>
+        </div>
+      </section>
+
       <!-- SOS & Emergency Section -->
       <section class="sos-section" id="sos">
         <div class="sos-content reveal">
@@ -1101,6 +1184,88 @@
 
       showSlide(0)
       startSlider()
+
+      // App Showcase Carousel
+      ;(function () {
+        var scSlides = Array.from(document.querySelectorAll('.showcase-slide'))
+        var scDots = Array.from(document.querySelectorAll('.showcase-dot'))
+        var scDotsContainer = document.querySelector('.showcase-dots')
+        var scCarousel = document.querySelector('.showcase-carousel')
+        if (!scSlides.length) return
+
+        var scCurrent = 0
+        var scInterval = null
+
+        function scShow(index) {
+          scSlides.forEach(function (s, i) {
+            s.classList.toggle('active', i === index)
+            s.setAttribute('aria-hidden', i !== index)
+          })
+          scDots.forEach(function (d, i) {
+            d.classList.toggle('active', i === index)
+            d.setAttribute('aria-current', i === index)
+          })
+          scCurrent = index
+        }
+
+        function scNext() {
+          scShow((scCurrent + 1) % scSlides.length)
+        }
+
+        function scStart() {
+          scStop()
+          if (shouldReduceMotion()) return
+          scInterval = setInterval(scNext, 5000)
+        }
+
+        function scStop() {
+          if (scInterval) { clearInterval(scInterval); scInterval = null }
+        }
+
+        scDots.forEach(function (dot) {
+          dot.addEventListener('click', function () {
+            scShow(parseInt(this.dataset.index))
+            scStop()
+            scStart()
+          })
+        })
+
+        // Keyboard nav
+        if (scDotsContainer) {
+          scDotsContainer.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft') { e.preventDefault(); scShow((scCurrent - 1 + scSlides.length) % scSlides.length); scStop(); scStart() }
+            if (e.key === 'ArrowRight') { e.preventDefault(); scShow((scCurrent + 1) % scSlides.length); scStop(); scStart() }
+          })
+        }
+
+        // Pause on hover/focus
+        if (scCarousel) {
+          scCarousel.addEventListener('mouseenter', scStop)
+          scCarousel.addEventListener('mouseleave', scStart)
+          scCarousel.addEventListener('focusin', scStop)
+          scCarousel.addEventListener('focusout', scStart)
+        }
+
+        // Touch swipe support
+        var touchStartX = 0
+        if (scCarousel) {
+          scCarousel.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX
+          }, { passive: true })
+          scCarousel.addEventListener('touchend', function (e) {
+            var diff = e.changedTouches[0].screenX - touchStartX
+            if (Math.abs(diff) > 50) {
+              if (diff < 0) scShow((scCurrent + 1) % scSlides.length)
+              else scShow((scCurrent - 1 + scSlides.length) % scSlides.length)
+              scStop()
+              scStart()
+            }
+          }, { passive: true })
+        }
+
+        scShow(0)
+        scStart()
+      })()
 
       const reveals = document.querySelectorAll('.reveal')
       function revealOnScroll() {

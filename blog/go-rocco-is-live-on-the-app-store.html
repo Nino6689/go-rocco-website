@@ -88,7 +88,9 @@
       .blog-post-cta .cta-btn:hover { background: var(--rocco-blue-dark); transform: translateY(-2px); }
       .blog-back { display: inline-block; color: var(--rocco-blue-dark); text-decoration: none; font-weight: 700; margin-bottom: 2rem; }
       .blog-back:hover { text-decoration: underline; }
-      @media (max-width: 768px) { .blog-post h1 { font-size: 1.75rem; } .blog-post { padding: 1.5rem 1rem 3rem; } }
+      .blog-screenshots { display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap; }
+      .blog-screenshots img { width: 200px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); border: 2px solid var(--gray-50); }
+      @media (max-width: 768px) { .blog-post h1 { font-size: 1.75rem; } .blog-post { padding: 1.5rem 1rem 3rem; } .blog-screenshots img { width: 140px; border-radius: 14px; } }
     </style>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -171,6 +173,12 @@
           <li><strong>Pet passport:</strong> Keep vaccination records, vet details, microchip numbers, and health notes all in one secure place</li>
           <li><strong>Community:</strong> Connect with other dog owners in your area. Share tips, favourite walks, and local knowledge</li>
         </ul>
+
+        <div class="blog-screenshots">
+          <img src="../assets/screenshots/social-feed.png" alt="Go Rocco social feed" loading="lazy" />
+          <img src="../assets/screenshots/discover-map.png" alt="Go Rocco discover map" loading="lazy" />
+          <img src="../assets/screenshots/walk-dashboard.png" alt="Go Rocco walk dashboard" loading="lazy" />
+        </div>
 
         <p>All of this is free. No trial period, no paywall for the basics. We believe every dog owner deserves access to safer walks, regardless of budget.</p>
 

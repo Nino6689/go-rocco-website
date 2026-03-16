@@ -759,6 +759,162 @@ nav.scrolled {
   color: var(--gray-600);
 }
 
+/* App Showcase Section */
+.app-showcase {
+  padding: 8rem 4rem;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.app-showcase .section-header h2 {
+  color: var(--white);
+}
+.app-showcase .section-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+.showcase-decoration {
+  position: absolute;
+  font-size: 10rem;
+  opacity: 0.03;
+  pointer-events: none;
+}
+.showcase-decoration:first-child {
+  top: 10%;
+  left: -2%;
+  transform: rotate(-15deg);
+}
+.showcase-decoration:nth-child(2) {
+  bottom: 5%;
+  right: -2%;
+  transform: rotate(20deg);
+}
+.showcase-carousel {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.showcase-slider {
+  position: relative;
+  min-height: 680px;
+}
+.showcase-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.showcase-slide.active {
+  position: relative;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* CSS Phone Mockup */
+.phone-mockup {
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 44px;
+  padding: 12px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.phone-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 32px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+  z-index: 2;
+}
+.phone-mockup img {
+  display: block;
+  width: 100%;
+  border-radius: 32px;
+  aspect-ratio: 9 / 19.5;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Showcase Captions */
+.showcase-caption {
+  margin-top: 2rem;
+}
+.showcase-caption h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.showcase-caption p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* Showcase Dots */
+.showcase-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+.showcase-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.showcase-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.showcase-dot.active {
+  background: var(--rocco-blue);
+  width: 36px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(123, 203, 235, 0.5);
+}
+
+@media (max-width: 768px) {
+  .app-showcase {
+    padding: 5rem 1.5rem;
+  }
+  .showcase-slider {
+    min-height: 560px;
+  }
+  .phone-mockup {
+    width: 220px;
+    border-radius: 36px;
+    padding: 10px;
+  }
+  .phone-notch {
+    width: 100px;
+    height: 26px;
+    top: 10px;
+  }
+  .phone-mockup img {
+    border-radius: 26px;
+  }
+  .showcase-caption h3 {
+    font-size: 1.25rem;
+  }
+}
+
 /* SOS & Emergency Section */
 .sos-section {
   padding: 8rem 4rem;
