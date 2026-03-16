@@ -301,6 +301,26 @@ nav.scrolled {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+}
+.hero-store-link {
+  display: inline-flex;
+  transition: all 0.3s ease;
+}
+.hero-store-link:hover {
+  transform: translateY(-3px) scale(1.05);
+  filter: brightness(1.1);
+}
+.hero-store-badge {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+.hero-android-note {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
 }
 .btn-primary {
   background: #1a1a2e;
@@ -1869,6 +1889,9 @@ footer {
   .hero-ctas,
   .hero-dots {
     justify-content: center;
+  }
+  .hero-android-note {
+    text-align: center;
   }
   .hero-visual {
     margin-top: 2rem;
