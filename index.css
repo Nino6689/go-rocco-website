@@ -573,7 +573,7 @@ nav.scrolled {
 }
 .solution-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   text-align: left;
 }
@@ -620,8 +620,14 @@ nav.scrolled {
 .solution-card-icon.purple {
   background: var(--rocco-purple);
 }
+.solution-card-icon.orange {
+  background: #FF9800;
+}
 .solution-card-icon.red {
   background: var(--rocco-red);
+}
+.solution-card-icon.pink {
+  background: #FF4081;
 }
 .solution-card h3 {
   font-size: 1.3rem;
@@ -795,7 +801,7 @@ nav.scrolled {
 }
 .showcase-slider {
   position: relative;
-  min-height: 680px;
+  min-height: 720px;
 }
 .showcase-slide {
   position: absolute;
@@ -827,24 +833,11 @@ nav.scrolled {
     0 0 0 1px rgba(255, 255, 255, 0.1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
-.phone-notch {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 32px;
-  background: #000;
-  border-radius: 0 0 20px 20px;
-  z-index: 2;
-}
 .phone-mockup img {
   display: block;
   width: 100%;
+  height: auto;
   border-radius: 32px;
-  aspect-ratio: 9 / 19.5;
-  object-fit: cover;
-  object-position: top;
 }
 
 /* Showcase Captions */
@@ -901,11 +894,6 @@ nav.scrolled {
     width: 220px;
     border-radius: 36px;
     padding: 10px;
-  }
-  .phone-notch {
-    width: 100px;
-    height: 26px;
-    top: 10px;
   }
   .phone-mockup img {
     border-radius: 26px;
@@ -2064,7 +2052,7 @@ footer {
     grid-template-columns: 1fr;
   }
   .solution-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .steps {
     flex-direction: column;
