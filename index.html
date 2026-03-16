@@ -265,6 +265,10 @@
             </a>
             <a href="#problem" class="btn-secondary">Learn More</a>
           </div>
+          <div class="app-rating">
+            <span class="app-rating-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+            <span class="app-rating-text">4.8 on the App Store</span>
+          </div>
           <p class="hero-android-note">🤖 Android coming soon</p>
         </div>
         <div class="hero-visual">
@@ -372,15 +376,15 @@
           </div>
           <div class="problem-stats">
             <div class="stat-item">
-              <div class="stat-number">8,000+</div>
+              <div class="stat-number" data-count="8000" data-suffix="+">8,000+</div>
               <div class="stat-label">Dog attacks reported in the UK annually <cite class="stat-source">(NHS Digital, 2024)</cite></div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">74%</div>
+              <div class="stat-number" data-count="74" data-suffix="%">74%</div>
               <div class="stat-label">Of incidents involve dogs meeting unexpectedly <cite class="stat-source">(RSPCA, 2023)</cite></div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">£400+</div>
+              <div class="stat-number" data-count="400" data-prefix="£" data-suffix="+">£400+</div>
               <div class="stat-label">Average vet bill for bite injuries <cite class="stat-source">(British Veterinary Association, 2023)</cite></div>
             </div>
           </div>
@@ -962,18 +966,72 @@
         </div>
       </section>
 
-      <section class="testimonial">
-        <div class="testimonial-content reveal">
-          <blockquote>
-            "My reactive rescue has been so much calmer since we started using Go Rocco. I can see when to pop him on
-            the lead before he gets overwhelmed. Game changer."
-          </blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar" aria-hidden="true">🐕</div>
-            <div class="author-info">
-              <h3>Emma & Chester</h3>
-              <p>Reactive dog owner, Manchester</p>
+      <section class="testimonial" id="testimonials">
+        <div class="section-header reveal">
+          <span class="section-label white">💬 What Dog Owners Say</span>
+          <h2>Loved by the pack</h2>
+        </div>
+        <div class="testimonial-carousel reveal">
+          <div class="testimonial-slider" aria-live="polite">
+            <div class="testimonial-slide active" data-index="0" aria-hidden="false">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>
+                "My reactive rescue has been so much calmer since we started using Go Rocco. I can see when to pop him on
+                the lead before he gets overwhelmed. Game changer."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">🐕</div>
+                <div class="author-info">
+                  <h3>Emma & Chester</h3>
+                  <p>Reactive dog owner, Manchester</p>
+                </div>
+              </div>
             </div>
+            <div class="testimonial-slide" data-index="1" aria-hidden="true">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>
+                "We found our favourite Sunday pub through Go Rocco — properly dog-friendly, not just 'we tolerate them.' Luna gets a biscuit at the bar and we get a roast. Everyone wins."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">🦮</div>
+                <div class="author-info">
+                  <h3>James & Luna</h3>
+                  <p>Labrador owner, Bristol</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide" data-index="2" aria-hidden="true">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>
+                "Milo is nervous around big dogs. The temperament map means I know what's ahead and can cross the road before he panics. It's like having a sixth sense for walks."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">🐩</div>
+                <div class="author-info">
+                  <h3>Sarah & Milo</h3>
+                  <p>Cockapoo owner, Edinburgh</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide" data-index="3" aria-hidden="true">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>
+                "The streaks and challenges have completely transformed our routine. Bella and I used to skip rainy days — now we've got a 14-day streak going. She drags me to the door!"
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">🐶</div>
+                <div class="author-info">
+                  <h3>Tom & Bella</h3>
+                  <p>Puppy owner, London</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-dots" aria-label="Testimonials">
+            <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1" aria-current="true"></button>
+            <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2" aria-current="false"></button>
+            <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3" aria-current="false"></button>
+            <button class="testimonial-dot" data-index="3" aria-label="Testimonial 4" aria-current="false"></button>
           </div>
         </div>
       </section>
@@ -1012,6 +1070,33 @@
         </div>
       </section>
 
+      <!-- FAQ Section -->
+      <section class="faq-section" id="faq">
+        <div class="section-header reveal">
+          <span class="section-label blue">❓ FAQ</span>
+          <h2>Got questions?</h2>
+          <p>Here are the ones we get asked most</p>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Is Go Rocco really free?</summary>
+            <p>Yes! GPS walk tracking, the live temperament map, lost pet alerts, SOS, social feed, discovering dog-friendly places, and achievements are all completely free. The optional Alpha Pack upgrade (£2.99/month) adds premium features like Ask Rocco AI, extended detection range, and multi-pet support.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is Go Rocco available on Android?</summary>
+            <p>Go Rocco is currently available on iOS (iPhone and Apple Watch). Android is in active development and coming very soon — follow us on social media for the announcement.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How does the temperament map work?</summary>
+            <p>When you set your dog's temperament (friendly, cautious, protective, reactive, training, or in heat), other nearby Go Rocco users can see it on the map. You see theirs too — so you know whether to approach or give space, before you're close enough for things to go wrong. All locations use a 50-metre fuzzy radius to protect privacy.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my location data safe?</summary>
+            <p>Absolutely. We never share your exact location — the map uses a 50-metre fuzzy radius so no one can pinpoint where you are. Your data is encrypted, stored securely, and we comply fully with UK GDPR. Read our <a href="privacy.html">Privacy Policy</a> for the full details.</p>
+          </details>
+        </div>
+      </section>
+
       <section class="cta" id="download">
         <div class="cta-content reveal">
           <h2>Safer walks start here</h2>
@@ -1029,10 +1114,22 @@
               />
             </a>
           </div>
-          <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.85">Android coming soon</p>
+          <div class="app-rating" style="margin-top: 1.5rem;">
+            <span class="app-rating-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+            <span class="app-rating-text">4.8 on the App Store</span>
+          </div>
+          <p style="margin-top: 0.75rem; font-size: 0.95rem; opacity: 0.85">Android coming soon</p>
         </div>
       </section>
     </main>
+
+    <!-- Sticky Download Bar (mobile) -->
+    <div class="sticky-download" id="stickyDownload" aria-hidden="true">
+      <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer" class="sticky-download-link">
+        <span class="sticky-download-text">Download Go Rocco — Free</span>
+        <span class="sticky-download-badge">Get</span>
+      </a>
+    </div>
 
     <footer>
       <div class="footer-content">
@@ -1295,6 +1392,82 @@
 
         scShow(0)
         scStart()
+      })()
+
+      // Testimonial Carousel
+      ;(function () {
+        var tSlides = Array.from(document.querySelectorAll('.testimonial-slide'))
+        var tDots = Array.from(document.querySelectorAll('.testimonial-dot'))
+        var tCarousel = document.querySelector('.testimonial-carousel')
+        if (!tSlides.length) return
+        var tCurrent = 0, tInterval = null
+        function tShow(i) {
+          tSlides.forEach(function (s, j) { s.classList.toggle('active', j === i); s.setAttribute('aria-hidden', j !== i) })
+          tDots.forEach(function (d, j) { d.classList.toggle('active', j === i); d.setAttribute('aria-current', j === i) })
+          tCurrent = i
+        }
+        function tNext() { tShow((tCurrent + 1) % tSlides.length) }
+        function tStart() { tStop(); if (shouldReduceMotion()) return; tInterval = setInterval(tNext, 6000) }
+        function tStop() { if (tInterval) { clearInterval(tInterval); tInterval = null } }
+        tDots.forEach(function (d) { d.addEventListener('click', function () { tShow(parseInt(this.dataset.index)); tStop(); tStart() }) })
+        if (tCarousel) {
+          tCarousel.addEventListener('mouseenter', tStop)
+          tCarousel.addEventListener('mouseleave', tStart)
+          var tStartX = 0
+          tCarousel.addEventListener('touchstart', function (e) { tStartX = e.changedTouches[0].screenX }, { passive: true })
+          tCarousel.addEventListener('touchend', function (e) {
+            var d = e.changedTouches[0].screenX - tStartX
+            if (Math.abs(d) > 50) { d < 0 ? tShow((tCurrent + 1) % tSlides.length) : tShow((tCurrent - 1 + tSlides.length) % tSlides.length); tStop(); tStart() }
+          }, { passive: true })
+        }
+        tShow(0); tStart()
+      })()
+
+      // Animated Stat Counters
+      ;(function () {
+        var counters = document.querySelectorAll('.stat-number[data-count]')
+        var counted = false
+        function animateCounters() {
+          if (counted) return
+          var first = counters[0]
+          if (!first || first.getBoundingClientRect().top > window.innerHeight - 50) return
+          counted = true
+          counters.forEach(function (el) {
+            var target = parseInt(el.dataset.count)
+            var prefix = el.dataset.prefix || ''
+            var suffix = el.dataset.suffix || ''
+            var duration = 1500
+            var start = 0
+            var startTime = null
+            function step(ts) {
+              if (!startTime) startTime = ts
+              var progress = Math.min((ts - startTime) / duration, 1)
+              var eased = 1 - Math.pow(1 - progress, 3)
+              var current = Math.floor(eased * target)
+              el.textContent = prefix + current.toLocaleString() + suffix
+              if (progress < 1) requestAnimationFrame(step)
+            }
+            requestAnimationFrame(step)
+          })
+        }
+        window.addEventListener('scroll', animateCounters)
+        animateCounters()
+      })()
+
+      // Sticky Download Bar
+      ;(function () {
+        var sticky = document.getElementById('stickyDownload')
+        var hero = document.querySelector('.hero')
+        var cta = document.getElementById('download')
+        if (!sticky || !hero) return
+        function updateSticky() {
+          var heroBottom = hero.getBoundingClientRect().bottom
+          var ctaTop = cta ? cta.getBoundingClientRect().top : Infinity
+          var show = heroBottom < -100 && ctaTop > window.innerHeight
+          sticky.classList.toggle('visible', show)
+          sticky.setAttribute('aria-hidden', !show)
+        }
+        window.addEventListener('scroll', updateSticky, { passive: true })
       })()
 
       const reveals = document.querySelectorAll('.reveal')
