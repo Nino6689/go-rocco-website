@@ -1947,6 +1947,108 @@ footer {
   transform: translateY(0);
 }
 
+/* Staggered card reveals */
+.reveal.active .feature-card,
+.reveal.active .solution-card,
+.reveal.active .sos-card,
+.reveal.active .lost-pet-card,
+.reveal.active .social-card,
+.reveal.active .marketplace-card,
+.reveal.active .store-card {
+  animation: cardReveal 0.6s ease both;
+}
+.reveal.active .feature-card:nth-child(1),
+.reveal.active .solution-card:nth-child(1),
+.reveal.active .sos-card:nth-child(1) { animation-delay: 0s; }
+.reveal.active .feature-card:nth-child(2),
+.reveal.active .solution-card:nth-child(2),
+.reveal.active .sos-card:nth-child(2) { animation-delay: 0.08s; }
+.reveal.active .feature-card:nth-child(3),
+.reveal.active .solution-card:nth-child(3),
+.reveal.active .sos-card:nth-child(3) { animation-delay: 0.16s; }
+.reveal.active .feature-card:nth-child(4),
+.reveal.active .solution-card:nth-child(4) { animation-delay: 0.24s; }
+.reveal.active .feature-card:nth-child(5),
+.reveal.active .solution-card:nth-child(5) { animation-delay: 0.32s; }
+.reveal.active .feature-card:nth-child(6),
+.reveal.active .solution-card:nth-child(6) { animation-delay: 0.4s; }
+.reveal.active .feature-card:nth-child(n+7) { animation-delay: 0.48s; }
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Gradient text on section headings */
+.section-header h2,
+.solution-content h2,
+.sos-content h2 {
+  background: linear-gradient(135deg, var(--gray-900) 0%, var(--rocco-blue-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.app-showcase .section-header h2,
+.sos-content h2 {
+  background: linear-gradient(135deg, var(--white) 0%, var(--rocco-blue-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Feature card icon bounce on hover */
+.feature-card:hover .feature-icon {
+  animation: iconPop 0.4s ease;
+}
+@keyframes iconPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.2) rotate(-5deg); }
+  70% { transform: scale(0.95) rotate(2deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+/* Phone mockup glow ring */
+.phone-mockup {
+  position: relative;
+}
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--rocco-blue), var(--rocco-purple), var(--rocco-coral));
+  opacity: 0.5;
+  filter: blur(20px);
+  z-index: -1;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.02); }
+}
+
+/* Trust section upgrade — card style */
+.trust-item {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+.trust-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+.trust-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--rocco-blue-light), var(--rocco-blue));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Mobile Hamburger Menu */
 .hamburger {
   display: none;
