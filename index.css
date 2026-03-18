@@ -586,9 +586,7 @@ nav.scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 .solution-card:hover {
-  border-color: var(--rocco-blue);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(123, 203, 235, 0.2);
+  border-color: rgba(123, 203, 235, 0.3);
 }
 .solution-card-header {
   display: flex;
@@ -737,9 +735,7 @@ nav.scrolled {
   transition: all 0.3s ease;
 }
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  border-color: var(--rocco-blue);
+  border-color: rgba(123, 203, 235, 0.3);
   background: var(--white);
 }
 .feature-icon {
@@ -1208,9 +1204,7 @@ nav.scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 .pet-card:hover {
-  border-color: var(--rocco-blue);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(123, 203, 235, 0.2);
+  border-color: rgba(123, 203, 235, 0.3);
 }
 .pet-icon {
   width: 80px;
@@ -2198,7 +2192,7 @@ footer {
 
 /* Feature card icon bounce on hover */
 .feature-card:hover .feature-icon {
-  animation: iconPop 0.4s ease;
+  /* removed iconPop animation — non-interactive cards should not animate like buttons */
 }
 @keyframes iconPop {
   0% { transform: scale(1); }
