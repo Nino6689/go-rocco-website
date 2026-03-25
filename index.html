@@ -1550,12 +1550,32 @@
         localStorage.setItem('gorocco_cookie_consent_date', new Date().toISOString());
       }
 
+      // UTM / QR Code Source Detection
+      function getUtmParams() {
+        var params = new URLSearchParams(window.location.search);
+        return {
+          source: params.get('utm_source') || '',
+          medium: params.get('utm_medium') || '',
+          campaign: params.get('utm_campaign') || ''
+        };
+      }
+      var utmParams = getUtmParams();
+      var isBusinessCard = (utmParams.source === 'business_card');
+
       function acceptAllCookies() {
         const consent = { essential: true, analytics: true, functionality: true };
         setCookieConsent(consent);
         // Update GA4 consent
         gtag('consent', 'update', { 'analytics_storage': 'granted' });
         loadAnalytics();
+        if (isBusinessCard) {
+          gtag('event', 'qr_code_arrival', {
+            'event_category': 'business_card',
+            'utm_source': utmParams.source,
+            'utm_medium': utmParams.medium,
+            'utm_campaign': utmParams.campaign
+          });
+        }
         hideCookieBanner();
       }
 
@@ -1610,6 +1630,14 @@
         if (consent && consent.analytics) {
           gtag('consent', 'update', { 'analytics_storage': 'granted' });
           loadAnalytics();
+          if (isBusinessCard) {
+            gtag('event', 'qr_code_arrival', {
+              'event_category': 'business_card',
+              'utm_source': utmParams.source,
+              'utm_medium': utmParams.medium,
+              'utm_campaign': utmParams.campaign
+            });
+          }
         }
 
         // Cookie banner button handlers
@@ -1625,7 +1653,7 @@
         // Track CTA button clicks
         document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(function(btn) {
           btn.addEventListener('click', function() {
-            gtag('event', 'click', { 'event_category': 'CTA', 'event_label': this.textContent.trim() });
+            gtag('event', 'click', { 'event_category': 'CTA', 'event_label': this.textContent.trim(), 'utm_source': utmParams.source, 'from_business_card': isBusinessCard });
           });
         });
       });
