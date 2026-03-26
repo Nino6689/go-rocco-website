@@ -28,6 +28,7 @@
     <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
     <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
     <link rel="manifest" href="manifest.json" />
+    <meta name="apple-itunes-app" content="app-id=6753819069">
     <meta name="theme-color" content="#7bcbeb" />
 
     <!-- Open Graph / Facebook -->
@@ -1638,6 +1639,13 @@
               'utm_campaign': utmParams.campaign
             });
           }
+          // Tag Clarity sessions with UTM data for filtering heatmaps/recordings
+          if (window.clarity) {
+            if (utmParams.source) clarity('set', 'utm_source', utmParams.source);
+            if (utmParams.medium) clarity('set', 'utm_medium', utmParams.medium);
+            if (utmParams.campaign) clarity('set', 'utm_campaign', utmParams.campaign);
+            if (isBusinessCard) clarity('set', 'from_business_card', 'true');
+          }
         }
 
         // Cookie banner button handlers
@@ -1656,6 +1664,42 @@
             gtag('event', 'click', { 'event_category': 'CTA', 'event_label': this.textContent.trim(), 'utm_source': utmParams.source, 'from_business_card': isBusinessCard });
           });
         });
+
+        // Track App Store link clicks (GA4 + Clarity)
+        var storeLinks = [
+          { selector: '.hero-store-link', label: 'hero' },
+          { selector: '.sticky-download-link', label: 'sticky_bar' }
+        ];
+        storeLinks.forEach(function(item) {
+          var el = document.querySelector(item.selector);
+          if (el) {
+            el.addEventListener('click', function() {
+              gtag('event', 'app_store_click', {
+                'event_category': 'download',
+                'event_label': item.label,
+                'utm_source': utmParams.source,
+                'utm_medium': utmParams.medium,
+                'utm_campaign': utmParams.campaign,
+                'from_business_card': isBusinessCard
+              });
+              if (window.clarity) clarity('event', 'app_store_click_' + item.label);
+            });
+          }
+        });
+        var ctaBadge = document.querySelector('.store-badge-img');
+        if (ctaBadge) {
+          ctaBadge.closest('a').addEventListener('click', function() {
+            gtag('event', 'app_store_click', {
+              'event_category': 'download',
+              'event_label': 'cta_section',
+              'utm_source': utmParams.source,
+              'utm_medium': utmParams.medium,
+              'utm_campaign': utmParams.campaign,
+              'from_business_card': isBusinessCard
+            });
+            if (window.clarity) clarity('event', 'app_store_click_cta');
+          });
+        }
       });
     </script>
 
