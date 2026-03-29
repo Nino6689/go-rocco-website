@@ -1563,6 +1563,19 @@
       var utmParams = getUtmParams();
       var isBusinessCard = (utmParams.source === 'business_card');
 
+      // Build App Store URL with campaign token for attribution tracking
+      // The ct= parameter is read by the app via Apple AdServices on first launch
+      function getAppStoreUrl() {
+        var baseUrl = 'https://apps.apple.com/gb/app/go-rocco/id6753819069';
+        var ct = 'web-direct';
+        if (utmParams.source) {
+          ct = 'web-' + utmParams.source;
+          if (utmParams.campaign) ct += '-' + utmParams.campaign;
+        }
+        // Apple ct parameter max 40 chars
+        return baseUrl + '?ct=' + ct.substring(0, 40);
+      }
+
       function acceptAllCookies() {
         const consent = { essential: true, analytics: true, functionality: true };
         setCookieConsent(consent);
@@ -1663,6 +1676,12 @@
           btn.addEventListener('click', function() {
             gtag('event', 'click', { 'event_category': 'CTA', 'event_label': this.textContent.trim(), 'utm_source': utmParams.source, 'from_business_card': isBusinessCard });
           });
+        });
+
+        // Update all App Store links with campaign token for attribution tracking
+        var appStoreUrl = getAppStoreUrl();
+        document.querySelectorAll('a[href*="apps.apple.com/gb/app/go-rocco"]').forEach(function(link) {
+          link.href = appStoreUrl;
         });
 
         // Track App Store link clicks (GA4 + Clarity)
