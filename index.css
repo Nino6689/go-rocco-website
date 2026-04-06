@@ -375,6 +375,22 @@ nav.scrolled {
   justify-content: center;
   align-items: center;
 }
+.hero-phone-mockup {
+  width: 280px;
+  background: #000;
+  border-radius: 44px;
+  padding: 12px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.hero-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 32px;
+}
 .hero-mascot {
   width: 380px;
   max-width: 100%;
@@ -830,7 +846,8 @@ nav.scrolled {
     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 .phone-mockup img,
-.phone-mockup picture img {
+.phone-mockup picture img,
+.phone-mockup video {
   display: block;
   width: 100%;
   height: auto;
@@ -2340,6 +2357,14 @@ footer {
   .hero-visual {
     margin-top: 2rem;
   }
+  .hero-phone-mockup {
+    width: 240px;
+    border-radius: 38px;
+    padding: 10px;
+  }
+  .hero-video {
+    border-radius: 28px;
+  }
   .hero-mascot {
     width: 280px;
     border-radius: 45px;
@@ -2406,6 +2431,14 @@ footer {
   .logo-img {
     height: 48px;
     border-radius: 12px;
+  }
+  .hero-phone-mockup {
+    width: 200px;
+    border-radius: 32px;
+    padding: 8px;
+  }
+  .hero-video {
+    border-radius: 24px;
   }
   .hero-mascot {
     width: 220px;

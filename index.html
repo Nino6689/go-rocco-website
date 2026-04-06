@@ -281,7 +281,19 @@
           </div>
         </div>
         <div class="hero-visual">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco - the ultimate dog walking and safety app for UK dog owners" class="hero-mascot" />
+          <div class="hero-phone-mockup">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="assets/videos/meeting-hugo-poster.jpg"
+              class="hero-video"
+            >
+              <source src="assets/videos/meeting-hugo.webm" type="video/webm" />
+              <source src="assets/videos/meeting-hugo.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </section>
 
@@ -334,14 +346,21 @@
             </div>
             <div class="showcase-slide" data-index="3" aria-hidden="true">
               <div class="phone-mockup">
-                <picture>
-                  <source srcset="assets/screenshots/live-walk-tracking.webp" type="image/webp" />
-                  <img src="assets/screenshots/live-walk-tracking.jpg" alt="Go Rocco live GPS walk tracking with SOS button" loading="lazy" />
-                </picture>
+                <video
+                  muted
+                  loop
+                  playsinline
+                  poster="assets/videos/meeting-hugo-poster.jpg"
+                  class="showcase-video"
+                  data-autoplay-on-active
+                >
+                  <source src="assets/videos/meeting-hugo.webm" type="video/webm" />
+                  <source src="assets/videos/meeting-hugo.mp4" type="video/mp4" />
+                </video>
               </div>
               <div class="showcase-caption">
                 <h3>Live Tracking</h3>
-                <p>GPS walks with SOS and hazard reporting</p>
+                <p>A real walk with Go Rocco - meeting Hugo</p>
               </div>
             </div>
             <div class="showcase-slide" data-index="4" aria-hidden="true">
@@ -1361,6 +1380,11 @@
           scSlides.forEach(function (s, i) {
             s.classList.toggle('active', i === index)
             s.setAttribute('aria-hidden', i !== index)
+            var vid = s.querySelector('video[data-autoplay-on-active]')
+            if (vid) {
+              if (i === index) { vid.currentTime = 0; vid.play().catch(function(){}) }
+              else { vid.pause() }
+            }
           })
           scDots.forEach(function (d, i) {
             d.classList.toggle('active', i === index)
