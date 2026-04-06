@@ -5,13 +5,22 @@
     <link>https://go-rocco.com/blog.html</link>
     <description>Dog safety tips, reactive dog advice, and UK dog walking guides from Go Rocco.</description>
     <language>en-GB</language>
-    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://go-rocco.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Go Rocco Is Now on Android!</title>
+      <link>https://go-rocco.com/blog/go-rocco-is-now-on-android.html</link>
+      <description>The wait is over. Go Rocco is officially live on Google Play with full feature parity. Free to download for all UK Android users.</description>
+      <pubDate>Sun, 06 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/go-rocco-is-now-on-android.html</guid>
+      <category>Announcements</category>
+    </item>
 
     <item>
       <title>Why Do Dogs Eat Grass? What Every UK Owner Should Know</title>
       <link>https://go-rocco.com/blog/why-do-dogs-eat-grass.html</link>
-      <description>Your dog munches grass on every walk — but why? From instinct to upset stomachs, here are 6 common reasons and when you should actually worry.</description>
+      <description>Your dog munches grass on every walk - but why? From instinct to upset stomachs, here are 6 common reasons and when you should actually worry.</description>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://go-rocco.com/blog/why-do-dogs-eat-grass.html</guid>
       <category>Dog Health</category>
@@ -20,7 +29,7 @@
     <item>
       <title>Why Do Dogs Lick You? 7 Reasons Behind the Slobber</title>
       <link>https://go-rocco.com/blog/why-do-dogs-lick-you.html</link>
-      <description>From affection to anxiety — here's what your dog is really trying to tell you with all that licking, and what it means for walks.</description>
+      <description>From affection to anxiety - here's what your dog is really trying to tell you with all that licking, and what it means for walks.</description>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://go-rocco.com/blog/why-do-dogs-lick-you.html</guid>
       <category>Dog Behaviour</category>
@@ -29,7 +38,7 @@
     <item>
       <title>How Long Are Dogs Pregnant? A Complete UK Guide</title>
       <link>https://go-rocco.com/blog/how-long-are-dogs-pregnant.html</link>
-      <description>Everything you need to know about dog pregnancy — the 63-day gestation period, week-by-week stages, vet visits, and why the In Heat temperament matters.</description>
+      <description>Everything you need to know about dog pregnancy - the 63-day gestation period, week-by-week stages, vet visits, and why the In Heat temperament matters.</description>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://go-rocco.com/blog/how-long-are-dogs-pregnant.html</guid>
       <category>Dog Health</category>
@@ -38,7 +47,7 @@
     <item>
       <title>Go Rocco Is Live on the App Store!</title>
       <link>https://go-rocco.com/blog/go-rocco-is-live-on-the-app-store.html</link>
-      <description>It's official — Go Rocco is available to download FREE on the iOS App Store. GPS walk tracking, live temperament map, dog-friendly places, and more. Here's everything you need to know.</description>
+      <description>It's official - Go Rocco is available to download FREE on the iOS App Store. GPS walk tracking, live temperament map, dog-friendly places, and more. Here's everything you need to know.</description>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://go-rocco.com/blog/go-rocco-is-live-on-the-app-store.html</guid>
       <category>Announcements</category>
@@ -119,7 +128,7 @@
     <item>
       <title>How the Live Map Works (Without Being Creepy)</title>
       <link>https://go-rocco.com/blog/how-the-live-map-works.html</link>
-      <description>A friendly deep-dive into how Go Rocco's live map shows nearby dogs, temperament colours, and walking routes — all without compromising anyone's privacy.</description>
+      <description>A friendly deep-dive into how Go Rocco's live map shows nearby dogs, temperament colours, and walking routes - all without compromising anyone's privacy.</description>
       <pubDate>Wed, 05 Mar 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://go-rocco.com/blog/how-the-live-map-works.html</guid>
       <category>Features</category>
