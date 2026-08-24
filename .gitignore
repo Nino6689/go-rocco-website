@@ -10,3 +10,7 @@ node_modules/
 .idea/
 *.bak
 Thumbs.db
+
+# Local tool artefacts
+.playwright-mcp/
+.wrangler/
