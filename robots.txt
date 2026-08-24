@@ -7,9 +7,6 @@ Allow: /
 # Block staging/upload folder
 Disallow: /upload/
 
-# Private field tool (password protected)
-Disallow: /survey/
-
 # Sitemap location
 Sitemap: https://go-rocco.com/sitemap.xml
 
