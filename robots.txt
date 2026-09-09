@@ -7,6 +7,9 @@ Allow: /
 # Block staging/upload folder
 Disallow: /upload/
 
+# Private film preview (also behind Basic Auth)
+Disallow: /films/
+
 # Sitemap location
 Sitemap: https://go-rocco.com/sitemap.xml
 
