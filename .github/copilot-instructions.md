@@ -1,198 +1,85 @@
 # Go Rocco Marketing Site — AI Assistant Instructions
 
-## Project Context
+_Updated 18 September 2026. The earlier version of this file described a single-page pre-launch
+site with an Alpha Pack subscription; none of that is true any more._
 
-You are working on the **Go Rocco marketing website** — a landing page for a dog safety mobile app launching in the UK in 2026. The app helps dog owners see nearby dogs' temperaments before encountering them.
+## What this is
 
----
+The static marketing site for **go-rocco.com**. Two audiences, two products:
 
-## Project Summary
+1. **Dog owners** — the Go Rocco app (iOS, Android, web at app.go-rocco.com, Apple Watch).
+   **Free since 9 September 2026: no subscription, no adverts.** The only optional purchase is a
+   lost-pet alert boost.
+2. **Dog businesses** — **Go Rocco Business** at provider.go-rocco.com (booking pages at
+   book.go-rocco.com): free calendar, client book, booking page, invoices with a pay link, care
+   records, books and a tax-ready pack. **Pro is £15/month or £144/year.** 0% commission on a
+   provider's own clients, forever; 15% on a client Go Rocco introduces, for 90 days or 10 bookings,
+   capped at £50. Independent makers sell in the shop at 15% commission on item prices.
 
-**Product**: Go Rocco — "Know Before You Meet"
-**Type**: Static HTML marketing site
-**Target**: UK dog owners
-**Launch**: 2026
+Launched March 2026 (iOS) and April 2026 (Android). Do not write "launching".
 
-### Core Value Proposition
+## Hard rules on copy
 
-- See if nearby dogs are friendly, nervous, reactive, or in training
-- Walk check-in feature for solo walker safety
-- Discover dog-friendly venues
-- Digital pet passport for health records
+- Never mention Alpha Pack, Premium, "Pro" for owners, £2.99, free trials or "ad-free" as
+  current features. The two dated blog posts carry an "Update, September 2026" note; leave it.
+- Tax: say "tax-ready records, not tax advice". **Never** "files your tax return",
+  "HMRC-recognised", "MTD-compatible" or "submits to HMRC".
+- Provider review is "within 48 hours"; maker review is "within 5 working days". Don't mix them.
+- Rating: 4.8 on the App Store (18 Sep 2026). No "Top 100".
+- Contact: `support@go-rocco.com`. The old `info@gorocco.com` was a typo'd domain.
+- The partner rewards programme is not public yet; describe it only as "coming".
 
----
+## Structure
 
-## Tech Stack
+Static HTML, no build step, no framework, no include system. Every page carries its own nav,
+footer, cookie banner and consent script. `index.html` uses `index.css`; every other page and
+all `blog/*.html` use `styles.css` plus a small inline `<style>`.
 
-| Technology  | Details                                           |
-| ----------- | ------------------------------------------------- |
-| **HTML**    | Single `index.html` with inline CSS and JS        |
-| **CSS**     | CSS custom properties, Flexbox, Grid, animations  |
-| **Fonts**   | Google Fonts: Nunito (headings), Quicksand (body) |
-| **Icons**   | Emoji-based (no icon library)                     |
-| **Hosting** | Hostinger (static files)                          |
-| **DNS/CDN** | Cloudflare                                        |
+Key pages: `index.html`, `providers.html` (Business, makers, venues, ethos, FAQ),
+`pricing.html`, `about.html`, `roadmap.html`, `blog.html` + `blog/`, `press.html`, `careers.html`,
+`cookies.html`, `data-policy.html`, `thank-you.html`, `404.html`.
 
----
+**Not here:** `/privacy`, `/terms`, `/support`, `/delete-account`, `/join`, `/go`, `/download`,
+`/claim/*` and other deep links are served by the `gorocco-legal` Cloudflare Worker in
+`GoRoccoV5/public-legal/`. Link to `/privacy` and `/terms`, never to `privacy.html`.
 
-## Brand Guidelines
+Nav (all pages): Features · For Providers · Pricing · Our Story · Blog, plus a CTA.
 
-### Colors (use CSS variables)
+## Brand
 
 ```css
---rocco-blue: #7BCBEB       /* Primary brand */
+--rocco-blue: #7BCBEB       /* Primary */
 --rocco-blue-dark: #5BB8E0  /* CTAs, links */
---safe-green: #4CAF50       /* Friendly dogs */
---warning-amber: #FF9800    /* Nervous/reactive dogs */
---gray-900: #111827         /* Dark text */
---cream: #FDF8F3            /* Light backgrounds */
+--safe-green: #4CAF50       /* Friendly, "own client" */
+--warning-amber: #FF9800    /* Cautious / reactive */
+--gray-900: #111827         /* Text */
+--cream: #FDF8F3            /* Light bands */
 ```
 
-### Tone of Voice
+Fonts: Nunito (headings), Quicksand (body) via Google Fonts. Emoji icons. Breakpoints 1024/768.
 
-- **Friendly** and approachable — talk like a fellow dog owner
-- **Reassuring** — safety without fear-mongering
-- **Inclusive** — all dogs welcome, no judgment for reactive/nervous dogs
-- Use 🐾 🐕 emojis sparingly for warmth
+### Tone
 
-### Key Phrases
+Friendly and plain. Talk like a fellow dog owner, or to a provider like someone who has run a
+small business. Reassuring without fear-mongering. Inclusive: nervous dogs aren't bad dogs.
+Emojis sparingly. No em-dashes in copy (use a hyphen with spaces, as the site does).
 
-- "Know before you meet"
-- "Safer walks start here"
-- "Made for dog people, by dog people"
-- "No judgment — nervous dogs aren't bad dogs"
+Key lines: "Know before you meet" · "Made for dog people, and the people they pay" ·
+"Your clients are yours" · "Free is the product" · "Tax-ready, not tax advice".
 
----
+## Common tasks
 
-## File Structure
+- **Change a nav/footer link everywhere:** scripted replace across `*.html blog/*.html`, then
+  check `index.html` separately (its nav markup differs).
+- **New blog post:** copy `blog/go-rocco-is-now-free.html`, update head/meta/JSON-LD, add a card
+  at the top of `blog.html`, an `<item>` to `feed.xml`, a `<url>` to `sitemap.xml`.
+- **New page:** copy `pricing.html` for the chrome; add to sitemap and footer.
+- **Validate:** `npx html-validate providers.html`; a local server + `curl` for links.
 
-```
-Website/
-├── index.html              # All content (styles + scripts inline)
-├── gorocco-app-icon.png    # Favicon and OG image
-├── assets/
-│   ├── gorocco-logo.png    # Header/footer logo
-│   └── *.svg               # App store badges
-```
+## Do / Don't
 
----
-
-## Important Patterns
-
-### CSS Architecture
-
-- All styles are inline in `<style>` tags
-- Uses CSS custom properties (`:root` variables)
-- Responsive breakpoints: 1024px (tablet), 768px (mobile)
-- Supports `prefers-reduced-motion` for accessibility
-
-### JavaScript Features
-
-- Hero slider with dot navigation
-- Scroll-triggered reveal animations
-- Sticky nav with blur effect
-- Smooth scroll (respects reduced motion)
-
-### Accessibility
-
-- Skip link to main content
-- ARIA labels on interactive elements
-- Focus-visible outlines
-- aria-hidden for inactive slides
-
----
-
-## Common Tasks
-
-### Add a New Section
-
-1. Create a `<section>` with a unique ID
-2. Add `.reveal` class for scroll animation
-3. Use existing CSS patterns (`.section-header`, grids)
-4. Add navigation link if needed
-
-### Update App Store Links
-
-Replace `href="#"` in the CTA section with actual store URLs:
-
-```html
-<a href="https://apps.apple.com/app/gorocco/..." class="store-badge-link">
-  <a href="https://play.google.com/store/apps/..." class="store-badge-link"></a
-></a>
-```
-
-### Add a New Feature Card
-
-```html
-<div class="feature-card">
-  <div class="feature-icon">🆕</div>
-  <h3>Feature Name</h3>
-  <p>Feature description here.</p>
-</div>
-```
-
----
-
-## Deployment
-
-### Hostinger
-
-1. Access hPanel → File Manager
-2. Navigate to `public_html/`
-3. Upload all files maintaining structure
-4. Clear Cloudflare cache if needed
-
-### Cloudflare
-
-- DNS records point to Hostinger IP
-- SSL: Full (Strict) mode
-- Cache: Enabled with appropriate TTL
-
----
-
-## Do's and Don'ts
-
-### ✅ Do
-
-- Maintain the warm, friendly tone
-- Keep accessibility features intact
-- Test on mobile after changes
-- Use existing CSS variables for colors
-- Preserve the reduced-motion support
-
-### ❌ Don't
-
-- Add heavy JavaScript frameworks (keep it vanilla)
-- Remove ARIA labels or skip links
-- Use colors outside the brand palette
-- Break the responsive breakpoints
-- Add external dependencies without consideration
-
----
-
-## Questions to Ask Before Changes
-
-1. Does this change work on mobile (< 768px)?
-2. Does it respect reduced-motion preferences?
-3. Does it match the brand voice and colors?
-4. Is it accessible (keyboard navigable, screen-reader friendly)?
-5. Will it affect page load performance?
-
----
-
-## Useful Commands
-
-```bash
-# Start local server (VS Code Live Server)
-# Right-click index.html → Open with Live Server
-
-# Validate HTML
-npx html-validate index.html
-
-# Check for broken links
-npx broken-link-checker http://localhost:5500
-```
-
----
-
-_This file helps AI assistants understand the project context. Update it when making significant architectural changes._
+- Do keep the skip link, ARIA labels, focus-visible outlines and reduced-motion support.
+- Do keep analytics behind consent; the consent script must stay identical on every page.
+- Don't add frameworks or external dependencies.
+- Don't add `privacy.html` / `terms.html` back.
+- Don't deploy by wiping the Hostinger docroot: `public_html/films/` exists only on the host.

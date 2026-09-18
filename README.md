@@ -1,238 +1,141 @@
 # Go Rocco Marketing Website
 
-> **"Know Before You Meet"** — A dog safety app helping owners see nearby dogs' temperaments before they get close.
+> **go-rocco.com** — the marketing site for Go Rocco, the free app for UK dog owners, and for
+> **Go Rocco Business**, the free platform for the people who look after their dogs.
+
+_Last refreshed: 18 September 2026._
 
 ---
 
-## Project Overview
+## What the site says (keep this true)
 
-This is the marketing landing page for **Go Rocco**, a mobile app launching in the UK in 2026. The site promotes the app's core features:
+| Fact | Value |
+|---|---|
+| The app | **Free for dog owners since 9 Sep 2026.** No subscription, no adverts. Alpha Pack is retired. |
+| Optional purchases for owners | A lost-pet alert **boost** only (the alert itself is free). Ask Rocco has a daily allowance, not a paywall. |
+| Go Rocco Business | Free core (unlimited bookings, clients, invoices, booking page, care records, books, tax-ready pack). **Pro £15/month or £144/year.** No trial. |
+| Provider fees | **0% on own clients, forever.** Introduced clients: 15% on first bookings for 90 days / 10 bookings, capped at £50 per client. |
+| Getting listed | Optional. Selfie + photo ID + basic DBS (<12 months) + £1m public liability; LA licence for boarding/daycare. Reviewed within 48 hours. |
+| Makers (the shop) | Applications open. Product liability insurance certificate required; decision within 5 working days; 15% commission on item prices, not delivery; paid at dispatch. |
+| Tax pack wording | "Tax-ready records, not tax advice." **Never** say "files your tax return", "HMRC-recognised" or "MTD-compatible". |
+| App Store rating | 4.8 (checked 18 Sep 2026). Don't claim "Top 100". |
+| Contact address | `support@go-rocco.com` (the app's support page uses it). `partners@go-rocco.com` for venues. |
+| Platforms | iOS, Android (since 17 Apr 2026), web at app.go-rocco.com, Apple Watch. |
 
-- **Real-time dog temperament visibility** — See if nearby dogs are friendly, nervous, reactive, or in training
-- **Walk check-in** — Optional safety feature for solo walkers
-- **Dog-friendly places** — Discover venues verified by real dog owners
-- **Pet Passport** — Digital health records for your dog
+Product facts come from the main repo (`GoRoccoV5`): `provider-portal/`, `services/business-service`,
+`services/store-service`, and the App Store listing script `scripts/update-app-store-listing.py`.
 
 ---
 
-## Project Structure
+## Structure
 
 ```
 Website/
-├── index.html              # Main landing page
-├── about.html              # About Go Rocco
-├── pricing.html            # Pricing plans
-├── roadmap.html            # Product roadmap
-├── blog.html               # Blog/news
-├── careers.html            # Job listings
-├── press.html              # Press kit
-├── beta.html               # Beta signup
-├── thank-you.html          # Post-signup confirmation
-├── privacy.html            # Privacy policy
-├── terms.html              # Terms of service
-├── cookies.html            # Cookie policy
-├── data-policy.html        # Data protection policy
-├── sitemap.xml             # XML sitemap for search engines
-├── robots.txt              # Crawler instructions
-├── .well-known/
-│   └── security.txt        # Security contact info
-├── assets/
-│   ├── gorocco-logo.png    # Logo image
-│   ├── *.svg               # App store badges
-│   └── ...                 # Other images
-├── styles.css              # Shared styles
-├── workers/                # Cloudflare Workers
-└── upload/                 # Staging/temp files (blocked from crawlers)
+├── index.html              # Home (uses index.css)
+├── providers.html          # For Providers: Go Rocco Business, makers, venues, ethos
+├── pricing.html            # Free for owners; Business Free/Pro; fees
+├── about.html · roadmap.html · blog.html · careers.html · press.html
+├── cookies.html · data-policy.html
+├── thank-you.html          # Newsletter double opt-in landing
+├── beta.html               # meta-refresh stub → index.html#download
+├── 404.html
+├── blog/*.html             # 19 posts (share one inline <style>)
+├── styles.css              # Every page except index
+├── index.css               # Home only
+├── attribution.js          # Adds Apple ct= campaign token to App Store links
+├── assets/                 # logo, store badges, screenshots, videos/ (films)
+├── sitemap.xml · feed.xml · robots.txt · manifest.json
+├── .well-known/security.txt
+├── workers/gorocco-subscribe/   # Cloudflare Worker: newsletter (D1 + Resend)
+└── docs/DEPLOYMENT.md
 ```
+
+**There is no build step and no include system.** Header, nav, footer, cookie banner and the
+consent script are copied into every file. A nav change is a change to every HTML file;
+`docs/DEPLOYMENT.md` has the one-liner that does it safely.
+
+### Pages you will NOT find here
+
+`/privacy`, `/terms`, `/support`, `/delete-account`, `/child-safety`, `/join`, `/go`, `/download`,
+`/claim/*`, `/walks/*`, `/p/*`, `/shelves/*` and `/.well-known/*` are served by the
+**`gorocco-legal` Cloudflare Worker** in `GoRoccoV5/public-legal/` (`npx wrangler deploy`
+from there). The Worker holds a `go-rocco.com/*` catch-all and passes everything else through
+to this site. Do not add `privacy.html` or `terms.html` back here; they would be unreachable.
+
+`/films/` is a password-protected preview of the twelve explainer films. It lives **only on the
+host** (`public_html/films/`, with its own `.htaccess`/`.htpasswd`), not in this repo. Two of the
+films are published on `providers.html` from `assets/videos/`.
 
 ---
 
-## Hosting & Deployment
-
-### Infrastructure
+## Hosting & deployment
 
 | Service | Purpose |
-|---------|---------|
-| **Hostinger** | Web hosting (LiteSpeed) |
-| **Cloudflare** | DNS, CDN, SSL, DDoS protection |
-| **GitHub** | Version control |
-| **Cloudflare Workers** | Serverless functions (subscribe API) |
+|---|---|
+| **Hostinger** | Static files in `public_html/` (domain `go-rocco.com`, LiteSpeed) |
+| **Cloudflare** | DNS, CDN, SSL (Full Strict), and the two Workers |
+| **GitHub** | `Nino6689/go-rocco-website`, branch `main` |
 
-### Quick Deployment (via GitHub)
-
-```bash
-# 1. Make your changes locally
-# 2. Commit changes
-git add .
-git commit -m "Your commit message"
-
-# 3. Push to GitHub
-git push origin main
-
-# 4. Deploy to Hostinger (manual sync required)
-# Option A: Use Hostinger Git integration (if configured)
-# Option B: Upload via FTP/File Manager
-```
-
-### Manual Deployment to Hostinger
-
-1. **Login to Hostinger hPanel**: https://hpanel.hostinger.com
-2. **Go to**: Files → File Manager → `public_html/`
-3. **Upload** all changed files (maintain folder structure)
-4. **Clear Cloudflare cache** (optional but recommended):
-   - Cloudflare Dashboard → Caching → Purge Everything
-
-### FTP Details (if needed)
-
-| Setting | Value |
-|---------|-------|
-| Host | ftp.go-rocco.com |
-| Port | 21 |
-| Username | (see Hostinger hPanel) |
-| Directory | /public_html/ |
-
-### Cloudflare Settings
-
-| Setting | Value |
-|---------|-------|
-| SSL Mode | Full (Strict) |
-| Always HTTPS | On |
-| Auto Minify | HTML, CSS, JS |
-| Brotli | On |
+Deploying is a file copy. See `docs/DEPLOYMENT.md` for the three ways to do it and the one
+rule that matters: **never wipe the docroot** (that would delete `/films/`).
 
 ---
 
-## Development Workflow
-
-### Local Development
+## Local development
 
 ```bash
-# 1. Open VS Code workspace
-code gorocco.code-workspace
-
-# 2. Start Live Server
-# Right-click index.html → "Open with Live Server"
-# Or: Cmd+Shift+P → "Live Server: Open with Live Server"
-
-# 3. Make changes and test
-# Live Server auto-refreshes on save
+code gorocco.code-workspace      # Live Server on :5500, or:
+python3 -m http.server 5500      # from this directory
 ```
 
-### Testing Checklist
-
-- [ ] Test all navigation links
-- [ ] Verify responsive design (mobile, tablet, desktop)
-- [ ] Check hero slider on mobile
-- [ ] Test cookie consent banner
-- [ ] Verify analytics only load after consent
-- [ ] Test form submissions
-- [ ] Check across browsers (Chrome, Safari, Firefox)
+Before committing: `grep -rn "Alpha Pack\|£2.99\|gorocco\.com" --include=*.html .` should
+only hit the two historical blog notes.
 
 ---
 
-## Design System
-
-### Brand Colors
+## Design system
 
 | Variable | Hex | Usage |
-|----------|-----|-------|
-| `--rocco-blue` | `#7BCBEB` | Primary brand color |
+|---|---|---|
+| `--rocco-blue` | `#7BCBEB` | Primary brand |
 | `--rocco-blue-light` | `#A8DCF3` | Hover states |
-| `--rocco-blue-dark` | `#5BB8E0` | CTA buttons |
-| `--safe-green` | `#4CAF50` | Friendly status |
-| `--warning-amber` | `#FF9800` | Reactive status |
-| `--cream` | `#FDF8F3` | Light backgrounds |
+| `--rocco-blue-dark` | `#5BB8E0` | CTAs, links |
+| `--safe-green` | `#4CAF50` | Friendly / "own client" |
+| `--warning-amber` | `#FF9800` | Cautious / reactive |
+| `--rocco-coral` `--rocco-purple` `--rocco-red` `--rocco-amber` | see `index.css:1-17` | Section labels |
+| `--cream` | `#FDF8F3` | Light bands |
 
-### Typography
-
-- **Headings**: Nunito (Google Fonts)
-- **Body**: Quicksand (Google Fonts)
-
-### Responsive Breakpoints
-
-| Breakpoint | Devices |
-|------------|---------|
-| > 1024px | Desktop |
-| 768px–1024px | Tablet |
-| < 768px | Mobile |
+Fonts: Nunito (headings) and Quicksand (body), loaded from Google Fonts in every `<head>`.
+Breakpoints: 1024px (tablet), 768px (mobile). Icons are emoji; no icon library, no JS framework.
 
 ---
 
-## Analytics & Tracking
+## Analytics & tracking
 
-### Configured Services
+| Service | ID | Load |
+|---|---|---|
+| Google Analytics 4 | `G-XF5KB7S3WL` | Consent Mode v2, default denied |
+| Microsoft Clarity | `vd24wvz3m1` | After consent only |
+| Cloudflare Web Analytics | `644d34331b7b4af0beacf23a746bb948` | After consent only |
+| Apple Smart App Banner | app id `6753819069` | `index.html` only |
 
-| Service | ID | Status |
-|---------|-----|--------|
-| Google Analytics 4 | `G-XF5KB7S3WL` | Active (consent-gated) |
-| Microsoft Clarity | `vd24wvz3m1` | Active (consent-gated) |
-| Cloudflare Analytics | `644d34331b7b4af0beacf23a746bb948` | Active |
-
-### GDPR Compliance
-
-- Cookie consent banner on all pages
-- Analytics only load after user consent
-- 12-month consent expiry (UK GDPR requirement)
-- Users can manage preferences on cookies.html
+Consent is stored in `localStorage` (`gorocco_cookie_consent`, 12-month expiry). `providers.html`
+sends `provider_signup_click` and `film_play` events.
 
 ---
 
-## Cloudflare Workers
+## Newsletter worker
 
-### Subscribe Worker
-
-- **URL**: https://subscribe.go-rocco.com
-- **Endpoints**:
-  - `POST /api/subscribe` — New signup
-  - `GET /api/count` — Get confirmed subscriber count
-  - `GET /confirm?token=xxx` — Email confirmation
-  - `GET /admin/stats` — Admin stats (auth required)
-  - `GET /admin/export` — Export CSV (auth required)
-
----
-
-## SEO
-
-### Configured
-
-- [x] XML Sitemap (`sitemap.xml`)
-- [x] robots.txt
-- [x] security.txt
-- [x] Meta descriptions on all pages
-- [x] Open Graph tags
-- [x] Canonical URLs
-
-### Google Search Console
-
-Submit sitemap at: https://search.google.com/search-console
-
----
-
-## Useful Commands
-
-```bash
-# Check git status
-git status
-
-# View recent commits
-git log --oneline -5
-
-# Discard local changes
-git checkout -- filename.html
-
-# Pull latest from GitHub
-git pull origin main
-```
+`workers/gorocco-subscribe/` → `https://subscribe.go-rocco.com` (`POST /api/subscribe`,
+`GET /confirm`, `GET /admin/stats`, `GET /admin/export`). Deploy with `npm run deploy` in that
+directory. The form is on `blog.html`; `thank-you.html` is the confirmation landing.
 
 ---
 
 ## Support
 
-For questions about Go Rocco:
 - Website: https://go-rocco.com
-- Email: hello@go-rocco.com
-- Security: security@go-rocco.com
+- Email: support@go-rocco.com
+- Security: security@go-rocco.com (see `.well-known/security.txt`)
 
----
-
-_Made with paw in the UK_
+_Made with 🐾 in the UK_

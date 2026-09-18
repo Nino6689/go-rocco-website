@@ -5,8 +5,26 @@
     <link>https://go-rocco.com/blog.html</link>
     <description>Dog safety tips, reactive dog advice, and UK dog walking guides from Go Rocco.</description>
     <language>en-GB</language>
-    <lastBuildDate>Sun, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://go-rocco.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Run your dog business on Go Rocco. It's free.</title>
+      <link>https://go-rocco.com/blog/introducing-go-rocco-business.html</link>
+      <description>Go Rocco Business is live: a free calendar, client book, booking page, invoices with a pay link and tax-ready books for UK dog walkers, groomers, sitters, boarders and trainers. 0% on your own clients, forever.</description>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/introducing-go-rocco-business.html</guid>
+      <category>Announcements</category>
+    </item>
+
+    <item>
+      <title>Go Rocco is now free for dog owners</title>
+      <link>https://go-rocco.com/blog/go-rocco-is-now-free.html</link>
+      <description>The Alpha Pack subscription and all third-party adverts are gone. Every feature in Go Rocco is now free for every dog owner. What changed, why, and how the lights stay on.</description>
+      <pubDate>Tue, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://go-rocco.com/blog/go-rocco-is-now-free.html</guid>
+      <category>Announcements</category>
+    </item>
 
     <item>
       <title>Go Rocco Is Now on Android!</title>

@@ -1,152 +1,88 @@
 # Deployment Guide — Hostinger + Cloudflare
 
-## Overview
+_Last updated: 18 September 2026._
 
-The Go Rocco marketing site is hosted on **Hostinger** with **Cloudflare** managing DNS and CDN.
-
----
-
-## Hostinger Setup
-
-### Access
-
-1. Log in to [Hostinger hPanel](https://hpanel.hostinger.com)
-2. Select your hosting plan
-3. Navigate to **File Manager** or **FTP Accounts**
-
-### File Structure on Server
+## How a request reaches this site
 
 ```
-public_html/
-├── index.html
-├── gorocco-app-icon.png
-└── assets/
-    ├── gorocco-logo.png
-    ├── Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg
-    ├── Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg
-    └── GetItOnGooglePlay_Badge_Web_color_English.svg
+browser → Cloudflare (DNS, CDN, SSL) → gorocco-legal Worker (catch-all go-rocco.com/*)
+        → matched route?  yes → Worker answers (privacy, terms, support, /join, /go, /download,
+                                  /claim/*, /walks/*, /p/*, /shelves/*, /.well-known/*, …)
+                            no  → passes through to Hostinger public_html/ (this repo)
 ```
 
-### Deployment Methods
+The Worker lives in the main repo at `GoRoccoV5/public-legal/` (`worker.js`, `wrangler.toml`).
+`wrangler.toml` is not the truth about which routes are live; check the zone:
+`GET https://api.cloudflare.com/client/v4/zones/8a0e6d66c95887d42485d075793d914c/workers/routes`.
 
-#### Option 1: File Manager (Recommended for small updates)
+Consequences for this repo:
 
-1. hPanel → **Files** → **File Manager**
-2. Navigate to `public_html/`
-3. Upload files directly (drag & drop)
-4. Overwrite existing files when prompted
+- `privacy.html` and `terms.html` were removed on 18 Sep 2026: the Worker serves those URLs and
+  the copies here were unreachable. Footer links point at `/privacy` and `/terms`.
+- `.well-known/security.txt` here is also shadowed by the Worker.
 
-#### Option 2: FTP Client
+## What is on the host but NOT in git
 
-1. hPanel → **Files** → **FTP Accounts**
-2. Create or use existing FTP account
-3. Connect with FileZilla or Cyberduck:
-   - **Host**: Your domain or Hostinger FTP hostname
-   - **Port**: 21
-   - **Protocol**: FTP or FTPS
-4. Upload to `public_html/`
+`public_html/films/` — twelve explainer films (~50 MB), posters, `index.html`, and a Basic Auth
+gate (`.htaccess` + `.htpasswd`). Built from `GoRoccoV5/films/`. **A whole-docroot deploy or a
+"deploy from archive" deletes it.** Deploy changed files only, or include `films/` in the archive.
 
-#### Option 3: Git (Advanced)
+## Hostinger
 
-1. hPanel → **Advanced** → **Git**
-2. Set up repository and auto-deploy
+- hPanel: https://hpanel.hostinger.com — domain `go-rocco.com`, user `u629312178`,
+  docroot `/home/u629312178/domains/go-rocco.com/public_html`.
+- FTP: `ftp.go-rocco.com`, port 21, user and password in hPanel → Files → FTP Accounts.
 
----
+### Deploy method 1 — File Manager (safe, manual)
 
-## Cloudflare Configuration
+1. hPanel → Files → File Manager → `public_html/`
+2. Drag in the changed files, keeping the folder structure. Overwrite when asked.
+3. Purge Cloudflare cache (Caching → Configuration → Purge Everything) and hard-refresh.
 
-### DNS Records
+### Deploy method 2 — FTP mirror of changed files (safe, scriptable)
 
-Set these in your Cloudflare dashboard:
+```bash
+# from the repo root; never pass --delete
+lftp -u "$FTP_USER","$FTP_PASS" ftp.go-rocco.com -e "
+  set ftp:ssl-force true; set ssl:verify-certificate no;
+  mirror -R --only-newer --exclude-glob .git* --exclude-glob node_modules/ \
+         --exclude-glob .playwright-mcp/ --exclude-glob .venv/ --exclude-glob .wrangler/ \
+         --exclude-glob docs/ --exclude-glob workers/ --exclude-glob films/ \
+         . /public_html; quit"
+```
 
-| Type  | Name | Content        | Proxy      |
-| ----- | ---- | -------------- | ---------- |
-| A     | @    | Hostinger IP   | ✅ Proxied |
-| A     | www  | Hostinger IP   | ✅ Proxied |
-| CNAME | www  | yourdomain.com | ✅ Proxied |
+### Deploy method 3 — Hostinger "deploy static site from archive" (DANGEROUS)
 
-> Get your Hostinger IP from hPanel → **Hosting** → **Plan Details**
+The Hostinger API / MCP tool `hosting_deployStaticWebsite` extracts an archive over the docroot
+and **removes what is not in the archive**. Only use it with an archive that contains everything
+that should exist afterwards, including `films/` and its `.htaccess`/`.htpasswd`.
 
-### SSL/TLS Settings
+## After deploying
 
-1. **Cloudflare Dashboard** → **SSL/TLS**
-2. Set encryption mode to **Full (Strict)**
-3. Enable **Always Use HTTPS**
-4. Enable **Automatic HTTPS Rewrites**
+- [ ] `curl -s https://go-rocco.com/providers.html | grep -c "Go Rocco Business"` → non-zero
+- [ ] `curl -s https://go-rocco.com/pricing.html | grep -c "Alpha Pack"` → `0`
+- [ ] `https://go-rocco.com/films/` still asks for a password
+- [ ] `https://go-rocco.com/privacy` shows "Last Updated: 15 September 2026" (Worker, unchanged)
+- [ ] Purge Cloudflare cache; hard refresh (Cmd+Shift+R); check on a phone
+- [ ] Re-submit `sitemap.xml` in Search Console if pages were added
 
-### Performance Settings
+## Cloudflare settings (unchanged)
 
-1. **Speed** → **Optimization**
-   - Enable Auto Minify (HTML, CSS, JS)
-   - Enable Brotli compression
-2. **Caching** → **Configuration**
-   - Browser Cache TTL: 1 month
-   - Enable "Always Online"
+SSL Full (Strict) · Always Use HTTPS · Brotli · Auto Minify · browser cache TTL 1 month.
+Zone id `8a0e6d66c95887d42485d075793d914c`.
 
-### Page Rules (Optional)
+## Editing the shared chrome
 
-Create a rule for caching static assets:
-
-- **URL**: `yourdomain.com/assets/*`
-- **Cache Level**: Cache Everything
-- **Edge Cache TTL**: 1 month
-
----
-
-## Deployment Checklist
-
-### Before Deploying
-
-- [ ] Test locally with Live Server
-- [ ] Check all links work
-- [ ] Verify images load correctly
-- [ ] Test responsive design
-- [ ] Validate HTML (no errors)
-
-### After Deploying
-
-- [ ] Hard refresh the live site (Cmd+Shift+R)
-- [ ] Purge Cloudflare cache if changes don't appear
-- [ ] Test on mobile device
-- [ ] Check SSL certificate is active
-- [ ] Verify meta tags appear correctly (share on social)
-
-### Purge Cloudflare Cache
-
-1. Cloudflare Dashboard → **Caching** → **Configuration**
-2. Click **Purge Everything** (or specific URLs)
-3. Wait 30 seconds, then test
-
----
+Every HTML file carries its own copy of the nav, footer and consent script. To change a nav
+link everywhere, edit with a scripted replace over `*.html blog/*.html` (see
+`refresh.py` in the 18 Sep 2026 commit message for the pattern), then eyeball `index.html`,
+which has its own nav markup and `index.css`.
 
 ## Troubleshooting
 
-### Changes not appearing?
-
-1. Hard refresh: `Cmd+Shift+R`
-2. Purge Cloudflare cache
-3. Check you uploaded to correct folder (`public_html/`)
-4. Verify file permissions (should be 644 for files, 755 for folders)
-
-### SSL certificate errors?
-
-1. Ensure Cloudflare SSL mode is "Full (Strict)"
-2. Check Hostinger has SSL enabled (hPanel → SSL)
-3. Wait up to 24 hours for propagation
-
-### Site offline?
-
-1. Check Hostinger server status
-2. Verify DNS records in Cloudflare
-3. Test with Cloudflare proxy disabled (grey cloud)
-
----
-
-## Contact
-
-- **Hostinger Support**: hPanel → Help → Live Chat
-- **Cloudflare Support**: Dashboard → Support
-
----
-
-_Last updated: January 2026_
+- **Changes not appearing** → purge Cloudflare, hard refresh, check you uploaded to
+  `public_html/` (not a subfolder), file permissions 644/755.
+- **A page 404s but the file is there** → the Worker owns that path; check its routes.
+- **A page shows old legal text** → it is the Worker's; edit `public-legal/worker.js` and
+  `npx wrangler deploy` from `GoRoccoV5/public-legal/`.
+- **Site offline** → Hostinger status, Cloudflare DNS, try with the proxy off (grey cloud).

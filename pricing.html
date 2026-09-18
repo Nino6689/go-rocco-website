@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing | Go Rocco - Free Dog Safety App UK</title>
+    <title>Pricing | Go Rocco - Free for Dog Owners, Fair for Dog Businesses</title>
     <meta
       name="description"
-      content="Go Rocco pricing for UK dog owners. Free core features forever. Alpha Pack premium from £2.99/month. No credit card required to start."
+      content="Go Rocco is free for dog owners: no subscription, no adverts. Go Rocco Business is free for the core, with Pro at £15 a month for the admin extras. 0% commission on your own clients."
     />
     <meta
       name="keywords"
-      content="Go Rocco pricing, dog app free UK, Alpha Pack subscription, dog safety app cost, pet app pricing, free dog walking app"
+      content="Go Rocco pricing, free dog app UK, dog walker software pricing, Go Rocco Business Pro, dog business app cost, is Go Rocco free"
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://go-rocco.com/pricing.html" />
@@ -26,8 +26,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://go-rocco.com/pricing.html" />
     <meta property="og:site_name" content="Go Rocco" />
-    <meta property="og:title" content="Pricing | Go Rocco - Free Dog Safety App UK" />
-    <meta property="og:description" content="Free core features forever. Alpha Pack premium from £2.99/month. No credit card required." />
+    <meta property="og:title" content="Pricing | Go Rocco - Free for Dog Owners, Fair for Dog Businesses" />
+    <meta property="og:description" content="Free for dog owners, no subscription and no adverts. Go Rocco Business is free for the core; Pro is £15 a month." />
     <meta property="og:image" content="https://go-rocco.com/gorocco-app-icon.png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
@@ -36,8 +36,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@goroccoapp" />
-    <meta name="twitter:title" content="Pricing | Go Rocco - Free Dog Safety App UK" />
-    <meta name="twitter:description" content="Free core features forever. Alpha Pack premium from £2.99/month for UK dog owners." />
+    <meta name="twitter:title" content="Pricing | Go Rocco - Free for Dog Owners, Fair for Dog Businesses" />
+    <meta name="twitter:description" content="Free for dog owners, no subscription and no adverts. Go Rocco Business is free for the core; Pro is £15 a month." />
     <meta name="twitter:image" content="https://go-rocco.com/gorocco-app-icon.png" />
 
     <!-- Structured Data - Breadcrumb -->
@@ -60,26 +60,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is the free version really free?",
+            "name": "Is Go Rocco free for dog owners?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! Go Rocco's core features are free forever. No credit card required, no hidden fees. The Free Pack includes dog temperament visibility, walk check-ins, and access to dog-friendly venues."
+              "text": "Yes. Every feature in the Go Rocco app is free for dog owners: GPS walk tracking, the live temperament map, pet health records and the digital passport, unlimited pet profiles, group chats, voice messages, safety zones, Ask Rocco and lost-pet alerts. There is no subscription and there are no adverts."
             }
           },
           {
             "@type": "Question",
-            "name": "Can I cancel my Alpha Pack subscription anytime?",
+            "name": "How does Go Rocco make money if the app is free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Absolutely. You can cancel your Alpha Pack subscription at any time with no cancellation fees. Your premium features will remain active until the end of your billing period."
+              "text": "From the businesses side. Go Rocco Business Pro costs £15 a month or £144 a year for dog-care professionals who want the admin extras, there is a small introduction fee when Go Rocco introduces a new client to a provider, independent makers pay a 15% commission on shop sales, and venues and providers can pay to promote a listing. Lost-pet alerts are free; a boost that widens an alert's reach is the only optional purchase for owners."
             }
           },
           {
             "@type": "Question",
-            "name": "What payment methods do you accept?",
+            "name": "What does Go Rocco Business cost?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We accept all major credit and debit cards, Apple Pay, and Google Pay through our secure payment processor."
+              "text": "The core is free forever: unlimited bookings, clients and invoices, your own booking page, care records, books and the tax-ready pack. Pro is £15 a month or £144 a year and adds monthly invoice runs, SMS reminders, a custom web address, team seats, the staff rota, the inspection pack, certificates, late payment fees, weather alerts and priority support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Go Rocco take commission from dog walkers and groomers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not on their own clients, ever. Only a client that Go Rocco introduces carries a fee, and only on that client's first bookings: 15% for 90 days or 10 bookings, capped at £50 per client. After that the client is the provider's at 0%."
             }
           }
         ]
@@ -96,6 +104,87 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .pricing-section + .pricing-section {
+        padding-top: 0;
+      }
+      .pricing-card.owners {
+        max-width: 640px;
+        border-color: var(--rocco-blue);
+        box-shadow: 0 20px 60px rgba(123, 203, 235, 0.25);
+      }
+      .pricing-card.owners:hover {
+        transform: translateY(-5px);
+      }
+      .pricing-features.two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
+      }
+      .pricing-features.two-col li {
+        border-bottom: 1px solid var(--gray-50);
+      }
+      .pricing-note {
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .fee-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        max-width: 960px;
+        margin: 2.5rem auto 0;
+        text-align: left;
+      }
+      .fee-box {
+        border-radius: 20px;
+        padding: 1.75rem;
+        background: var(--gray-50);
+        border: 2px solid transparent;
+      }
+      .fee-box.green {
+        background: rgba(76, 175, 80, 0.1);
+        border-color: rgba(76, 175, 80, 0.35);
+      }
+      .fee-box .big {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 900;
+        font-size: 2.25rem;
+        color: var(--rocco-blue-dark);
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+      }
+      .fee-box.green .big {
+        color: var(--safe-green);
+      }
+      .fee-box h3 {
+        font-size: 1.1rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+      }
+      .fee-box p {
+        color: var(--gray-600);
+        line-height: 1.7;
+        font-size: 0.98rem;
+      }
+      .store-badges {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+      .store-badges img {
+        height: 44px;
+      }
+      @media (max-width: 768px) {
+        .pricing-features.two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
 
     <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
     <script>
@@ -122,9 +211,9 @@
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
+        <li><a href="providers.html">For Providers</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="about.html">Our Story</a></li>
-        <li><a href="roadmap.html">Roadmap</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
       <a href="index.html#download" class="nav-cta">Download</a>
@@ -137,98 +226,74 @@
 
     <div class="mobile-menu" id="mobileMenu">
       <a href="index.html#features" class="mobile-nav-link">Features</a>
+      <a href="providers.html" class="mobile-nav-link">For Providers</a>
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="about.html" class="mobile-nav-link">Our Story</a>
-      <a href="roadmap.html" class="mobile-nav-link">Roadmap</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
       <a href="index.html#download" class="nav-cta mobile-nav-link">Download Free →</a>
     </div>
 
     <main id="main">
       <header class="page-header">
-        <h1>Simple, Fair Pricing</h1>
-        <p>Safety features are free. Pro is for power users.</p>
+        <h1>Free for dog owners. Fair for the people they pay.</h1>
+        <p>No subscription and no adverts in the app. The businesses that use Go Rocco pay for the extras, and only for the extras.</p>
       </header>
 
-      <section class="pricing-section">
+      <section class="pricing-section" id="owners">
         <div class="pricing-header">
-          <h2>Choose Your Plan</h2>
-          <p>
-            All the essential features you need are completely free. Join the Alpha Pack for the ultimate dog owner
-            experience.
-          </p>
+          <h2>For dog owners</h2>
+          <p>Since September 2026 every feature in the Go Rocco app is free for everyone. There is nothing to buy and nothing to unlock.</p>
         </div>
 
         <div class="pricing-cards">
-          <div class="pricing-card">
-            <h3>Go Rocco Free</h3>
+          <div class="pricing-card owners">
+            <span class="pricing-badge">🐾 The Go Rocco app</span>
+            <h3>Everything, for everyone</h3>
             <div class="pricing-price">£0<span>/forever</span></div>
             <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic">
-              Perfect for casual dog owners
+              No subscription. No adverts. No trial that runs out.
             </p>
-            <ul class="pricing-features">
-              <li>🗺️ GPS Walk Tracking (20 mtr/walk)</li>
-              <li>🚨 Lost Pet Alerts & SOS</li>
-              <li>📸 Social Feed & Stories</li>
-              <li>📍 Discover Dog-Friendly Places</li>
-              <li>🏆 Achievements & Rewards</li>
-              <li>🐕 Live Temperament Map</li>
-              <li>👤 1 Pet Profile</li>
+            <ul class="pricing-features two-col">
+              <li>GPS walk tracking, unlimited</li>
+              <li>Live temperament map, 100 m radar</li>
+              <li>Unlimited pet profiles</li>
+              <li>Pet health records and reminders</li>
+              <li>Digital pet passport with QR code</li>
+              <li>Lost-pet alerts and photo matching</li>
+              <li>SOS, walk timer and safety zones</li>
+              <li>Group chats and voice messages</li>
+              <li>Ask Rocco, your AI dog-care companion</li>
+              <li>Dog-friendly places, reviews and check-ins</li>
+              <li>Groups, events and group walks</li>
+              <li>Apple Watch companion</li>
+              <li>Book trusted walkers, groomers and sitters</li>
+              <li>Points, streaks and achievements</li>
             </ul>
-            <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer" class="pricing-btn">Get Started Free (iOS)</a>
-            <a href="https://play.google.com/store/apps/details?id=com.gorocco.v6&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="pricing-btn" style="margin-top: 0.5rem; background: var(--gray-50); color: var(--gray-900); border: 2px solid var(--rocco-blue);">Get Started Free (Android)</a>
-          </div>
-
-          <div class="pricing-card featured">
-            <span class="pricing-badge">🐺 Alpha Pack</span>
-            <h3>Go Rocco Alpha Pack</h3>
-            <div class="pricing-price">£2.99<span>/month</span></div>
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic">
-              For dedicated dog parents
-            </p>
-            <ul class="pricing-features">
-              <li><strong>Everything in Free, plus:</strong></li>
-              <li>⏱️ Extended Walk Tracking (100 mtr/walk)</li>
-              <li>🐾 Multi-Pet Support (unlimited profiles)</li>
-              <li>📢 Lost Pet Alert Boosting (priority alerts)</li>
-              <li>💊 Pet Health Dashboard (vet records, reminders)</li>
-              <li>💬 Group Chats & Voice Messages</li>
-              <li>🚫 Ad-Free Experience</li>
-              <li>✨ 2x Points on all activities</li>
-              <li>🔥 Streak Protection (3 freezes/month)</li>
-              <li>⌚ Apple Watch App</li>
-              <li>🤖 Ask Rocco AI assistant</li>
-              <li>📍 Safety Zones (geofencing)</li>
-              <li>🛂 Digital Pet Passport</li>
-              <li>🏷️ 5% off marketplace bookings</li>
-              <li>🏅 Exclusive Alpha Pack badge</li>
-              <li>⚡ Early access to new features</li>
-              <li>🎧 Priority support</li>
-            </ul>
-            <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer" class="pricing-btn">Start Free Trial (iOS)</a>
-            <a href="https://play.google.com/store/apps/details?id=com.gorocco.v6&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="pricing-btn" style="margin-top: 0.5rem; background: var(--white); color: var(--rocco-blue); border: 2px solid var(--rocco-blue);">Start Free Trial (Android)</a>
-            <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 1rem; text-align: center">
-              7-day free trial. Cancel anytime.
-            </p>
+            <div class="store-badges">
+              <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <img src="assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download Go Rocco on the App Store" />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.gorocco.v6&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <img src="assets/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get Go Rocco on Google Play" />
+              </a>
+            </div>
+            <p class="pricing-note">Also in your browser at <a href="https://app.go-rocco.com">app.go-rocco.com</a>.</p>
           </div>
         </div>
-
-        <div style="max-width: 600px; margin: 4rem auto 0; text-align: center">
-          <h3 style="font-size: 1.5rem; color: var(--gray-900); margin-bottom: 1rem">Annual Plan</h3>
-          <p style="color: var(--gray-600); margin-bottom: 1rem">Save 33% with an annual subscription</p>
-          <div class="pricing-price" style="font-size: 2.5rem">£23.99<span>/year</span></div>
-          <p style="color: var(--safe-green); font-weight: 600; margin-top: 0.5rem">That's just £2/month!</p>
-        </div>
+        <p class="pricing-note" style="max-width: 640px; margin: 2rem auto 0">
+          The only optional purchase for owners is a <strong>lost-pet alert boost</strong>. The alert itself is free and goes out to people nearby the moment you create it; a boost just widens the reach. Ask Rocco has a generous daily allowance of questions, a cost ceiling rather than a paywall.
+        </p>
       </section>
 
       <section style="padding: 4rem; background: var(--cream)">
         <div style="max-width: 800px; margin: 0 auto">
           <h2 style="font-size: 2rem; color: var(--gray-900); margin-bottom: 2rem; text-align: center">
-            Why We Keep Core Features Free
+            Why the app is free
           </h2>
           <p style="font-size: 1.15rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 1.5rem">
-            The whole point of Go Rocco is to make dog walks safer for everyone. That only works if lots of people use
-            it. So we made a promise:
+            Go Rocco only works if the dog owners on your street use it too. A paywall in front of the map, the lost-dog
+            alerts or the health records made every walk a little less safe for everyone, so in September 2026 we took it
+            down. Nothing was cut; it was all unlocked.
           </p>
           <div
             style="
@@ -239,65 +304,138 @@
             "
           >
             <p style="font-size: 1.25rem; color: var(--gray-900); font-weight: 600; font-style: italic; margin: 0">
-              "Any feature that helps prevent dog incidents will always be free."
+              "Any feature that helps keep a dog safe will always be free."
             </p>
           </div>
           <p style="font-size: 1.15rem; color: var(--gray-600); line-height: 1.8; margin-top: 1.5rem">
-            Alpha Pack features are nice-to-haves for dedicated dog owners who want the ultimate experience. They help
-            us keep the lights on while keeping safety accessible to all.
+            The lights stay on because of the businesses side: the professionals who run their day on Go Rocco Business,
+            the makers who sell in the shop, and the venues and providers who choose to promote themselves. That side
+            pays for the extras, and only for the extras.
           </p>
         </div>
+      </section>
+
+      <section class="pricing-section" id="business">
+        <div class="pricing-header">
+          <h2>For dog businesses</h2>
+          <p>
+            <strong>Go Rocco Business</strong> is the calendar, client book, booking page, invoices and tax-ready books for
+            people who look after other people's dogs. Free runs the business. Pro takes the admin off your plate.
+          </p>
+        </div>
+
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <h3>Free</h3>
+            <div class="pricing-price">£0<span>/forever</span></div>
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic">
+              Unlimited. No card, no contract.
+            </p>
+            <ul class="pricing-features">
+              <li>Unlimited bookings, clients and invoices</li>
+              <li>Your booking page and client hub</li>
+              <li>Care records, report cards and live updates</li>
+              <li>Repeat bookings, waiting list, quotes and vouchers</li>
+              <li>Cancellation and no-show fees</li>
+              <li>Animal register, incident reports and keys</li>
+              <li>Books, mileage and the tax-ready pack</li>
+              <li>Bank, cash and card payments, 0% on your own clients</li>
+            </ul>
+            <a href="https://provider.go-rocco.com/signup" class="pricing-btn">Create your free account</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <span class="pricing-badge">⭐ Pro</span>
+            <h3>Go Rocco Business Pro</h3>
+            <div class="pricing-price">£15<span>/month</span></div>
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic">
+              Or £144 a year. Everything in Free, plus:
+            </p>
+            <ul class="pricing-features">
+              <li>Monthly invoice runs</li>
+              <li>SMS reminders (100 a month)</li>
+              <li>Custom web address for your booking page</li>
+              <li>Three team seats and the staff rota</li>
+              <li>Inspection pack in the local authority format</li>
+              <li>Run sheets with drive time</li>
+              <li>Certificates, late payment fees, weather alerts</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="https://provider.go-rocco.com/signup" class="pricing-btn">Start free, upgrade any time</a>
+            <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 1rem; text-align: center">
+              Upgrade or cancel from your plan page. No trial to run out.
+            </p>
+          </div>
+        </div>
+
+        <div class="fee-strip">
+          <div class="fee-box green">
+            <div class="big">0%</div>
+            <h3>On your own clients, forever</h3>
+            <p>Clients you bring, import, add by hand or who book through your own page. Card payments go straight to your own Stripe account.</p>
+          </div>
+          <div class="fee-box">
+            <div class="big">15%</div>
+            <h3>On a client Go Rocco introduces, briefly</h3>
+            <p>Their first bookings only: for 90 days or 10 bookings, capped at £50 per client. Then they're yours at 0% too. Listing on the marketplace is optional.</p>
+          </div>
+          <div class="fee-box">
+            <div class="big">15%</div>
+            <h3>For makers who sell in the shop</h3>
+            <p>Independent British makers sell direct through their own Stripe account. Commission is on item prices, never delivery, and payouts are scheduled at dispatch.</p>
+          </div>
+        </div>
+        <p class="pricing-note" style="margin-top: 2rem">
+          Full details, the sign-up steps and what's needed to get listed are on the <a href="providers.html">For Providers</a> page.
+        </p>
       </section>
 
       <section class="content-section">
         <h2>Frequently Asked Questions</h2>
 
-        <h3>Is the free version really free?</h3>
+        <h3>Is the app really free?</h3>
         <p>
-          Yes! No credit card required, no hidden fees. The Live Map, temperament sharing, and safety features are 100%
-          free forever. We may show occasional, non-intrusive ads to free users.
+          Yes. Every feature is unlocked for everyone: walks, health records, group chats, safety zones, the lot. There is
+          no subscription and there are no adverts.
         </p>
 
-        <h3>What happens after my free trial?</h3>
+        <h3>I paid for Alpha Pack before. What happens now?</h3>
         <p>
-          You'll be prompted to subscribe to Alpha Pack. If you don't, you'll simply drop back to the free plan - you
-          won't lose any data, and all free features keep working.
+          Alpha Pack is no longer sold, and everything it unlocked is now free for everyone. Anything you already paid for
+          is handled by Apple or Google in the usual way; the details are in our <a href="/terms">Terms of Service</a>.
         </p>
 
-        <h3>Can I cancel anytime?</h3>
+        <h3>What does Go Rocco Business Pro cost?</h3>
         <p>
-          Absolutely. Cancel through your App Store or Google Play account settings. You'll keep Pro access until the
-          end of your billing period.
+          £15 a month or £144 a year. There is no free trial because there is nothing to trial: the free plan is the full
+          product and Pro is the convenience layer on top. Switch it on when it pays for itself.
         </p>
 
-        <h3>Do you offer refunds?</h3>
+        <h3>Do you take commission from walkers, groomers and sitters?</h3>
         <p>
-          Refund requests are handled by Apple or Google depending on where you subscribed. UK consumers have statutory
-          rights under the Consumer Rights Act 2015.
+          Not on their own clients, ever. Only a client Go Rocco introduces carries a fee, and only on that client's first
+          bookings: 15% for 90 days or 10 bookings, capped at £50 per client. After that the client is theirs at 0%.
         </p>
 
         <h3>Is there a family plan?</h3>
         <p>
-          Not yet, but it's on our roadmap! For now, each account is for one person (though you can add multiple dogs to
-          your profile).
+          You don't need one. Each person has their own free account, and you can share a dog's profile with family,
+          carers or a dog walker from the pet's page.
         </p>
 
-        <h3>What about multi-dog households?</h3>
-        <p>Free users can add one dog profile. Alpha Pack members can add unlimited dogs to their account.</p>
-
-        <h3>Is Go Rocco really free?</h3>
+        <h3>Do you offer refunds?</h3>
         <p>
-          Yes! The core app is completely free to download and use. The optional
-          <strong>Alpha Pack upgrade unlocks premium features</strong> for power users who want even more from their walks.
-          <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer">Download Go Rocco →</a>
+          Purchases in the app are handled by Apple or Google depending on where you bought them. Business Pro is billed by
+          Go Rocco and can be cancelled from your plan page at any time. UK consumers have statutory rights under the
+          Consumer Rights Act 2015.
         </p>
       </section>
 
       <section style="padding: 4rem; background: var(--rocco-blue); text-align: center">
         <div style="max-width: 600px; margin: 0 auto">
-          <h2 style="font-size: 2rem; color: var(--white); margin-bottom: 1rem">Ready to Make Walks Safer?</h2>
+          <h2 style="font-size: 2rem; color: var(--white); margin-bottom: 1rem">Ready for a better walk?</h2>
           <p style="font-size: 1.15rem; color: rgba(255, 255, 255, 0.95); margin-bottom: 2rem">
-            Download Go Rocco free and see why thousands of UK dog owners love it.
+            Download Go Rocco free. Your community is already out walking.
           </p>
           <a
             href="index.html#download"
@@ -328,6 +466,7 @@
           <h4>Product</h4>
           <ul>
             <li><a href="index.html#features">Features</a></li>
+            <li><a href="providers.html">For Providers</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="roadmap.html">Roadmap</a></li>
             <li><a href="index.html#download">Download</a></li>
@@ -345,8 +484,8 @@
         <div class="footer-column">
           <h4>Legal</h4>
           <ul>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
             <li><a href="data-policy.html">Data Policy</a></li>
             <li><a href="cookies.html">Cookie Settings</a></li>
           </ul>
@@ -409,7 +548,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyze site traffic.
+          🍪 We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">
