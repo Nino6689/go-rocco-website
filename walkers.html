@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Founding Walkers | Free for a year for dog walkers who help us build it | Go Rocco</title>
+    <meta
+      name="description"
+      content="We're looking for a small group of UK dog walkers to run their business on Go Rocco and tell us what's wrong. You get Pro free for a year, GPS walk updates your clients can watch, and a direct line to the people building it."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://go-rocco.com/walkers.html" />
+    <meta name="geo.region" content="GB" />
+    <link rel="alternate" hreflang="en-GB" href="https://go-rocco.com/walkers.html" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://go-rocco.com/walkers.html" />
+    <meta property="og:site_name" content="Go Rocco" />
+    <meta property="og:title" content="Founding Walkers: run your dog walking business from your phone, free for a year" />
+    <meta
+      property="og:description"
+      content="A small group of UK dog walkers, Pro free for 12 months, GPS walks your clients can watch, invoices in one tap, and a monthly call with the people building it. We fix what you tell us."
+    />
+    <meta property="og:image" content="https://go-rocco.com/assets/social/founding-walkers-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Founding Walkers: dog walkers, run your business from your phone. Free for a year." />
+    <meta property="og:locale" content="en_GB" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@goroccoapp" />
+    <meta name="twitter:title" content="Founding Walkers: free for a year for dog walkers who help us build it" />
+    <meta name="twitter:description" content="Pro free for 12 months, GPS walks your clients can watch, invoices in one tap, and a monthly call with the founders." />
+    <meta name="twitter:image" content="https://go-rocco.com/assets/social/founding-walkers-og.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://go-rocco.com/"},
+          {"@type": "ListItem", "position": 2, "name": "For Providers", "item": "https://go-rocco.com/providers.html"},
+          {"@type": "ListItem", "position": 3, "name": "Founding Walkers", "item": "https://go-rocco.com/walkers.html"}
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing. Founding Walkers get Go Rocco Business Pro free for 12 months. After that the core stays free forever and Pro is £15 a month if you want it. There is no card to enter and no contract."}},
+          {"@type": "Question", "name": "What do you need from me?", "acceptedAnswer": {"@type": "Answer", "text": "Use it for your real walks for at least eight weeks, bring three or more of your own clients onto it, join a 30-minute call once a month, and tell us honestly what is wrong."}},
+          {"@type": "Question", "name": "Does it work for group walks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Several dogs on one walk share one GPS recording, and every owner gets their own update."}},
+          {"@type": "Question", "name": "Do my clients have to pay or download anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. Each client gets a private page with every walk, the route and their invoices, no account needed. If they install the free Go Rocco app they can follow the walk live on a map."}},
+          {"@type": "Question", "name": "Can I leave?", "acceptedAnswer": {"@type": "Answer", "text": "Any time. Your clients, bookings and invoices are yours and export in one click. We would just ask for ten minutes on why."}}
+        ]
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
+    <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
+    <style>
+      .page-header.providers {
+        background: linear-gradient(160deg, var(--rocco-blue) 0%, var(--rocco-blue-dark) 100%);
+      }
+      .page-header .eyebrow {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.25rem;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .btn-white,
+      .btn-outline,
+      .btn-blue {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        transition: all 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn-white {
+        background: var(--white);
+        color: var(--rocco-blue-dark);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      }
+      .btn-white:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+      }
+      .btn-outline {
+        color: var(--white);
+        border: 2px solid rgba(255, 255, 255, 0.7);
+      }
+      .btn-outline:hover {
+        border-color: var(--white);
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .btn-blue {
+        background: var(--rocco-blue);
+        color: var(--white);
+        box-shadow: 0 4px 15px rgba(123, 203, 235, 0.4);
+      }
+      .btn-blue:hover {
+        background: var(--rocco-blue-dark);
+        transform: translateY(-2px);
+      }
+      .hero-note {
+        margin-top: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        position: relative;
+        z-index: 1;
+      }
+      .section {
+        padding: 5rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .section.tight {
+        padding-top: 3rem;
+      }
+      .section-intro {
+        max-width: 760px;
+        margin: 0 auto 3rem;
+        text-align: center;
+      }
+      .section-intro h2 {
+        font-size: 2.25rem;
+        color: var(--gray-900);
+        margin-bottom: 1rem;
+        font-weight: 900;
+      }
+      .section-intro p {
+        font-size: 1.15rem;
+        color: var(--gray-600);
+        line-height: 1.8;
+      }
+      .section-label {
+        display: inline-block;
+        background: rgba(123, 203, 235, 0.15);
+        color: var(--rocco-blue-dark);
+        padding: 0.35rem 0.9rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+      }
+      .chips {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto 2.5rem;
+      }
+      .chip {
+        background: var(--cream);
+        color: var(--gray-900);
+        border: 2px solid rgba(123, 203, 235, 0.35);
+        padding: 0.6rem 1.1rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+      .film {
+        max-width: 960px;
+        margin: 0 auto;
+        background: var(--gray-900);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(17, 24, 39, 0.25);
+      }
+      .film video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        background: #000;
+      }
+      .film-caption {
+        text-align: center;
+        color: var(--gray-600);
+        font-size: 0.95rem;
+        margin-top: 1rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+      .tile {
+        background: var(--gray-50);
+        border-radius: 20px;
+        padding: 1.75rem;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+      }
+      .tile:hover {
+        border-color: var(--rocco-blue);
+      }
+      .tile .icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+      }
+      .tile h3 {
+        font-size: 1.15rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+      }
+      .tile p {
+        color: var(--gray-600);
+        line-height: 1.7;
+        font-size: 0.98rem;
+      }
+      .plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .plan {
+        background: var(--white);
+        border: 3px solid var(--gray-50);
+        border-radius: 30px;
+        padding: 2.5rem;
+      }
+      .plan.featured {
+        border-color: var(--rocco-blue);
+        box-shadow: 0 20px 60px rgba(123, 203, 235, 0.25);
+      }
+      .plan h3 {
+        font-size: 1.5rem;
+        color: var(--gray-900);
+        margin-bottom: 0.25rem;
+      }
+      .plan .price {
+        font-size: 2.75rem;
+        font-weight: 900;
+        color: var(--rocco-blue-dark);
+        font-family: 'Nunito', sans-serif;
+        line-height: 1.1;
+      }
+      .plan .price span {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--gray-600);
+      }
+      .plan .tagline {
+        color: var(--gray-600);
+        font-style: italic;
+        margin: 0.75rem 0 1.5rem;
+      }
+      .plan ul {
+        list-style: none;
+        margin: 0 0 1.75rem;
+        padding: 0;
+      }
+      .plan li {
+        display: flex;
+        gap: 0.65rem;
+        padding: 0.55rem 0;
+        border-bottom: 1px solid var(--gray-50);
+        color: var(--gray-600);
+        line-height: 1.5;
+      }
+      .plan li::before {
+        content: '✓';
+        color: var(--safe-green);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .steps {
+        counter-reset: step;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+      .step {
+        background: var(--white);
+        border: 2px solid var(--gray-50);
+        border-radius: 20px;
+        padding: 2rem 1.75rem;
+        position: relative;
+      }
+      .step .num {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--rocco-blue);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      .step h3 {
+        font-size: 1.15rem;
+        color: var(--gray-900);
+        margin-bottom: 0.5rem;
+        font-weight: 800;
+      }
+      .step p,
+      .step li {
+        color: var(--gray-600);
+        line-height: 1.7;
+        font-size: 0.98rem;
+      }
+      .step ul {
+        padding-left: 1.1rem;
+        margin-top: 0.5rem;
+      }
+      .fees {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .fee {
+        border-radius: 24px;
+        padding: 2.25rem;
+      }
+      .fee.own {
+        background: rgba(76, 175, 80, 0.1);
+        border: 2px solid rgba(76, 175, 80, 0.35);
+      }
+      .fee.intro {
+        background: rgba(123, 203, 235, 0.12);
+        border: 2px solid rgba(123, 203, 235, 0.4);
+      }
+      .fee .big {
+        font-size: 3rem;
+        font-weight: 900;
+        font-family: 'Nunito', sans-serif;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      .fee.own .big {
+        color: var(--safe-green);
+      }
+      .fee.intro .big {
+        color: var(--rocco-blue-dark);
+      }
+      .fee h3 {
+        font-size: 1.2rem;
+        color: var(--gray-900);
+        margin-bottom: 0.75rem;
+      }
+      .fee p {
+        color: var(--gray-600);
+        line-height: 1.7;
+      }
+      .band {
+        background: var(--cream);
+      }
+      .band.dark {
+        background: var(--gray-900);
+        color: var(--white);
+      }
+      .band.dark .section-intro h2,
+      .band.dark .tile h3 {
+        color: var(--white);
+      }
+      .band.dark .section-intro p,
+      .band.dark .tile p {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .band.dark .tile {
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .band.dark .section-label {
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--rocco-blue-light);
+      }
+      .quote {
+        max-width: 760px;
+        margin: 0 auto;
+        background: var(--white);
+        border-left: 4px solid var(--rocco-blue);
+        border-radius: 20px;
+        padding: 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--gray-900);
+        font-style: italic;
+      }
+      .faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        background: var(--gray-50);
+        border-radius: 16px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .faq-item summary {
+        cursor: pointer;
+        font-weight: 800;
+        font-family: 'Nunito', sans-serif;
+        color: var(--gray-900);
+        font-size: 1.05rem;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary::after {
+        content: '+';
+        font-size: 1.5rem;
+        color: var(--rocco-blue-dark);
+      }
+      .faq-item[open] summary::after {
+        content: '–';
+      }
+      .faq-item p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        margin-top: 0.75rem;
+      }
+      .faq-item a,
+      .section p a,
+      .tile a,
+      .step a,
+      .fee a {
+        color: var(--rocco-blue-dark);
+        text-decoration: underline;
+      }
+      .credit {
+        text-align: center;
+        color: var(--gray-600);
+        font-size: 0.85rem;
+        max-width: 760px;
+        margin: 2rem auto 0;
+      }
+      .cta-band {
+        background: var(--rocco-blue);
+        text-align: center;
+        padding: 5rem 4rem;
+      }
+      .cta-band h2 {
+        font-size: 2.25rem;
+        color: var(--white);
+        margin-bottom: 1rem;
+        font-weight: 900;
+      }
+      .cta-band p {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.15rem;
+        max-width: 640px;
+        margin: 0 auto 2rem;
+        line-height: 1.7;
+      }
+      @media (max-width: 768px) {
+        .section {
+          padding: 3rem 1.5rem;
+        }
+        .section-intro h2 {
+          font-size: 1.75rem;
+        }
+        .cta-band {
+          padding: 3rem 1.5rem;
+        }
+        .cta-band h2 {
+          font-size: 1.75rem;
+        }
+        .plan {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+    <style>
+      .walkers .page-header p.hero-lead {
+        max-width: 640px;
+      }
+      .ask-list li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .ask-list li .tick {
+        flex: 0 0 auto;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--rocco-blue-light);
+        color: var(--gray-900);
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+      .ask-list li .ask-list-text strong {
+        display: block;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+      @media (max-width: 760px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+      .join-card {
+        background: var(--white);
+        border: 2px solid var(--rocco-blue-light);
+        border-radius: 20px;
+        padding: 28px;
+      }
+      .join-card h3 {
+        margin-bottom: 8px;
+      }
+      .join-card .btn-blue {
+        display: inline-block;
+        margin-top: 12px;
+      }
+      .join-card .small {
+        color: var(--gray-600);
+        font-size: 0.95rem;
+        margin-top: 12px;
+      }
+      .honest {
+        background: var(--cream);
+        border-radius: 16px;
+        padding: 22px 24px;
+        margin-top: 8px;
+      }
+      .honest p {
+        margin: 0;
+      }
+      .day-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .day-list li {
+        display: flex;
+        gap: 14px;
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .day-list li:last-child {
+        border-bottom: 0;
+      }
+      .day-list .time {
+        flex: 0 0 64px;
+        font-weight: 800;
+        color: var(--gray-900);
+      }
+      .day-list .what strong {
+        display: block;
+      }
+      .day-list .what span {
+        color: var(--gray-600);
+      }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF5KB7S3WL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', wait_for_update: 500 });
+      gtag('js', new Date());
+      gtag('config', 'G-XF5KB7S3WL', { anonymize_ip: true });
+    </script>
+  </head>
+  <body class="walkers">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="providers.html">For Providers</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="#join" class="nav-cta">Join the founding walkers</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#features" class="mobile-nav-link">Features</a>
+      <a href="providers.html" class="mobile-nav-link">For Providers</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="about.html" class="mobile-nav-link">Our Story</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="#join" class="nav-cta mobile-nav-link">Join the founding walkers →</a>
+    </div>
+
+    <main id="main">
+      <header class="page-header providers">
+        <span class="eyebrow">🐾 Founding Walkers · a small test group · autumn 2026</span>
+        <h1>Dog walkers: run your business from your phone.<br />Free for a year, if you help us get it right.</h1>
+        <p class="hero-lead">
+          We've built Go Rocco Business for the way a walker's day actually goes: see today's walks, tap Start, walk,
+          tap Finish. The owner watches the route on a map and gets the update. Your invoice goes with it. Now we need
+          a few real walkers to run their real business on it and tell us what's wrong.
+        </p>
+        <div class="hero-actions">
+          <a href="#join" class="btn-white">I'm in — how do I join?</a>
+          <a href="#what-you-get" class="btn-outline">What do I get?</a>
+        </div>
+        <p class="hero-note">Free Pro for 12 months · Your clients pay nothing · No card · Leave whenever you like</p>
+      </header>
+
+      <section class="section tight">
+        <div class="chips" aria-label="In short">
+          <span class="chip">📱 One app for the whole day</span>
+          <span class="chip">📍 GPS walks your clients can watch</span>
+          <span class="chip">✍️ Updates that write themselves</span>
+          <span class="chip">💷 Invoice sent with the update</span>
+          <span class="chip">🗓️ Repeat walks in one go</span>
+        </div>
+      </section>
+
+      <section class="section" id="what-it-is">
+        <div class="section-intro">
+          <span class="section-label">What it is</span>
+          <h2>A walker's day, done in three taps.</h2>
+          <p>
+            No spreadsheet, no WhatsApp scroll to find who's booked, no "did I invoice Sarah?". Here is a Tuesday on Go
+            Rocco, from your phone.
+          </p>
+        </div>
+        <div class="two-col">
+          <div>
+            <ul class="day-list">
+              <li>
+                <span class="time">07:45</span>
+                <div class="what"><strong>Open the app. It opens on My walks.</strong><span>Today in order: 9:00 Biscuit &amp; Rex (Olive), 10:30 Max (Sam), 12:00 the group. Anything a new client asked for is at the top with a Yes / No.</span></div>
+              </li>
+              <li>
+                <span class="time">09:00</span>
+                <div class="what"><strong>Tap Start.</strong><span>GPS starts on its own. Olive gets "Biscuit's walk has started" and can watch the route on a map, live.</span></div>
+              </li>
+              <li>
+                <span class="time">09:20</span>
+                <div class="what"><strong>Big buttons for the things that happen.</strong><span>Photo. Wee / poo. Fed / water. A note. One tap each. Nothing to type.</span></div>
+              </li>
+              <li>
+                <span class="time">10:00</span>
+                <div class="what"><strong>Tap Finish.</strong><span>The update writes itself: "Biscuit walked 2.4 km in 52 minutes, 2 toilet breaks, 3 photos". Change a word if you like, tap Send. The invoice goes with it, with a pay link.</span></div>
+              </li>
+              <li>
+                <span class="time">Evening</span>
+                <div class="what"><strong>Money shows who has paid.</strong><span>One tap to mark cash. Your books and a tax-ready pack build themselves in the background.</span></div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="tile">
+              <div class="icon" aria-hidden="true">🐶</div>
+              <h3>Your clients get more than they get now</h3>
+              <p>
+                Each owner gets their own page: every walk, the route, photos, and their invoices, with nothing to
+                install. If they get the free Go Rocco app they follow the walk live, get a notification when it
+                starts and finishes, and can cancel under your own cancellation rules, not ours.
+              </p>
+            </div>
+            <div class="tile" style="margin-top: 16px">
+              <div class="icon" aria-hidden="true">🔁</div>
+              <h3>Regulars in one go</h3>
+              <p>
+                "Mon, Wed, Fri at 11" once, and four weeks land in your diary. Skip a date, pause for a holiday, or end
+                it, from the phone. Group walks share one GPS recording and every owner still gets their own update.
+              </p>
+            </div>
+            <div class="tile" style="margin-top: 16px">
+              <div class="icon" aria-hidden="true">🔑</div>
+              <h3>The small stuff, remembered</h3>
+              <p>Who holds which key, which dogs don't mix, the vet, the emergency contact, vaccination dates. Asked once.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section" id="what-you-get">
+          <div class="section-intro">
+            <span class="section-label">What you get</span>
+            <h2>Free for a year, and a say in what gets built.</h2>
+          </div>
+          <div class="grid">
+            <div class="tile">
+              <div class="icon" aria-hidden="true">🎁</div>
+              <h3>Go Rocco Business Pro, free for 12 months</h3>
+              <p>Everything in Free plus monthly invoice runs, text-message reminders, your own web address, team seats and the rest. Worth £180. After the year, the core is still free forever.</p>
+            </div>
+            <div class="tile">
+              <div class="icon" aria-hidden="true">📞</div>
+              <h3>A direct line to the founders</h3>
+              <p>A WhatsApp group with the people who build it. Something broken at 8am on a Tuesday? You'll hear back the same day, usually within the hour.</p>
+            </div>
+            <div class="tile">
+              <div class="icon" aria-hidden="true">🛠️</div>
+              <h3>We build what you ask for</h3>
+              <p>Every monthly call ends with a list. We ship the list. Founding walkers' requests go to the front of the queue, and your name goes on the founding list if you want it there.</p>
+            </div>
+            <div class="tile">
+              <div class="icon" aria-hidden="true">🤝</div>
+              <h3>Set-up done with you</h3>
+              <p>A 15-minute call to move your client list over (paste a spreadsheet, or just tell us) and set up your regulars. You won't type it all in on your own.</p>
+            </div>
+            <div class="tile">
+              <div class="icon" aria-hidden="true">💷</div>
+              <h3>0% on your own clients, forever</h3>
+              <p>Your clients are yours. Card payments through the pay link cost only the card fee. We never take a cut of your own bookings, in the test or after it.</p>
+            </div>
+            <div class="tile">
+              <div class="icon" aria-hidden="true">📣</div>
+              <h3>Your clients get the app free</h3>
+              <p>Live walk maps, notifications, the report card, their dog's profile and the rest of Go Rocco. Free, no ads, no subscription. That's the thing they'll thank you for.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="what-we-need">
+        <div class="section-intro">
+          <span class="section-label">What we need from you</span>
+          <h2>Use it for real, and be blunt.</h2>
+          <p>This only works if you actually run your business on it. Polite silence teaches us nothing.</p>
+        </div>
+        <div class="two-col">
+          <ul class="ask-list">
+            <li><span class="tick">1</span><div class="ask-list-text"><strong>Run your real walks on it for at least eight weeks.</strong>Start and Finish every walk from the app, so the owners get the map and the update.</div></li>
+            <li><span class="tick">2</span><div class="ask-list-text"><strong>Bring three or more of your own clients onto it.</strong>You send them their link (WhatsApp is fine). We'll help with the words. They pay nothing.</div></li>
+            <li><span class="tick">3</span><div class="ask-list-text"><strong>Thirty minutes once a month.</strong>A video call with the other founding walkers and us. What annoyed you, what your clients said, what's missing. That call sets what we build next.</div></li>
+            <li><span class="tick">4</span><div class="ask-list-text"><strong>Tell us when it's rubbish.</strong>A message in the group, or Settings → Tester programme in the app (code <strong>WALKERS</strong>) → Send feedback. Screenshots help. "This is confusing" is a complete bug report.</div></li>
+            <li><span class="tick">5</span><div class="ask-list-text"><strong>A little patience.</strong>It's early. You will find things we haven't. We fix fast, and your regulars' bookings are never at risk: everything exports in one click.</div></li>
+          </ul>
+          <div>
+            <div class="honest">
+              <p>
+                <strong>Straight answer on where we are.</strong> The app runs a walker's day today: clients, repeat
+                walks, GPS walks, updates, invoices, books. It has been built with walkers and tested on our own dogs.
+                It has not yet had twenty walkers hammering it through a wet November. That's you. Expect rough edges;
+                expect them gone by the next call.
+              </p>
+            </div>
+            <div class="honest" style="margin-top: 14px">
+              <p>
+                <strong>Who this suits.</strong> Solo walkers and small teams anywhere in the UK, with regulars and an
+                iPhone or Android phone. If you already use another app, great: tell us what it does better.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section" id="join">
+          <div class="section-intro">
+            <span class="section-label">How to join</span>
+            <h2>Four steps. The first one takes a minute.</h2>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div class="num">1</div>
+              <h3>Email us</h3>
+              <p>Tap the button below. It opens an email with the questions filled in: your name, your business, where you walk, roughly how many dogs a day, and your phone number. Send it.</p>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <h3>We set you up, together</h3>
+              <p>Within a day you get the app link, your Pro year, and a 15-minute set-up call to bring your clients over. Your first regulars are in the diary before we hang up.</p>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <h3>Walk</h3>
+              <p>Start and Finish from the app. Send your clients their links. In the app, go to Settings → Tester programme and enter the code <strong>WALKERS</strong>: that opens your tester hub, where feedback is one tap. Message the group the moment something is off.</p>
+            </div>
+            <div class="step">
+              <div class="num">4</div>
+              <h3>The monthly call</h3>
+              <p>Thirty minutes, once a month, on a video call. You tell us what to fix and build. Places are limited to twenty walkers so everyone gets heard.</p>
+            </div>
+          </div>
+          <div class="join-card" style="margin-top: 28px">
+            <h3>Ready? Email us and we'll take it from there.</h3>
+            <p>No form, no account, no card. Just an email.</p>
+            <a
+              class="btn-blue"
+              href="mailto:support@go-rocco.com?subject=Founding%20Walker%20%E2%80%94%20count%20me%20in&body=Hi%20Go%20Rocco%2C%0A%0AI%27d%20like%20to%20join%20the%20Founding%20Walkers%20test.%0A%0AMy%20name%3A%20%0AMy%20business%20name%3A%20%0AWhere%20I%20walk%20(town%2Farea)%3A%20%0ARoughly%20how%20many%20dogs%20a%20day%3A%20%0AiPhone%20or%20Android%3A%20%0ABest%20number%20to%20reach%20me%3A%20%0AAnything%20else%3A%20%0A%0AThanks!"
+              >Email support@go-rocco.com</a
+            >
+            <p class="small">
+              Prefer to talk first? Put "call me" in the email and a number, and we'll ring you. Places are limited to
+              twenty founding walkers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-intro">
+          <span class="section-label">Questions</span>
+          <h2>The ones we get asked.</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What does it cost, really?</summary>
+            <p>Nothing. Founding Walkers get Pro free for 12 months. After that the core is free forever (unlimited bookings, clients, invoices, your booking page, books and the tax pack), and Pro is £15 a month if you want the extras. No card to enter now, no contract, no "we'll bill you later".</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you take a cut of my bookings?</summary>
+            <p>Not of your own clients, ever. The only fee in Go Rocco is on clients we introduce to you through the marketplace, and only for their first few bookings. You don't have to be listed on the marketplace at all.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What do my clients have to do?</summary>
+            <p>Nothing they don't want to. You send them a link; it opens their own page with every walk, the route on a map, photos and their invoices. No account, no app. If they install the free Go Rocco app and sign in with the same number or email, they get the walk live on a map and a notification when you start and finish.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it handle group walks?</summary>
+            <p>Yes. Start once with the first dog, and the other dogs on that walk share the same GPS recording. Every owner still gets their own update and their own invoice.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What happens to my data if I stop?</summary>
+            <p>It's yours. Clients, bookings, invoices and books export in one click from the web portal, and we delete your account on request. We'd just ask for ten minutes on why you left.</p>
+          </details>
+          <details class="faq-item">
+            <summary>I've got a website / another app already.</summary>
+            <p>Keep them. Plenty of walkers run Go Rocco alongside something else for the first few weeks. The bit walkers switch for is the walk itself: Start, the map the owner watches, and the update that writes itself.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Android?</summary>
+            <p>Yes, both. The test group starts on iPhone via TestFlight; Android testers get a Play Store link. Say which you use in your email.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section tight">
+        <div class="join-card">
+          <h3>Twenty places. First come, first walked.</h3>
+          <p>If you walk dogs for a living and you're fed up with the admin, we'd like you in the group.</p>
+          <a class="btn-blue" href="#join">Join the founding walkers</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <p>The dog app that pays you to walk. Free for owners. Free software for the people who look after their dogs.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Product</h4>
+            <a href="index.html#features">Features</a>
+            <a href="providers.html">For Providers</a>
+            <a href="walkers.html">Founding Walkers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="roadmap.html">Roadmap</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">Our Story</a>
+            <a href="blog.html">Blog</a>
+            <a href="press.html">Press</a>
+            <a href="careers.html">Careers</a>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="data-policy.html">Data policy</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="mailto:support@go-rocco.com">support@go-rocco.com</a>
+            <a href="/support">Support</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Go Rocco. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+          const open = mobileMenu.classList.toggle('active');
+          hamburger.classList.toggle('active', open);
+          hamburger.setAttribute('aria-expanded', String(open));
+        });
+        mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }));
+      }
+    </script>
+    <script src="attribution.js" defer></script>
+  </body>
+</html>
