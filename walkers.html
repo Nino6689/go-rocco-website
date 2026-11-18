@@ -59,539 +59,101 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="gorocco-app-icon.png" />
     <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
     <style>
-      .page-header.providers {
-        background: linear-gradient(160deg, var(--rocco-blue) 0%, var(--rocco-blue-dark) 100%);
-      }
-      .page-header .eyebrow {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.2);
-        color: var(--white);
-        padding: 0.4rem 1rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        margin-bottom: 1.25rem;
-        position: relative;
-        z-index: 1;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-        position: relative;
-        z-index: 1;
-      }
-      .btn-white,
-      .btn-outline,
-      .btn-blue {
-        display: inline-block;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-        font-family: 'Nunito', sans-serif;
-        transition: all 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .btn-white {
-        background: var(--white);
-        color: var(--rocco-blue-dark);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-      }
-      .btn-white:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-      }
-      .btn-outline {
-        color: var(--white);
-        border: 2px solid rgba(255, 255, 255, 0.7);
-      }
-      .btn-outline:hover {
-        border-color: var(--white);
-        background: rgba(255, 255, 255, 0.12);
-      }
-      .btn-blue {
-        background: var(--rocco-blue);
-        color: var(--white);
-        box-shadow: 0 4px 15px rgba(123, 203, 235, 0.4);
-      }
-      .btn-blue:hover {
-        background: var(--rocco-blue-dark);
-        transform: translateY(-2px);
-      }
-      .hero-note {
-        margin-top: 1rem;
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.95rem;
-        position: relative;
-        z-index: 1;
-      }
-      .section {
-        padding: 5rem 4rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .section.tight {
-        padding-top: 3rem;
-      }
-      .section-intro {
-        max-width: 760px;
-        margin: 0 auto 3rem;
-        text-align: center;
-      }
-      .section-intro h2 {
-        font-size: 2.25rem;
-        color: var(--gray-900);
-        margin-bottom: 1rem;
-        font-weight: 900;
-      }
-      .section-intro p {
-        font-size: 1.15rem;
-        color: var(--gray-600);
-        line-height: 1.8;
-      }
-      .section-label {
-        display: inline-block;
-        background: rgba(123, 203, 235, 0.15);
-        color: var(--rocco-blue-dark);
-        padding: 0.35rem 0.9rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-      }
-      .chips {
-        display: flex;
-        gap: 0.75rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0 auto 2.5rem;
-      }
-      .chip {
-        background: var(--cream);
-        color: var(--gray-900);
-        border: 2px solid rgba(123, 203, 235, 0.35);
-        padding: 0.6rem 1.1rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 0.95rem;
-      }
-      .film {
-        max-width: 960px;
-        margin: 0 auto;
-        background: var(--gray-900);
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 25px 60px rgba(17, 24, 39, 0.25);
-      }
-      .film video {
-        display: block;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        background: #000;
-      }
-      .film-caption {
-        text-align: center;
-        color: var(--gray-600);
-        font-size: 0.95rem;
-        margin-top: 1rem;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
-      }
-      .tile {
-        background: var(--gray-50);
-        border-radius: 20px;
-        padding: 1.75rem;
-        border: 2px solid transparent;
-        transition: border-color 0.3s ease;
-      }
-      .tile:hover {
-        border-color: var(--rocco-blue);
-      }
-      .tile .icon {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
-      }
-      .tile h3 {
-        font-size: 1.15rem;
-        color: var(--gray-900);
-        margin-bottom: 0.5rem;
-        font-weight: 800;
-      }
-      .tile p {
-        color: var(--gray-600);
-        line-height: 1.7;
-        font-size: 0.98rem;
-      }
-      .plans {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        max-width: 960px;
-        margin: 0 auto;
-      }
-      .plan {
-        background: var(--white);
-        border: 3px solid var(--gray-50);
-        border-radius: 30px;
-        padding: 2.5rem;
-      }
-      .plan.featured {
-        border-color: var(--rocco-blue);
-        box-shadow: 0 20px 60px rgba(123, 203, 235, 0.25);
-      }
-      .plan h3 {
-        font-size: 1.5rem;
-        color: var(--gray-900);
-        margin-bottom: 0.25rem;
-      }
-      .plan .price {
-        font-size: 2.75rem;
-        font-weight: 900;
-        color: var(--rocco-blue-dark);
-        font-family: 'Nunito', sans-serif;
-        line-height: 1.1;
-      }
-      .plan .price span {
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--gray-600);
-      }
-      .plan .tagline {
-        color: var(--gray-600);
-        font-style: italic;
-        margin: 0.75rem 0 1.5rem;
-      }
-      .plan ul {
+      .ask-list {
         list-style: none;
-        margin: 0 0 1.75rem;
-        padding: 0;
-      }
-      .plan li {
-        display: flex;
-        gap: 0.65rem;
-        padding: 0.55rem 0;
-        border-bottom: 1px solid var(--gray-50);
-        color: var(--gray-600);
-        line-height: 1.5;
-      }
-      .plan li::before {
-        content: '✓';
-        color: var(--safe-green);
-        font-weight: 700;
-        flex-shrink: 0;
-      }
-      .steps {
-        counter-reset: step;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-      }
-      .step {
-        background: var(--white);
-        border: 2px solid var(--gray-50);
-        border-radius: 20px;
-        padding: 2rem 1.75rem;
-        position: relative;
-      }
-      .step .num {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: var(--rocco-blue);
-        color: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 900;
-        font-family: 'Nunito', sans-serif;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
-      .step h3 {
-        font-size: 1.15rem;
-        color: var(--gray-900);
-        margin-bottom: 0.5rem;
-        font-weight: 800;
-      }
-      .step p,
-      .step li {
-        color: var(--gray-600);
-        line-height: 1.7;
-        font-size: 0.98rem;
-      }
-      .step ul {
-        padding-left: 1.1rem;
-        margin-top: 0.5rem;
-      }
-      .fees {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        max-width: 960px;
-        margin: 0 auto;
-      }
-      .fee {
-        border-radius: 24px;
-        padding: 2.25rem;
-      }
-      .fee.own {
-        background: rgba(76, 175, 80, 0.1);
-        border: 2px solid rgba(76, 175, 80, 0.35);
-      }
-      .fee.intro {
-        background: rgba(123, 203, 235, 0.12);
-        border: 2px solid rgba(123, 203, 235, 0.4);
-      }
-      .fee .big {
-        font-size: 3rem;
-        font-weight: 900;
-        font-family: 'Nunito', sans-serif;
-        line-height: 1;
-        margin-bottom: 0.5rem;
-      }
-      .fee.own .big {
-        color: var(--safe-green);
-      }
-      .fee.intro .big {
-        color: var(--rocco-blue-dark);
-      }
-      .fee h3 {
-        font-size: 1.2rem;
-        color: var(--gray-900);
-        margin-bottom: 0.75rem;
-      }
-      .fee p {
-        color: var(--gray-600);
-        line-height: 1.7;
-      }
-      .band {
-        background: var(--cream);
-      }
-      .band.dark {
-        background: var(--gray-900);
-        color: var(--white);
-      }
-      .band.dark .section-intro h2,
-      .band.dark .tile h3 {
-        color: var(--white);
-      }
-      .band.dark .section-intro p,
-      .band.dark .tile p {
-        color: rgba(255, 255, 255, 0.8);
-      }
-      .band.dark .tile {
-        background: rgba(255, 255, 255, 0.06);
-      }
-      .band.dark .section-label {
-        background: rgba(255, 255, 255, 0.12);
-        color: var(--rocco-blue-light);
-      }
-      .quote {
-        max-width: 760px;
-        margin: 0 auto;
-        background: var(--white);
-        border-left: 4px solid var(--rocco-blue);
-        border-radius: 20px;
-        padding: 2rem;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--gray-900);
-        font-style: italic;
-      }
-      .faq-list {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .faq-item {
-        background: var(--gray-50);
-        border-radius: 16px;
-        padding: 1.25rem 1.5rem;
-        margin-bottom: 1rem;
-      }
-      .faq-item summary {
-        cursor: pointer;
-        font-weight: 800;
-        font-family: 'Nunito', sans-serif;
-        color: var(--gray-900);
-        font-size: 1.05rem;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .faq-item summary::-webkit-details-marker {
-        display: none;
-      }
-      .faq-item summary::after {
-        content: '+';
-        font-size: 1.5rem;
-        color: var(--rocco-blue-dark);
-      }
-      .faq-item[open] summary::after {
-        content: '–';
-      }
-      .faq-item p {
-        color: var(--gray-600);
-        line-height: 1.8;
-        margin-top: 0.75rem;
-      }
-      .faq-item a,
-      .section p a,
-      .tile a,
-      .step a,
-      .fee a {
-        color: var(--rocco-blue-dark);
-        text-decoration: underline;
-      }
-      .credit {
-        text-align: center;
-        color: var(--gray-600);
-        font-size: 0.85rem;
-        max-width: 760px;
-        margin: 2rem auto 0;
-      }
-      .cta-band {
-        background: var(--rocco-blue);
-        text-align: center;
-        padding: 5rem 4rem;
-      }
-      .cta-band h2 {
-        font-size: 2.25rem;
-        color: var(--white);
-        margin-bottom: 1rem;
-        font-weight: 900;
-      }
-      .cta-band p {
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 1.15rem;
-        max-width: 640px;
-        margin: 0 auto 2rem;
-        line-height: 1.7;
-      }
-      @media (max-width: 768px) {
-        .section {
-          padding: 3rem 1.5rem;
-        }
-        .section-intro h2 {
-          font-size: 1.75rem;
-        }
-        .cta-band {
-          padding: 3rem 1.5rem;
-        }
-        .cta-band h2 {
-          font-size: 1.75rem;
-        }
-        .plan {
-          padding: 2rem 1.5rem;
-        }
-      }
-    </style>
-    <style>
-      .walkers .page-header p.hero-lead {
-        max-width: 640px;
       }
       .ask-list li {
         display: flex;
-        gap: 12px;
+        gap: 1rem;
         align-items: flex-start;
-        margin-bottom: 14px;
-        line-height: 1.5;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink-soft);
+      }
+      .ask-list li:first-child {
+        border-top: 1px solid var(--line);
       }
       .ask-list li .tick {
         flex: 0 0 auto;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background: var(--rocco-blue-light);
-        color: var(--gray-900);
-        font-weight: 800;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
+        min-width: 1.5rem;
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--amber-ink);
       }
       .ask-list li .ask-list-text strong {
         display: block;
-      }
-      .two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        align-items: start;
-      }
-      @media (max-width: 760px) {
-        .two-col {
-          grid-template-columns: 1fr;
-        }
+        color: var(--ink);
       }
       .join-card {
-        background: var(--white);
-        border: 2px solid var(--rocco-blue-light);
-        border-radius: 20px;
-        padding: 28px;
+        background: var(--surface);
+        border: 1px solid var(--ink);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        margin-top: 1.75rem;
+        box-shadow: var(--shadow);
       }
       .join-card h3 {
-        margin-bottom: 8px;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
       }
-      .join-card .btn-blue {
-        display: inline-block;
-        margin-top: 12px;
+      .join-card p {
+        color: var(--ink-soft);
+      }
+      .join-card .btn-primary {
+        margin-top: 1.1rem;
       }
       .join-card .small {
-        color: var(--gray-600);
         font-size: 0.95rem;
-        margin-top: 12px;
+        margin-top: 1rem;
       }
       .honest {
-        background: var(--cream);
-        border-radius: 16px;
-        padding: 22px 24px;
-        margin-top: 8px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--blue);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+        color: var(--ink-soft);
+      }
+      .honest + .honest {
+        margin-top: 1rem;
+      }
+      .honest strong {
+        color: var(--ink);
       }
       .honest p {
         margin: 0;
       }
       .day-list {
         list-style: none;
-        padding: 0;
-        margin: 0;
+        border-top: 1px solid var(--line-strong);
       }
       .day-list li {
         display: flex;
-        gap: 14px;
-        padding: 12px 0;
-        border-bottom: 1px solid #e5e7eb;
-      }
-      .day-list li:last-child {
-        border-bottom: 0;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--line);
       }
       .day-list .time {
-        flex: 0 0 64px;
-        font-weight: 800;
-        color: var(--gray-900);
+        flex: 0 0 4.5rem;
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--ink);
       }
       .day-list .what strong {
         display: block;
       }
       .day-list .what span {
-        color: var(--gray-600);
+        color: var(--ink-soft);
+      }
+      .walkers .chips {
+        margin-bottom: 0;
       }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF5KB7S3WL"></script>
@@ -610,7 +172,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -633,32 +195,35 @@
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="#join" class="nav-cta mobile-nav-link">Join the founding walkers →</a>
+      <a href="#join" class="nav-cta mobile-nav-link">Join the founding walkers</a>
     </div>
 
     <main id="main">
-      <header class="page-header providers">
-        <span class="eyebrow">🐾 Founding Walkers · a small test group · autumn 2026</span>
-        <h1>Dog walkers: run your business from your phone.<br />Free for a year, if you help us get it right.</h1>
-        <p class="hero-lead">
-          We've built Go Rocco Business for the way a walker's day actually goes: see today's walks, tap Start, walk,
-          tap Finish. The owner watches the route on a map and gets the update. Your invoice goes with it. Now we need
-          a few real walkers to run their real business on it and tell us what's wrong.
-        </p>
-        <div class="hero-actions">
-          <a href="#join" class="btn-white">I'm in — how do I join?</a>
-          <a href="#what-you-get" class="btn-outline">What do I get?</a>
+      <header class="page-header hero-media">
+        <img class="hero-bg" src="assets/videos/brand/walker-sunrise-poster.jpg" alt="" aria-hidden="true" />
+        <div class="hero-inner">
+          <span class="eyebrow">Founding Walkers · a small test group · autumn 2026</span>
+          <h1>Dog walkers: run your business from your phone.<br />Free for a year, if you help us get it right.</h1>
+          <p class="hero-lead">
+            Go Rocco Business is built for the way a walker's day goes: see today's walks, tap Start, walk, tap
+            Finish. The owner watches the route on a map and gets the update, and your invoice goes with it. We now
+            need a few working walkers to run their business on it and tell us what is wrong.
+          </p>
+          <div class="hero-actions">
+            <a href="#join" class="btn-white">How to join</a>
+            <a href="#what-you-get" class="btn-outline">What you get</a>
+          </div>
+          <p class="hero-note">Free Pro for 12 months · Your clients pay nothing · No card · Leave whenever you like</p>
         </div>
-        <p class="hero-note">Free Pro for 12 months · Your clients pay nothing · No card · Leave whenever you like</p>
       </header>
 
       <section class="section tight">
         <div class="chips" aria-label="In short">
-          <span class="chip">📱 One app for the whole day</span>
-          <span class="chip">📍 GPS walks your clients can watch</span>
-          <span class="chip">✍️ Updates that write themselves</span>
-          <span class="chip">💷 Invoice sent with the update</span>
-          <span class="chip">🗓️ Repeat walks in one go</span>
+          <span class="chip">One app for the whole day</span>
+          <span class="chip">GPS walks your clients can watch</span>
+          <span class="chip">Updates that write themselves</span>
+          <span class="chip">Invoice sent with the update</span>
+          <span class="chip">Repeat walks in one go</span>
         </div>
       </section>
 
@@ -698,7 +263,6 @@
           </div>
           <div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">🐶</div>
               <h3>Your clients get more than they get now</h3>
               <p>
                 Each owner gets their own page: every walk, the route, photos, and their invoices, with nothing to
@@ -706,16 +270,14 @@
                 starts and finishes, and can cancel under your own cancellation rules, not ours.
               </p>
             </div>
-            <div class="tile" style="margin-top: 16px">
-              <div class="icon" aria-hidden="true">🔁</div>
+            <div class="tile stacked">
               <h3>Regulars in one go</h3>
               <p>
                 "Mon, Wed, Fri at 11" once, and four weeks land in your diary. Skip a date, pause for a holiday, or end
                 it, from the phone. Group walks share one GPS recording and every owner still gets their own update.
               </p>
             </div>
-            <div class="tile" style="margin-top: 16px">
-              <div class="icon" aria-hidden="true">🔑</div>
+            <div class="tile stacked">
               <h3>The small stuff, remembered</h3>
               <p>Who holds which key, which dogs don't mix, the vet, the emergency contact, vaccination dates. Asked once.</p>
             </div>
@@ -731,32 +293,26 @@
           </div>
           <div class="grid">
             <div class="tile">
-              <div class="icon" aria-hidden="true">🎁</div>
               <h3>Go Rocco Business Pro, free for 12 months</h3>
               <p>Everything in Free plus monthly invoice runs, text-message reminders, your own web address, team seats and the rest. Worth £180. After the year, the core is still free forever.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">📞</div>
               <h3>A direct line to the founders</h3>
               <p>A WhatsApp group with the people who build it. Something broken at 8am on a Tuesday? You'll hear back the same day, usually within the hour.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">🛠️</div>
               <h3>We build what you ask for</h3>
               <p>Every monthly call ends with a list. We ship the list. Founding walkers' requests go to the front of the queue, and your name goes on the founding list if you want it there.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">🤝</div>
               <h3>Set-up done with you</h3>
               <p>A 15-minute call to move your client list over (paste a spreadsheet, or just tell us) and set up your regulars. You won't type it all in on your own.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">💷</div>
               <h3>0% on your own clients, forever</h3>
               <p>Your clients are yours. Card payments through the pay link cost only the card fee. We never take a cut of your own bookings, in the test or after it.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">📣</div>
               <h3>Your clients get the app free</h3>
               <p>Live walk maps, notifications, the report card, their dog's profile and the rest of Go Rocco. Free, no ads, no subscription. That's the thing they'll thank you for.</p>
             </div>
@@ -787,7 +343,7 @@
                 expect them gone by the next call.
               </p>
             </div>
-            <div class="honest" style="margin-top: 14px">
+            <div class="honest">
               <p>
                 <strong>Who this suits.</strong> Solo walkers and small teams anywhere in the UK, with regulars and an
                 iPhone or Android phone. If you already use another app, great: tell us what it does better.
@@ -825,11 +381,11 @@
               <p>Thirty minutes, once a month, on a video call. You tell us what to fix and build. Places are limited to twenty walkers so everyone gets heard.</p>
             </div>
           </div>
-          <div class="join-card" style="margin-top: 28px">
+          <div class="join-card">
             <h3>Ready? Email us and we'll take it from there.</h3>
             <p>No form, no account, no card. Just an email.</p>
             <a
-              class="btn-blue"
+              class="btn-primary"
               href="mailto:support@go-rocco.com?subject=Founding%20Walker%20%E2%80%94%20count%20me%20in&body=Hi%20Go%20Rocco%2C%0A%0AI%27d%20like%20to%20join%20the%20Founding%20Walkers%20test.%0A%0AMy%20name%3A%20%0AMy%20business%20name%3A%20%0AWhere%20I%20walk%20(town%2Farea)%3A%20%0ARoughly%20how%20many%20dogs%20a%20day%3A%20%0AiPhone%20or%20Android%3A%20%0ABest%20number%20to%20reach%20me%3A%20%0AAnything%20else%3A%20%0A%0AThanks!"
               >Email support@go-rocco.com</a
             >
@@ -882,7 +438,7 @@
         <div class="join-card">
           <h3>Twenty places. First come, first walked.</h3>
           <p>If you walk dogs for a living and you're fed up with the admin, we'd like you in the group.</p>
-          <a class="btn-blue" href="#join">Join the founding walkers</a>
+          <a class="btn-primary" href="#join">Join the founding walkers</a>
         </div>
       </section>
     </main>
@@ -890,7 +446,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>The dog app that pays you to walk. Free for owners. Free software for the people who look after their dogs.</p>
         </div>
         <div class="footer-links">

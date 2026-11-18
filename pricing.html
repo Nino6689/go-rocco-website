@@ -100,91 +100,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .pricing-section + .pricing-section {
-        padding-top: 0;
-      }
-      .pricing-card.owners {
-        max-width: 640px;
-        border-color: var(--rocco-blue);
-        box-shadow: 0 20px 60px rgba(123, 203, 235, 0.25);
-      }
-      .pricing-card.owners:hover {
-        transform: translateY(-5px);
-      }
-      .pricing-features.two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 1.5rem;
-      }
-      .pricing-features.two-col li {
-        border-bottom: 1px solid var(--gray-50);
-      }
-      .pricing-note {
-        font-size: 0.9rem;
-        color: var(--gray-600);
-        margin-top: 1rem;
-        text-align: center;
-      }
-      .fee-strip {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
-        max-width: 960px;
-        margin: 2.5rem auto 0;
-        text-align: left;
-      }
-      .fee-box {
-        border-radius: 20px;
-        padding: 1.75rem;
-        background: var(--gray-50);
-        border: 2px solid transparent;
-      }
-      .fee-box.green {
-        background: rgba(76, 175, 80, 0.1);
-        border-color: rgba(76, 175, 80, 0.35);
-      }
-      .fee-box .big {
-        font-family: 'Nunito', sans-serif;
-        font-weight: 900;
-        font-size: 2.25rem;
-        color: var(--rocco-blue-dark);
-        line-height: 1.1;
-        margin-bottom: 0.5rem;
-      }
-      .fee-box.green .big {
-        color: var(--safe-green);
-      }
-      .fee-box h3 {
-        font-size: 1.1rem;
-        color: var(--gray-900);
-        margin-bottom: 0.5rem;
-      }
-      .fee-box p {
-        color: var(--gray-600);
-        line-height: 1.7;
-        font-size: 0.98rem;
-      }
-      .store-badges {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 1.5rem;
-      }
-      .store-badges img {
-        height: 44px;
-      }
-      @media (max-width: 768px) {
-        .pricing-features.two-col {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
 
     <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
     <script>
@@ -207,7 +126,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -216,7 +135,7 @@
         <li><a href="about.html">Our Story</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -230,7 +149,7 @@
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="index.html#download" class="nav-cta mobile-nav-link">Download Free →</a>
+      <a href="index.html#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
@@ -247,12 +166,10 @@
 
         <div class="pricing-cards">
           <div class="pricing-card owners">
-            <span class="pricing-badge">🐾 The Go Rocco app</span>
+            <span class="pricing-badge">The Go Rocco app</span>
             <h3>Everything, for everyone</h3>
             <div class="pricing-price">£0<span>/forever</span></div>
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic">
-              No subscription. No adverts. No trial that runs out.
-            </p>
+            <p class="pricing-tagline">No subscription. No adverts. No trial that runs out.</p>
             <ul class="pricing-features two-col">
               <li>GPS walk tracking, unlimited</li>
               <li>Live temperament map, 100 m radar</li>
@@ -280,34 +197,23 @@
             <p class="pricing-note">Also in your browser at <a href="https://app.go-rocco.com">app.go-rocco.com</a>.</p>
           </div>
         </div>
-        <p class="pricing-note" style="max-width: 640px; margin: 2rem auto 0">
+        <p class="pricing-note wide">
           The only optional purchase for owners is a <strong>lost-pet alert boost</strong>. The alert itself is free and goes out to people nearby the moment you create it; a boost just widens the reach. Ask Rocco has a generous daily allowance of questions, a cost ceiling rather than a paywall.
         </p>
       </section>
 
-      <section style="padding: 4rem; background: var(--cream)">
-        <div style="max-width: 800px; margin: 0 auto">
-          <h2 style="font-size: 2rem; color: var(--gray-900); margin-bottom: 2rem; text-align: center">
-            Why the app is free
-          </h2>
-          <p style="font-size: 1.15rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 1.5rem">
+      <section class="prose-band">
+        <div class="prose-band-inner">
+          <h2>Why the app is free</h2>
+          <p>
             Go Rocco only works if the dog owners on your street use it too. A paywall in front of the map, the lost-dog
             alerts or the health records made every walk a little less safe for everyone, so in September 2026 we took it
             down. Nothing was cut; it was all unlocked.
           </p>
-          <div
-            style="
-              background: var(--white);
-              border-radius: 20px;
-              padding: 2rem;
-              border-left: 4px solid var(--rocco-blue);
-            "
-          >
-            <p style="font-size: 1.25rem; color: var(--gray-900); font-weight: 600; font-style: italic; margin: 0">
-              "Any feature that helps keep a dog safe will always be free."
-            </p>
+          <div class="quote">
+            <p>"Any feature that helps keep a dog safe will always be free."</p>
           </div>
-          <p style="font-size: 1.15rem; color: var(--gray-600); line-height: 1.8; margin-top: 1.5rem">
+          <p>
             The lights stay on because of the businesses side: the professionals who run their day on Go Rocco Business,
             the makers who sell in the shop, and the venues and providers who choose to promote themselves. That side
             pays for the extras, and only for the extras.
@@ -328,9 +234,7 @@
           <div class="pricing-card">
             <h3>Free</h3>
             <div class="pricing-price">£0<span>/forever</span></div>
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic">
-              Unlimited. No card, no contract.
-            </p>
+            <p class="pricing-tagline">Unlimited. No card, no contract.</p>
             <ul class="pricing-features">
               <li>Unlimited bookings, clients and invoices</li>
               <li>Your booking page and client hub</li>
@@ -345,12 +249,10 @@
           </div>
 
           <div class="pricing-card featured">
-            <span class="pricing-badge">⭐ Pro</span>
+            <span class="pricing-badge">Pro</span>
             <h3>Go Rocco Business Pro</h3>
             <div class="pricing-price">£15<span>/month</span></div>
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic">
-              Or £144 a year. Everything in Free, plus:
-            </p>
+            <p class="pricing-tagline">Or £144 a year. Everything in Free, plus:</p>
             <ul class="pricing-features">
               <li>Monthly invoice runs</li>
               <li>SMS reminders (100 a month)</li>
@@ -362,9 +264,7 @@
               <li>Priority support</li>
             </ul>
             <a href="https://provider.go-rocco.com/signup" class="pricing-btn">Start free, upgrade any time</a>
-            <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 1rem; text-align: center">
-              Upgrade or cancel from your plan page. No trial to run out.
-            </p>
+            <p class="pricing-note">Upgrade or cancel from your plan page. No trial to run out.</p>
           </div>
         </div>
 
@@ -385,13 +285,13 @@
             <p>Independent British makers sell direct through their own Stripe account. Commission is on item prices, never delivery, and payouts are scheduled at dispatch.</p>
           </div>
         </div>
-        <p class="pricing-note" style="margin-top: 2rem">
+        <p class="pricing-note wide">
           Full details, the sign-up steps and what's needed to get listed are on the <a href="providers.html">For Providers</a> page.
         </p>
       </section>
 
       <section class="content-section">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Questions about pricing</h2>
 
         <h3>Is the app really free?</h3>
         <p>
@@ -431,27 +331,12 @@
         </p>
       </section>
 
-      <section style="padding: 4rem; background: var(--rocco-blue); text-align: center">
-        <div style="max-width: 600px; margin: 0 auto">
-          <h2 style="font-size: 2rem; color: var(--white); margin-bottom: 1rem">Ready for a better walk?</h2>
-          <p style="font-size: 1.15rem; color: rgba(255, 255, 255, 0.95); margin-bottom: 2rem">
-            Download Go Rocco free. Your community is already out walking.
-          </p>
-          <a
-            href="index.html#download"
-            style="
-              display: inline-block;
-              background: var(--white);
-              color: var(--rocco-blue-dark);
-              padding: 1rem 2rem;
-              border-radius: 50px;
-              text-decoration: none;
-              font-weight: 700;
-              font-family: 'Nunito', sans-serif;
-              transition: all 0.3s ease;
-            "
-            >Download Free →</a
-          >
+      <section class="cta-band">
+        <h2>Get Go Rocco</h2>
+        <p>Free on iPhone, Android and the web. No subscription, no adverts.</p>
+        <div class="hero-actions">
+          <a href="index.html#download" class="btn-white">Get the app</a>
+          <a href="providers.html" class="btn-outline">Go Rocco Business</a>
         </div>
       </section>
     </main>
@@ -459,7 +344,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -492,7 +377,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -548,7 +433,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyse site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">

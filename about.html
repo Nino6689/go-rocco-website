@@ -58,82 +58,102 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
       .story-section {
-        padding: 5rem 4rem;
-        max-width: 800px;
+        padding: 4.5rem var(--gutter);
+        max-width: 760px;
         margin: 0 auto;
       }
       .story-section h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 1.5rem;
-        font-weight: 800;
+        font-size: 1.7rem;
+        margin: 3rem 0 1.1rem;
       }
-      .story-section p {
-        font-size: 1.15rem;
-        line-height: 1.9;
-        color: var(--gray-600);
-        margin-bottom: 1.5rem;
+      .story-section h2:first-child {
+        margin-top: 0;
+      }
+      .story-section p,
+      .story-section li {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        margin-bottom: 1.25rem;
+      }
+      .story-section ul {
+        padding-left: 1.25rem;
+      }
+      .story-section li {
+        margin-bottom: 0.6rem;
+      }
+      .story-section a {
+        color: var(--blue-ink);
+        text-underline-offset: 3px;
+      }
+      .story-section strong {
+        color: var(--ink);
       }
       .story-highlight {
-        background: var(--cream);
-        border-radius: 24px;
-        padding: 2.5rem;
-        margin: 2rem 0;
-        border-left: 4px solid var(--rocco-blue);
+        border-left: 3px solid var(--blue);
+        padding: 0.25rem 0 0.25rem 1.5rem;
+        margin: 2.25rem 0;
       }
-      .story-highlight p {
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: var(--gray-900);
-        font-style: italic;
+      .story-section .story-highlight p {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.35;
+        color: var(--ink);
         margin: 0;
       }
       .values-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin: 3rem 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        margin: 2rem 0 0;
       }
       .value-card {
-        background: var(--gray-50);
-        border-radius: 20px;
-        padding: 2rem;
-        text-align: center;
-      }
-      .value-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.6rem;
+        box-shadow: var(--shadow-sm);
       }
       .value-card h3 {
-        font-size: 1.2rem;
-        color: var(--gray-900);
-        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
       }
-      .value-card p {
-        font-size: 1rem;
+      .story-section .value-card p {
+        font-size: 0.98rem;
+        line-height: 1.6;
         margin: 0;
       }
       .team-note {
-        background: var(--rocco-blue);
-        color: var(--white);
-        padding: 4rem;
+        background: var(--ink-deep);
+        padding: 5rem var(--gutter);
         text-align: center;
-        margin-top: 4rem;
       }
       .team-note h2 {
-        color: var(--white);
+        color: #fff;
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
         margin-bottom: 1rem;
       }
       .team-note p {
-        color: rgba(255, 255, 255, 0.95);
-        max-width: 600px;
+        color: var(--on-dark-soft);
+        font-size: 1.1rem;
+        max-width: 640px;
         margin: 0 auto;
+      }
+      @media (max-width: 768px) {
+        .story-section {
+          padding: 3rem var(--gutter);
+        }
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
 
@@ -158,7 +178,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -167,7 +187,7 @@
         <li><a href="about.html">Our Story</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -181,26 +201,26 @@
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="providers.html" class="mobile-nav-link">For Providers</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="index.html#download" class="nav-cta mobile-nav-link">Download Free →</a>
+      <a href="index.html#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
       <header class="page-header">
-        <h1>Our Story</h1>
-        <p>Built by dog people, for dog people</p>
+        <h1>Our story</h1>
+        <p>Why we built Go Rocco, and who it is for.</p>
       </header>
 
       <section class="story-section">
-        <h2>It Started With a Walk Gone Wrong</h2>
+        <h2>It started with a walk gone wrong</h2>
         <p>
-          Picture this: You're in the park with your dog. They're off-lead, having the time of their life. Then you spot
-          another dog in the distance - this one's on a lead. Your stomach drops.
+          You are in the park with your dog. They are off the lead and enjoying it. Then you spot another dog in the
+          distance, and this one is on a lead.
         </p>
         <p>
-          Is that dog friendly? Nervous? Reactive? You start the awkward dance. Squinting. Waving. Trying to make eye
-          contact. Shouting "IS HE FRIENDLY?" across the park while your dog bounds toward them at full speed.
+          Is that dog friendly, nervous or reactive? You squint, you wave, you try to catch the owner's eye, and you
+          end up calling "Is he friendly?" across the park while your dog runs towards them at full speed.
         </p>
-        <p>Sometimes it's fine. Sometimes it's really not fine.</p>
+        <p>Sometimes it is fine. Sometimes it really is not.</p>
 
         <div class="story-highlight">
           <p>
@@ -209,7 +229,7 @@
           </p>
         </div>
 
-        <p>That's the moment Go Rocco was born.</p>
+        <p>That question is where Go Rocco began.</p>
 
         <h2>Why "Go Rocco"?</h2>
         <p>
@@ -225,45 +245,41 @@
           and give space to dogs who don't.
         </p>
 
-        <h2>What We Believe</h2>
+        <h2>What we believe</h2>
         <div class="values-grid">
           <div class="value-card">
-            <div class="value-icon">🐕</div>
-            <h3>Every Dog Deserves Understanding</h3>
+            <h3>Every dog deserves understanding</h3>
             <p>
               Nervous dogs aren't bad dogs. Reactive dogs aren't bad dogs. They're dogs who need owners who understand
               them.
             </p>
           </div>
           <div class="value-card">
-            <div class="value-icon">🤝</div>
-            <h3>Community Over Competition</h3>
+            <h3>Community over competition</h3>
             <p>Go Rocco only works if we all use it. We're building something together, for everyone's benefit.</p>
           </div>
           <div class="value-card">
-            <div class="value-icon">🔒</div>
-            <h3>Privacy Is Non-Negotiable</h3>
+            <h3>Privacy is not negotiable</h3>
             <p>Your location is yours. We'll never sell your data. The 50-metre rule exists because privacy matters.</p>
           </div>
           <div class="value-card">
-            <div class="value-icon">💚</div>
-            <h3>Free for Dog Owners</h3>
+            <h3>Free for dog owners</h3>
             <p>Every feature in the app is free, with no adverts. The businesses that use Go Rocco pay for the extras, and only for the extras.</p>
           </div>
         </div>
 
         <h2>Made in the UK</h2>
         <p>
-          Go Rocco is proudly British. Our team is based in the UK, we follow UK data protection laws (hello, ICO!), and
-          we launched here first because this is home.
+          Go Rocco is built in the UK. Our team is based here, we follow UK data protection law, and we launched here
+          first because this is home.
         </p>
         <p>
-          We know UK dog culture. The parks. The pub dogs. The coastal walks. The slightly-too-muddy fields. The "yes,
-          he's friendly!" shouting. We get it, because we live it every day.
+          We know how dogs are walked here: the parks, the pub dogs, the coastal paths, the fields that are muddier
+          than they looked. We know it because it is our own week.
         </p>
 
-        <h2>Join Us</h2>
-        <p>We're just getting started. If you believe in what we're building, there are a few ways to get involved:</p>
+        <h2>Join us</h2>
+        <p>We are at the start. If you like what we are building, there are a few ways to get involved:</p>
         <ul>
           <li>
             <strong>Download Go Rocco</strong> - Get the app on <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer">iOS</a> or <a href="https://play.google.com/store/apps/details?id=com.gorocco.v6&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android</a> and help shape its future
@@ -272,7 +288,7 @@
             <a href="providers.html"><strong>Run your dog business on it</strong></a> - Go Rocco Business is free for walkers, groomers, sitters and trainers, with 0% on your own clients
           </li>
           <li>
-            <a href="careers.html"><strong>Join the team</strong></a> - We're hiring dog lovers
+            <a href="careers.html"><strong>Work with us</strong></a> - See the careers page
           </li>
         </ul>
       </section>
@@ -281,8 +297,8 @@
         <h2>From Bryony, Chez & Rocco</h2>
         <p>
           Go Rocco started with a simple question from two dog owners who wanted safer walks for their mini dachshund, Rocco.
-          What began as an idea in the park has grown into something we're truly proud of. Thanks for believing in what we're building.
-          Every dog owner who joins makes walks safer for everyone. We can't wait to see you in the park. 🐾
+          What began as an idea in the park has grown into something we are proud of. Thank you for backing it.
+          Every dog owner who joins makes walks safer for everyone. We look forward to seeing you in the park.
         </p>
       </section>
     </main>
@@ -290,7 +306,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -323,7 +339,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -380,7 +396,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyze site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">

@@ -133,445 +133,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .page-header.providers {
-        background: linear-gradient(160deg, var(--rocco-blue) 0%, var(--rocco-blue-dark) 100%);
-      }
-      .page-header .eyebrow {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.2);
-        color: var(--white);
-        padding: 0.4rem 1rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        margin-bottom: 1.25rem;
-        position: relative;
-        z-index: 1;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-        position: relative;
-        z-index: 1;
-      }
-      .btn-white,
-      .btn-outline,
-      .btn-blue {
-        display: inline-block;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-        font-family: 'Nunito', sans-serif;
-        transition: all 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .btn-white {
-        background: var(--white);
-        color: var(--rocco-blue-dark);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-      }
-      .btn-white:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-      }
-      .btn-outline {
-        color: var(--white);
-        border: 2px solid rgba(255, 255, 255, 0.7);
-      }
-      .btn-outline:hover {
-        border-color: var(--white);
-        background: rgba(255, 255, 255, 0.12);
-      }
-      .btn-blue {
-        background: var(--rocco-blue);
-        color: var(--white);
-        box-shadow: 0 4px 15px rgba(123, 203, 235, 0.4);
-      }
-      .btn-blue:hover {
-        background: var(--rocco-blue-dark);
-        transform: translateY(-2px);
-      }
-      .hero-note {
-        margin-top: 1rem;
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.95rem;
-        position: relative;
-        z-index: 1;
-      }
-      .section {
-        padding: 5rem 4rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .section.tight {
-        padding-top: 3rem;
-      }
-      .section-intro {
-        max-width: 760px;
-        margin: 0 auto 3rem;
-        text-align: center;
-      }
-      .section-intro h2 {
-        font-size: 2.25rem;
-        color: var(--gray-900);
-        margin-bottom: 1rem;
-        font-weight: 900;
-      }
-      .section-intro p {
-        font-size: 1.15rem;
-        color: var(--gray-600);
-        line-height: 1.8;
-      }
-      .section-label {
-        display: inline-block;
-        background: rgba(123, 203, 235, 0.15);
-        color: var(--rocco-blue-dark);
-        padding: 0.35rem 0.9rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-      }
-      .chips {
-        display: flex;
-        gap: 0.75rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0 auto 2.5rem;
-      }
-      .chip {
-        background: var(--cream);
-        color: var(--gray-900);
-        border: 2px solid rgba(123, 203, 235, 0.35);
-        padding: 0.6rem 1.1rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 0.95rem;
-      }
-      .film {
-        max-width: 960px;
-        margin: 0 auto;
-        background: var(--gray-900);
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 25px 60px rgba(17, 24, 39, 0.25);
-      }
-      .film video {
-        display: block;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        background: #000;
-      }
-      .film-caption {
-        text-align: center;
-        color: var(--gray-600);
-        font-size: 0.95rem;
-        margin-top: 1rem;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
-      }
-      .tile {
-        background: var(--gray-50);
-        border-radius: 20px;
-        padding: 1.75rem;
-        border: 2px solid transparent;
-        transition: border-color 0.3s ease;
-      }
-      .tile:hover {
-        border-color: var(--rocco-blue);
-      }
-      .tile .icon {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
-      }
-      .tile h3 {
-        font-size: 1.15rem;
-        color: var(--gray-900);
-        margin-bottom: 0.5rem;
-        font-weight: 800;
-      }
-      .tile p {
-        color: var(--gray-600);
-        line-height: 1.7;
-        font-size: 0.98rem;
-      }
-      .plans {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        max-width: 960px;
-        margin: 0 auto;
-      }
-      .plan {
-        background: var(--white);
-        border: 3px solid var(--gray-50);
-        border-radius: 30px;
-        padding: 2.5rem;
-      }
-      .plan.featured {
-        border-color: var(--rocco-blue);
-        box-shadow: 0 20px 60px rgba(123, 203, 235, 0.25);
-      }
-      .plan h3 {
-        font-size: 1.5rem;
-        color: var(--gray-900);
-        margin-bottom: 0.25rem;
-      }
-      .plan .price {
-        font-size: 2.75rem;
-        font-weight: 900;
-        color: var(--rocco-blue-dark);
-        font-family: 'Nunito', sans-serif;
-        line-height: 1.1;
-      }
-      .plan .price span {
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--gray-600);
-      }
-      .plan .tagline {
-        color: var(--gray-600);
-        font-style: italic;
-        margin: 0.75rem 0 1.5rem;
-      }
-      .plan ul {
-        list-style: none;
-        margin: 0 0 1.75rem;
-        padding: 0;
-      }
-      .plan li {
-        display: flex;
-        gap: 0.65rem;
-        padding: 0.55rem 0;
-        border-bottom: 1px solid var(--gray-50);
-        color: var(--gray-600);
-        line-height: 1.5;
-      }
-      .plan li::before {
-        content: '✓';
-        color: var(--safe-green);
-        font-weight: 700;
-        flex-shrink: 0;
-      }
-      .steps {
-        counter-reset: step;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-      }
-      .step {
-        background: var(--white);
-        border: 2px solid var(--gray-50);
-        border-radius: 20px;
-        padding: 2rem 1.75rem;
-        position: relative;
-      }
-      .step .num {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: var(--rocco-blue);
-        color: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 900;
-        font-family: 'Nunito', sans-serif;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
-      .step h3 {
-        font-size: 1.15rem;
-        color: var(--gray-900);
-        margin-bottom: 0.5rem;
-        font-weight: 800;
-      }
-      .step p,
-      .step li {
-        color: var(--gray-600);
-        line-height: 1.7;
-        font-size: 0.98rem;
-      }
-      .step ul {
-        padding-left: 1.1rem;
-        margin-top: 0.5rem;
-      }
-      .fees {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        max-width: 960px;
-        margin: 0 auto;
-      }
-      .fee {
-        border-radius: 24px;
-        padding: 2.25rem;
-      }
-      .fee.own {
-        background: rgba(76, 175, 80, 0.1);
-        border: 2px solid rgba(76, 175, 80, 0.35);
-      }
-      .fee.intro {
-        background: rgba(123, 203, 235, 0.12);
-        border: 2px solid rgba(123, 203, 235, 0.4);
-      }
-      .fee .big {
-        font-size: 3rem;
-        font-weight: 900;
-        font-family: 'Nunito', sans-serif;
-        line-height: 1;
-        margin-bottom: 0.5rem;
-      }
-      .fee.own .big {
-        color: var(--safe-green);
-      }
-      .fee.intro .big {
-        color: var(--rocco-blue-dark);
-      }
-      .fee h3 {
-        font-size: 1.2rem;
-        color: var(--gray-900);
-        margin-bottom: 0.75rem;
-      }
-      .fee p {
-        color: var(--gray-600);
-        line-height: 1.7;
-      }
-      .band {
-        background: var(--cream);
-      }
-      .band.dark {
-        background: var(--gray-900);
-        color: var(--white);
-      }
-      .band.dark .section-intro h2,
-      .band.dark .tile h3 {
-        color: var(--white);
-      }
-      .band.dark .section-intro p,
-      .band.dark .tile p {
-        color: rgba(255, 255, 255, 0.8);
-      }
-      .band.dark .tile {
-        background: rgba(255, 255, 255, 0.06);
-      }
-      .band.dark .section-label {
-        background: rgba(255, 255, 255, 0.12);
-        color: var(--rocco-blue-light);
-      }
-      .quote {
-        max-width: 760px;
-        margin: 0 auto;
-        background: var(--white);
-        border-left: 4px solid var(--rocco-blue);
-        border-radius: 20px;
-        padding: 2rem;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--gray-900);
-        font-style: italic;
-      }
-      .faq-list {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .faq-item {
-        background: var(--gray-50);
-        border-radius: 16px;
-        padding: 1.25rem 1.5rem;
-        margin-bottom: 1rem;
-      }
-      .faq-item summary {
-        cursor: pointer;
-        font-weight: 800;
-        font-family: 'Nunito', sans-serif;
-        color: var(--gray-900);
-        font-size: 1.05rem;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .faq-item summary::-webkit-details-marker {
-        display: none;
-      }
-      .faq-item summary::after {
-        content: '+';
-        font-size: 1.5rem;
-        color: var(--rocco-blue-dark);
-      }
-      .faq-item[open] summary::after {
-        content: '–';
-      }
-      .faq-item p {
-        color: var(--gray-600);
-        line-height: 1.8;
-        margin-top: 0.75rem;
-      }
-      .faq-item a,
-      .section p a,
-      .tile a,
-      .step a,
-      .fee a {
-        color: var(--rocco-blue-dark);
-        text-decoration: underline;
-      }
-      .credit {
-        text-align: center;
-        color: var(--gray-600);
-        font-size: 0.85rem;
-        max-width: 760px;
-        margin: 2rem auto 0;
-      }
-      .cta-band {
-        background: var(--rocco-blue);
-        text-align: center;
-        padding: 5rem 4rem;
-      }
-      .cta-band h2 {
-        font-size: 2.25rem;
-        color: var(--white);
-        margin-bottom: 1rem;
-        font-weight: 900;
-      }
-      .cta-band p {
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 1.15rem;
-        max-width: 640px;
-        margin: 0 auto 2rem;
-        line-height: 1.7;
-      }
-      @media (max-width: 768px) {
-        .section {
-          padding: 3rem 1.5rem;
-        }
-        .section-intro h2 {
-          font-size: 1.75rem;
-        }
-        .cta-band {
-          padding: 3rem 1.5rem;
-        }
-        .cta-band h2 {
-          font-size: 1.75rem;
-        }
-        .plan {
-          padding: 2rem 1.5rem;
+      /* Reduced motion: no footage, show the still instead (styles.css hides the video) */
+      @media (prefers-reduced-motion: reduce) {
+        .page-header.hero-media {
+          background: var(--ink-deep) url('assets/videos/brand/walker-sunrise-poster.jpg') center / cover no-repeat;
         }
       }
     </style>
@@ -597,7 +167,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -620,31 +190,60 @@
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="https://provider.go-rocco.com/signup" class="nav-cta mobile-nav-link">Get started free →</a>
+      <a href="https://provider.go-rocco.com/signup" class="nav-cta mobile-nav-link">Get started free</a>
     </div>
 
     <main id="main">
-      <header class="page-header providers">
-        <span class="eyebrow">🐾 Go Rocco Business</span>
-        <h1>Run your dog business for free.<br />Keep 100% of your own clients.</h1>
-        <p>
-          If dogs are your job, this is the other half of Go Rocco: your day, your clients, your bookings and your
-          invoices in one place. Built for UK walkers, groomers, sitters, boarders, daycares and trainers.
-        </p>
-        <div class="hero-actions">
-          <a href="https://provider.go-rocco.com/signup" class="btn-white">Create your free account</a>
-          <a href="#film" class="btn-outline">Watch the 60-second film</a>
+      <header class="page-header hero-media">
+        <!-- Decorative background footage: silent, looping, hidden from assistive tech.
+             Visitors who ask for reduced motion get the poster still instead. -->
+        <video
+          class="hero-bg"
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="assets/videos/brand/walker-sunrise-poster.jpg"
+          aria-hidden="true"
+          tabindex="-1"
+          disablepictureinpicture
+        >
+          <source src="assets/videos/brand/walker-sunrise.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-inner">
+          <span class="eyebrow">Go Rocco Business</span>
+          <h1>Run your dog business for free.<br />Keep 100% of your own clients.</h1>
+          <p>
+            Your diary, clients, bookings and invoices in one place. Built for UK dog walkers, groomers, sitters,
+            boarders, daycares and trainers.
+          </p>
+          <div class="hero-actions">
+            <a href="https://provider.go-rocco.com/signup" class="btn-white">Create your free account</a>
+            <a href="#brand-film" class="btn-outline">Watch the film</a>
+          </div>
+          <p class="hero-note">Takes about a minute · No card · No contract · 0% on your own clients, forever</p>
+          <p class="hero-note"><strong>Dog walker?</strong> <a href="walkers.html">Join the Founding Walkers test: Pro free for a year →</a></p>
         </div>
-        <p class="hero-note">Takes about a minute · No card · No contract · 0% on your own clients, forever</p>
-        <p class="hero-note"><strong>Dog walker?</strong> <a href="walkers.html" style="color:inherit;text-decoration:underline">Join the Founding Walkers test — Pro free for a year →</a></p>
       </header>
+
+      <section class="section tight" id="brand-film">
+        <div class="film">
+          <video controls preload="none" playsinline poster="assets/videos/brand/go-rocco-business-film-poster.jpg">
+            <source src="assets/videos/brand/go-rocco-business-film.mp4" type="video/mp4" />
+            Your browser can't play this video. <a href="assets/videos/brand/go-rocco-business-film.mp4">Download it instead.</a>
+          </video>
+        </div>
+        <p class="film-caption">Go Rocco Business, the film. Fifty-one seconds, with sound and captions.</p>
+      </section>
 
       <section class="section tight" id="film">
         <div class="chips" aria-label="What you get">
-          <span class="chip">✅ Free forever for the core</span>
-          <span class="chip">💷 0% commission on your own clients</span>
-          <span class="chip">📅 Bookings, invoices &amp; tax-ready books</span>
-          <span class="chip">🇬🇧 Built for UK rules</span>
+          <span class="chip">Free forever for the core</span>
+          <span class="chip">0% commission on your own clients</span>
+          <span class="chip">Bookings, invoices and tax-ready books</span>
+          <span class="chip">Built for UK rules</span>
         </div>
         <div class="film">
           <video controls preload="none" playsinline poster="assets/videos/go-rocco-business-poster.jpg">
@@ -669,62 +268,50 @@
         </div>
         <div class="grid">
           <div class="tile">
-            <div class="icon" aria-hidden="true">📅</div>
             <h3>Today, calendar and bookings</h3>
             <p>Who you've got, when, and whose dog is whose. Every booking in one diary, whatever its source, with a Start, Log and Complete on each one.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">📇</div>
             <h3>Your client book</h3>
             <p>Clients and their dogs, kept properly: vet, feeding, medication, the thing you must not forget. Bring your existing book in from a spreadsheet in a minute.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">🔗</div>
             <h3>Your own booking page</h3>
             <p>Set your prices and hours once and get a page at <strong>book.go-rocco.com/your-name</strong> that a client can use tonight. Anyone who books there is your own client at 0%.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">🧾</div>
             <h3>Invoices with a pay link</h3>
             <p>Finish the job and it's ready to invoice. Take card, Apple Pay and Google Pay straight into your own Stripe account, and record bank transfers and cash too.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">📝</div>
             <h3>Care records and report cards</h3>
             <p>Log fed, toilet, exercise, a photograph while you have the dog. The owner gets a live feed or an evening digest, and the report card writes itself.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">🏠</div>
             <h3>A hub for every client</h3>
             <p>Each client gets a private link with their bookings, receipts, what's to pay, care updates and their dog's documents. No account or app needed.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">📚</div>
             <h3>Books and the tax-ready pack</h3>
             <p>Income lands in your books on its own. Add expenses and mileage at HMRC's approved rates, then download the year for your accountant as CSV, Xero, FreeAgent or QuickBooks.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">🚫</div>
             <h3>Cancellation and no-show fees</h3>
             <p>Your policy, applied automatically. Charging for a late cancellation isn't a premium feature; it's the difference between a hobby and a business.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">🔁</div>
             <h3>Repeat bookings and a waiting list</h3>
             <p>Mrs Patel every Tuesday, without writing it in the diary each week. When a slot comes free, the waiting list knows who to offer it to.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">💬</div>
             <h3>Quotes, vouchers, classes and packs</h3>
             <p>A priced proposal that only enters the diary when they say yes. Gift vouchers sold across the counter. Classes, packs and seasonal pricing.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">📋</div>
             <h3>Animal register and incident reports</h3>
             <p>Arrivals, departures and the daily record a licensing inspector asks for. A bite, an escape or a near miss written down once, properly, while it's fresh.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">🔑</div>
             <h3>Keys, reviews, tips and calendar sync</h3>
             <p>A register of every key and code you hold. Reviews from your own clients on your own page. Tips. And a read-only feed of your diary for Google, Apple or Outlook.</p>
           </div>
@@ -754,7 +341,7 @@
                 <li>Bank, cash and card payments, 0% on your own clients</li>
                 <li>Reviews, tips and calendar sync</li>
               </ul>
-              <a href="https://provider.go-rocco.com/signup" class="btn-blue">Start free</a>
+              <a href="https://provider.go-rocco.com/signup" class="btn-primary">Start free</a>
             </div>
             <div class="plan featured">
               <h3>Pro</h3>
@@ -771,7 +358,7 @@
                 <li>Late payment fees and weather alerts</li>
                 <li>Priority support</li>
               </ul>
-              <a href="https://provider.go-rocco.com/signup" class="btn-blue">Start free, upgrade any time</a>
+              <a href="https://provider.go-rocco.com/signup" class="btn-primary">Start free, upgrade any time</a>
             </div>
           </div>
         </div>
@@ -788,17 +375,14 @@
         </div>
         <div class="grid">
           <div class="tile">
-            <div class="icon" aria-hidden="true">🐕</div>
             <h3>Walkers and sitters</h3>
             <p>Runs in the order you actually drive them, council dog limits on group walks, GPS-tracked walks and photos that go to the owner automatically.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">🏡</div>
             <h3>Boarders and daycares</h3>
             <p>The per-animal register and daily record the Animal Welfare (Licensing of Activities Involving Animals) Regulations 2018 ask for, kept as you go, with a one-click inspection pack on Pro.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">✂️</div>
             <h3>Groomers and trainers</h3>
             <p>Grooming cards with before-and-after photos, training plans with a goal and sessions against it, and certificates a client can show someone.</p>
           </div>
@@ -861,7 +445,7 @@
             <p>For 90 days or 10 bookings, capped at £50 per client, then they're yours at 0% too. Card bookings through the app collect it automatically; bookings you invoice or take in cash are totted up on a monthly statement.</p>
           </div>
         </div>
-        <p class="credit" style="margin-top: 1.5rem">
+        <p class="credit">
           Pro and marketplace fees are separate. Your plan never changes what a client costs, and being listed never changes what the software costs.
         </p>
       </section>
@@ -895,23 +479,20 @@
         </div>
         <div class="grid">
           <div class="tile">
-            <div class="icon" aria-hidden="true">✍️</div>
             <h3>Apply in about ten minutes</h3>
             <p>Five short pages about what you make. It saves as you go. A person at Go Rocco reads it and decides within five working days, and we email you either way.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">📄</div>
             <h3>What you'll need</h3>
             <p>Your story and the county your things are made in, your returns window (at least 14 days, as the law requires), how long you take to post an order, and your product liability insurance certificate. Food and treats also need your feed business registration. Nothing else does.</p>
           </div>
           <div class="tile">
-            <div class="icon" aria-hidden="true">💷</div>
             <h3>Fair terms, paid at dispatch</h3>
             <p>You sell direct through your own Stripe account. Go Rocco's commission is 15% on item prices, never on delivery, and your payout is scheduled when you mark the order dispatched. A statement each month shows exactly what was sold and paid.</p>
           </div>
         </div>
-        <div class="hero-actions" style="margin-top: 2.5rem">
-          <a href="https://provider.go-rocco.com/signup" class="btn-blue">Apply to sell on Go Rocco</a>
+        <div class="hero-actions center">
+          <a href="https://provider.go-rocco.com/signup" class="btn-primary">Apply to sell on Go Rocco</a>
         </div>
         <p class="credit">Create a free account, then choose <strong>Apply to sell</strong> under Shop.</p>
       </section>
@@ -928,17 +509,14 @@
           </div>
           <div class="grid">
             <div class="tile">
-              <div class="icon" aria-hidden="true">✅</div>
               <h3>A verified dog-friendly badge</h3>
               <p>It tells owners you genuinely welcome dogs, which reads very differently from "dogs tolerated". Reply to reviews, add photos and keep your details right from a free dashboard.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">☕</div>
               <h3>Walk &amp; Brew</h3>
               <p>Adopt the walks that already start or finish at your door and offer walkers a small perk when they arrive, a free puppuccino or 10% off food. Never alcohol, and every perk is checked by a person.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">🎴</div>
               <h3>Cards for the counter</h3>
               <p>Want physical "Dogs Welcome on Go Rocco" cards for the bar or till? Ask when you claim and we'll post you a pack, free.</p>
             </div>
@@ -958,32 +536,26 @@
           </div>
           <div class="grid">
             <div class="tile">
-              <div class="icon" aria-hidden="true">🆓</div>
               <h3>Free is the product</h3>
               <p>Nothing you need to run your business is behind a paywall. Pro is a convenience layer, and you'll know when it's worth it.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">🤝</div>
               <h3>Your clients are yours</h3>
               <p>0% on your own clients isn't a launch offer. It's the deal, forever, and the system decides who is yours so nobody can quietly move the line.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">📍</div>
               <h3>Being found is the bonus, not the pitch</h3>
               <p>We'd rather you used Go Rocco because it runs your day well. When a Go Rocco dog owner books you, that's on top.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">⚖️</div>
               <h3>Built for the rules you actually work under</h3>
               <p>The Animal Welfare Act 2006, the 2018 licensing regulations, council limits on dogs per walk, insurance and DBS renewals. Kept as you go, not reconstructed the night before.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">🧮</div>
               <h3>Tax-ready, not tax advice</h3>
               <p>We give you the numbers your accountant asks for, in one download. We don't file anything, and we won't pretend to.</p>
             </div>
             <div class="tile">
-              <div class="icon" aria-hidden="true">🐾</div>
               <h3>One record, both sides</h3>
               <p>The owner sees it in the app, you see it in the portal, and the dog is looked after in between. Nobody types it twice.</p>
             </div>
@@ -1031,24 +603,23 @@
       <section class="cta-band" id="start">
         <h2>Go Rocco Business. Made for dog people, and the people they pay.</h2>
         <p>Your calendar, your clients and your invoices, set up in about a minute. Free, no card, and your clients stay yours.</p>
-        <div class="hero-actions" style="margin-top: 0">
+        <div class="hero-actions">
           <a href="https://provider.go-rocco.com/signup" class="btn-white">Create your free account</a>
           <a href="pricing.html" class="btn-outline">See pricing</a>
         </div>
-        <p class="hero-note">Questions first? Email <a href="mailto:support@go-rocco.com" style="color: #fff">support@go-rocco.com</a></p>
+        <p class="hero-note">Questions first? Email <a href="mailto:support@go-rocco.com">support@go-rocco.com</a></p>
       </section>
 
-      <p class="credit" style="padding: 0 1.5rem 2rem">
-        Films recorded on app.go-rocco.com and provider.go-rocco.com. The people on screen are demonstration accounts.
-        Music: <em>"Carefree"</em> by Kevin MacLeod (incompetech.com), licensed under
-        <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a>.
+      <p class="credit page-credit">
+        Product films recorded on app.go-rocco.com and provider.go-rocco.com. The people on screen are demonstration
+        accounts.
       </p>
     </main>
 
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -1081,7 +652,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -1133,6 +704,22 @@
         })
       })
 
+      // Background footage is decorative: stop it for visitors who ask for reduced motion
+      ;(function () {
+        var bg = document.getElementById('heroVideo')
+        if (!bg || !window.matchMedia) return
+        var mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+        function sync() {
+          if (mq.matches) bg.pause()
+          else {
+            var p = bg.play()
+            if (p && p.catch) p.catch(function () {})
+          }
+        }
+        sync()
+        if (mq.addEventListener) mq.addEventListener('change', sync)
+      })()
+
       // Only one film plays at a time
       document.querySelectorAll('.film video').forEach((v) => {
         v.addEventListener('play', () => {
@@ -1154,7 +741,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyse site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">
