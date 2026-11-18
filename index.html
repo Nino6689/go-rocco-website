@@ -29,7 +29,7 @@
     <link rel="apple-touch-icon" href="gorocco-app-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <meta name="apple-itunes-app" content="app-id=6753819069">
-    <meta name="theme-color" content="#7bcbeb" />
+    <meta name="theme-color" content="#faf8f5" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -182,12 +182,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://subscribe.go-rocco.com" />
-    <link rel="preload" href="assets/gorocco-logo.png" as="image" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css?v=3" />
+    <link rel="stylesheet" href="index.css?v=4" />
   </head>
   <body>
     <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
@@ -195,7 +194,7 @@
 
     <nav id="navbar">
       <a href="/" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
@@ -204,7 +203,7 @@
         <li><a href="about.html">Our Story</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <a href="#download" class="nav-cta">Download</a>
+      <a href="#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -219,45 +218,36 @@
       <a href="pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="#download" class="nav-cta mobile-nav-link">Download Free →</a>
+      <a href="#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
       <section class="hero">
-        <div class="paw-decoration" aria-hidden="true">🐾</div>
-        <div class="paw-decoration" aria-hidden="true">🐾</div>
-        <div class="paw-decoration" aria-hidden="true">🐾</div>
+        <!-- Decorative background footage: silent, looping, hidden from assistive tech. Visitors who ask for
+             reduced motion get the poster still instead. Until the files exist the hero is solid ink. -->
+        <video
+          class="hero-bg"
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="assets/videos/brand/owner-woodland-poster.jpg"
+          aria-hidden="true"
+          tabindex="-1"
+          disablepictureinpicture
+        >
+          <source src="assets/videos/brand/owner-woodland.mp4" type="video/mp4" />
+        </video>
 
-        <div class="hero-content">
-          <div class="hero-badge">🎉 Free for dog owners · iOS, Android &amp; web</div>
-          <div class="hero-slider" aria-live="polite">
-            <div class="hero-slide active" data-index="0" aria-hidden="false">
-              <h1>The Ultimate App for <span>Dog Owners</span></h1>
-              <p class="hero-description">
-                Track walks, connect with fellow dog lovers, find trusted pet services, and keep your furry friend safe
-                - all in one app. Free, with no subscription and no adverts.
-              </p>
-            </div>
-            <div class="hero-slide" data-index="1" aria-hidden="true">
-              <h2 class="hero-heading">Know before you <span>meet</span></h2>
-              <p class="hero-description">
-                See if approaching dogs are friendly or nervous before you get close. No more awkward hand signals
-                across the park. No more guessing. No more preventable incidents.
-              </p>
-            </div>
-            <div class="hero-slide" data-index="2" aria-hidden="true">
-              <h2 class="hero-heading">You're all <span>welcome</span></h2>
-              <p class="hero-description">
-                "Can we bring the dog?" Finally answered. Discover cafés, pubs, parks and beaches that genuinely welcome
-                your four-legged friend - verified by real dog owners, not marketing teams.
-              </p>
-            </div>
-          </div>
-          <div class="hero-dots" aria-label="Hero slides">
-            <button class="hero-dot active" data-index="0" aria-label="Slide 1" aria-current="true"></button>
-            <button class="hero-dot" data-index="1" aria-label="Slide 2" aria-current="false"></button>
-            <button class="hero-dot" data-index="2" aria-label="Slide 3" aria-current="false"></button>
-          </div>
+        <div class="hero-inner">
+          <span class="eyebrow">Free for dog owners · iOS, Android and web</span>
+          <h1>Everything your dog's life needs, in one app.</h1>
+          <p class="hero-description">
+            Walk tracking, local dog-friendly places, trusted care and a community that looks out for each other. Free
+            for owners, with no subscription and no adverts.
+          </p>
           <div class="hero-ctas">
             <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer" class="hero-store-link" aria-label="Download on the App Store">
               <img
@@ -273,428 +263,372 @@
                 class="hero-store-badge"
               />
             </a>
-            <a href="#problem" class="btn-secondary">Learn More</a>
+            <a href="#features" class="btn-secondary">See what it does</a>
           </div>
-          <div class="app-rating">
-            <span class="app-rating-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
-            <span class="app-rating-text">4.8 on the App Store</span>
-          </div>
+          <p class="app-rating"><strong>4.8</strong> on the App Store</p>
         </div>
-        <div class="hero-visual">
-          <div class="hero-phone-mockup">
-            <video
-              autoplay
-              muted
-              loop
-              playsinline
-              poster="assets/videos/meeting-hugo-poster.jpg"
-              class="hero-video"
-            >
-              <source src="assets/videos/meeting-hugo.webm" type="video/webm" />
-              <source src="assets/videos/meeting-hugo.mp4" type="video/mp4" />
-            </video>
+      </section>
+
+      <!-- Facts strip -->
+      <section class="trust-signals" id="trust" aria-label="At a glance">
+        <div class="trust-signals-content">
+          <div class="trust-item">
+            <div class="trust-number">Free for owners</div>
+            <div class="trust-label">No subscription, no adverts</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">Safety first</div>
+            <div class="trust-label">Know which dogs are nearby before you meet</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">Community powered</div>
+            <div class="trust-label">Owners looking out for each other</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-number">Made in the UK</div>
+            <div class="trust-label">Built for British dog owners</div>
           </div>
         </div>
       </section>
 
       <!-- App Showcase Section -->
-      <section class="app-showcase" id="app-showcase">
-        <div class="showcase-decoration" aria-hidden="true">📱</div>
-        <div class="showcase-decoration" aria-hidden="true">🐾</div>
-        <div class="section-header reveal">
-          <span class="section-label white">📱 See It in Action</span>
-          <h2>Designed for dog people</h2>
-          <p>Real screenshots. Real features. Really free.</p>
-        </div>
-        <div class="showcase-carousel reveal">
-          <div class="showcase-slider" aria-live="polite">
-            <div class="showcase-slide active" data-index="0" aria-hidden="false">
-              <div class="phone-mockup">
-                <picture>
-                  <source srcset="assets/screenshots/social-feed.webp" type="image/webp" />
-                  <img src="assets/screenshots/social-feed.jpg" alt="Go Rocco social feed showing walk posts, photos, and community activity" loading="lazy" />
-                </picture>
-              </div>
-              <div class="showcase-caption">
-                <h3>Social Feed</h3>
-                <p>Share walks, photos, and connect with the pack</p>
-              </div>
-            </div>
-            <div class="showcase-slide" data-index="1" aria-hidden="true">
-              <div class="phone-mockup">
-                <picture>
-                  <source srcset="assets/screenshots/discover-map.webp" type="image/webp" />
-                  <img src="assets/screenshots/discover-map.jpg" alt="Go Rocco discover map showing dog-friendly places nearby" loading="lazy" />
-                </picture>
-              </div>
-              <div class="showcase-caption">
-                <h3>Discover</h3>
-                <p>Find dog-friendly places near you</p>
-              </div>
-            </div>
-            <div class="showcase-slide" data-index="2" aria-hidden="true">
-              <div class="phone-mockup">
+      <section class="sec" id="app-showcase">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">The app</span>
+            <h2>Built around the daily walk</h2>
+            <p>Screenshots from the app as it is today.</p>
+          </div>
+          <div class="showcase-row" role="region" aria-label="App screenshots" tabindex="0">
+            <figure class="showcase-item">
+              <div class="device">
                 <picture>
                   <source srcset="assets/screenshots/walk-dashboard.webp" type="image/webp" />
-                  <img src="assets/screenshots/walk-dashboard.jpg" alt="Go Rocco walk dashboard with weather, goals, and quick actions" loading="lazy" />
+                  <img src="assets/screenshots/walk-dashboard.jpg" alt="Go Rocco walk dashboard with weather, goals, and quick actions" loading="lazy" width="749" height="1630" />
                 </picture>
               </div>
-              <div class="showcase-caption">
-                <h3>Walk Hub</h3>
-                <p>Weather, goals, streaks, and quick actions</p>
+              <figcaption>
+                <h3>Walk</h3>
+                <p>Weather, goals, streaks and a one-tap start</p>
+              </figcaption>
+            </figure>
+            <figure class="showcase-item">
+              <div class="device">
+                <picture>
+                  <source srcset="assets/screenshots/discover-map.webp" type="image/webp" />
+                  <img src="assets/screenshots/discover-map.jpg" alt="Go Rocco discover map showing dog-friendly places nearby" loading="lazy" width="749" height="1630" />
+                </picture>
               </div>
-            </div>
-            <div class="showcase-slide" data-index="3" aria-hidden="true">
-              <div class="phone-mockup">
-                <video
-                  muted
-                  loop
-                  playsinline
-                  poster="assets/videos/meeting-hugo-poster.jpg"
-                  class="showcase-video"
-                  data-autoplay-on-active
-                >
-                  <source src="assets/videos/meeting-hugo.webm" type="video/webm" />
-                  <source src="assets/videos/meeting-hugo.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <div class="showcase-caption">
-                <h3>Live Tracking</h3>
-                <p>A real walk with Go Rocco - meeting Hugo</p>
-              </div>
-            </div>
-            <div class="showcase-slide" data-index="4" aria-hidden="true">
-              <div class="phone-mockup">
+              <figcaption>
+                <h3>Discover</h3>
+                <p>Dog-friendly places near you</p>
+              </figcaption>
+            </figure>
+            <!-- film slot: replaced in the 2026-11 remaster -->
+            <figure class="showcase-item">
+              <div class="device">
                 <picture>
                   <source srcset="assets/screenshots/pet-services.webp" type="image/webp" />
-                  <img src="assets/screenshots/pet-services.jpg" alt="Go Rocco pet services marketplace with grooming, training, and daycare" loading="lazy" />
+                  <img src="assets/screenshots/pet-services.jpg" alt="Go Rocco pet services marketplace with grooming, training, and daycare" loading="lazy" width="749" height="1630" />
                 </picture>
               </div>
-              <div class="showcase-caption">
-                <h3>Pet Services</h3>
-                <p>Grooming, training, daycare, and more</p>
-              </div>
-            </div>
-            <div class="showcase-slide" data-index="5" aria-hidden="true">
-              <div class="phone-mockup">
+              <figcaption>
+                <h3>Care</h3>
+                <p>Walkers, groomers, sitters and trainers</p>
+              </figcaption>
+            </figure>
+            <figure class="showcase-item">
+              <div class="device">
                 <picture>
                   <source srcset="assets/screenshots/pet-profile.webp" type="image/webp" />
-                  <img src="assets/screenshots/pet-profile.jpg" alt="Go Rocco pet profile with health records and temperament badge" loading="lazy" />
+                  <img src="assets/screenshots/pet-profile.jpg" alt="Go Rocco pet profile with health records and temperament badge" loading="lazy" width="749" height="1630" />
                 </picture>
               </div>
-              <div class="showcase-caption">
-                <h3>Pet Passport</h3>
-                <p>Health records, temperament, and profile</p>
+              <figcaption>
+                <h3>Pet passport</h3>
+                <p>Health records, temperament and profile</p>
+              </figcaption>
+            </figure>
+            <figure class="showcase-item">
+              <div class="device">
+                <picture>
+                  <source srcset="assets/screenshots/social-feed.webp" type="image/webp" />
+                  <img src="assets/screenshots/social-feed.jpg" alt="Go Rocco social feed showing walk posts, photos, and community activity" loading="lazy" width="749" height="1630" />
+                </picture>
               </div>
-            </div>
-          </div>
-          <div class="showcase-dots" aria-label="App screenshots">
-            <button class="showcase-dot active" data-index="0" aria-label="Social Feed" aria-current="true"></button>
-            <button class="showcase-dot" data-index="1" aria-label="Discover" aria-current="false"></button>
-            <button class="showcase-dot" data-index="2" aria-label="Walk Hub" aria-current="false"></button>
-            <button class="showcase-dot" data-index="3" aria-label="Live Tracking" aria-current="false"></button>
-            <button class="showcase-dot" data-index="4" aria-label="Pet Services" aria-current="false"></button>
-            <button class="showcase-dot" data-index="5" aria-label="Pet Passport" aria-current="false"></button>
+              <figcaption>
+                <h3>Feed</h3>
+                <p>Walks and photos from owners you follow</p>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section class="problem" id="problem">
-        <div class="problem-content reveal">
-          <span class="section-label orange">The Problem</span>
-          <h2>We've all been there.</h2>
-          <div class="problem-scenario">
+      <section class="sec sec-alt" id="problem">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">The problem</span>
+            <h2>Most bad encounters start with not knowing.</h2>
+          </div>
+          <div class="problem-layout">
             <div class="scenario-text">
               <p>
-                You're walking your dog off-lead. They're having the time of their life. Then you spot another dog in
-                the distance - on a lead.
+                Your dog is off the lead and enjoying it. Then you see another dog in the distance, on a lead.
               </p>
               <p>
-                Your heart sinks. Is that dog friendly? Nervous? Reactive? You start the awkward dance. Squinting to
-                read body language. Waving your arms. Trying to make eye contact with the owner. Shouting "IS HE
-                FRIENDLY?" across the park while your dog bounds towards them.
+                Is that dog friendly, nervous or reactive? You try to read its body language from fifty yards, catch
+                the owner's eye, and end up calling "Is he friendly?" across the park while your dog is already on
+                the way over.
               </p>
               <p>
-                Sometimes it's fine. Sometimes it's not. And those "not fine" moments? They can mean injuries. Vet
-                bills. Trauma for dogs and owners alike. All because we had no way of knowing.
+                Usually it is fine. When it is not, it can mean an injury, a vet bill and a dog that is wary for
+                months afterwards, all for want of one piece of information.
               </p>
             </div>
-          </div>
-          <div class="problem-stats">
-            <div class="stat-item">
-              <div class="stat-number" data-count="8000" data-suffix="+">8,000+</div>
-              <div class="stat-label">Dog attacks reported in the UK annually <cite class="stat-source">(NHS Digital, 2024)</cite></div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="74" data-suffix="%">74%</div>
-              <div class="stat-label">Of incidents involve dogs meeting unexpectedly <cite class="stat-source">(RSPCA, 2023)</cite></div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="400" data-prefix="£" data-suffix="+">£400+</div>
-              <div class="stat-label">Average vet bill for bite injuries <cite class="stat-source">(British Veterinary Association, 2023)</cite></div>
+            <div class="problem-stats">
+              <div class="stat-item">
+                <div class="stat-number">8,000+</div>
+                <div class="stat-label">Dog attacks reported in the UK annually <cite class="stat-source">(NHS Digital, 2024)</cite></div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">74%</div>
+                <div class="stat-label">Of incidents involve dogs meeting unexpectedly <cite class="stat-source">(RSPCA, 2023)</cite></div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">£400+</div>
+                <div class="stat-label">Average vet bill for bite injuries <cite class="stat-source">(British Veterinary Association, 2023)</cite></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="solution" id="solution">
-        <div class="solution-content reveal">
-          <span class="section-label green">The Solution</span>
-          <h2>What if you could just... know?</h2>
-          <p class="solution-intro">
-            Go Rocco shows you the temperament of nearby dogs before you're close enough for things to go wrong. Set
-            your own dog's profile, see others on the map, and make informed decisions.
-          </p>
-          <div class="solution-grid">
-            <div class="solution-card">
-              <div class="solution-card-header">
-                <div class="solution-card-icon green" role="img" aria-label="Green circle indicating friendly temperament">😊</div>
-                <h3>Friendly</h3>
-              </div>
-              <p>Social and approachable - happy to play and safe to approach. Let them say hello!</p>
+      <section class="sec" id="solution">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">The answer</span>
+            <h2>Know before you meet.</h2>
+            <p>
+              Go Rocco shows you the temperament of nearby dogs before you are close enough for things to go wrong. Set
+              your own dog's profile, see others on the map, and decide whether to say hello or give space.
+            </p>
+          </div>
+          <div class="cards c3 temper">
+            <div class="card">
+              <h3><span class="dot green" aria-hidden="true"></span>Friendly</h3>
+              <p>Social and approachable. Happy to play and fine to approach.</p>
             </div>
-            <div class="solution-card">
-              <div class="solution-card-header">
-                <div class="solution-card-icon orange" role="img" aria-label="Orange circle indicating cautious temperament">🤔</div>
-                <h3>Cautious</h3>
-              </div>
+            <div class="card">
+              <h3><span class="dot orange" aria-hidden="true"></span>Cautious</h3>
               <p>May be shy or nervous around other dogs. Approach slowly and let them set the pace.</p>
             </div>
-            <div class="solution-card">
-              <div class="solution-card-header">
-                <div class="solution-card-icon blue" role="img" aria-label="Blue shield indicating protective temperament">🛡️</div>
-                <h3>Protective</h3>
-              </div>
-              <p>Loyal but may be territorial. Always ask the owner before approaching.</p>
+            <div class="card">
+              <h3><span class="dot blue" aria-hidden="true"></span>Protective</h3>
+              <p>Loyal but may be territorial. Ask the owner before approaching.</p>
             </div>
-            <div class="solution-card">
-              <div class="solution-card-header">
-                <div class="solution-card-icon red" role="img" aria-label="Red warning indicating reactive temperament">⚠️</div>
-                <h3>Reactive</h3>
-              </div>
-              <p>Needs space and distance. Please keep your dog away and give them room.</p>
+            <div class="card">
+              <h3><span class="dot red" aria-hidden="true"></span>Reactive</h3>
+              <p>Needs space and distance. Keep your dog away and give them room.</p>
             </div>
-            <div class="solution-card">
-              <div class="solution-card-header">
-                <div class="solution-card-icon purple" role="img" aria-label="Purple graduation cap indicating dog in training">🎓</div>
-                <h3>Training</h3>
-              </div>
-              <p>Learning social skills - be patient and give them space to practise.</p>
+            <div class="card">
+              <h3><span class="dot purple" aria-hidden="true"></span>Training</h3>
+              <p>Learning social skills. Be patient and give them space to practise.</p>
             </div>
-            <div class="solution-card">
-              <div class="solution-card-header">
-                <div class="solution-card-icon pink" role="img" aria-label="Pink heart indicating dog in heat">💗</div>
-                <h3>In Heat</h3>
-              </div>
+            <div class="card">
+              <h3><span class="dot pink" aria-hidden="true"></span>In heat</h3>
               <p>Give extra space and avoid close contact. Keep your dog at a distance.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="how-it-works" id="how-it-works">
-        <div class="section-header reveal">
-          <h2>How it works</h2>
-          <p>Three simple steps to safer walks</p>
-        </div>
-        <div class="steps reveal">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Set up your dog</h3>
-            <p>Add your dog's name, breed, and temperament. Be honest - it helps everyone stay safe.</p>
+      <section class="sec sec-alt" id="how-it-works">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">How it works</span>
+            <h2>Three steps to a calmer walk</h2>
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Start your walk</h3>
-            <p>
-              Open the app and you'll appear on the map to other dog owners nearby. Go Rocco users within 100 metres can
-              see you - and you can block anyone at any time (blocking is mutual: you won't see them and they won't see
-              you).
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Know before you meet</h3>
-            <p>See approaching dogs' temperaments at a glance. Make informed decisions. Avoid incidents.</p>
+          <div class="cards c3">
+            <div class="card">
+              <span class="card-num">Step 1</span>
+              <h3>Set up your dog</h3>
+              <p>Add your dog's name, breed and temperament. Be honest: it helps everyone stay safe.</p>
+            </div>
+            <div class="card">
+              <span class="card-num">Step 2</span>
+              <h3>Start your walk</h3>
+              <p>
+                Open the app and you appear on the map to other dog owners nearby. Go Rocco users within 100 metres can
+                see you, and you can block anyone at any time. Blocking is mutual: you won't see them and they won't
+                see you.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card-num">Step 3</span>
+              <h3>Know before you meet</h3>
+              <p>See approaching dogs' temperaments at a glance, and choose your route with that in mind.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Pet Management Section -->
-      <section class="pet-section" id="pet-management">
-        <div class="pet-content reveal">
-          <span class="section-label blue">🐕 Pet Management</span>
-          <h2>Every dog deserves their own profile</h2>
-          <p class="pet-intro">
-            Go Rocco treats every dog as a first-class citizen. Complete profiles, health records, and a digital passport - everything you and your vet need, in one place.
-          </p>
-          <div class="pet-grid">
-            <div class="pet-card">
-              <div class="pet-icon" aria-hidden="true">📋</div>
-              <h3>Pet Profiles</h3>
-              <p>Full profiles with breed (2,000+ breeds), age, weight, photos, temperament badges, and energy level. Unlimited profiles, all free.</p>
+      <section class="sec" id="pet-management">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Your dog</span>
+            <h2>A proper record for every dog</h2>
+            <p>
+              Profiles, health records and a digital passport: everything you and your vet need, in one place.
+            </p>
+          </div>
+          <div class="cards c4">
+            <div class="card">
+              <h3>Pet profiles</h3>
+              <p>Full profiles with breed (2,000+ breeds), age, weight, photos, temperament badges and energy level. Unlimited profiles, all free.</p>
             </div>
-            <div class="pet-card">
-              <div class="pet-icon" aria-hidden="true">🏥</div>
-              <h3>Health Dashboard</h3>
-              <p>Track vaccinations, medications, vet appointments, weight history, and allergies. Get reminders so nothing gets missed. Export as PDF for your vet.</p>
+            <div class="card">
+              <h3>Health dashboard</h3>
+              <p>Track vaccinations, medications, vet appointments, weight history and allergies, with reminders so nothing gets missed. Export as a PDF for your vet.</p>
             </div>
-            <div class="pet-card">
-              <div class="pet-icon" aria-hidden="true">🛂</div>
-              <h3>Pet Passport</h3>
-              <p>A complete digital ID with QR code - microchip, insurance, vet info, and vaccination history. Share via link or export as PDF.</p>
+            <div class="card">
+              <h3>Pet passport</h3>
+              <p>A complete digital ID with a QR code: microchip, insurance, vet details and vaccination history. Share by link or export as a PDF.</p>
             </div>
-            <div class="pet-card">
-              <div class="pet-icon" aria-hidden="true">🔗</div>
-              <h3>Access Sharing</h3>
-              <p>Grant family, carers, or dog walkers access with granular permissions - owner, caretaker, walker, or viewer. Perfect for shared households.</p>
+            <div class="card">
+              <h3>Access sharing</h3>
+              <p>Give family, carers or a dog walker access with their own permissions: owner, caretaker, walker or viewer. Useful for shared households.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="features" id="features">
-        <div class="section-header reveal">
-          <h2>Everything you need, all in one app</h2>
-          <p>Every feature is free for dog owners. No subscription, no adverts.</p>
-        </div>
-        <div class="features-grid reveal">
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🗺️</div>
-            <h3>GPS Walk Tracking</h3>
-            <p>
-              Track routes, distance, pace, and calories with live GPS. Auto-pause when stationary, capture walk photos, set goals, build streaks, and review your full walk history. Works offline too.
-            </p>
+      <section class="sec sec-alt" id="features">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Features</span>
+            <h2>Everything in the app, and all of it free</h2>
+            <p>Every feature is free for dog owners. No subscription, no adverts.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🚨</div>
-            <h3>Lost Pet Alerts & SOS</h3>
-            <p>
-              Report a missing pet and alert the entire Go Rocco community nearby. SOS button shares your live location
-              with emergency contacts.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📸</div>
-            <h3>Social Feed & Stories</h3>
-            <p>
-              Share photos from your walks, follow other dog owners, and build your pack. Connect with your local dog
-              community.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📍</div>
-            <h3>Discover Dog-Friendly Places</h3>
-            <p>Find cafés, parks, pubs, and beaches that genuinely welcome dogs - all verified by real owners.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🏆</div>
-            <h3>Achievements & Rewards</h3>
-            <p>
-              Earn points and badges for walks, streaks, and community contributions. Complete daily challenges, collect login rewards, and climb the leaderboards.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">⚠️</div>
-            <h3>Hazard Reporting</h3>
-            <p>
-              Community-reported dangers like broken glass, aggressive animals, flooding, or road works - shown on the map so you can plan safe routes.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🎯</div>
-            <h3>Daily Challenges</h3>
-            <p>
-              Time-based goals like "Walk 50km this month" or "Visit 5 new dog-friendly places." Complete challenges to earn bonus points and exclusive badges.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🐕</div>
-            <h3>Live Temperament Map</h3>
-            <p>
-              See nearby dogs' temperaments at a glance - friendly, cautious, protective, reactive, training, or in heat. Know before you meet.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">⌚</div>
-            <h3>Apple Watch &amp; HealthKit</h3>
-            <p>
-              Walk stats on your wrist, Live Activities on your lock screen, and automatic syncing with Apple Health. Plus Siri Shortcuts for hands-free control.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🤖</div>
-            <h3>Ask Rocco AI</h3>
-            <p>
-              Get instant dog care advice from our AI assistant. Ask anything about training, health, behaviour, or breed-specific questions.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📍</div>
-            <h3>Safety Zones</h3>
-            <p>
-              Set geofence boundaries for your walks. Get instant alerts if you or your dog leave the safe area during a walk.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">👥</div>
-            <h3>Pack Walks</h3>
-            <p>
-              Walk with friends, track group stats, and share the adventure. See everyone on the map in real-time.
-            </p>
+          <div class="cards c3 plain">
+            <div class="card">
+              <h3>GPS walk tracking</h3>
+              <p>
+                Track routes, distance, pace and calories with live GPS. Auto-pause when you stop, add photos, set goals, build streaks and review your full walk history. Works offline too.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Lost pet alerts and SOS</h3>
+              <p>
+                Report a missing pet and alert the Go Rocco community nearby. The SOS button shares your live location
+                with your emergency contacts.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Social feed and stories</h3>
+              <p>
+                Share photos from your walks, follow other dog owners and get to know the dogs in your area.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Dog-friendly places</h3>
+              <p>Find cafés, parks, pubs and beaches that genuinely welcome dogs, all verified by real owners.</p>
+            </div>
+            <div class="card">
+              <h3>Achievements and rewards</h3>
+              <p>
+                Earn points and badges for walks, streaks and community contributions. Complete daily challenges, collect login rewards and climb the leaderboards.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Hazard reporting</h3>
+              <p>
+                Community-reported dangers such as broken glass, aggressive animals, flooding or road works, shown on the map so you can plan a safe route.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Daily challenges</h3>
+              <p>
+                Time-based goals such as "Walk 50km this month" or "Visit 5 new dog-friendly places". Complete them to earn bonus points and exclusive badges.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Live temperament map</h3>
+              <p>
+                See nearby dogs' temperaments at a glance: friendly, cautious, protective, reactive, training or in heat.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Apple Watch and HealthKit</h3>
+              <p>
+                Walk stats on your wrist, Live Activities on your lock screen and automatic syncing with Apple Health, plus Siri Shortcuts for hands-free control.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Ask Rocco</h3>
+              <p>
+                Dog care answers from the built-in AI assistant. Ask about training, health, behaviour or anything breed-specific.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Safety zones</h3>
+              <p>
+                Set geofence boundaries for your walks and get an alert if you or your dog leave the safe area.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Pack walks</h3>
+              <p>
+                Walk with friends, track group stats and see everyone on the map in real time.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-
-
 
       <!-- SOS & Emergency Section -->
-      <section class="sos-section" id="sos">
-        <div class="sos-content reveal">
-          <span class="section-label red"
-            >🚨 Emergency Features</span
-          >
-          <h2>When seconds count</h2>
-          <p class="sos-intro">
-            Go Rocco isn't just about daily walks - it's about being prepared when things go wrong.
-          </p>
-          <div class="sos-grid">
-            <div class="sos-card">
-              <div class="sos-icon" aria-hidden="true">🆘</div>
-              <h3>SOS Alert Button</h3>
+      <section class="sec" id="sos">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Emergency features</span>
+            <h2>When seconds count</h2>
+            <p>
+              Go Rocco is for the ordinary walks, and for the ones that go wrong.
+            </p>
+          </div>
+          <div class="cards c3 plain">
+            <div class="card">
+              <h3>SOS alert button</h3>
               <p>
-                One tap sends your live location to your emergency contacts. Whether you've had a fall, encountered an
-                aggressive dog, or feel unsafe - help knows exactly where to find you.
+                One tap sends your live location to your emergency contacts. Whether you have had a fall, met an
+                aggressive dog or feel unsafe, they know exactly where to find you.
               </p>
             </div>
-            <div class="sos-card">
-              <div class="sos-icon" aria-hidden="true">⏰</div>
-              <h3>Walk Timer Safety</h3>
+            <div class="card">
+              <h3>Walk timer</h3>
               <p>
-                Set an expected walk duration. If you don't check back in, your trusted contact gets an automatic alert
-                with your last known location. Perfect for solo walkers.
+                Set how long you expect to be out. If you don't check back in, your trusted contact gets an automatic
+                alert with your last known location. Made for solo walkers.
               </p>
             </div>
-            <div class="sos-card">
-              <div class="sos-icon" aria-hidden="true">📍</div>
-              <h3>Location Sharing</h3>
+            <div class="card">
+              <h3>Location sharing</h3>
               <p>
-                Share your real-time walk with family or friends. They can follow along from home, giving everyone peace
-                of mind - especially in remote areas or after dark.
+                Share your walk in real time with family or friends, so they can follow along from home. Useful in
+                remote areas or after dark.
               </p>
             </div>
-            <div class="sos-card">
-              <div class="sos-icon" aria-hidden="true">📡</div>
-              <h3>Nearby Dog Detection</h3>
+            <div class="card">
+              <h3>Nearby dog detection</h3>
               <p>
-                See other Go Rocco dogs walking within 100 metres on the map with pulsing markers. Know who's nearby before your paths cross - and track encounters for safety reviews.
+                See other Go Rocco dogs walking within 100 metres on the map, so you know who is nearby before your paths cross. Encounters are logged for you to review afterwards.
               </p>
             </div>
-            <div class="sos-card">
-              <div class="sos-icon" aria-hidden="true">🔒</div>
-              <h3>Safety Zones</h3>
+            <div class="card">
+              <h3>Safety zones</h3>
               <p>
-                Set geofenced safe areas and get notified if you leave them during a walk. Perfect for keeping to familiar routes or monitoring off-lead areas.
+                Set geofenced safe areas and get notified if you leave them during a walk. Good for keeping to familiar routes or watching an off-lead area.
               </p>
             </div>
           </div>
@@ -702,180 +636,169 @@
       </section>
 
       <!-- Lost Pet Section -->
-      <section class="lost-pet-section" id="lost-pet">
-        <div class="lost-pet-content reveal">
-          <span class="section-label orange"
-            >🔍 Lost Pet System</span
-          >
-          <h2>Lost dog? We've got the whole community looking.</h2>
-          <p class="lost-pet-intro">Every dog owner's worst nightmare. With Go Rocco, you're never searching alone.</p>
-          <div class="lost-pet-features">
-            <div class="lost-pet-card">
-              <div class="lost-pet-number" aria-hidden="true">1</div>
-              <h3>Report Missing</h3>
+      <section class="sec sec-alt" id="lost-pet">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Lost pet alerts</span>
+            <h2>If your dog goes missing, the neighbourhood is looking.</h2>
+            <p>It is every owner's worst day. With Go Rocco you are not searching alone.</p>
+          </div>
+          <div class="cards c4">
+            <div class="card">
+              <span class="card-num">1</span>
+              <h3>Report missing</h3>
               <p>
-                One tap to alert all Go Rocco users in your area. Your dog's photo, last known location, and description
-                go out instantly.
+                One tap alerts Go Rocco users in your area. Your dog's photo, last known location and description
+                go out straight away.
               </p>
             </div>
-            <div class="lost-pet-card">
-              <div class="lost-pet-number" aria-hidden="true">2</div>
-              <h3>Community Search</h3>
+            <div class="card">
+              <span class="card-num">2</span>
+              <h3>Community search</h3>
               <p>
-                Nearby users get push notifications with your dog's details. More eyes suddenly looking out for
-                your pup.
+                Nearby users get a push notification with your dog's details, so more people are looking within
+                minutes.
               </p>
             </div>
-            <div class="lost-pet-card">
-              <div class="lost-pet-number" aria-hidden="true">3</div>
-              <h3>Sighting Reports</h3>
+            <div class="card">
+              <span class="card-num">3</span>
+              <h3>Sighting reports</h3>
               <p>
-                Anyone who spots your dog can report the sighting with location. Track reports on a live map to narrow
-                down the search area.
+                Anyone who spots your dog can report the sighting with a location. Follow the reports on a live map to
+                narrow the search.
               </p>
             </div>
-            <div class="lost-pet-card">
-              <div class="lost-pet-number" aria-hidden="true">4</div>
+            <div class="card">
+              <span class="card-num">4</span>
               <h3>Reunion</h3>
               <p>
-                When your furry friend is found, mark them safe with one tap. The community gets the happy news -
-                reunions celebrated together.
+                When your dog is found, mark them safe with one tap and everyone who was looking is told.
               </p>
             </div>
           </div>
-          <div class="lost-pet-cta">
-            <p>
-              <strong>Pro tip:</strong> Keep your dog's profile photo up to date. It could be the difference between
-              found and still looking.
-            </p>
-          </div>
+          <p class="note">
+            <strong>Worth doing now:</strong> keep your dog's profile photo up to date. It could be the difference
+            between found and still looking.
+          </p>
         </div>
       </section>
 
       <!-- Ask Rocco AI Section -->
-      <section class="ai-section" id="ai-assistant">
-        <div class="ai-content reveal">
-          <span class="section-label purple">🤖 Ask Rocco</span>
-          <h2>Got a question? Ask Rocco.</h2>
-          <p class="ai-intro">
-            Your built-in AI chatbot for all things dog care. Ask about health, training, nutrition, or get help navigating the app - Rocco's got answers.
-          </p>
-          <div class="ai-grid">
-            <div class="ai-card">
-              <div class="ai-icon" aria-hidden="true">💬</div>
-              <h3>Dog Care Q&amp;A</h3>
-              <p>Ask about symptoms, diet, training tips, breed-specific concerns, or anything dog-related. Get helpful answers instantly, any time of day.</p>
+      <section class="sec" id="ai-assistant">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Ask Rocco</span>
+            <h2>Dog care questions, answered at any hour</h2>
+            <p>
+              A built-in AI assistant for dog care. Ask about health, training or nutrition, or how something in the
+              app works. It is not a vet, and it says so.
+            </p>
+          </div>
+          <div class="cards c3">
+            <div class="card">
+              <h3>Dog care Q&amp;A</h3>
+              <p>Ask about symptoms, diet, training, breed-specific concerns or anything else to do with dogs, at any time of day.</p>
             </div>
-            <div class="ai-card">
-              <div class="ai-icon" aria-hidden="true">🧭</div>
-              <h3>In-App Help</h3>
-              <p>Not sure how something works? Ask Rocco for step-by-step guidance on any feature in the app - from setting up profiles to booking services.</p>
+            <div class="card">
+              <h3>In-app help</h3>
+              <p>Not sure how something works? Ask Rocco for step-by-step guidance on any feature, from setting up profiles to booking services.</p>
             </div>
-            <div class="ai-card">
-              <div class="ai-icon" aria-hidden="true">✨</div>
-              <h3>Smart Recommendations</h3>
-              <p>Personalised suggestions for places, events, and content based on your preferences, location, and your dog's profile. Discover more of what matters to you.</p>
+            <div class="card">
+              <h3>Recommendations</h3>
+              <p>Suggestions for places, events and content based on your preferences, your location and your dog's profile.</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Social Network Section -->
-      <section class="social-section" id="community">
-        <div class="social-content reveal">
-          <span class="section-label blue"
-            >🐾 Dog Social Network</span
-          >
-          <h2>Not just an app. A community.</h2>
-          <p class="social-intro">
-            Connect with dog owners who get it. Share your walks, celebrate milestones, and find your pack.
-          </p>
-          <div class="social-grid">
-            <div class="social-card">
-              <div class="social-icon" aria-hidden="true">📸</div>
-              <h3>Feed, Stories &amp; Reels</h3>
+      <section class="sec sec-alt" id="community">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Community</span>
+            <h2>A community, not just an app</h2>
+            <p>
+              Share your walks, mark the milestones and get to know the owners near you.
+            </p>
+          </div>
+          <div class="cards c3 plain">
+            <div class="card">
+              <h3>Feed, stories and reels</h3>
               <p>
-                Share photos and videos on your feed, post 24-hour stories with stickers and text overlays, or create short-form reels. Like, comment, save, and share.
+                Share photos and videos on your feed, post 24-hour stories with stickers and text, or make short reels. Like, comment, save and share.
               </p>
             </div>
-            <div class="social-card">
-              <div class="social-icon" aria-hidden="true">🏅</div>
-              <h3>Achievements & XP</h3>
+            <div class="card">
+              <h3>Achievements and XP</h3>
               <p>
-                Earn badges for walks, distance milestones, and helpful community actions. Level up your Go Rocco
-                profile.
+                Earn badges for walks, distance milestones and helpful community actions, and level up your profile.
               </p>
             </div>
-            <div class="social-card">
-              <div class="social-icon" aria-hidden="true">🔥</div>
-              <h3>Walk Streaks</h3>
+            <div class="card">
+              <h3>Walk streaks</h3>
               <p>
-                Build daily streaks for consistent walking. Compete with friends on the leaderboards. Keep that streak
-                alive!
+                Build a daily streak for walking consistently, and compare with friends on the leaderboards.
               </p>
             </div>
-            <div class="social-card">
-              <div class="social-icon" aria-hidden="true">👥</div>
-              <h3>Follow Friends</h3>
-              <p>Find and follow other dog owners in your area. See their walks, their pups, and coordinate meetups.</p>
+            <div class="card">
+              <h3>Follow friends</h3>
+              <p>Find and follow other dog owners in your area. See their walks and their dogs, and arrange to meet up.</p>
             </div>
-            <div class="social-card">
-              <div class="social-icon" aria-hidden="true">💬</div>
-              <h3>Real-Time Messaging</h3>
-              <p>Chat 1:1 or in groups with read receipts, typing indicators, voice messages, and message requests. Coordinate walks and share tips with your pack.</p>
+            <div class="card">
+              <h3>Real-time messaging</h3>
+              <p>Chat one to one or in groups, with read receipts, typing indicators, voice messages and message requests.</p>
             </div>
-            <div class="social-card">
-              <div class="social-icon" aria-hidden="true">🔔</div>
-              <h3>Smart Notifications</h3>
-              <p>Granular notification preferences per category, quiet hours, and weekly digest emails. Stay informed about what matters - without being overwhelmed.</p>
+            <div class="card">
+              <h3>Notifications you control</h3>
+              <p>Preferences for each category, quiet hours and a weekly digest email. Stay informed without being overwhelmed.</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Events & Groups Section -->
-      <section class="events-section" id="events">
-        <div class="events-content reveal">
-          <span class="section-label purple"
-            >📅 Events & Groups</span
-          >
-          <h2>Your local dog community, organised.</h2>
-          <p class="events-intro">From dog-friendly places to organised events - discover, review, and connect with your local community.</p>
-          <div class="events-grid">
-            <div class="event-card">
-              <div class="event-badge">📍 Groups</div>
-              <h3>Create &amp; Join Groups</h3>
+      <section class="sec" id="events">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Events and groups</span>
+            <h2>Your local dog community, organised</h2>
+            <p>Groups, meetups, walking partners and honest reviews of the places you go.</p>
+          </div>
+          <div class="cards c3">
+            <div class="card">
+              <span class="card-kicker">Groups</span>
+              <h3>Create and join groups</h3>
               <p>
-                Find or create groups by breed, location, or activity. Public or private with member approval, group posts, group events, and full moderation tools.
+                Find or create groups by breed, location or activity. Public or private with member approval, group posts, group events and full moderation tools.
               </p>
             </div>
-            <div class="event-card">
-              <div class="event-badge">🎉 Events</div>
-              <h3>Dog-Friendly Meetups</h3>
+            <div class="card">
+              <span class="card-kicker">Events</span>
+              <h3>Dog-friendly meetups</h3>
               <p>
-                Discover local dog walks, charity fundraisers, training sessions, and social events happening near you.
+                Local dog walks, charity fundraisers, training sessions and social events happening near you.
               </p>
             </div>
-            <div class="event-card">
-              <div class="event-badge">🚶 Walk Buddies</div>
-              <h3>Schedule Together</h3>
+            <div class="card">
+              <span class="card-kicker">Walk buddies</span>
+              <h3>Schedule together</h3>
               <p>
-                Find compatible dogs and coordinate regular walks. Great for socialising puppies or matching energy
+                Find compatible dogs and arrange regular walks. Good for socialising puppies or matching energy
                 levels.
               </p>
             </div>
-            <div class="event-card">
-              <div class="event-badge">⭐ Reviews</div>
-              <h3>Reviews &amp; Check-Ins</h3>
+            <div class="card">
+              <span class="card-kicker">Reviews</span>
+              <h3>Reviews and check-ins</h3>
               <p>
-                Rate and review dog-friendly locations. Check in to share where you are with friends and the community. Real reviews from real dog owners.
+                Rate and review dog-friendly places, and check in to share where you are with friends. Reviews come from dog owners who have been there.
               </p>
             </div>
-            <div class="event-card">
-              <div class="event-badge">🏪 Businesses</div>
-              <h3>Claim Your Listing</h3>
+            <div class="card">
+              <span class="card-kicker">Businesses</span>
+              <h3>Claim your listing</h3>
               <p>
-                Business owners can verify and claim their venue, respond to reviews, and manage their presence on Go Rocco. A direct channel to dog owners. <a href="providers.html#venues">Free to claim →</a>
+                Business owners can verify and claim their venue, respond to reviews and manage their presence on Go Rocco. <a href="providers.html#venues">Free to claim →</a>
               </p>
             </div>
           </div>
@@ -883,273 +806,204 @@
       </section>
 
       <!-- Pet Services Marketplace Section -->
-      <section class="marketplace-section" id="marketplace">
-        <div class="marketplace-content reveal">
-          <span class="section-label green">🐾 Care</span>
-          <h2>Book people other owners already trust</h2>
-          <p class="marketplace-intro">
-            Walkers, groomers, sitters, boarders, daycares and trainers near you, with their DBS, insurance and licence checks shown as badges. Book, share your dog's profile for the visit, chat, and get a report card - all without leaving Go Rocco.
-          </p>
-          <div class="marketplace-grid">
-            <div class="marketplace-card">
-              <div class="marketplace-badge">🚶 Dog Walking</div>
-              <h3>Trusted Walkers</h3>
-              <p>
-                Find verified dog walkers with reviews, qualifications, and GPS-tracked walks you can follow in
-                real-time.
-              </p>
-            </div>
-            <div class="marketplace-card">
-              <div class="marketplace-badge">✂️ Grooming</div>
-              <h3>Local Groomers</h3>
-              <p>Book groomers in your area with photos of their work, ratings, and easy online scheduling.</p>
-            </div>
-            <div class="marketplace-card">
-              <div class="marketplace-badge">🏠 Pet Sitting</div>
-              <h3>Home From Home</h3>
-              <p>
-                Find overnight or day care with people your dog already knows and trusts from the Go Rocco community.
-              </p>
-            </div>
-            <div class="marketplace-card">
-              <div class="marketplace-badge">🎓 Training</div>
-              <h3>Professional Trainers</h3>
-              <p>
-                Find qualified trainers for obedience, behaviour, puppy socialisation, and more. Book sessions and track your dog's progress.
-              </p>
-            </div>
-            <div class="marketplace-card">
-              <div class="marketplace-badge">🏫 Daycare</div>
-              <h3>Day &amp; Overnight Care</h3>
-              <p>
-                Trusted daycare and overnight boarding from vetted providers. Check availability, read reviews, and book with confidence.
-              </p>
-            </div>
-            <div class="marketplace-card">
-              <div class="marketplace-badge">🤝 Meet &amp; Greet</div>
-              <h3>Try Before You Book</h3>
-              <p>
-                A pre-booking introduction so your dog and their new carer can meet first. Safety and trust, built in from the start.
-              </p>
-            </div>
-            <div class="marketplace-card">
-              <div class="marketplace-badge">📝 Report Cards</div>
-              <h3>Post-Service Updates</h3>
-              <p>
-                After every service, get photos and notes on your dog's behaviour, activities, and condition. Know exactly how their day went.
-              </p>
-            </div>
-          </div>
-          <div class="marketplace-cta">
+      <section class="sec sec-alt" id="marketplace">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Care</span>
+            <h2>Book people other owners already trust</h2>
             <p>
-              Walker, groomer, sitter or trainer? Run your business on Go Rocco for free - 0% on your own clients, forever.
-              <a href="providers.html">Go Rocco Business →</a>
+              Walkers, groomers, sitters, boarders, daycares and trainers near you, with their DBS, insurance and licence checks shown as badges. Book, share your dog's profile for the visit, chat, and get a report card, all without leaving Go Rocco.
             </p>
           </div>
+          <div class="cards c4">
+            <div class="card">
+              <span class="card-kicker">Dog walking</span>
+              <h3>Trusted walkers</h3>
+              <p>
+                Verified dog walkers with reviews, qualifications and GPS-tracked walks you can follow in real time.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card-kicker">Grooming</span>
+              <h3>Local groomers</h3>
+              <p>Groomers in your area with photos of their work, ratings and online booking.</p>
+            </div>
+            <div class="card">
+              <span class="card-kicker">Pet sitting</span>
+              <h3>Home from home</h3>
+              <p>
+                Overnight or day care with people your dog already knows from the Go Rocco community.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card-kicker">Training</span>
+              <h3>Professional trainers</h3>
+              <p>
+                Qualified trainers for obedience, behaviour, puppy socialisation and more. Book sessions and track your dog's progress.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card-kicker">Daycare</span>
+              <h3>Day and overnight care</h3>
+              <p>
+                Daycare and overnight boarding from vetted providers. Check availability, read reviews and book.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card-kicker">Meet and greet</span>
+              <h3>Meet before you book</h3>
+              <p>
+                An introduction before the first booking, so your dog and their new carer can meet first.
+              </p>
+            </div>
+            <div class="card">
+              <span class="card-kicker">Report cards</span>
+              <h3>Updates after every visit</h3>
+              <p>
+                Photos and notes on your dog's behaviour, activities and condition after each service, so you know how their day went.
+              </p>
+            </div>
+          </div>
+          <p class="note">
+            <strong>Walker, groomer, sitter or trainer?</strong> Run your business on Go Rocco for free, with 0% on
+            your own clients, forever.
+            <a href="providers.html">Go Rocco Business →</a>
+          </p>
         </div>
       </section>
 
       <!-- Product Store Section -->
-      <section class="store-section" id="store">
-        <div class="store-content reveal">
-          <span class="section-label coral">🛍️ The Shop</span>
-          <h2>A shop being built maker by maker</h2>
-          <p class="store-intro">
-            We cleared the shelves of drop-shipped filler. What goes back on them is smaller and far better: independent British makers, chosen one at a time - treats, toys, leads and beds genuinely worth buying for a dog.
-          </p>
-          <div class="store-grid">
-            <div class="store-card">
-              <div class="store-icon" aria-hidden="true">🇬🇧</div>
-              <h3>Independent &amp; made in Britain</h3>
+      <section class="sec" id="store">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">The shop</span>
+            <h2>A shop being built maker by maker</h2>
+            <p>
+              We cleared the shelves of drop-shipped filler. What goes back on them is smaller and far better: independent British makers, chosen one at a time. Treats, toys, leads and beds genuinely worth buying for a dog.
+            </p>
+          </div>
+          <div class="cards c3">
+            <div class="card">
+              <h3>Independent and made in Britain</h3>
               <p>Every brand gets its own page with its story and where things are made. One person at a kitchen table is as welcome as a small workshop.</p>
             </div>
-            <div class="store-card">
-              <div class="store-icon" aria-hidden="true">🔍</div>
+            <div class="card">
               <h3>Hand-picked, and insured</h3>
               <p>A person at Go Rocco reads every application. Makers show product liability insurance before anything goes on sale, and reviews come only from real purchases.</p>
             </div>
-            <div class="store-card">
-              <div class="store-icon" aria-hidden="true">✍️</div>
+            <div class="card">
               <h3>Do you make something for dogs?</h3>
-              <p>We're signing our founding brands now: fair terms, and a shop that puts your name on the shelf instead of burying it under a supplier catalogue. <a href="providers.html#makers">Apply to sell →</a></p>
+              <p>We are signing our founding brands now: fair terms, and a shop that puts your name on the shelf instead of burying it under a supplier catalogue. <a href="providers.html#makers">Apply to sell →</a></p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="safety" id="safety">
-        <div class="safety-content reveal">
+      <section class="sec sec-dark" id="safety">
+        <div class="wrap safety-layout">
           <div class="safety-text">
-            <span class="section-label white"
-              >🛡️ Safety First</span
-            >
-            <h2>Your dog's safety is our priority</h2>
-            <p>
-              We believe most dog incidents aren't caused by "bad dogs" - they're caused by lack of information. Go
-              Rocco gives owners the knowledge they need to make better decisions, before it's too late.
-            </p>
+            <div class="sec-head">
+              <span class="section-label">Our approach</span>
+              <h2>Most incidents come from a lack of information, not a bad dog.</h2>
+              <p>
+                Go Rocco gives owners what they need to know to make a better decision, while there is still time to
+                make it.
+              </p>
+            </div>
             <ul class="safety-list">
-              <li><span class="safety-check">✓</span> See approaching dogs' temperaments before you meet</li>
-              <li><span class="safety-check">✓</span> SOS button sends your live location to emergency contacts</li>
-              <li><span class="safety-check">✓</span> Walk timer alerts trusted contacts if you don't check back in</li>
-              <li><span class="safety-check">✓</span> Lost pet alerts notify the entire community instantly</li>
-              <li><span class="safety-check">✓</span> Simple privacy controls with mutual blocking</li>
+              <li>See approaching dogs' temperaments before you meet</li>
+              <li>SOS button sends your live location to emergency contacts</li>
+              <li>Walk timer alerts trusted contacts if you don't check back in</li>
+              <li>Lost pet alerts notify the community nearby straight away</li>
+              <li>Simple privacy controls with mutual blocking</li>
             </ul>
           </div>
           <div class="safety-visual">
-            <div class="safety-card">
-              <h3>🛡️ Prevention first</h3>
+            <div class="card">
+              <h3>Prevention first</h3>
               <p>Most incidents are preventable with the right information at the right time.</p>
             </div>
-            <div class="safety-card">
-              <h3>🤝 Community powered</h3>
+            <div class="card">
+              <h3>Community powered</h3>
               <p>The more owners who join, the safer walks become for everyone.</p>
             </div>
-            <div class="safety-card">
-              <h3>💚 No judgement</h3>
-              <p>Nervous dogs aren't bad dogs. They just need owners who understand them.</p>
+            <div class="card">
+              <h3>No judgement</h3>
+              <p>Nervous dogs aren't bad dogs. They need owners who understand them.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="testimonial" id="testimonials">
-        <div class="section-header reveal">
-          <span class="section-label white">💬 What Dog Owners Say</span>
-          <h2>Loved by the pack</h2>
-        </div>
-        <div class="testimonial-carousel reveal">
-          <div class="testimonial-slider" aria-live="polite">
-            <div class="testimonial-slide active" data-index="0" aria-hidden="false">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <section class="sec" id="testimonials">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">From owners</span>
+            <h2>What dog owners say</h2>
+          </div>
+          <div class="cards c2">
+            <figure class="card quote-card">
               <blockquote>
                 "My reactive rescue has been so much calmer since we started using Go Rocco. I can see when to pop him on
                 the lead before he gets overwhelmed. Game changer."
               </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">🐕</div>
-                <div class="author-info">
-                  <h3>Emma & Chester</h3>
-                  <p>Reactive dog owner, Manchester</p>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-slide" data-index="1" aria-hidden="true">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <figcaption><strong>Emma &amp; Chester</strong>Reactive dog owner, Manchester</figcaption>
+            </figure>
+            <figure class="card quote-card">
               <blockquote>
                 "We found our favourite Sunday pub through Go Rocco - properly dog-friendly, not just 'we tolerate them.' Luna gets a biscuit at the bar and we get a roast. Everyone wins."
               </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">🦮</div>
-                <div class="author-info">
-                  <h3>James & Luna</h3>
-                  <p>Labrador owner, Bristol</p>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-slide" data-index="2" aria-hidden="true">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <figcaption><strong>James &amp; Luna</strong>Labrador owner, Bristol</figcaption>
+            </figure>
+            <figure class="card quote-card">
               <blockquote>
                 "Milo is nervous around big dogs. The temperament map means I know what's ahead and can cross the road before he panics. It's like having a sixth sense for walks."
               </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">🐩</div>
-                <div class="author-info">
-                  <h3>Sarah & Milo</h3>
-                  <p>Cockapoo owner, Edinburgh</p>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-slide" data-index="3" aria-hidden="true">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <figcaption><strong>Sarah &amp; Milo</strong>Cockapoo owner, Edinburgh</figcaption>
+            </figure>
+            <figure class="card quote-card">
               <blockquote>
                 "The streaks and challenges have completely transformed our routine. Bella and I used to skip rainy days - now we've got a 14-day streak going. She drags me to the door!"
               </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">🐶</div>
-                <div class="author-info">
-                  <h3>Tom & Bella</h3>
-                  <p>Puppy owner, London</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-dots" aria-label="Testimonials">
-            <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1" aria-current="true"></button>
-            <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2" aria-current="false"></button>
-            <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3" aria-current="false"></button>
-            <button class="testimonial-dot" data-index="3" aria-label="Testimonial 4" aria-current="false"></button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Trust Signals Section -->
-      <section class="trust-signals" id="trust">
-        <div class="trust-signals-content reveal">
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true">📱</div>
-            <div class="trust-text">
-              <div class="trust-number">Free</div>
-              <div class="trust-label">Download on the App Store</div>
-            </div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true">⭐</div>
-            <div class="trust-text">
-              <div class="trust-number">Safety</div>
-              <div class="trust-label">First dog walking app</div>
-            </div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true">🛡️</div>
-            <div class="trust-text">
-              <div class="trust-number">Community</div>
-              <div class="trust-label">Powered pet safety</div>
-            </div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon" aria-hidden="true">🇬🇧</div>
-            <div class="trust-text">
-              <div class="trust-number">UK Made</div>
-              <div class="trust-label">Built for British dog owners</div>
-            </div>
+              <figcaption><strong>Tom &amp; Bella</strong>Puppy owner, London</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       <!-- FAQ Section -->
-      <section class="faq-section" id="faq">
-        <div class="section-header reveal">
-          <span class="section-label blue">❓ FAQ</span>
-          <h2>Got questions?</h2>
-          <p>Here are the ones we get asked most</p>
-        </div>
-        <div class="faq-list reveal">
-          <details class="faq-item">
-            <summary>Is Go Rocco really free?</summary>
-            <p>Yes. Every feature is free for every dog owner - GPS walk tracking, the live temperament map, unlimited pet profiles, health records, lost pet alerts, SOS, safety zones, group chats, Ask Rocco, places and achievements. There is no subscription and there are no adverts. The people who look after your dog can use <a href="providers.html">Go Rocco Business</a> free too; <a href="pricing.html">here's how the lights stay on</a>.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Is Go Rocco available on Android?</summary>
-            <p>Yes! Go Rocco is available on both iOS and Android. Download it from the <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.gorocco.v6&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Google Play</a>.</p>
-          </details>
-          <details class="faq-item">
-            <summary>How does the temperament map work?</summary>
-            <p>When you set your dog's temperament (friendly, cautious, protective, reactive, training, or in heat), other nearby Go Rocco users can see it on the map. You see theirs too - so you know whether to approach or give space, before you're close enough for things to go wrong. All locations use a 50-metre fuzzy radius to protect privacy.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Is my location data safe?</summary>
-            <p>Absolutely. We never share your exact location - the map uses a 50-metre fuzzy radius so no one can pinpoint where you are. Your data is encrypted, stored securely, and we comply fully with UK GDPR. Read our <a href="/privacy">Privacy Policy</a> for the full details.</p>
-          </details>
+      <section class="sec sec-alt" id="faq">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="section-label">Questions</span>
+            <h2>The ones we are asked most</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Is Go Rocco really free?</summary>
+              <p>Yes. Every feature is free for every dog owner: GPS walk tracking, the live temperament map, unlimited pet profiles, health records, lost pet alerts, SOS, safety zones, group chats, Ask Rocco, places and achievements. There is no subscription and there are no adverts. The people who look after your dog can use <a href="providers.html">Go Rocco Business</a> free too; <a href="pricing.html">here's how the lights stay on</a>.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is Go Rocco available on Android?</summary>
+              <p>Yes. Go Rocco is available on both iOS and Android. Download it from the <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.gorocco.v6&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Google Play</a>.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How does the temperament map work?</summary>
+              <p>When you set your dog's temperament (friendly, cautious, protective, reactive, training or in heat), other nearby Go Rocco users can see it on the map. You see theirs too, so you know whether to approach or give space before you are close enough for things to go wrong. All locations use a 50-metre fuzzy radius to protect privacy.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is my location data safe?</summary>
+              <p>Yes. We never share your exact location: the map uses a 50-metre fuzzy radius so no one can pinpoint where you are. Your data is encrypted, stored securely, and we comply fully with UK GDPR. Read our <a href="/privacy">Privacy Policy</a> for the full details.</p>
+            </details>
+          </div>
         </div>
       </section>
 
       <section class="cta" id="download">
-        <div class="cta-content reveal">
-          <h2>Safer walks start here</h2>
+        <div class="cta-content">
+          <h2>Get Go Rocco</h2>
           <p>
-            Join our growing community of responsible dog owners who believe every walk should be enjoyable - for dogs and humans
-            alike.
+            Free on iPhone, Android and the web. No subscription, no adverts.
           </p>
           <div class="cta-buttons">
             <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
@@ -1169,10 +1023,7 @@
               />
             </a>
           </div>
-          <div class="app-rating" style="margin-top: 1.5rem;">
-            <span class="app-rating-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
-            <span class="app-rating-text">4.8 on the App Store</span>
-          </div>
+          <p class="app-rating"><strong>4.8</strong> on the App Store</p>
         </div>
       </section>
     </main>
@@ -1180,7 +1031,7 @@
     <!-- Sticky Download Bar (mobile) -->
     <div class="sticky-download" id="stickyDownload" aria-hidden="true">
       <a href="https://apps.apple.com/gb/app/go-rocco/id6753819069" target="_blank" rel="noopener noreferrer" class="sticky-download-link">
-        <span class="sticky-download-text">Download Go Rocco - Free</span>
+        <span class="sticky-download-text">Go Rocco, free for dog owners</span>
         <span class="sticky-download-badge">Get</span>
       </a>
     </div>
@@ -1188,7 +1039,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" loading="lazy" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -1221,7 +1072,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -1246,7 +1097,6 @@
         </div>
       </div>
     </footer>
-
 
     <script>
       // Mobile Hamburger Menu
@@ -1275,243 +1125,25 @@
       const navbar = document.getElementById('navbar')
       window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 50)
-      })
+      }, { passive: true })
 
-      const slides = Array.from(document.querySelectorAll('.hero-slide'))
-      const dots = Array.from(document.querySelectorAll('.hero-dot'))
-      const dotsContainer = document.querySelector('.hero-dots')
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
       const shouldReduceMotion = () => prefersReducedMotion.matches
 
-      let currentSlide = 0
-      let slideInterval = null
-
-      function syncA11y(index) {
-        slides.forEach((slide, i) => {
-          const isActive = i === index
-          slide.setAttribute('aria-hidden', String(!isActive))
-        })
-        dots.forEach((dot, i) => {
-          const isActive = i === index
-          dot.setAttribute('aria-current', String(isActive))
-        })
-      }
-
-      function showSlide(index) {
-        slides.forEach((slide, i) => slide.classList.toggle('active', i === index))
-        dots.forEach((dot, i) => dot.classList.toggle('active', i === index))
-        currentSlide = index
-        syncA11y(index)
-      }
-
-      function nextSlide() {
-        showSlide((currentSlide + 1) % slides.length)
-      }
-
-      function stopSlider() {
-        if (slideInterval) {
-          clearInterval(slideInterval)
-          slideInterval = null
-        }
-      }
-
-      function startSlider() {
-        stopSlider()
-        if (slides.length <= 1) return
-        if (shouldReduceMotion()) return
-        slideInterval = setInterval(nextSlide, 8000)
-      }
-
-      function resetSlider() {
-        startSlider()
-      }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          showSlide(index)
-          resetSlider()
-        })
-      })
-
-      if (dotsContainer) {
-        dotsContainer.addEventListener('keydown', (e) => {
-          const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End']
-          if (!keys.includes(e.key)) return
-          e.preventDefault()
-
-          let nextIndex = currentSlide
-          if (e.key === 'ArrowLeft') nextIndex = (currentSlide - 1 + slides.length) % slides.length
-          if (e.key === 'ArrowRight') nextIndex = (currentSlide + 1) % slides.length
-          if (e.key === 'Home') nextIndex = 0
-          if (e.key === 'End') nextIndex = slides.length - 1
-
-          showSlide(nextIndex)
-          resetSlider()
-          if (dots[nextIndex]) dots[nextIndex].focus()
-        })
-      }
-
-      prefersReducedMotion.addEventListener?.('change', () => {
-        startSlider()
-      })
-
-      // Pause carousel on hover/focus
-      const heroSlider = document.querySelector('.hero-slider')
-      if (heroSlider) {
-        heroSlider.addEventListener('mouseenter', stopSlider)
-        heroSlider.addEventListener('mouseleave', startSlider)
-        heroSlider.addEventListener('focusin', stopSlider)
-        heroSlider.addEventListener('focusout', startSlider)
-      }
-
-      showSlide(0)
-      startSlider()
-
-      // App Showcase Carousel
+      // Hero footage is decorative: stop it for visitors who ask for reduced motion
       ;(function () {
-        var scSlides = Array.from(document.querySelectorAll('.showcase-slide'))
-        var scDots = Array.from(document.querySelectorAll('.showcase-dot'))
-        var scDotsContainer = document.querySelector('.showcase-dots')
-        var scCarousel = document.querySelector('.showcase-carousel')
-        if (!scSlides.length) return
-
-        var scCurrent = 0
-        var scInterval = null
-
-        function scShow(index) {
-          scSlides.forEach(function (s, i) {
-            s.classList.toggle('active', i === index)
-            s.setAttribute('aria-hidden', i !== index)
-            var vid = s.querySelector('video[data-autoplay-on-active]')
-            if (vid) {
-              if (i === index) { vid.currentTime = 0; vid.play().catch(function(){}) }
-              else { vid.pause() }
-            }
-          })
-          scDots.forEach(function (d, i) {
-            d.classList.toggle('active', i === index)
-            d.setAttribute('aria-current', i === index)
-          })
-          scCurrent = index
+        var video = document.getElementById('heroVideo')
+        if (!video) return
+        function sync() {
+          if (shouldReduceMotion()) {
+            video.pause()
+          } else {
+            var p = video.play()
+            if (p && p.catch) p.catch(function () {})
+          }
         }
-
-        function scNext() {
-          scShow((scCurrent + 1) % scSlides.length)
-        }
-
-        function scStart() {
-          scStop()
-          if (shouldReduceMotion()) return
-          scInterval = setInterval(scNext, 5000)
-        }
-
-        function scStop() {
-          if (scInterval) { clearInterval(scInterval); scInterval = null }
-        }
-
-        scDots.forEach(function (dot) {
-          dot.addEventListener('click', function () {
-            scShow(parseInt(this.dataset.index))
-            scStop()
-            scStart()
-          })
-        })
-
-        // Keyboard nav
-        if (scDotsContainer) {
-          scDotsContainer.addEventListener('keydown', function (e) {
-            if (e.key === 'ArrowLeft') { e.preventDefault(); scShow((scCurrent - 1 + scSlides.length) % scSlides.length); scStop(); scStart() }
-            if (e.key === 'ArrowRight') { e.preventDefault(); scShow((scCurrent + 1) % scSlides.length); scStop(); scStart() }
-          })
-        }
-
-        // Pause on hover/focus
-        if (scCarousel) {
-          scCarousel.addEventListener('mouseenter', scStop)
-          scCarousel.addEventListener('mouseleave', scStart)
-          scCarousel.addEventListener('focusin', scStop)
-          scCarousel.addEventListener('focusout', scStart)
-        }
-
-        // Touch swipe support
-        var touchStartX = 0
-        if (scCarousel) {
-          scCarousel.addEventListener('touchstart', function (e) {
-            touchStartX = e.changedTouches[0].screenX
-          }, { passive: true })
-          scCarousel.addEventListener('touchend', function (e) {
-            var diff = e.changedTouches[0].screenX - touchStartX
-            if (Math.abs(diff) > 50) {
-              if (diff < 0) scShow((scCurrent + 1) % scSlides.length)
-              else scShow((scCurrent - 1 + scSlides.length) % scSlides.length)
-              scStop()
-              scStart()
-            }
-          }, { passive: true })
-        }
-
-        scShow(0)
-        scStart()
-      })()
-
-      // Testimonial Carousel
-      ;(function () {
-        var tSlides = Array.from(document.querySelectorAll('.testimonial-slide'))
-        var tDots = Array.from(document.querySelectorAll('.testimonial-dot'))
-        var tCarousel = document.querySelector('.testimonial-carousel')
-        if (!tSlides.length) return
-        var tCurrent = 0, tInterval = null
-        function tShow(i) {
-          tSlides.forEach(function (s, j) { s.classList.toggle('active', j === i); s.setAttribute('aria-hidden', j !== i) })
-          tDots.forEach(function (d, j) { d.classList.toggle('active', j === i); d.setAttribute('aria-current', j === i) })
-          tCurrent = i
-        }
-        function tNext() { tShow((tCurrent + 1) % tSlides.length) }
-        function tStart() { tStop(); if (shouldReduceMotion()) return; tInterval = setInterval(tNext, 6000) }
-        function tStop() { if (tInterval) { clearInterval(tInterval); tInterval = null } }
-        tDots.forEach(function (d) { d.addEventListener('click', function () { tShow(parseInt(this.dataset.index)); tStop(); tStart() }) })
-        if (tCarousel) {
-          tCarousel.addEventListener('mouseenter', tStop)
-          tCarousel.addEventListener('mouseleave', tStart)
-          var tStartX = 0
-          tCarousel.addEventListener('touchstart', function (e) { tStartX = e.changedTouches[0].screenX }, { passive: true })
-          tCarousel.addEventListener('touchend', function (e) {
-            var d = e.changedTouches[0].screenX - tStartX
-            if (Math.abs(d) > 50) { d < 0 ? tShow((tCurrent + 1) % tSlides.length) : tShow((tCurrent - 1 + tSlides.length) % tSlides.length); tStop(); tStart() }
-          }, { passive: true })
-        }
-        tShow(0); tStart()
-      })()
-
-      // Animated Stat Counters
-      ;(function () {
-        var counters = document.querySelectorAll('.stat-number[data-count]')
-        var counted = false
-        function animateCounters() {
-          if (counted) return
-          var first = counters[0]
-          if (!first || first.getBoundingClientRect().top > window.innerHeight - 50) return
-          counted = true
-          counters.forEach(function (el) {
-            var target = parseInt(el.dataset.count)
-            var prefix = el.dataset.prefix || ''
-            var suffix = el.dataset.suffix || ''
-            var duration = 1500
-            var start = 0
-            var startTime = null
-            function step(ts) {
-              if (!startTime) startTime = ts
-              var progress = Math.min((ts - startTime) / duration, 1)
-              var eased = 1 - Math.pow(1 - progress, 3)
-              var current = Math.floor(eased * target)
-              el.textContent = prefix + current.toLocaleString() + suffix
-              if (progress < 1) requestAnimationFrame(step)
-            }
-            requestAnimationFrame(step)
-          })
-        }
-        window.addEventListener('scroll', animateCounters)
-        animateCounters()
+        sync()
+        prefersReducedMotion.addEventListener?.('change', sync)
       })()
 
       // Sticky Download Bar
@@ -1530,15 +1162,6 @@
         window.addEventListener('scroll', updateSticky, { passive: true })
       })()
 
-      const reveals = document.querySelectorAll('.reveal')
-      function revealOnScroll() {
-        reveals.forEach((el) => {
-          if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active')
-        })
-      }
-      window.addEventListener('scroll', revealOnScroll)
-      revealOnScroll()
-
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href')
@@ -1554,7 +1177,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyze site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">
