@@ -39,11 +39,11 @@ Website/
 ├── thank-you.html          # Newsletter double opt-in landing
 ├── beta.html               # meta-refresh stub → index.html#download
 ├── 404.html
-├── blog/*.html             # 19 posts (share one inline <style>)
+├── blog/*.html             # 19 posts (styled from styles.css)
 ├── styles.css              # Every page except index
 ├── index.css               # Home only
 ├── attribution.js          # Adds Apple ct= campaign token to App Store links
-├── assets/                 # logo, store badges, screenshots, videos/ (films)
+├── assets/                 # logo, store badges, screenshots, videos/ (films, brand/ hero footage)
 ├── sitemap.xml · feed.xml · robots.txt · manifest.json
 ├── .well-known/security.txt
 ├── workers/gorocco-subscribe/   # Cloudflare Worker: newsletter (D1 + Resend)
@@ -95,18 +95,32 @@ only hit the two historical blog notes.
 
 ## Design system
 
+_Restyled November 2026 (branch `redesign/grown-up-2026-11`). Tokens are defined once in the
+`:root` of `styles.css` and again in `index.css`; keep the two in step._
+
 | Variable | Hex | Usage |
 |---|---|---|
-| `--rocco-blue` | `#7BCBEB` | Primary brand |
-| `--rocco-blue-light` | `#A8DCF3` | Hover states |
-| `--rocco-blue-dark` | `#5BB8E0` | CTAs, links |
-| `--safe-green` | `#4CAF50` | Friendly / "own client" |
-| `--warning-amber` | `#FF9800` | Cautious / reactive |
-| `--rocco-coral` `--rocco-purple` `--rocco-red` `--rocco-amber` | see `index.css:1-17` | Section labels |
-| `--cream` | `#FDF8F3` | Light bands |
+| `--ink` | `#101828` | Text, primary buttons |
+| `--ink-deep` | `#0B1220` | Dark sections, footer, hero fallback |
+| `--ink-soft` | `#475467` | Secondary text |
+| `--paper` | `#FAF8F5` | Page background |
+| `--surface` | `#FFFFFF` | Cards, alternate bands |
+| `--line` | `#E7E2DA` | 1px borders and rules |
+| `--amber` / `--amber-ink` | `#F38F47` / `#B4541A` | Accent on dark / amber text on light (AA) |
+| `--blue` / `--blue-ink` | `#7BCBEB` / `#0E6B8C` | Heritage blue, **accent only** (logo tile, thin rule, focus ring) / links on light |
+| `--green` `--red` | `#1F7A4D` `#B42318` | Success and error only |
 
-Fonts: Nunito (headings) and Quicksand (body), loaded from Google Fonts in every `<head>`.
-Breakpoints: 1024px (tablet), 768px (mobile). Icons are emoji; no icon library, no JS framework.
+Fonts: Inter Tight 600/700 (headings, -0.02em, sentence case) and Inter 400/500/600 (body), loaded
+from Google Fonts in every `<head>`. Radii 10-14px; pills only for small chips. Primary button is ink
+with white text (white with ink text on dark sections); secondary is a 1px outline.
+Breakpoints: 1024px, 900px (nav collapses), 768px (mobile). No emoji as decoration, no icon
+library, no JS framework: ticks and crosses are drawn in CSS. The blue must never be a section
+background or a button fill.
+
+Hero footage lives in `assets/videos/brand/` (home: `owner-woodland`, providers: `walker-sunrise`,
+plus the `go-rocco-business-film`). It is decorative, muted and `aria-hidden`; visitors with
+`prefers-reduced-motion` get the poster still. Blog posts no longer carry an inline `<style>`:
+their rules are in `styles.css` under "Blog posts".
 
 ---
 
@@ -138,4 +152,4 @@ directory. The form is on `blog.html`; `thank-you.html` is the confirmation land
 - Email: support@go-rocco.com
 - Security: security@go-rocco.com (see `.well-known/security.txt`)
 
-_Made with 🐾 in the UK_
+_Made in the UK_

@@ -48,21 +48,22 @@ Nav (all pages): Features · For Providers · Pricing · Our Story · Blog, plus
 ## Brand
 
 ```css
---rocco-blue: #7BCBEB       /* Primary */
---rocco-blue-dark: #5BB8E0  /* CTAs, links */
---safe-green: #4CAF50       /* Friendly, "own client" */
---warning-amber: #FF9800    /* Cautious / reactive */
---gray-900: #111827         /* Text */
---cream: #FDF8F3            /* Light bands */
+--ink: #101828        /* Text, primary buttons */
+--ink-deep: #0B1220   /* Dark sections, footer */
+--paper: #FAF8F5      /* Page background */
+--line: #E7E2DA       /* Borders */
+--amber: #F38F47      /* Accent on dark; --amber-ink #B4541A on light */
+--blue: #7BCBEB       /* Heritage blue: small accent only, never a section or button fill */
 ```
 
-Fonts: Nunito (headings), Quicksand (body) via Google Fonts. Emoji icons. Breakpoints 1024/768.
+Fonts: Inter Tight (headings), Inter (body) via Google Fonts. No emoji as decoration. Breakpoints 1024/900/768. Tokens and rules: README "Design system".
 
 ### Tone
 
-Friendly and plain. Talk like a fellow dog owner, or to a provider like someone who has run a
-small business. Reassuring without fear-mongering. Inclusive: nervous dogs aren't bad dogs.
-Emojis sparingly. No em-dashes in copy (use a hyphen with spaces, as the site does).
+Plain, confident, adult British English. Lead with what it does. Talk to a provider like
+someone who has run a small business. Reassuring without fear-mongering. Inclusive: nervous dogs
+aren't bad dogs. No exclamation marks, no "furry friend" or "pawsome", no emoji as decoration,
+sentence-case headings. No em-dashes in copy (use a hyphen with spaces, as the site does).
 
 Key lines: "Know before you meet" · "Made for dog people, and the people they pay" ·
 "Your clients are yours" · "Free is the product" · "Tax-ready, not tax advice".
