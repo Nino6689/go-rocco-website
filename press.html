@@ -58,257 +58,275 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
+      .press-intro,
+      .facts-section,
+      .guidelines-section {
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        padding: 4.5rem var(--gutter);
+      }
+      .facts-section,
+      .guidelines-section {
+        border-top: 1px solid var(--line);
+      }
       .press-intro {
-        background: var(--cream);
-        padding: 4rem;
         text-align: center;
       }
       .press-intro-content {
-        max-width: 700px;
+        max-width: 680px;
         margin: 0 auto;
       }
-      .press-intro h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
+      .press-intro h2,
+      .boilerplate-section h2,
+      .facts-section h2,
+      .assets-section h2,
+      .guidelines-section h2 {
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
         margin-bottom: 1rem;
       }
+      .boilerplate-section h2,
+      .facts-section h2,
+      .assets-section h2,
+      .guidelines-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
       .press-intro p {
-        color: var(--gray-600);
-        line-height: 1.8;
+        color: var(--ink-soft);
         font-size: 1.1rem;
       }
       .press-contact {
-        margin-top: 2rem;
-      }
-      .press-contact a {
-        background: var(--rocco-blue);
-        color: var(--white);
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-        display: inline-block;
-        transition: all 0.3s ease;
-      }
-      .press-contact a:hover {
-        background: var(--rocco-blue-dark);
+        margin-top: 1.75rem;
       }
       .boilerplate-section {
-        padding: 4rem;
-        max-width: 900px;
+        padding: 4.5rem var(--gutter);
+        max-width: calc(820px + 2 * var(--gutter));
         margin: 0 auto;
       }
-      .boilerplate-section h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 2rem;
-        text-align: center;
-      }
       .boilerplate-card {
-        background: var(--white);
-        padding: 2rem;
-        border-radius: 24px;
-        border: 2px solid var(--gray-50);
-        margin-bottom: 2rem;
+        background: var(--surface);
+        padding: 1.75rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+        margin-bottom: 1.25rem;
       }
       .boilerplate-card h3 {
-        font-size: 1.25rem;
-        color: var(--gray-900);
-        margin-bottom: 1rem;
+        font-size: 1.15rem;
+        margin-bottom: 0.75rem;
       }
       .boilerplate-card p {
-        color: var(--gray-600);
-        line-height: 1.8;
+        color: var(--ink-soft);
         margin-bottom: 1rem;
       }
       .boilerplate-card p:last-child {
         margin-bottom: 0;
       }
-      .copy-btn {
-        background: var(--gray-50);
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-family: 'Quicksand', sans-serif;
+      .boilerplate-card strong {
+        color: var(--ink);
+      }
+      .copy-btn,
+      .asset-download {
+        display: inline-block;
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid var(--line-strong);
+        padding: 0.45rem 0.9rem;
+        border-radius: var(--radius-sm);
+        font-family: var(--font-body);
+        font-size: 0.875rem;
         font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: border-color 0.15s ease;
       }
-      .copy-btn:hover {
-        background: var(--gray-200);
+      .copy-btn:hover,
+      a.asset-download:hover {
+        border-color: var(--ink);
       }
-      .facts-section {
-        padding: 4rem;
-        background: var(--cream);
-      }
-      .facts-section h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 2rem;
-        text-align: center;
+      span.asset-download {
+        color: var(--ink-soft);
+        border-style: dashed;
+        cursor: default;
       }
       .facts-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1000px;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: var(--maxw);
         margin: 0 auto;
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
       }
       .fact-card {
-        background: var(--white);
-        padding: 1.5rem;
-        border-radius: 16px;
-        border: 2px solid var(--gray-50);
+        padding: 1.25rem 1.4rem;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
       }
       .fact-label {
-        font-size: 0.85rem;
-        color: var(--gray-600);
+        font-size: 0.78rem;
+        color: var(--ink-soft);
         text-transform: uppercase;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
       }
       .fact-value {
-        font-size: 1.1rem;
-        color: var(--gray-900);
-        font-weight: 600;
+        font-size: 1rem;
+        color: var(--ink);
+        font-weight: 500;
+        overflow-wrap: anywhere;
       }
       .assets-section {
-        padding: 4rem;
-        max-width: 1000px;
+        padding: 4.5rem var(--gutter);
+        max-width: calc(1000px + 2 * var(--gutter));
         margin: 0 auto;
-      }
-      .assets-section h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 2rem;
-        text-align: center;
       }
       .assets-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
       }
       .asset-card {
-        background: var(--white);
-        border-radius: 24px;
-        border: 2px solid var(--gray-50);
+        background: var(--surface);
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
         overflow: hidden;
-        transition: all 0.3s ease;
-      }
-      .asset-card:hover {
-        border-color: var(--rocco-blue);
       }
       .asset-preview {
-        height: 150px;
+        height: 160px;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 2rem;
-      }
-      .asset-preview.light {
-        background: var(--white);
+        background: var(--paper);
       }
       .asset-preview.dark {
-        background: var(--gray-900);
-      }
-      .asset-preview.blue {
-        background: var(--rocco-blue);
+        background: var(--ink-deep);
       }
       .asset-preview img {
-        max-height: 80px;
+        max-height: 88px;
         max-width: 100%;
+        border-radius: 18px;
+      }
+      .asset-preview .wordmark-sample {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 2.1rem;
+        letter-spacing: -0.02em;
+        color: var(--ink);
       }
       .asset-info {
-        padding: 1.5rem;
-        border-top: 2px solid var(--gray-50);
+        padding: 1.4rem;
+        border-top: 1px solid var(--line);
       }
       .asset-info h3 {
-        font-size: 1.1rem;
-        color: var(--gray-900);
-        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
       }
       .asset-info p {
-        color: var(--gray-600);
-        font-size: 0.9rem;
+        color: var(--ink-soft);
+        font-size: 0.925rem;
         margin-bottom: 1rem;
       }
-      .asset-download {
-        display: inline-block;
-        background: var(--gray-50);
-        color: var(--gray-900);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-      .asset-download:hover {
-        background: var(--rocco-blue);
-        color: var(--white);
-      }
-      .guidelines-section {
-        padding: 4rem;
-        background: var(--cream);
-      }
-      .guidelines-section h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 2rem;
-        text-align: center;
-      }
       .guidelines-content {
-        max-width: 800px;
+        max-width: 760px;
         margin: 0 auto;
-        background: var(--white);
-        padding: 2rem;
-        border-radius: 24px;
-        border: 2px solid var(--gray-50);
+      }
+      .guidelines-content h3 {
+        margin: 2.25rem 0 1rem;
+        font-size: 1.1rem;
       }
       .guideline-item {
         display: flex;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
+        gap: 0.9rem;
+        padding: 0.9rem 0;
+        border-bottom: 1px solid var(--line);
         align-items: flex-start;
       }
-      .guideline-item:last-child {
-        margin-bottom: 0;
+      .guideline-item:first-child {
+        border-top: 1px solid var(--line);
       }
-      .guideline-icon {
-        font-size: 1.5rem;
-        flex-shrink: 0;
+      .guideline-mark {
+        position: relative;
+        flex: 0 0 1.1rem;
+        height: 1.1rem;
+        margin-top: 0.3rem;
+      }
+      .guideline-mark.do::before {
+        content: '';
+        position: absolute;
+        left: 0.1rem;
+        top: 0.15rem;
+        width: 0.8rem;
+        height: 0.42rem;
+        border-left: 1.5px solid var(--green);
+        border-bottom: 1.5px solid var(--green);
+        transform: rotate(-45deg);
+      }
+      .guideline-mark.dont::before,
+      .guideline-mark.dont::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 1rem;
+        border-top: 1.5px solid var(--red);
+        transform: rotate(45deg);
+      }
+      .guideline-mark.dont::after {
+        transform: rotate(-45deg);
       }
       .guideline-item p {
-        color: var(--gray-600);
-        line-height: 1.6;
+        color: var(--ink-soft);
       }
       .guideline-item strong {
-        color: var(--gray-900);
+        color: var(--ink);
       }
       .color-swatches {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 1rem;
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
       }
       .color-swatch {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding-bottom: 0.25rem;
-        font-size: 0.6rem;
-        font-weight: 700;
-        color: var(--white);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+      .color-swatch strong {
+        display: block;
+        color: var(--ink);
+      }
+      .color-swatch .swatch {
+        display: block;
+        height: 56px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+        margin-bottom: 0.5rem;
+      }
+      @media (max-width: 900px) {
+        .facts-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .press-intro,
+        .facts-section,
+        .guidelines-section,
+        .boilerplate-section,
+        .assets-section {
+          padding: 3rem var(--gutter);
+        }
+      }
+      @media (max-width: 480px) {
+        .facts-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
     <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
@@ -332,7 +350,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -341,7 +359,7 @@
         <li><a href="about.html">Our Story</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -355,24 +373,24 @@
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="providers.html" class="mobile-nav-link">For Providers</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="index.html#download" class="nav-cta mobile-nav-link">Download Free →</a>
+      <a href="index.html#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
       <header class="page-header">
-        <h1>Press Kit</h1>
-        <p>Everything you need to write about Go Rocco</p>
+        <h1>Press kit</h1>
+        <p>Descriptions, facts and brand assets for writing about Go Rocco.</p>
       </header>
 
       <section class="press-intro">
         <div class="press-intro-content">
-          <h2>Media Enquiries</h2>
+          <h2>Media enquiries</h2>
           <p>
-            Writing about Go Rocco? We'd love to help. Whether you need quotes, interviews, or additional information,
-            our team is happy to assist journalists and content creators.
+            Writing about Go Rocco? We can help with quotes, interviews and background information for journalists and
+            other writers.
           </p>
           <div class="press-contact">
-            <a href="mailto:support@go-rocco.com">Contact Press Team</a>
+            <a href="mailto:support@go-rocco.com" class="btn-primary">Email the press team</a>
           </div>
         </div>
       </section>
@@ -381,17 +399,17 @@
         <h2>About Go Rocco</h2>
 
         <div class="boilerplate-card">
-          <h3>Short Description (50 words)</h3>
+          <h3>Short description (50 words)</h3>
           <p>
             Go Rocco is a UK-based mobile app that helps dog owners see nearby dogs' temperaments before meeting them.
             Using privacy-first location sharing, owners can identify friendly, nervous, or reactive dogs within 50
             metres - making every walk safer and reducing unexpected encounters.
           </p>
-          <button class="copy-btn" onclick="copyText(this.previousElementSibling)">📋 Copy</button>
+          <button class="copy-btn" onclick="copyText(this.previousElementSibling)">Copy</button>
         </div>
 
         <div class="boilerplate-card">
-          <h3>Long Description (150 words)</h3>
+          <h3>Long description (150 words)</h3>
           <p>
             Go Rocco is a UK app, launched in March 2026, that's reimagining dog walk safety. The app allows dog
             owners to see other dogs within 50 metres and their temperament indicators - whether they're friendly,
@@ -413,11 +431,11 @@
             (with a £15-a-month Pro plan for the admin extras), a marketplace for booking them, and a shop of independent
             British makers.
           </p>
-          <button class="copy-btn" onclick="copyText(this.parentElement.querySelector('p'))">📋 Copy</button>
+          <button class="copy-btn" onclick="copyText(this.parentElement.querySelector('p'))">Copy</button>
         </div>
 
         <div class="boilerplate-card">
-          <h3>Key Message</h3>
+          <h3>Key message</h3>
           <p>
             <strong>"Know Before You Meet"</strong> - Go Rocco helps dog owners see nearby dogs' temperaments so they
             can choose whether to say hello or give space. It's about making walks safer and more enjoyable for
@@ -427,10 +445,10 @@
       </section>
 
       <section class="facts-section">
-        <h2>Quick Facts</h2>
+        <h2>Quick facts</h2>
         <div class="facts-grid">
           <div class="fact-card">
-            <div class="fact-label">Company Name</div>
+            <div class="fact-label">Company name</div>
             <div class="fact-value">Go Rocco</div>
           </div>
           <div class="fact-card">
@@ -442,7 +460,7 @@
             <div class="fact-value">United Kingdom</div>
           </div>
           <div class="fact-card">
-            <div class="fact-label">Launch Date</div>
+            <div class="fact-label">Launch date</div>
             <div class="fact-value">March 2026 (iOS), April 2026 (Android)</div>
           </div>
           <div class="fact-card">
@@ -465,82 +483,76 @@
       </section>
 
       <section class="assets-section">
-        <h2>Brand Assets</h2>
+        <h2>Brand assets</h2>
         <div class="assets-grid">
           <div class="asset-card">
             <div class="asset-preview light">
               <img src="assets/gorocco-logo.png" alt="Go Rocco Logo" />
             </div>
             <div class="asset-info">
-              <h3>Primary Logo</h3>
+              <h3>Primary logo</h3>
               <p>Full colour logo for light backgrounds. PNG format with transparency.</p>
               <a href="assets/gorocco-logo.png" class="asset-download" download>Download PNG</a>
             </div>
           </div>
 
           <div class="asset-card">
-            <div class="asset-preview blue">
-              <img src="gorocco-app-icon.png" alt="Go Rocco App Icon" style="border-radius: 20px" />
+            <div class="asset-preview light">
+              <img src="gorocco-app-icon.png" alt="Go Rocco App Icon" />
             </div>
             <div class="asset-info">
-              <h3>App Icon</h3>
+              <h3>App icon</h3>
               <p>Square app icon for app store listings and social media.</p>
               <a href="gorocco-app-icon.png" class="asset-download" download>Download PNG</a>
             </div>
           </div>
 
           <div class="asset-card">
-            <div
-              class="asset-preview light"
-              style="background: linear-gradient(135deg, var(--rocco-blue), var(--rocco-blue-dark))"
-            >
-              <span style="color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 2rem"
-                >Go Rocco</span
-              >
+            <div class="asset-preview light">
+              <span class="wordmark-sample">Go Rocco</span>
             </div>
             <div class="asset-info">
               <h3>Wordmark</h3>
-              <p>Text-only logo. Use Nunito Extra Bold, 800 weight.</p>
-              <span class="asset-download" style="opacity: 0.5">SVG Coming Soon</span>
+              <p>Text-only logo. Set in Inter Tight Bold (700) in ink, #101828.</p>
+              <span class="asset-download">SVG coming soon</span>
             </div>
           </div>
         </div>
       </section>
 
       <section class="guidelines-section">
-        <h2>Brand Guidelines</h2>
+        <h2>Brand guidelines</h2>
         <div class="guidelines-content">
           <div class="guideline-item">
-            <span class="guideline-icon">✅</span>
+            <span class="guideline-mark do" aria-hidden="true"></span>
             <p>
               <strong>Do:</strong> Use "Go Rocco" as two words with capital G and R. The app name is always written this
               way.
             </p>
           </div>
           <div class="guideline-item">
-            <span class="guideline-icon">✅</span>
+            <span class="guideline-mark do" aria-hidden="true"></span>
             <p><strong>Do:</strong> Maintain clear space around the logo equal to the height of the "o" in Rocco.</p>
           </div>
           <div class="guideline-item">
-            <span class="guideline-icon">✅</span>
+            <span class="guideline-mark do" aria-hidden="true"></span>
             <p><strong>Do:</strong> Use our brand colours when featuring Go Rocco prominently.</p>
           </div>
           <div class="guideline-item">
-            <span class="guideline-icon">❌</span>
+            <span class="guideline-mark dont" aria-hidden="true"></span>
             <p><strong>Don't:</strong> Alter the logo colours, stretch, rotate, or add effects to the logo.</p>
           </div>
           <div class="guideline-item">
-            <span class="guideline-icon">❌</span>
+            <span class="guideline-mark dont" aria-hidden="true"></span>
             <p><strong>Don't:</strong> Use "GoRocco", "gorocco", or "Go-Rocco" - always two separate words.</p>
           </div>
 
-          <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.1rem">Brand Colours</h3>
+          <h3>Brand colours</h3>
           <div class="color-swatches">
-            <div class="color-swatch" style="background: #7bcbeb">#7BCBEB</div>
-            <div class="color-swatch" style="background: #5bb8e0">#5BB8E0</div>
-            <div class="color-swatch" style="background: #4caf50">#4CAF50</div>
-            <div class="color-swatch" style="background: #ff9800">#FF9800</div>
-            <div class="color-swatch" style="background: #111827">#111827</div>
+            <div class="color-swatch"><span class="swatch" style="background: #101828"></span><strong>Ink</strong>#101828</div>
+            <div class="color-swatch"><span class="swatch" style="background: #faf8f5"></span><strong>Paper</strong>#FAF8F5</div>
+            <div class="color-swatch"><span class="swatch" style="background: #f38f47"></span><strong>Amber</strong>#F38F47</div>
+            <div class="color-swatch"><span class="swatch" style="background: #7bcbeb"></span><strong>Rocco blue</strong>#7BCBEB, accent only</div>
           </div>
         </div>
       </section>
@@ -549,7 +561,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -582,7 +594,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -639,7 +651,7 @@
         navigator.clipboard.writeText(text).then(() => {
           const btn = element.nextElementSibling
           const originalText = btn.innerText
-          btn.innerText = '✓ Copied!'
+          btn.innerText = 'Copied'
           setTimeout(() => {
             btn.innerText = originalText
           }, 2000)
@@ -650,7 +662,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyze site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">

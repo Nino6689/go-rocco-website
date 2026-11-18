@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -25,158 +25,108 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 6rem 2rem;
-        background: linear-gradient(135deg, var(--gray-900) 0%, #1a1a2e 100%);
+        padding: calc(var(--nav-h) + 4rem) var(--gutter) 5rem;
+        background: var(--ink-deep);
         text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-      .thank-you-hero::before {
-        content: '🐾';
-        position: absolute;
-        font-size: 20rem;
-        opacity: 0.03;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
       }
       .thank-you-content {
         max-width: 600px;
-        position: relative;
-        z-index: 1;
-      }
-      .thank-you-icon {
-        font-size: 5rem;
-        margin-bottom: 1.5rem;
-        animation: bounce 2s ease-in-out infinite;
-      }
-      @keyframes bounce {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .thank-you-icon {
-          animation: none;
-        }
       }
       .thank-you-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: linear-gradient(135deg, var(--safe-green) 0%, #43a047 100%);
-        color: var(--white);
-        padding: 0.5rem 1.25rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
+        display: inline-block;
+        background: rgba(143, 214, 172, 0.14);
+        color: #8fd6ac;
+        border: 1px solid rgba(143, 214, 172, 0.4);
+        padding: 0.3rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.08em;
+        margin-bottom: 1.5rem;
       }
       .thank-you-badge.warning {
-        background: linear-gradient(135deg, var(--warning-amber) 0%, #f57c00 100%);
+        background: rgba(243, 143, 71, 0.14);
+        color: var(--amber);
+        border-color: rgba(243, 143, 71, 0.45);
       }
       .thank-you-badge.error {
-        background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+        background: rgba(255, 180, 171, 0.12);
+        color: #ffb4ab;
+        border-color: rgba(255, 180, 171, 0.45);
       }
       .thank-you-content h1 {
-        font-size: 2.75rem;
-        color: var(--white);
+        font-size: clamp(2rem, 4.5vw, 2.9rem);
+        color: #fff;
         margin-bottom: 1rem;
-        font-weight: 900;
-        line-height: 1.2;
       }
       .thank-you-content p {
-        font-size: 1.15rem;
-        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.125rem;
+        color: var(--on-dark-soft);
         margin-bottom: 1.5rem;
-        line-height: 1.8;
       }
       .thank-you-steps {
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        padding: 2rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--line-dark);
+        border-radius: var(--radius);
+        padding: 1.75rem;
         margin: 2rem 0;
         text-align: left;
       }
       .thank-you-steps h3 {
-        color: var(--white);
+        color: #fff;
         font-size: 1.1rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
+        margin-bottom: 0.9rem;
       }
       .thank-you-steps ol {
-        color: rgba(255, 255, 255, 0.8);
-        padding-left: 1.5rem;
+        color: rgba(255, 255, 255, 0.86);
+        padding-left: 1.4rem;
         margin: 0;
       }
       .thank-you-steps li {
-        margin-bottom: 0.75rem;
-        line-height: 1.6;
+        margin-bottom: 0.6rem;
       }
       .thank-you-steps li:last-child {
         margin-bottom: 0;
       }
       .thank-you-social {
         display: flex;
-        gap: 1rem;
+        gap: 0.75rem;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         margin-top: 2rem;
       }
       .thank-you-social span {
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.68);
         font-size: 0.95rem;
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
       }
       .thank-you-social a {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--white);
+        color: #fff;
         text-decoration: none;
-        padding: 0.75rem 1.25rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50px;
+        padding: 0.65rem 1.1rem;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: var(--radius-sm);
         font-weight: 600;
-        transition: all 0.3s ease;
+        transition:
+          background-color 0.15s ease,
+          border-color 0.15s ease;
       }
       .thank-you-social a:hover {
-        background: var(--rocco-blue);
-        transform: translateY(-2px);
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.08);
       }
       .thank-you-home {
         display: inline-block;
         margin-top: 2rem;
-        color: var(--rocco-blue);
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
+        color: var(--blue);
+        font-weight: 500;
+        text-underline-offset: 3px;
       }
       .thank-you-home:hover {
-        color: var(--rocco-blue-dark);
-      }
-      @media (max-width: 768px) {
-        .thank-you-hero {
-          padding: 4rem 1.5rem;
-        }
-        .thank-you-content h1 {
-          font-size: 2rem;
-        }
-        .thank-you-icon {
-          font-size: 4rem;
-        }
-        .thank-you-social {
-          flex-direction: column;
-          gap: 0.75rem;
-        }
+        color: #fff;
       }
     </style>
     <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
@@ -200,7 +150,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -208,7 +158,7 @@
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="about.html">Our Story</a></li>
       </ul>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html#download" class="nav-cta">Get the app</a>
     </nav>
 
     <main id="main">
@@ -222,7 +172,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -255,7 +205,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -293,12 +243,11 @@
 
       const content = {
         success: {
-          icon: '🎉',
           badge: 'Confirmed',
           badgeClass: '',
-          title: "You're part of something great!",
+          title: "You're subscribed.",
           message:
-            "Welcome to the pack! We're building Go Rocco to make every walk safer - and you're helping us get there.",
+            'Thank you for confirming. We are building Go Rocco to make every walk safer, and we will keep you posted as we go.',
           showSteps: true,
           steps: [
             "You'll receive updates about our progress",
@@ -307,30 +256,27 @@
           ],
         },
         already: {
-          icon: '👋',
-          badge: 'Already Confirmed',
+          badge: 'Already confirmed',
           badgeClass: 'warning',
-          title: "You're already in the pack!",
+          title: 'You have already confirmed.',
           message:
-            "Looks like you've already confirmed your spot. No worries - you're all set! We'll keep you updated on our launch progress.",
+            "This address is already on the list, so there is nothing more to do. We'll keep you updated.",
           showSteps: false,
         },
         invalid: {
-          icon: '🔗',
-          badge: 'Invalid Link',
+          badge: 'Invalid link',
           badgeClass: 'error',
-          title: "Hmm, that link didn't work",
+          title: "That link didn't work",
           message:
             "The confirmation link might have expired or already been used. If you haven't confirmed yet, try signing up again and we'll send a fresh link.",
           showSteps: false,
         },
         error: {
-          icon: '😅',
-          badge: 'Something Went Wrong',
+          badge: 'Something went wrong',
           badgeClass: 'error',
-          title: "Oops! That didn't go as planned",
+          title: "We couldn't confirm your subscription",
           message:
-            'Something went wrong on our end. Please try signing up again, or drop us an email at support@go-rocco.com if you keep having trouble.',
+            'Something went wrong at our end. Please try signing up again, or email support@go-rocco.com if it keeps happening.',
           showSteps: false,
         },
       }
@@ -339,15 +285,14 @@
 
       const contentEl = document.getElementById('thankYouContent')
       contentEl.innerHTML = `
-        <div class="thank-you-icon">${data.icon}</div>
-        <div class="thank-you-badge ${data.badgeClass}">✓ ${data.badge}</div>
+        <div class="thank-you-badge ${data.badgeClass}">${data.badge}</div>
         <h1>${data.title}</h1>
         <p>${data.message}</p>
         ${
           data.showSteps
             ? `
           <div class="thank-you-steps">
-            <h3>What happens next?</h3>
+            <h3>What happens next</h3>
             <ol>
               ${data.steps.map((step) => `<li>${step}</li>`).join('')}
             </ol>
@@ -356,15 +301,15 @@
             : ''
         }
         <div class="thank-you-social">
-          <span>Follow our journey:</span>
+          <span>Follow Go Rocco</span>
           <a href="https://www.instagram.com/goroccoapp" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
-            📸 @goroccoapp
+            Instagram
           </a>
           <a href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
-            📘 Facebook
+            Facebook
           </a>
         </div>
-        <a href="index.html" class="thank-you-home">← Back to Home</a>
+        <a href="index.html" class="thank-you-home">← Back to home</a>
       `
 
       // Update page title based on status
@@ -377,7 +322,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyze site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">

@@ -85,152 +85,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-        padding: 4rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .blog-card {
-        background: var(--white);
-        border-radius: 24px;
-        overflow: hidden;
-        border: 2px solid var(--gray-50);
-        transition: all 0.3s ease;
-      }
-      .blog-card:hover {
-        border-color: var(--rocco-blue);
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      }
-      .blog-card-image {
-        height: 200px;
-        background: var(--rocco-blue);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-      }
-      .blog-card-content {
-        padding: 1.5rem;
-      }
-      .blog-card-category {
-        display: inline-block;
-        background: var(--rocco-blue);
-        color: var(--white);
-        padding: 0.25rem 0.75rem;
-        border-radius: 50px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 0.75rem;
-      }
-      .blog-card h3 {
-        font-size: 1.25rem;
-        color: var(--gray-900);
-        margin-bottom: 0.75rem;
-        font-weight: 800;
-        line-height: 1.4;
-      }
-      .blog-card h3 a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .blog-card h3 a:hover {
-        color: var(--rocco-blue-dark);
-      }
-      .blog-card p {
-        color: var(--gray-600);
-        line-height: 1.7;
-        margin-bottom: 1rem;
-      }
-      .blog-card-meta {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        font-size: 0.85rem;
-        color: var(--gray-600);
-      }
-      .coming-soon-overlay {
-        position: relative;
-      }
-      .coming-soon-overlay::after {
-        content: 'Coming Soon';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--gray-900);
-        color: var(--white);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 0.85rem;
-      }
-      .newsletter-section {
-        background: var(--cream);
-        padding: 4rem;
-        text-align: center;
-      }
-      .newsletter-content {
-        max-width: 500px;
-        margin: 0 auto;
-      }
-      .newsletter-content h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 1rem;
-      }
-      .newsletter-content p {
-        color: var(--gray-600);
-        margin-bottom: 2rem;
-      }
-      .newsletter-form {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .newsletter-form input {
-        flex: 1;
-        min-width: 250px;
-        padding: 1rem 1.5rem;
-        border: 2px solid var(--gray-50);
-        border-radius: 50px;
-        font-size: 1rem;
-        font-family: 'Quicksand', sans-serif;
-      }
-      .newsletter-form input:focus {
-        outline: none;
-        border-color: var(--rocco-blue);
-      }
-      .newsletter-form button {
-        background: var(--rocco-blue);
-        color: var(--white);
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 50px;
-        font-weight: 700;
-        font-family: 'Nunito', sans-serif;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      .newsletter-form button:hover {
-        background: var(--rocco-blue-dark);
-      }
-      .newsletter-msg {
-        display: none;
-        margin-top: 1rem;
-        font-weight: 600;
-      }
-    </style>
     <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -252,7 +110,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -261,7 +119,7 @@
         <li><a href="about.html">Our Story</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -275,259 +133,240 @@
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="providers.html" class="mobile-nav-link">For Providers</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="index.html#download" class="nav-cta mobile-nav-link">Download Free →</a>
+      <a href="index.html#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
       <header class="page-header">
-        <h1>Dog Safety Tips & UK Walking Guides</h1>
-        <p>Tips, stories, and updates from the Go Rocco pack</p>
+        <h1>Dog safety tips and UK walking guides</h1>
+        <p>Guides, stories and product news from the Go Rocco team.</p>
       </header>
 
       <section class="blog-grid">
         <article class="blog-card">
-          <div class="blog-card-image">💼</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Announcement</span>
             <h3><a href="blog/introducing-go-rocco-business.html">Run your dog business on Go Rocco. It's free.</a></h3>
             <p>Calendar, client book, booking page, invoices with a pay link and tax-ready books for walkers, groomers, sitters and trainers. 0% on your own clients, forever.</p>
             <div class="blog-card-meta">
-              <span>📅 September 2026</span>
-              <span>⏱️ 5 min read</span>
+              <span>September 2026</span>
+              <span>5 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🆓</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Announcement</span>
             <h3><a href="blog/go-rocco-is-now-free.html">Go Rocco is now free for dog owners</a></h3>
             <p>The Alpha Pack subscription and all adverts are gone. Every feature is unlocked for everyone. Here's what changed, why, and how the lights stay on.</p>
             <div class="blog-card-meta">
-              <span>📅 September 2026</span>
-              <span>⏱️ 4 min read</span>
+              <span>September 2026</span>
+              <span>4 min read</span>
             </div>
           </div>
         </article>
         <article class="blog-card">
-          <div class="blog-card-image">🤖</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Announcement</span>
             <h3><a href="blog/go-rocco-is-now-on-android.html">Go Rocco Is Now on Android!</a></h3>
             <p>The wait is over. Go Rocco is officially live on Google Play with full feature parity. Free to download.</p>
             <div class="blog-card-meta">
-              <span>📅 April 2026</span>
-              <span>⏱️ 5 min read</span>
+              <span>April 2026</span>
+              <span>5 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🌿</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Dog Health</span>
             <h3><a href="blog/why-do-dogs-eat-grass.html">Why Do Dogs Eat Grass? What Every UK Owner Should Know</a></h3>
             <p>Your dog munches grass on every walk - but why? Here are 6 common reasons and when you should worry.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 5 min read</span>
+              <span>March 2026</span>
+              <span>5 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">👅</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Dog Behaviour</span>
             <h3><a href="blog/why-do-dogs-lick-you.html">Why Do Dogs Lick You? 7 Reasons Behind the Slobber</a></h3>
             <p>From affection to anxiety - here's what your dog is really trying to tell you with all that licking.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 5 min read</span>
+              <span>March 2026</span>
+              <span>5 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🤰</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Dog Health</span>
             <h3><a href="blog/how-long-are-dogs-pregnant.html">How Long Are Dogs Pregnant? A Complete UK Guide</a></h3>
             <p>Everything you need to know about dog pregnancy - from the 63-day gestation period to week-by-week stages.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 5 min read</span>
+              <span>March 2026</span>
+              <span>5 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🍎</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Announcement</span>
             <h3><a href="blog/go-rocco-is-live-on-the-app-store.html">Go Rocco Is Live on the App Store!</a></h3>
             <p>It's official - Go Rocco is available to download FREE on the iOS App Store. Here's everything you need to know.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 5 min read</span>
+              <span>March 2026</span>
+              <span>5 min read</span>
             </div>
           </div>
         </article>
 
 
         <article class="blog-card">
-          <div class="blog-card-image">🐕</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Dog Safety</span>
             <h3><a href="blog/5-signs-a-dog-needs-space.html">5 Signs a Dog Needs Space (and How to Respond)</a></h3>
             <p>Not every dog wants to say hello. Here's how to read the signs and be a considerate fellow dog owner.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 7 min read</span>
+              <span>March 2026</span>
+              <span>7 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🔒</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Privacy</span>
             <h3><a href="blog/the-50-metre-rule.html">The 50-Metre Rule: Why We Built Privacy Into Go Rocco</a></h3>
             <p>Location apps can be creepy. Here's how we designed Go Rocco so it's helpful without being invasive.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 6 min read</span>
+              <span>March 2026</span>
+              <span>6 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">💛</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Community</span>
             <h3><a href="blog/nervous-dogs-arent-bad-dogs.html">Nervous Dogs Aren't Bad Dogs</a></h3>
             <p>A love letter to reactive and nervous dogs, and the owners who advocate for them every single day.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 8 min read</span>
+              <span>March 2026</span>
+              <span>8 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🗺️</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Features</span>
             <h3><a href="blog/how-the-live-map-works.html">How the Live Map Works (Without Being Creepy)</a></h3>
             <p>A technical deep-dive into how we show nearby dogs without compromising your privacy or safety.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 10 min read</span>
+              <span>March 2026</span>
+              <span>10 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🥾</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Dog Walking</span>
             <h3><a href="blog/best-dog-walking-routes-uk.html">Best Dog Walking Routes in the UK for 2026</a></h3>
             <p>From the Lake District to Cornwall, our guide to the best dog-friendly walks across the UK this year.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 12 min read</span>
+              <span>March 2026</span>
+              <span>12 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🚨</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Dog Safety</span>
             <h3><a href="blog/what-to-do-off-lead-dog.html">What To Do If an Off-Lead Dog Approaches Yours</a></h3>
             <p>Practical advice for UK dog owners on staying calm and safe when an unfamiliar off-lead dog runs up to yours.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 8 min read</span>
+              <span>March 2026</span>
+              <span>8 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">⚖️</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Legal</span>
             <h3><a href="blog/dog-walking-laws-uk.html">Dog Walking Laws UK: Rights, Rules & Lead Requirements</a></h3>
             <p>A complete guide to dog walking laws in the UK. Lead requirements, right to roam, livestock rules, and your legal rights.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 11 min read</span>
+              <span>March 2026</span>
+              <span>11 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🐶</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Training</span>
             <h3><a href="blog/how-to-socialise-a-puppy.html">How to Socialise a Puppy: A Week-by-Week UK Guide</a></h3>
             <p>A practical guide to puppy socialisation. From first walks to meeting other dogs, build a confident, well-adjusted dog.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 12 min read</span>
+              <span>March 2026</span>
+              <span>12 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">📋</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Legal</span>
             <h3><a href="blog/xl-bully-ban-uk.html">XL Bully Ban UK: What Dog Owners Need to Know in 2026</a></h3>
             <p>Everything UK dog owners need to know about the XL Bully ban. Exemption rules, walking requirements, and penalties.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 10 min read</span>
+              <span>March 2026</span>
+              <span>10 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">📊</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Dog Safety</span>
             <h3><a href="blog/dog-bite-statistics-uk.html">Dog Bite Statistics UK 2026: What Every Owner Should Know</a></h3>
             <p>UK dog bite data, risk factors, and how awareness and responsible ownership can prevent incidents.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 10 min read</span>
+              <span>March 2026</span>
+              <span>10 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">🍺</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Lifestyle</span>
             <h3><a href="blog/dog-friendly-pubs-cafes-uk.html">Dog-Friendly Pubs and Cafes: A Complete UK Guide</a></h3>
             <p>The best dog-friendly pubs and cafes across the UK. Regional picks, etiquette tips, and how to find welcoming spots.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 11 min read</span>
+              <span>March 2026</span>
+              <span>11 min read</span>
             </div>
           </div>
         </article>
 
         <article class="blog-card">
-          <div class="blog-card-image">💙</div>
           <div class="blog-card-content">
             <span class="blog-card-category">Health</span>
             <h3><a href="blog/separation-anxiety-in-dogs.html">Separation Anxiety in Dogs: Signs, Causes & Solutions</a></h3>
             <p>How to recognise and help separation anxiety in dogs. Signs, causes, proven solutions, and when to seek help.</p>
             <div class="blog-card-meta">
-              <span>📅 March 2026</span>
-              <span>⏱️ 11 min read</span>
+              <span>March 2026</span>
+              <span>11 min read</span>
             </div>
           </div>
         </article>
@@ -536,11 +375,11 @@
 
       <section class="newsletter-section">
         <div class="newsletter-content">
-          <h2>Get Updates in Your Inbox</h2>
-          <p>New articles, product updates, and dog safety tips. No spam, unsubscribe anytime.</p>
+          <h2>New articles, by email</h2>
+          <p>Articles, product updates and dog safety tips. No spam, and you can unsubscribe at any time.</p>
           <form class="newsletter-form" id="newsletterForm">
-            <input type="email" id="newsletterEmail" placeholder="Your email address" required />
-            <button type="submit" id="newsletterBtn">Subscribe 🐾</button>
+            <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Email address" required />
+            <button type="submit" id="newsletterBtn">Subscribe</button>
           </form>
           <p id="newsletterMsg" class="newsletter-msg"></p>
         </div>
@@ -550,7 +389,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -583,7 +422,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -657,23 +496,23 @@
             clearTimeout(timeoutId);
             msg.style.display = 'block';
             if (data.success) {
-              msg.textContent = 'You\'re subscribed! Welcome to the pack 🐾';
-              msg.style.color = 'var(--safe-green)';
+              msg.textContent = 'You\'re subscribed. Thank you.';
+              msg.style.color = '#8fd6ac';
               form.reset();
             } else {
               msg.textContent = data.error || 'Something went wrong. Please try again.';
-              msg.style.color = 'var(--rocco-coral)';
+              msg.style.color = '#ffb4ab';
             }
           })
           .catch(function() {
             clearTimeout(timeoutId);
             msg.style.display = 'block';
             msg.textContent = 'Network error. Please try again.';
-            msg.style.color = 'var(--rocco-coral)';
+            msg.style.color = '#ffb4ab';
           })
           .finally(function() {
             btn.disabled = false;
-            btn.textContent = 'Subscribe 🐾';
+            btn.textContent = 'Subscribe';
           });
         });
       }
@@ -682,7 +521,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyze site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">

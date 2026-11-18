@@ -58,194 +58,175 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
+      .careers-intro,
+      .jobs-section {
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        padding: 4.5rem var(--gutter);
+      }
+      .jobs-section {
+        border-top: 1px solid var(--line);
+      }
       .careers-intro {
-        background: var(--cream);
-        padding: 4rem;
         text-align: center;
       }
       .careers-intro-content {
         max-width: 700px;
         margin: 0 auto;
       }
-      .careers-intro h2 {
-        font-size: 2rem;
-        color: var(--gray-900);
+      .careers-intro h2,
+      .perks-section h2,
+      .values-section h2,
+      .jobs-section h2 {
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
         margin-bottom: 1rem;
       }
+      .perks-section h2,
+      .values-section h2,
+      .jobs-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
       .careers-intro p {
-        color: var(--gray-600);
-        line-height: 1.8;
+        color: var(--ink-soft);
         font-size: 1.1rem;
       }
       .perks-section {
-        padding: 4rem;
-        max-width: 1200px;
+        padding: 4.5rem var(--gutter);
+        max-width: calc(var(--maxw) + 2 * var(--gutter));
         margin: 0 auto;
-      }
-      .perks-section h2 {
-        text-align: center;
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 2rem;
       }
       .perks-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
       }
       .perk-card {
-        background: var(--white);
-        padding: 2rem;
-        border-radius: 24px;
-        border: 2px solid var(--gray-50);
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-      .perk-card:hover {
-        border-color: var(--rocco-blue);
-        transform: translateY(-5px);
-      }
-      .perk-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+        background: var(--surface);
+        padding: 1.6rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
       }
       .perk-card h3 {
-        font-size: 1.25rem;
-        color: var(--gray-900);
+        font-size: 1.1rem;
         margin-bottom: 0.5rem;
       }
       .perk-card p {
-        color: var(--gray-600);
-        line-height: 1.6;
-      }
-      .jobs-section {
-        padding: 4rem;
-        background: var(--cream);
-      }
-      .jobs-section h2 {
-        text-align: center;
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 2rem;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
       }
       .jobs-list {
-        max-width: 800px;
+        max-width: 760px;
         margin: 0 auto;
       }
       .job-card {
-        background: var(--white);
-        padding: 2rem;
-        border-radius: 24px;
-        margin-bottom: 1.5rem;
-        border: 2px solid var(--gray-50);
+        background: var(--paper);
+        padding: 1.6rem;
+        border-radius: var(--radius);
+        margin-bottom: 1rem;
+        border: 1px solid var(--line);
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 1rem;
-        transition: all 0.3s ease;
-      }
-      .job-card:hover {
-        border-color: var(--rocco-blue);
       }
       .job-info h3 {
-        font-size: 1.25rem;
-        color: var(--gray-900);
+        font-size: 1.15rem;
         margin-bottom: 0.5rem;
       }
       .job-meta {
         display: flex;
-        gap: 1rem;
+        gap: 0.5rem;
         flex-wrap: wrap;
       }
       .job-meta span {
-        background: var(--gray-50);
-        padding: 0.25rem 0.75rem;
-        border-radius: 50px;
+        border: 1px solid var(--line);
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
         font-size: 0.85rem;
-        color: var(--gray-600);
+        color: var(--ink-soft);
       }
       .job-apply {
-        background: var(--rocco-blue);
-        color: var(--white);
-        padding: 0.75rem 1.5rem;
-        border-radius: 50px;
+        background: var(--ink);
+        color: #fff;
+        padding: 0.7rem 1.2rem;
+        border-radius: var(--radius-sm);
         text-decoration: none;
-        font-weight: 700;
-        transition: all 0.3s ease;
-      }
-      .job-apply:hover {
-        background: var(--rocco-blue-dark);
+        font-weight: 600;
       }
       .no-jobs {
         text-align: center;
-        padding: 3rem;
-        background: var(--white);
-        border-radius: 24px;
-        border: 2px dashed var(--gray-200);
-      }
-      .no-jobs-icon {
-        font-size: 4rem;
-        margin-bottom: 1rem;
+        padding: 2.5rem;
+        background: var(--paper);
+        border-radius: var(--radius);
+        border: 1px dashed var(--line-strong);
       }
       .no-jobs h3 {
-        font-size: 1.5rem;
-        color: var(--gray-900);
-        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
       }
       .no-jobs p {
-        color: var(--gray-600);
-        margin-bottom: 1.5rem;
+        color: var(--ink-soft);
+        margin-bottom: 1.25rem;
       }
       .no-jobs a {
-        color: var(--rocco-blue-dark);
-        font-weight: 700;
+        color: var(--blue-ink);
+        font-weight: 600;
+        text-underline-offset: 3px;
       }
       .values-section {
-        padding: 4rem;
-        max-width: 1000px;
+        padding: 0 var(--gutter) 4.5rem;
+        max-width: calc(760px + 2 * var(--gutter));
         margin: 0 auto;
       }
-      .values-section h2 {
-        text-align: center;
-        font-size: 2rem;
-        color: var(--gray-900);
-        margin-bottom: 2rem;
-      }
       .values-list {
-        display: grid;
-        gap: 1.5rem;
+        border-top: 1px solid var(--line-strong);
       }
       .value-item {
         display: flex;
-        gap: 1.5rem;
+        gap: 1.25rem;
         align-items: flex-start;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid var(--line);
       }
       .value-number {
-        background: var(--rocco-blue);
-        color: var(--white);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--amber-ink);
+        min-width: 1.5rem;
         flex-shrink: 0;
       }
       .value-content h3 {
-        font-size: 1.25rem;
-        color: var(--gray-900);
-        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.35rem;
       }
       .value-content p {
-        color: var(--gray-600);
-        line-height: 1.7;
+        color: var(--ink-soft);
+      }
+      @media (max-width: 900px) {
+        .perks-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .careers-intro,
+        .jobs-section,
+        .perks-section {
+          padding: 3rem var(--gutter);
+        }
+        .values-section {
+          padding: 0 var(--gutter) 3rem;
+        }
+        .perks-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
     <!-- Google Analytics 4 - Consent Mode (GDPR Compliant) -->
@@ -269,7 +250,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -278,7 +259,7 @@
         <li><a href="about.html">Our Story</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -292,69 +273,63 @@
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="providers.html" class="mobile-nav-link">For Providers</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="index.html#download" class="nav-cta mobile-nav-link">Download Free →</a>
+      <a href="index.html#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
       <header class="page-header">
         <h1>Careers</h1>
-        <p>Join the pack. Help us make every walk safer.</p>
+        <p>A small UK team building for dog owners and the people who look after their dogs.</p>
       </header>
 
       <section class="careers-intro">
         <div class="careers-intro-content">
-          <h2>We're Just Getting Started</h2>
+          <h2>A small team, early on</h2>
           <p>
-            Go Rocco is a small, early-stage team based in the UK. We're building something new - an app that helps dog
-            owners feel safer and more connected. If you're passionate about dogs, privacy, and building products that
-            genuinely help people, we'd love to hear from you.
+            Go Rocco is a small, early-stage team based in the UK. We are building an app that helps dog owners feel
+            safer and better connected. If you care about dogs, privacy and products that genuinely help people, we
+            would like to hear from you.
           </p>
         </div>
       </section>
 
       <section class="perks-section">
-        <h2>Why Join Go Rocco</h2>
+        <h2>Why join Go Rocco</h2>
         <div class="perks-grid">
           <div class="perk-card">
-            <div class="perk-icon">🐕</div>
-            <h3>Dog-Friendly Everything</h3>
+            <h3>Dog-friendly everything</h3>
             <p>Bring your dog to work (even if work is your living room). We're building this for dog people.</p>
           </div>
           <div class="perk-card">
-            <div class="perk-icon">🏠</div>
-            <h3>Remote-First</h3>
+            <h3>Remote-first</h3>
             <p>Work from anywhere in the UK. We believe in flexibility and trust our team to get things done.</p>
           </div>
           <div class="perk-card">
-            <div class="perk-icon">🚀</div>
-            <h3>Early-Stage Impact</h3>
+            <h3>Early-stage impact</h3>
             <p>Shape the product from the ground up. Your ideas will directly influence what we build.</p>
           </div>
           <div class="perk-card">
-            <div class="perk-icon">💷</div>
-            <h3>Equity Options</h3>
+            <h3>Equity options</h3>
             <p>Early team members get stock options. When Go Rocco succeeds, you succeed.</p>
           </div>
           <div class="perk-card">
-            <div class="perk-icon">📚</div>
-            <h3>Learning Budget</h3>
+            <h3>Learning budget</h3>
             <p>Annual budget for courses, conferences, and books. We invest in your growth.</p>
           </div>
           <div class="perk-card">
-            <div class="perk-icon">🎯</div>
-            <h3>Meaningful Work</h3>
+            <h3>Meaningful work</h3>
             <p>Build something that actually helps people and their dogs. Not ads. Not engagement hacks.</p>
           </div>
         </div>
       </section>
 
       <section class="values-section">
-        <h2>Our Values</h2>
+        <h2>Our values</h2>
         <div class="values-list">
           <div class="value-item">
             <div class="value-number">1</div>
             <div class="value-content">
-              <h3>Dogs Come First</h3>
+              <h3>Dogs come first</h3>
               <p>
                 Every decision starts with: "Does this help dogs and their owners?" If it doesn't, we don't build it.
               </p>
@@ -363,21 +338,21 @@
           <div class="value-item">
             <div class="value-number">2</div>
             <div class="value-content">
-              <h3>Privacy by Design</h3>
+              <h3>Privacy by design</h3>
               <p>We collect only what we need, protect it fiercely, and give users complete control. No exceptions.</p>
             </div>
           </div>
           <div class="value-item">
             <div class="value-number">3</div>
             <div class="value-content">
-              <h3>No Judgment</h3>
+              <h3>No judgement</h3>
               <p>Reactive dogs aren't bad dogs. Nervous owners aren't bad owners. We build for everyone.</p>
             </div>
           </div>
           <div class="value-item">
             <div class="value-number">4</div>
             <div class="value-content">
-              <h3>Ship and Learn</h3>
+              <h3>Ship and learn</h3>
               <p>
                 We'd rather launch something good today and improve it than wait for perfect. Iteration over perfection.
               </p>
@@ -386,7 +361,7 @@
           <div class="value-item">
             <div class="value-number">5</div>
             <div class="value-content">
-              <h3>Be Kind</h3>
+              <h3>Be kind</h3>
               <p>To each other, to our users, to everyone. Life's too short for drama.</p>
             </div>
           </div>
@@ -394,14 +369,13 @@
       </section>
 
       <section class="jobs-section">
-        <h2>Open Positions</h2>
+        <h2>Open positions</h2>
         <div class="jobs-list">
           <div class="no-jobs">
-            <div class="no-jobs-icon">🐾</div>
-            <h3>No Open Roles Right Now</h3>
+            <h3>No open roles right now</h3>
             <p>
-              We don't have any positions listed at the moment, but we're always interested in meeting talented dog
-              lovers. Send us a note and tell us about yourself.
+              We have no positions listed at the moment, but we are always glad to hear from good people who like
+              dogs. Send us a note and tell us about yourself.
             </p>
             <a href="mailto:support@go-rocco.com">support@go-rocco.com</a>
           </div>
@@ -411,9 +385,9 @@
             <div class="job-info">
               <h3>Senior iOS Developer</h3>
               <div class="job-meta">
-                <span>📍 Remote (UK)</span>
-                <span>⏰ Full-time</span>
-                <span>💷 £65-80k</span>
+                <span>Remote (UK)</span>
+                <span>Full-time</span>
+                <span>£65-80k</span>
               </div>
             </div>
             <a href="#" class="job-apply">Apply Now</a>
@@ -426,7 +400,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -459,7 +433,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
@@ -515,7 +489,7 @@
     <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookieDescription">
       <div class="cookie-content">
         <p id="cookieDescription">
-          🍪 We use cookies to improve your experience and analyze site traffic.
+          We use cookies to improve your experience and analyse site traffic.
           <a href="cookies.html">Learn more</a>
         </p>
         <div class="cookie-buttons">

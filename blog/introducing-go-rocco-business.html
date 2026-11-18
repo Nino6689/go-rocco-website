@@ -65,47 +65,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
-    <style>
-      .blog-post { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-      .blog-post-header { margin-bottom: 2rem; }
-      .blog-post-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--gray-600); margin-bottom: 1.5rem; flex-wrap: wrap; }
-      .blog-post-category { display: inline-block; background: var(--rocco-blue); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-      .blog-post h1 { font-size: 2.25rem; color: var(--gray-900); font-weight: 900; line-height: 1.3; margin-bottom: 1rem; }
-      .blog-post h2 { font-size: 1.5rem; color: var(--gray-900); font-weight: 800; margin: 2.5rem 0 1rem; }
-      .blog-post h3 { font-size: 1.2rem; color: var(--gray-900); font-weight: 700; margin: 2rem 0 0.75rem; }
-      .blog-post p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
-      .blog-post ul, .blog-post ol { color: var(--gray-600); line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.5rem; }
-      .blog-post li { margin-bottom: 0.5rem; }
-      .blog-post a { color: var(--rocco-blue-dark); }
-      .blog-post blockquote { border-left: 4px solid var(--rocco-blue); padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(123, 203, 235, 0.08); border-radius: 0 12px 12px 0; }
-      .blog-post blockquote p { color: var(--gray-800); font-style: italic; margin-bottom: 0; }
-      .blog-post-cta { background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 100%); border-radius: 24px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
-      .blog-post-cta h3 { margin-top: 0; }
-      .blog-post-cta .cta-btn { display: inline-block; background: var(--rocco-blue); color: var(--white); padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; font-family: 'Nunito', sans-serif; }
-      .blog-post-cta .cta-btn:hover { background: var(--rocco-blue-dark); transform: translateY(-2px); }
-      .blog-back { display: inline-block; color: var(--rocco-blue-dark); text-decoration: none; font-weight: 700; margin-bottom: 2rem; }
-      .blog-back:hover { text-decoration: underline; }
-      .film { background: var(--gray-900); border-radius: 20px; overflow: hidden; margin: 2rem 0; box-shadow: 0 20px 50px rgba(17, 24, 39, 0.2); }
-      .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
-      .film-credit { font-size: 0.85rem; color: var(--gray-600); text-align: center; margin-top: -1rem; margin-bottom: 2rem; }
-      .share-bar { display: flex; align-items: center; gap: 0.75rem; padding: 1.5rem 0; border-top: 1px solid var(--gray-50); margin-top: 2rem; }
-      .share-bar span { font-weight: 700; color: var(--gray-800); }
-      .share-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gray-50); text-decoration: none; font-weight: 700; color: var(--gray-600); background: var(--white); cursor: pointer; font-size: 1rem; transition: all 0.2s; }
-      .share-btn:hover { border-color: var(--rocco-blue); color: var(--rocco-blue); }
-      .related-articles { margin-top: 3rem; }
-      .related-articles h2 { font-size: 1.5rem; color: var(--gray-900); font-weight: 800; margin-bottom: 1.5rem; }
-      .related-articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-      .related-card { background: var(--gray-50); border-radius: 16px; padding: 1.5rem; text-decoration: none; transition: transform 0.2s; display: block; }
-      .related-card:hover { transform: translateY(-4px); }
-      .related-card-category { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--rocco-blue); }
-      .related-card h3 { font-size: 1.05rem; color: var(--gray-900); margin: 0.5rem 0; }
-      .related-card p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
-      @media (max-width: 768px) { .blog-post h1 { font-size: 1.75rem; } .blog-post { padding: 1.5rem 1rem 3rem; } }
-    </style>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -122,7 +85,7 @@
 
     <nav id="navbar">
       <a href="../index.html" class="logo">
-        <img src="../assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="../assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="../index.html#features">Features</a></li>
@@ -131,7 +94,7 @@
         <li><a href="../about.html">Our Story</a></li>
         <li><a href="../blog.html">Blog</a></li>
       </ul>
-      <a href="../index.html#download" class="nav-cta">Download</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -143,7 +106,7 @@
       <a href="../pricing.html" class="mobile-nav-link">Pricing</a>
       <a href="../about.html" class="mobile-nav-link">Our Story</a>
       <a href="../blog.html" class="mobile-nav-link">Blog</a>
-      <a href="../index.html#download" class="nav-cta mobile-nav-link">Download Free</a>
+      <a href="../index.html#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
@@ -167,7 +130,7 @@
             <source src="../assets/videos/go-rocco-business.mp4" type="video/mp4" />
           </video>
         </div>
-        <p class="film-credit">Sixty seconds, recorded on the live portal. Music: "Carefree" by Kevin MacLeod, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a>.</p>
+        <p class="film-credit">Sixty seconds, recorded on the live portal.</p>
 
         <h2>Why we built it</h2>
 
@@ -238,10 +201,10 @@
 
         <div class="share-bar">
           <span>Share this:</span>
-          <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=https://go-rocco.com/blog/introducing-go-rocco-business.html&text=Run%20your%20dog%20business%20on%20Go%20Rocco.%20It%27s%20free." target="_blank" rel="noopener" aria-label="Share on X">&#x1D54F;</a>
-          <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://go-rocco.com/blog/introducing-go-rocco-business.html" target="_blank" rel="noopener" aria-label="Share on Facebook">f</a>
-          <a class="share-btn whatsapp" href="https://wa.me/?text=Run%20your%20dog%20business%20on%20Go%20Rocco.%20It%27s%20free.%20https://go-rocco.com/blog/introducing-go-rocco-business.html" target="_blank" rel="noopener" aria-label="Share on WhatsApp">w</a>
-          <button type="button" class="share-btn copy-link" onclick="navigator.clipboard.writeText('https://go-rocco.com/blog/introducing-go-rocco-business.html');this.textContent='✓';setTimeout(()=>this.textContent='🔗',2000)" aria-label="Copy link">🔗</button>
+          <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=https://go-rocco.com/blog/introducing-go-rocco-business.html&text=Run%20your%20dog%20business%20on%20Go%20Rocco.%20It%27s%20free." target="_blank" rel="noopener" aria-label="Share on X">X</a>
+          <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://go-rocco.com/blog/introducing-go-rocco-business.html" target="_blank" rel="noopener" aria-label="Share on Facebook">Facebook</a>
+          <a class="share-btn whatsapp" href="https://wa.me/?text=Run%20your%20dog%20business%20on%20Go%20Rocco.%20It%27s%20free.%20https://go-rocco.com/blog/introducing-go-rocco-business.html" target="_blank" rel="noopener" aria-label="Share on WhatsApp">WhatsApp</a>
+          <button type="button" class="share-btn copy-link" onclick="navigator.clipboard.writeText('https://go-rocco.com/blog/introducing-go-rocco-business.html');this.textContent='Copied';setTimeout(()=>this.textContent='Copy link',2000)" aria-label="Copy link">Copy link</button>
         </div>
 
         <section class="related-articles">
@@ -270,7 +233,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="../assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="../assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -303,7 +266,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>&copy; 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>

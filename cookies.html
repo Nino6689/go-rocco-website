@@ -42,172 +42,174 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
       .cookie-category {
-        background: var(--gray-50);
-        border-radius: 20px;
-        padding: 2rem;
-        margin-bottom: 1.5rem;
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-      }
-      .cookie-category:hover {
-        border-color: var(--rocco-blue);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        margin-bottom: 1.25rem;
+        box-shadow: var(--shadow-sm);
       }
       .cookie-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1rem;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
       }
-      .cookie-header h3 {
+      .content-section .cookie-header h3 {
         margin: 0;
-        font-size: 1.3rem;
-        color: var(--gray-900);
+        font-size: 1.2rem;
       }
       .cookie-toggle {
         position: relative;
-        width: 60px;
-        height: 32px;
+        display: inline-block;
+        width: 52px;
+        height: 30px;
+        flex-shrink: 0;
       }
       .cookie-toggle input {
+        position: absolute;
         opacity: 0;
-        width: 0;
-        height: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        cursor: pointer;
       }
       .cookie-slider {
         position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: var(--gray-600);
-        border-radius: 32px;
-        transition: all 0.3s ease;
+        inset: 0;
+        background: #667085;
+        border-radius: 30px;
+        transition: background-color 0.2s ease;
+        pointer-events: none;
       }
       .cookie-slider::before {
         position: absolute;
         content: '';
-        height: 24px;
-        width: 24px;
+        height: 22px;
+        width: 22px;
         left: 4px;
         bottom: 4px;
-        background: white;
+        background: #fff;
         border-radius: 50%;
-        transition: all 0.3s ease;
+        transition: transform 0.2s ease;
       }
       .cookie-toggle input:checked + .cookie-slider {
-        background: var(--safe-green);
+        background: var(--green);
       }
       .cookie-toggle input:checked + .cookie-slider::before {
-        transform: translateX(28px);
+        transform: translateX(22px);
       }
       .cookie-toggle input:disabled + .cookie-slider {
-        background: var(--safe-green);
-        opacity: 0.6;
-        cursor: not-allowed;
+        background: var(--green);
+        opacity: 0.55;
       }
       .cookie-toggle input:disabled + .cookie-slider::before {
-        transform: translateX(28px);
+        transform: translateX(22px);
       }
-      .cookie-description {
-        color: var(--gray-600);
+      .cookie-toggle input:focus-visible + .cookie-slider {
+        outline: 3px solid var(--blue);
+        outline-offset: 3px;
+        box-shadow: 0 0 0 1px var(--ink);
+      }
+      .content-section .cookie-description {
         font-size: 1rem;
-        line-height: 1.7;
         margin-bottom: 1rem;
       }
       .cookie-list {
-        background: var(--white);
-        border-radius: 12px;
-        padding: 1rem;
+        border-top: 1px solid var(--line);
         margin-top: 1rem;
       }
       .cookie-item {
         display: flex;
         justify-content: space-between;
-        padding: 0.75rem 0;
-        border-bottom: 1px solid var(--gray-50);
+        gap: 1rem;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid var(--line);
         font-size: 0.95rem;
       }
       .cookie-item:last-child {
         border-bottom: none;
+        padding-bottom: 0;
       }
       .cookie-name {
-        font-weight: 600;
-        color: var(--gray-900);
+        font-weight: 500;
+        color: var(--ink);
       }
       .cookie-duration {
-        color: var(--gray-600);
+        color: var(--ink-soft);
+        white-space: nowrap;
       }
       .cookie-actions {
         display: flex;
-        gap: 1rem;
+        gap: 0.75rem;
         justify-content: center;
         margin-top: 2rem;
         flex-wrap: wrap;
       }
       .cookie-action-btn {
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-family: 'Nunito', sans-serif;
+        padding: 0.8rem 1.35rem;
+        border-radius: var(--radius-sm);
+        font-family: var(--font-body);
+        font-weight: 600;
         font-size: 1rem;
+        border: 1px solid transparent;
         cursor: pointer;
-        transition: all 0.3s ease;
-        border: none;
+        transition:
+          background-color 0.15s ease,
+          border-color 0.15s ease;
       }
       .cookie-action-btn.primary {
-        background: var(--rocco-blue);
-        color: var(--white);
+        background: var(--ink);
+        color: #fff;
       }
       .cookie-action-btn.primary:hover {
-        background: var(--rocco-blue-dark);
-        transform: translateY(-2px);
+        background: #263043;
       }
       .cookie-action-btn.secondary {
-        background: var(--gray-50);
-        color: var(--gray-900);
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line-strong);
       }
       .cookie-action-btn.secondary:hover {
-        background: var(--gray-600);
-        color: var(--white);
+        border-color: var(--ink);
       }
       .cookie-saved {
         display: none;
-        background: var(--safe-green);
-        color: var(--white);
-        padding: 1rem 2rem;
-        border-radius: 12px;
+        background: var(--green-tint);
+        color: var(--green);
+        border: 1px solid rgba(31, 122, 77, 0.3);
+        padding: 0.9rem 1.25rem;
+        border-radius: var(--radius-sm);
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         font-weight: 600;
       }
       .cookie-saved.active {
         display: block;
-        animation: fadeIn 0.3s ease;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
       .required-badge {
-        background: var(--rocco-blue);
-        color: var(--white);
-        padding: 0.25rem 0.75rem;
-        border-radius: 50px;
+        border: 1px solid var(--line-strong);
+        color: var(--ink-soft);
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
         font-size: 0.75rem;
-        font-weight: 700;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      @media (max-width: 768px) {
+        .cookie-category {
+          padding: 1.25rem;
+        }
+        .cookie-action-btn {
+          flex: 1 1 100%;
+        }
       }
     </style>
 
@@ -232,7 +234,7 @@
 
     <nav id="navbar">
       <a href="index.html" class="logo">
-        <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+        <img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
@@ -241,7 +243,7 @@
         <li><a href="about.html">Our Story</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      <a href="index.html#download" class="nav-cta">Download</a>
+      <a href="index.html#download" class="nav-cta">Get the app</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -255,12 +257,12 @@
       <a href="about.html" class="mobile-nav-link">Our Story</a>
       <a href="providers.html" class="mobile-nav-link">For Providers</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="index.html#download" class="nav-cta mobile-nav-link">Download Free →</a>
+      <a href="index.html#download" class="nav-cta mobile-nav-link">Get the app</a>
     </div>
 
     <main id="main">
       <header class="page-header">
-        <h1>Cookie Settings</h1>
+        <h1>Cookie settings</h1>
         <p>Control how we use cookies on this website</p>
       </header>
 
@@ -276,8 +278,8 @@
 
         <div class="cookie-category">
           <div class="cookie-header">
-            <h3>🔒 Essential Cookies</h3>
-            <span class="required-badge">Always On</span>
+            <h3>Essential cookies</h3>
+            <span class="required-badge">Always on</span>
           </div>
           <p class="cookie-description">
             These cookies are necessary for the website to function properly. They enable core functionality like
@@ -301,7 +303,7 @@
 
         <div class="cookie-category">
           <div class="cookie-header">
-            <h3>📊 Analytics Cookies</h3>
+            <h3>Analytics cookies</h3>
             <label class="cookie-toggle">
               <input type="checkbox" id="analytics" />
               <span class="cookie-slider"></span>
@@ -325,7 +327,7 @@
 
         <div class="cookie-category">
           <div class="cookie-header">
-            <h3>⚙️ Functionality Cookies</h3>
+            <h3>Functionality cookies</h3>
             <label class="cookie-toggle">
               <input type="checkbox" id="functionality" />
               <span class="cookie-slider"></span>
@@ -349,22 +351,22 @@
           <button class="cookie-action-btn secondary" id="acceptAll">Accept All</button>
         </div>
 
-        <div class="cookie-saved" id="savedMessage">✓ Your cookie preferences have been saved</div>
+        <div class="cookie-saved" id="savedMessage">Your cookie preferences have been saved</div>
 
-        <h2>More Information</h2>
+        <h2>More information</h2>
         <p>For more details about how we handle your data, please see our:</p>
         <ul>
           <li><a href="/privacy">Privacy Policy</a> – How we collect and use personal data</li>
           <li><a href="data-policy.html">Data Policy</a> – Technical details about data handling</li>
         </ul>
 
-        <h2>What Are Cookies?</h2>
+        <h2>What are cookies?</h2>
         <p>
           Cookies are small text files stored on your device when you visit a website. They help websites remember your
           preferences and understand how you use the site.
         </p>
 
-        <h2>How to Delete Cookies</h2>
+        <h2>How to delete cookies</h2>
         <p>You can delete cookies from your browser at any time. Here's how:</p>
         <ul>
           <li><strong>Chrome:</strong> Settings → Privacy and Security → Cookies</li>
@@ -385,7 +387,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/gorocco-logo.png" alt="Go Rocco" class="logo-img" />
+          <span class="logo"><img src="assets/gorocco-logo.png" alt="" class="logo-img" width="28" height="28" /><span class="logo-word">Go Rocco</span></span>
           <p>Making every walk safer, one dog at a time. Built by dog people, for dog people.</p>
         </div>
         <div class="footer-column">
@@ -418,7 +420,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Go Rocco. All rights reserved. Made with 🐾 in the UK.</p>
+        <p>© 2026 Go Rocco. All rights reserved. Made in the UK.</p>
         <div class="social-links">
           <a
             href="https://www.facebook.com/share/1C2WnAfGX5/?mibextid=wwXIfr"
