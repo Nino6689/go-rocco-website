@@ -196,7 +196,7 @@
 
         <p>Why? Because you don't need pinpoint accuracy to make better decisions on your walk. Knowing there's a reactive dog <em>somewhere on the path ahead</em> is just as useful as knowing their exact coordinates - and far less invasive for the other owner.</p>
 
-        <p>The technical term for this is "spatial generalisation." Your phone's GPS might know your position to within 5 metres, but Go Rocco deliberately rounds that to a much larger area before it ever reaches our servers. We don't store the precise data and then blur it on the screen. The precision is reduced at the source, so even our database doesn't know exactly where you were.</p>
+        <p>The technical term for this is "spatial generalisation." Your phone's GPS might know your position to within 5 metres, but Go Rocco deliberately rounds that to a much larger area before it reaches anyone else. We don't send the precise position and then blur it on the screen. The rounding happens on our servers, so another walker's phone never holds your exact position. Your own route is kept precisely for your walk log, and only you can see it.</p>
 
         <h2 id="how-gps-tracking-works-during-a-walk">How GPS tracking works during a walk</h2>
 
@@ -244,9 +244,9 @@
         <p>Transparency matters to us, so here's exactly what happens with your location data:</p>
 
         <ul>
-          <li><strong>During a walk:</strong> Your generalised zone is shared with nearby users in real time (if you've opted in). Your full route is recorded locally for your walk log</li>
-          <li><strong>After a walk:</strong> Your zone disappears from the live map. Your walk log is stored securely and is only visible to you</li>
-          <li><strong>If you go invisible:</strong> Your zone is immediately removed from the map. Other users won't know you were ever there</li>
+          <li><strong>During a walk:</strong> Your generalised zone is shared in real time with walkers within 50 metres of you (unless you have gone invisible). Your full route is recorded for your walk log</li>
+          <li><strong>After a walk:</strong> Your zone disappears from the live map. The route you walked is stored securely and only you can see it</li>
+          <li><strong>If you go invisible:</strong> Your zone is removed from the map within seconds. Other users won't know you were ever there</li>
           <li><strong>If you delete your account:</strong> All data - walk logs, profile, temperament settings - is permanently deleted</li>
         </ul>
 
@@ -254,7 +254,7 @@
 
         <h2 id="the-technology-behind-the-scenes">The technology behind the scenes</h2>
 
-        <p>For the technically curious, here's a simplified overview of the stack. Your phone sends its generalised location to our servers, which determine which other users are "nearby" (within a configurable radius). The server then sends back the generalised zones of those nearby dogs, along with their temperament and profile data.</p>
+        <p>For the technically curious, here's a simplified overview of the stack. Your phone sends its location to our servers, which work out which other walkers are within 50 metres of you. The server then sends back the generalised zones of those nearby dogs, along with their temperament and profile data.</p>
 
         <p>This all happens in near real-time - typically within a couple of seconds. The map updates as you walk, so the picture of nearby dogs stays current. When a dog leaves the area or their owner ends the walk, they fade from the map.</p>
 
