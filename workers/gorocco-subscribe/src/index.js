@@ -153,8 +153,7 @@ async function sendConfirmationEmail(env, email, dogName, confirmToken) {
                     <p style="color: #111827; font-weight: 700; margin: 0 0 12px; font-size: 14px;">What happens next?</p>
                     <p style="color: #4B5563; font-size: 14px; line-height: 1.7; margin: 0;">
                       • We'll keep you updated on our launch progress<br>
-                      • You'll get early access when we launch in 2026<br>
-                      • Founding member badge on your profile — forever
+                      • Go Rocco is free on iPhone, Android and the web
                     </p>
                   </td>
                 </tr>
@@ -194,8 +193,7 @@ Confirm your email: ${confirmUrl}
 
 What happens next?
 - We'll keep you updated on our launch progress
-- You'll get early access when we launch in 2026
-- Founding member badge on your profile — forever
+- Go Rocco is free on iPhone, Android and the web
 
 ---
 You're receiving this because you signed up at go-rocco.com.

@@ -14,7 +14,7 @@ _Last refreshed: 18 September 2026._
 | The app | **Free for dog owners since 9 Sep 2026.** No subscription, no adverts. Alpha Pack is retired. |
 | Optional purchases for owners | A lost-pet alert **boost** only (the alert itself is free). Ask Rocco has a daily allowance, not a paywall. |
 | Go Rocco Business | Free core (unlimited bookings, clients, invoices, booking page, care records, books, tax-ready pack). **Pro £15/month or £144/year.** No trial. |
-| Provider fees | **0% on own clients, forever.** Introduced clients: 15% on first bookings for 90 days / 10 bookings, capped at £50 per client. |
+| Provider fees | **0% on own clients, forever.** Introduced clients: 15% on first bookings for 90 days / 10 bookings, capped at £50 per client; 12% after 100 completed bookings, 10% after 500 (`platformFees.ts` `TIERS`). |
 | Getting listed | Optional. Selfie + photo ID + basic DBS (<12 months) + £1m public liability; LA licence for boarding/daycare. Reviewed within 48 hours. |
 | Makers (the shop) | Applications open. Product liability insurance certificate required; decision within 5 working days; 15% commission on item prices, not delivery; paid at dispatch. |
 | Tax pack wording | "Tax-ready records, not tax advice." **Never** say "files your tax return", "HMRC-recognised" or "MTD-compatible". |

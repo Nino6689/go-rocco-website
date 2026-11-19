@@ -66,5 +66,5 @@ Hi [name]! Thanks — here's the page with everything on it: https://go-rocco.co
 3. Grant Pro: admin `POST /api/v1/admin/business/<businessId>/comp-pro {"days": 183, "reason": "founding walker"}`.
 4. Add them to the Founding Walkers WhatsApp group.
 5. On the call: create the business from the app (three steps), paste their client list, set up regulars, send the first client link together.
-6. Cohort: they enter code WALKERS under Settings → Tester programme (cohort `founding-walkers`, 40 places, recruiting until 31 Mar 2027).
+6. Cohort: they enter code WALKERS under Settings → Tester programme (cohort `founding-walkers`; the app allows 40 so nobody is turned away at the door, we recruit 20; open until 31 Mar 2027).
 7. Monthly call: first Thursday, 30 minutes, video. Notes → the build list.
