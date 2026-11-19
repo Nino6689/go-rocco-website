@@ -381,6 +381,10 @@
             <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Email address" required />
             <button type="submit" id="newsletterBtn">Subscribe</button>
           </form>
+          <label class="newsletter-consent" for="newsletterConsent" style="display:flex;gap:.6rem;align-items:flex-start;justify-content:center;margin-top:.9rem;font-size:.9rem;line-height:1.45;text-align:left;max-width:34rem;margin-left:auto;margin-right:auto;cursor:pointer">
+            <input type="checkbox" id="newsletterConsent" form="newsletterForm" required style="margin-top:.2rem;flex:none" />
+            <span>I agree to receive email updates about Go Rocco, including launch news and product updates. I can unsubscribe at any time.</span>
+          </label>
           <p id="newsletterMsg" class="newsletter-msg"></p>
         </div>
       </section>
@@ -488,7 +492,7 @@
           fetch('https://subscribe.go-rocco.com/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email }),
+            body: JSON.stringify({ email: email, consent: document.getElementById('newsletterConsent').checked }),
             signal: controller.signal
           })
           .then(function(res) { return res.json(); })
@@ -496,7 +500,7 @@
             clearTimeout(timeoutId);
             msg.style.display = 'block';
             if (data.success) {
-              msg.textContent = 'You\'re subscribed. Thank you.';
+              msg.textContent = 'Nearly there. Check your inbox and confirm your email.';
               msg.style.color = '#8fd6ac';
               form.reset();
             } else {
