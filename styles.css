@@ -533,6 +533,13 @@ nav {
   margin: 0 auto 2.5rem;
 }
 
+/* an odd card out sits centred on its own row */
+.tour-grid > .tour-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 1rem);
+  margin: 0 auto;
+}
+
 .tour-card .film {
   max-width: none;
 }
@@ -559,6 +566,9 @@ nav {
 @media (max-width: 760px) {
   .tour-grid {
     grid-template-columns: 1fr;
+  }
+  .tour-grid > .tour-card:last-child:nth-child(odd) {
+    width: auto;
   }
 }
 
