@@ -140,9 +140,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Location Data</td><td>GPS coordinates during walks</td><td>Live position: during the walk only. Route: kept in your walk log until you delete it</td></tr>
+            <tr><td>Location Data</td><td>GPS coordinates during walks</td><td>Live position: during the walk only. Route: kept in your walk log for 12 months, or until you delete the walk</td></tr>
             <tr><td>Device Info</td><td>Model, OS version, app version</td><td>While account active</td></tr>
-            <tr><td>Usage Analytics</td><td>Feature usage, session duration</td><td>Anonymised after 90 days</td></tr>
+            <tr><td>Usage Analytics</td><td>Feature usage, session duration</td><td>Deleted after 2 years</td></tr>
             <tr><td>Crash Reports</td><td>Error logs, stack traces</td><td>90 days</td></tr>
           </tbody>
         </table>
@@ -182,7 +182,7 @@
             <h3>2.4 Location Storage</h3>
             <ul>
               <li><strong>Real-time:</strong> Your current location is transmitted to nearby users during active walks</li>
-              <li><strong>Walk History:</strong> When you finish a walk, its route is saved to the walk log in your account</li>
+              <li><strong>Walk History:</strong> When you finish a walk, its route is saved to the walk log in your account. The route is deleted after 12 months; the walk itself (date, distance, duration) stays in your log</li>
               <li><strong>Not Shared:</strong> Other users cannot open your saved routes. The exceptions are people who share care of the dog that was walked, and anyone you share a walk with yourself</li>
               <li><strong>Deletion:</strong> You can delete any walk, and its route with it, at any time</li>
             </ul>
@@ -194,42 +194,55 @@
         <div class="legal-card">
           <h3>3.1 Where We Store Data</h3>
           <ul>
-            <li>Primary servers located in the United Kingdom</li>
-            <li>Backup servers within the European Economic Area</li>
-            <li>Cloud infrastructure provided by Cloudflare with ISO 27001 certification</li>
+            <li>Your account, your dogs, your walks, your messages and your photos are stored on Go Rocco's own servers in the United Kingdom</li>
+            <li>A standby copy and backups are kept on separate machines, also in the United Kingdom</li>
+            <li>Copies of the database backups are also held with Cloudflare in the United States, encrypted where they are stored</li>
+            <li>Cloudflare carries the traffic between the app and our servers. It sees your IP address; it does not store your account</li>
           </ul>
         </div>
 
         <div class="legal-highlight">
           <h3>3.2 Security Measures</h3>
           <ul>
-            <li><strong>Encryption in Transit:</strong> All data transmitted using TLS 1.3</li>
-            <li><strong>Encryption at Rest:</strong> AES-256 encryption for stored data</li>
-            <li><strong>Access Control:</strong> Role-based access with multi-factor authentication</li>
-            <li><strong>Monitoring:</strong> 24/7 security monitoring and intrusion detection</li>
-            <li><strong>Auditing:</strong> Regular security audits and penetration testing</li>
+            <li><strong>Encryption in Transit:</strong> All connections use TLS 1.2 or higher</li>
+            <li><strong>Encryption at Rest:</strong> Email addresses, phone numbers and two-factor secrets are encrypted in the database with AES-256. Backups are encrypted where they are stored</li>
+            <li><strong>Passwords:</strong> Stored only as a bcrypt hash. We cannot read your password</li>
+            <li><strong>Access Control:</strong> Staff access is limited by role, and access to personal data is logged</li>
+            <li><strong>Monitoring:</strong> Automated monitoring and alerting, day and night</li>
+            <li><strong>Review:</strong> Security reviews and penetration tests</li>
           </ul>
         </div>
 
         <div class="legal-card">
-          <h3>3.3 Data Processors</h3>
-          <p>We use the following third-party processors:</p>
+          <h3>3.3 Other Companies That Handle Your Data</h3>
+          <p>These companies receive some of your data so that part of Go Rocco can work:</p>
           <table class="legal-table">
             <thead>
               <tr>
-                <th>Service</th>
-                <th>Provider</th>
-                <th>Purpose</th>
+                <th>What for</th>
+                <th>Company</th>
+                <th>What they receive</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Cloud Hosting</td><td>Cloudflare Workers</td><td>Data storage and processing</td></tr>
-              <tr><td>Analytics</td><td>Privacy-focused</td><td>No personal data shared</td></tr>
-              <tr><td>Payments</td><td>Stripe; Apple / Google Play</td><td>Marketplace bookings, shop orders, Go Rocco Business Pro and optional lost-pet alert boosts</td></tr>
-              <tr><td>Email</td><td>Resend</td><td>Transactional and marketing emails</td></tr>
+              <tr><td>Network and security</td><td>Cloudflare</td><td>Your IP address and the traffic between the app and our servers; encrypted database backups</td></tr>
+              <tr><td>Push notifications</td><td>Google (Firebase); Apple</td><td>Your device's notification token and the notification itself</td></tr>
+              <tr><td>Crash and performance reports</td><td>Google (Firebase)</td><td>What went wrong, your device model and app version, and your account ID</td></tr>
+              <tr><td>Usage analytics, if you agree to it</td><td>Google (Firebase); Microsoft (Clarity)</td><td>Which features are used and how the app's screens are navigated</td></tr>
+              <tr><td>Advertising measurement</td><td>Meta; TikTok; Tenjin; Apple; Google</td><td>Which advert led to an install, app events and, where your device allows it, its advertising identifier</td></tr>
+              <tr><td>Maps and address lookup</td><td>Google; Apple</td><td>The area of the map you are viewing and addresses you look up</td></tr>
+              <tr><td>Weather</td><td>Open-Meteo</td><td>Your location, to show the weather on the walk screen</td></tr>
+              <tr><td>Postcode lookup</td><td>postcodes.io</td><td>A postcode you type in</td></tr>
+              <tr><td>Signing in with Apple or Google</td><td>Apple; Google</td><td>Confirmation of who you are, if you choose that way of signing in</td></tr>
+              <tr><td>Payments</td><td>Stripe; Apple; Google Play</td><td>Your payment details, for marketplace bookings, shop orders, Go Rocco Business Pro and optional lost-pet alert boosts. We never see or store your card number</td></tr>
+              <tr><td>Email</td><td>Microsoft 365</td><td>Your email address and the emails we send you</td></tr>
+              <tr><td>Text messages</td><td>Twilio</td><td>The phone numbers of your emergency contacts and the safety alert sent to them; appointment reminders a business sends its clients</td></tr>
+              <tr><td>Fixing faults</td><td>Anthropic; Twilio (WhatsApp)</td><td>Technical error reports, and any fault report you send us</td></tr>
+              <tr><td>Partner links</td><td>Awin</td><td>An anonymous reference when you follow a link to a partner's shop</td></tr>
             </tbody>
           </table>
-          <p>All processors are bound by Data Processing Agreements compliant with UK GDPR.</p>
+          <p>Ask Rocco and our content moderation run on our own servers. Your questions and your posts are not sent to an outside AI company.</p>
+          <p>Some of these companies process data outside the United Kingdom. The safeguards we rely on are set out under International Transfers in our <a href="/privacy">Privacy Policy</a>.</p>
         </div>
 
         <h2><span class="legal-section-number">4</span> Data Retention Schedule</h2>
@@ -242,13 +255,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Account Data</td><td>Until account deletion</td><td>Deleted within 30 days</td></tr>
-            <tr><td>Dog Profile</td><td>Until account deletion</td><td>Deleted within 30 days</td></tr>
+            <tr><td>Account Data</td><td>Until you delete your account</td><td>Deleted 30 days after you ask</td></tr>
+            <tr><td>Dog Profile</td><td>Until you delete it or your account</td><td>Deleted with the account</td></tr>
             <tr><td>Real-time Location</td><td>Duration of active walk only</td><td>Immediately cleared</td></tr>
-            <tr><td>Saved Walk History</td><td>Until you delete or close account</td><td>Deleted within 30 days</td></tr>
-            <tr><td>Messages</td><td>Until you delete or close account</td><td>Deleted within 30 days</td></tr>
-            <tr><td>Analytics (identifiable)</td><td>90 days</td><td>Anonymised</td></tr>
-            <tr><td>Analytics (anonymised)</td><td>2 years</td><td>Deleted</td></tr>
+            <tr><td>Walk Routes (GPS points)</td><td>12 months, or until you delete the walk</td><td>Deleted</td></tr>
+            <tr><td>Walk Log (date, distance, duration)</td><td>Until you delete the walk or your account</td><td>Deleted with the account</td></tr>
+            <tr><td>Messages</td><td>Until you delete them or your account</td><td>Deleted with the account</td></tr>
+            <tr><td>Booking and Payment Records</td><td>7 years, as the law requires</td><td>Kept without your name once your account is deleted</td></tr>
+            <tr><td>Usage Analytics</td><td>2 years</td><td>Deleted</td></tr>
+            <tr><td>Backups</td><td>Up to 90 days</td><td>Deleted</td></tr>
           </tbody>
         </table>
 
