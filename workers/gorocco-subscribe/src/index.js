@@ -4,6 +4,7 @@
  * Endpoints:
  * - POST /api/subscribe    - Submit email for waitlist (double opt-in)
  * - GET  /confirm?token=x  - Confirm email subscription
+ * - GET  /api/count        - Number of confirmed subscribers (public)
  * - GET  /admin/export     - Download confirmed subscribers as CSV (Basic Auth)
  */
 
@@ -24,7 +25,7 @@ function getCorsHeaders(request) {
 
   return {
     'Access-Control-Allow-Origin': allowedOrigin,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   }
 }
@@ -114,7 +115,7 @@ async function sendConfirmationEmail(env, email, dogName, confirmToken) {
                 ${greeting}
               </h1>
               <p style="color: #4B5563; font-size: 16px; line-height: 1.7; margin: 0 0 24px; text-align: center;">
-                One quick tap to confirm your spot as an early adopter. You'll be among the first to try Go Rocco when we launch — and help shape the app that makes walks safer for everyone.
+                One quick tap to confirm your email. You'll get news about Go Rocco and what we are building next, and you can unsubscribe at any time.
               </p>
             </td>
           </tr>
@@ -152,7 +153,7 @@ async function sendConfirmationEmail(env, email, dogName, confirmToken) {
                   <td style="padding: 20px;">
                     <p style="color: #111827; font-weight: 700; margin: 0 0 12px; font-size: 14px;">What happens next?</p>
                     <p style="color: #4B5563; font-size: 14px; line-height: 1.7; margin: 0;">
-                      • We'll keep you updated on our launch progress<br>
+                      • We'll send you news about Go Rocco and what is coming next<br>
                       • Go Rocco is free on iPhone, Android and the web
                     </p>
                   </td>
@@ -187,12 +188,12 @@ async function sendConfirmationEmail(env, email, dogName, confirmToken) {
   const textContent = `
 ${greeting}
 
-One quick tap to confirm your spot as an early adopter.
+One quick tap to confirm your email.
 
 Confirm your email: ${confirmUrl}
 
 What happens next?
-- We'll keep you updated on our launch progress
+- We'll send you news about Go Rocco and what is coming next
 - Go Rocco is free on iPhone, Android and the web
 
 ---
@@ -401,6 +402,24 @@ async function handleConfirm(request, env) {
 }
 
 // GET /admin/export - Export confirmed subscribers as CSV (protected)
+// Public count of confirmed subscribers. Was added to the live Worker in the Cloudflare
+// dashboard and never brought back here; a deploy from this repo used to remove it.
+async function handleCount(request, env) {
+  try {
+    const confirmed = await env.DB.prepare('SELECT COUNT(*) as count FROM subscribers WHERE status = ?').bind('confirmed').first()
+    return new Response(JSON.stringify({ count: confirmed?.count || 0 }), {
+      status: 200,
+      headers: { ...getCorsHeaders(request), 'Content-Type': 'application/json' },
+    })
+  } catch (error) {
+    console.error('Count error:', error)
+    return new Response(JSON.stringify({ count: 0 }), {
+      status: 200,
+      headers: { ...getCorsHeaders(request), 'Content-Type': 'application/json' },
+    })
+  }
+}
+
 async function handleExport(request, env) {
   // Check Basic Auth
   if (!checkBasicAuth(request, env)) {
@@ -507,6 +526,10 @@ export default {
 
     if (pathname === '/confirm' && method === 'GET') {
       return handleConfirm(request, env)
+    }
+
+    if (pathname === '/api/count' && method === 'GET') {
+      return handleCount(request, env)
     }
 
     if (pathname === '/admin/export' && method === 'GET') {
