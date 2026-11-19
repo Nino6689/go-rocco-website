@@ -525,6 +525,43 @@ nav {
   background: #000;
 }
 
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem 2rem;
+  max-width: 1080px;
+  margin: 0 auto 2.5rem;
+}
+
+.tour-card .film {
+  max-width: none;
+}
+
+.tour-card h3 {
+  font-size: 1.3rem;
+  margin: 0.2rem 0 0.35rem;
+}
+
+.tour-card p {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.tour-card .tour-question {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+}
+
+@media (max-width: 760px) {
+  .tour-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .film-caption,
 .film-credit {
   text-align: center;
